@@ -1281,7 +1281,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #3eff83;
+    background: #ff79b1;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1749,6 +1749,14 @@ pre code {
 .post-button {
   margin-top: 40px;
   text-align: center;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #ff106c;
+  text-decoration: underline;
 }
 .use-motion .post-block,
 .use-motion .pagination,

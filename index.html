@@ -293,7 +293,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-16 22:08:01" itemprop="dateModified" datetime="2025-04-16T22:08:01+08:00">2025-04-16</time>
+      <time title="修改时间：2025-04-16 23:20:47" itemprop="dateModified" datetime="2025-04-16T23:20:47+08:00">2025-04-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,14 +312,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -330,83 +330,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><p>博客搭建所使用的部件如下：</p>
-<ul>
-<li>Github：用于博客线上浏览</li>
-<li>Git: 线上推送工具</li>
-<li>Hexo：用于管理本地博客内容、主题与线上推送</li>
-<li>Sublime Text：用于管理博客文件夹，无需来回跳转</li>
-</ul>
-<p>博客搭建所用的参考视频为：</p>
-<p>【1】<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cW411A7Jx/?spm_id_from=333.337.top_right_bar_window_history.content.click&vd_source=5465b0f4790ebae45362caa6519f3b79">hojun_cn|手把手教你搭建属于自己的hexo+github博客</a></p>
-<p>博客美化参考的教程如下：</p>
-<p>【1】<a target="_blank" rel="noopener" href="https://hexo-next.readthedocs.io/zh-cn/latest/">Hexo-NexT</a></p>
-<p>【2】<a target="_blank" rel="noopener" href="https://vic.kim/2019/05/25/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">Hexo博客优化之Next主题美化 | Vicの博客</a></p>
-<p>【3】<a target="_blank" rel="noopener" href="https://xiamu-ssr.github.io/Hexo/2024/06/19/2024-H1/2024-06-19-12-31-52/">如何优雅的使用Github Action服务来将Hexo部署到Github Pages - Hexo</a></p>
-<p>*【4】<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-canvas-nest/blob/master/README.md">新版Hexo的canvas-nest配置–旧博客内的方式现在已经不支持</a></p>
-<p>【5.1】<a target="_blank" rel="noopener" href="https://blog.csdn.net/Aoman_Hao/article/details/89416634">Hexo博客Next主题建立标签云hexo-tag-cloud及效果展示_next主题 词云-CSDN博客</a></p>
-<p>【5.2】<a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-tag-cloud/blob/master/README.ZH.md">hexo-tag-cloud&#x2F;README.ZH.md at master · D0n9X1n&#x2F;hexo-tag-cloud</a></p>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>Hexo创建本地博客仓库后，使用<strong>控制台</strong>或<strong>Git Bash Here</strong>输入指令进行博文管理，详见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">指令 | Hexo</a>，以下简要介绍常用指令</p>
-<ol>
-<li><p>网站生成–生成本地网站</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>网站推送–推送至github</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建本地端口</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s -p 5555</span><br></pre></td></tr></table></figure>
-
-<p>该指令将创建本地5555端口，可在浏览器中输入<code>localhost:5555</code>进行查看，但并未推送至线上。</p>
-</li>
-</ol>
-<h2 id="问题与解决办法"><a href="#问题与解决办法" class="headerlink" title="问题与解决办法"></a>问题与解决办法</h2><p>虽然有视频参考，但作者在使用时仍然出现一些问题，在此记录，希望对各位有所帮助。</p>
-<h3 id="本地仓库初始化失败"><a href="#本地仓库初始化失败" class="headerlink" title="本地仓库初始化失败"></a>本地仓库初始化失败</h3><p><strong>原因1：在Github创建仓库时的仓库名与本地仓库名不一致。</strong></p>
-<p>举个栗子：作者在Github的仓库名为<code>AAA</code>，那么使用<code>hexo init AAA</code>指令时的本地仓库路径应该为<code>C:\Blog</code>，文件夹名称为<code>AAA</code>。</p>
-<p><strong>原因2：无法在某个硬盘的根目录下创建仓库。例如在<code>C:</code>文件夹下初始化将失败。</strong></p>
-<p>举个栗子：在本地文件夹下应该创建子文件夹，如<code>C:\Blog</code>或者你喜欢的其他名称。</p>
-<p><strong>原因3：SSL证书报错，如下。</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init AAA</span><br><span class="line">INFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.git</span><br><span class="line">fatal: unable to access <span class="string">&#x27;https://github.com/hexojs/hexo-starter.git/&#x27;</span>: SSL certificate problem: unable to get <span class="built_in">local</span> issuer certificate</span><br><span class="line">WARN  git <span class="built_in">clone</span> failed. Copying data instead</span><br><span class="line">INFO  Install dependencies</span><br><span class="line">INFO  Start blogging with Hexo!</span><br></pre></td></tr></table></figure>
-
-<p>解决办法：首先下载最新版本Git，某些旧版本可能会失败。其次，Git在下载后默认为Linux终端加密，使用以下指令修改配置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global http.sslbackend schannel</span><br></pre></td></tr></table></figure>
-
-<p><span style = "color:red"><strong>不建议使用以下指令：该指令关闭安全检查，可能会受到外部攻击。</strong></span></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global http.sslVerify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="更改主题后生成时报错-显示空白"><a href="#更改主题后生成时报错-显示空白" class="headerlink" title="更改主题后生成时报错&#x2F;显示空白"></a>更改主题后生成时报错&#x2F;显示空白</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">WARN  No layout: 2025/04/09/hello-world/index.html</span><br><span class="line">WARN  No layout: archives/index.html</span><br><span class="line">WARN  No layout: archives/2025/index.html</span><br><span class="line">WARN  No layout: archives/2025/04/index.html</span><br><span class="line">WARN  No layout: index.html</span><br></pre></td></tr></table></figure>
-
-<p>原因1：主题包名称与<code>_config.yml</code>中不一致，检查文件名。</p>
-<p>举个例子：作者使用<code>next</code>主题，在github上下载的主题包名称为<code>xxxx_next_xxx</code>形式。将主题包与<code>_config.yml</code>中修改为<code>next</code>或其他相同的名称即可。</p>
-<p>原因2：原有缓存内容未更新。使用以下指令重新生成。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="无法推送至Github仓库"><a href="#无法推送至Github仓库" class="headerlink" title="无法推送至Github仓库"></a>无法推送至Github仓库</h3><p>原因1：仓库分支名有误。Github默认仓库名曾由<code>master</code>修改为<code>mian</code>， 但Hexo默认分支为<code>master</code>。</p>
-<p>解决办法：在<code>_config.yml</code>内找到<code>branch </code>分支，并修改为<code>main</code>:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="string">type:git</span></span><br><span class="line">	<span class="string">repo:xxx</span> <span class="comment">#你的Github仓库</span></span><br><span class="line">	<span class="string">branch：main</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="新增侧边栏项目后出错"><a href="#新增侧边栏项目后出错" class="headerlink" title="新增侧边栏项目后出错"></a>新增侧边栏项目后出错</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">YAMLException: can not <span class="built_in">read</span> a block mapping entry; a multiline key may not be an implicit key (4:1)</span><br></pre></td></tr></table></figure>
-
-<p>原因1：文件的<code>front-matter</code>内存在中英文字符混用。</p>
-<p>解决办法：使用英文字符，并且后跟空格。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 关于</span><br><span class="line"><span class="built_in">date</span>: 2025-04-16 13:20:26</span><br><span class="line">tags: about</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="创建新标签后访问错误"><a href="#创建新标签后访问错误" class="headerlink" title="创建新标签后访问错误"></a>创建新标签后访问错误</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot GET /about/</span><br></pre></td></tr></table></figure>
-
-<p>原因1：可能并未创建对应的文件夹，或者文件名称有误。</p>
-<p>解决办法：new page创建新文件夹，文件夹内的文件名<strong>必须为<code>index.md</code></strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
-
-<p>并且注意，此时需要更改内部的tags，比如</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 关于</span><br><span class="line"><span class="built_in">date</span>: 2025-04-16 13:20:26</span><br><span class="line">tags: about</span><br></pre></td></tr></table></figure>
-
-
+          <p>本文主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的帖子与网站，同时汇总搭建过程中遇到的各种错误和解决办法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/04/09/Hexo-MyBlog/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -452,7 +384,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3 分钟</span>
+    <span title="站点阅读时长">4 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
