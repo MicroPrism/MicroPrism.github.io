@@ -12,7 +12,10 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
 
+<link rel="stylesheet" href="[object Object]">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
@@ -29,7 +32,7 @@
 <meta property="og:description" content="本文主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的帖子与网站，同时汇总搭建过程中遇到的各种错误和解决办法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-09T13:44:35.287Z">
-<meta property="article:modified_time" content="2025-04-16T15:20:47.772Z">
+<meta property="article:modified_time" content="2025-04-17T17:38:10.439Z">
 <meta property="article:author" content="Youngs">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Next">
@@ -118,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">1</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">1</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -169,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">博客搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">问题与解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5"><span class="nav-number">3.1.</span> <span class="nav-text">本地仓库初始化失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%90%8E%E7%94%9F%E6%88%90%E6%97%B6%E6%8A%A5%E9%94%99-%E6%98%BE%E7%A4%BA%E7%A9%BA%E7%99%BD"><span class="nav-number">3.2.</span> <span class="nav-text">更改主题后生成时报错&#x2F;显示空白</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E8%87%B3Github%E4%BB%93%E5%BA%93"><span class="nav-number">3.3.</span> <span class="nav-text">无法推送至Github仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%A1%B9%E7%9B%AE%E5%90%8E%E5%87%BA%E9%94%99"><span class="nav-number">3.4.</span> <span class="nav-text">新增侧边栏项目后出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E6%A0%87%E7%AD%BE%E5%90%8E%E8%AE%BF%E9%97%AE%E9%94%99%E8%AF%AF"><span class="nav-number">3.5.</span> <span class="nav-text">创建新标签后访问错误</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">博客搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">问题与解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5"><span class="nav-number">3.1.</span> <span class="nav-text">本地仓库初始化失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%90%8E%E7%94%9F%E6%88%90%E6%97%B6%E6%8A%A5%E9%94%99"><span class="nav-number">3.2.</span> <span class="nav-text">更改主题后生成时报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E8%87%B3Github%E4%BB%93%E5%BA%93"><span class="nav-number">3.3.</span> <span class="nav-text">无法推送至Github仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%A1%B9%E7%9B%AE%E5%90%8E%E5%87%BA%E9%94%99"><span class="nav-number">3.4.</span> <span class="nav-text">新增侧边栏项目后出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E6%A0%87%E7%AD%BE%E5%90%8E%E8%AE%BF%E9%97%AE%E9%94%99%E8%AF%AF"><span class="nav-number">3.5.</span> <span class="nav-text">创建新标签后访问错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="nav-number">4.</span> <span class="nav-text">使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E5%88%86%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">博客分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%88%86%E7%B1%BB%E9%97%B4%E9%9A%94%E7%AC%A6"><span class="nav-number">4.2.</span> <span class="nav-text">修改分类间隔符</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,7 +193,7 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -300,7 +303,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-16 23:20:47" itemprop="dateModified" datetime="2025-04-16T23:20:47+08:00">2025-04-16</time>
+      <time title="修改时间：2025-04-18 01:38:10" itemprop="dateModified" datetime="2025-04-18T01:38:10+08:00">2025-04-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -309,6 +312,10 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">实用工具</span></a>
+        </span>
+          /
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
         </span>
     </span>
 
@@ -326,7 +333,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -354,14 +361,15 @@
 <li>Sublime Text：用于管理博客文件夹，无需来回跳转</li>
 </ul>
 <p>博客搭建所用的参考视频为：</p>
-<p>【1】<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cW411A7Jx/?spm_id_from=333.337.top_right_bar_window_history.content.click&vd_source=5465b0f4790ebae45362caa6519f3b79">hojun_cn|手把手教你搭建属于自己的hexo+github博客</a></p>
+<p>【1】<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cW411A7Jx/?spm_id_from=333.337.top_right_bar_window_history.content.click&vd_source=5465b0f4790ebae45362caa6519f3b79">hojun_cn|手把手教你搭建属于自己的hexo+github博客-BiliBili</a></p>
 <p>博客美化参考的教程如下：</p>
 <p>【1】<a target="_blank" rel="noopener" href="https://hexo-next.readthedocs.io/zh-cn/latest/">Hexo-NexT</a></p>
 <p>【2】<a target="_blank" rel="noopener" href="https://vic.kim/2019/05/25/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">Hexo博客优化之Next主题美化 | Vicの博客</a></p>
 <p>【3】<a target="_blank" rel="noopener" href="https://xiamu-ssr.github.io/Hexo/2024/06/19/2024-H1/2024-06-19-12-31-52/">如何优雅的使用Github Action服务来将Hexo部署到Github Pages - Hexo</a></p>
-<p>【4】<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-canvas-nest/blob/master/README.md">新版Hexo的canvas-nest配置–旧博客内的方式现在已经不支持</a></p>
-<p>【5.1】<a target="_blank" rel="noopener" href="https://blog.csdn.net/Aoman_Hao/article/details/89416634">Hexo博客Next主题建立标签云hexo-tag-cloud及效果展示_next主题 词云-CSDN博客</a></p>
-<p>【5.2】<a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-tag-cloud/blob/master/README.ZH.md">hexo-tag-cloud&#x2F;README.ZH.md at master · D0n9X1n&#x2F;hexo-tag-cloud</a></p>
+<p>【4】<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-canvas-nest/blob/master/README.md">Hexo v7.0+的canvas-nest插件配置-Github</a></p>
+<p>【5.1】<a target="_blank" rel="noopener" href="https://blog.csdn.net/Aoman_Hao/article/details/89416634">Hexo博客Next主题建立标签云-CSDN博客</a></p>
+<p>【5.2】<a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-tag-cloud/blob/master/README.ZH.md">Hexo的hexo-tag-cloud插件使用手册-Github</a></p>
+<p>【6】<a target="_blank" rel="noopener" href="https://blog.csdn.net/kantaiyang/article/details/129159055">Hexo无法显示本地图片的问题-CSDN博客</a></p>
 <h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>Hexo创建本地博客仓库后，使用<strong>控制台</strong>或<strong>Git Bash Here</strong>输入指令进行博文管理，详见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">指令 | Hexo</a>，以下简要介绍常用指令</p>
 <ol>
 <li><p>网站生成–生成本地网站</p>
@@ -387,17 +395,18 @@
 <p>解决办法：首先下载最新版本Git，某些旧版本可能会失败。其次，Git在下载后默认为Linux终端加密，使用以下指令修改配置。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global http.sslbackend schannel</span><br></pre></td></tr></table></figure>
 
-<p><span style = "color:red"><strong>不建议使用以下指令：该指令关闭安全检查，可能会受到外部攻击。</strong></span></p>
+<p><span style="color:red"><strong>不建议使用以下指令：该指令关闭安全检查，可能会受到外部攻击。</strong></span></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global http.sslVerify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="更改主题后生成时报错-显示空白"><a href="#更改主题后生成时报错-显示空白" class="headerlink" title="更改主题后生成时报错&#x2F;显示空白"></a>更改主题后生成时报错&#x2F;显示空白</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">WARN  No layout: 2025/04/09/hello-world/index.html</span><br><span class="line">WARN  No layout: archives/index.html</span><br><span class="line">WARN  No layout: archives/2025/index.html</span><br><span class="line">WARN  No layout: archives/2025/04/index.html</span><br><span class="line">WARN  No layout: index.html</span><br></pre></td></tr></table></figure>
+<h3 id="更改主题后生成时报错"><a href="#更改主题后生成时报错" class="headerlink" title="更改主题后生成时报错"></a>更改主题后生成时报错</h3><p>此时进行本地查看，网页端将显示空白界面。生成阶段的报错信息如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">WARN  No layout: 2025/04/09/hello-world/index.html</span><br><span class="line">WARN  No layout: archives/index.html</span><br><span class="line">WARN  No layout: archives/2025/index.html</span><br><span class="line">WARN  No layout: archives/2025/04/index.html</span><br><span class="line">WARN  No layout: index.html</span><br></pre></td></tr></table></figure>
 
 <p>原因1：主题包名称与<code>_config.yml</code>中不一致，检查文件名。</p>
 <p>举个例子：作者使用<code>next</code>主题，在github上下载的主题包名称为<code>xxxx_next_xxx</code>形式。将主题包与<code>_config.yml</code>中修改为<code>next</code>或其他相同的名称即可。</p>
 <p>原因2：原有缓存内容未更新。使用以下指令重新生成。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure>
 
 <h3 id="无法推送至Github仓库"><a href="#无法推送至Github仓库" class="headerlink" title="无法推送至Github仓库"></a>无法推送至Github仓库</h3><p>原因1：仓库分支名有误。Github默认仓库名曾由<code>master</code>修改为<code>mian</code>， 但Hexo默认分支为<code>master</code>。</p>
 <p>解决办法：在<code>_config.yml</code>内找到<code>branch </code>分支，并修改为<code>main</code>:</p>
@@ -422,6 +431,22 @@
 <p>并且注意，此时需要更改内部的tags，比如</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 关于</span><br><span class="line"><span class="built_in">date</span>: 2025-04-16 13:20:26</span><br><span class="line">tags: about</span><br></pre></td></tr></table></figure>
 
+<h2 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h2><h3 id="博客分类"><a href="#博客分类" class="headerlink" title="博客分类"></a>博客分类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Diary, PlayStation]</span><br><span class="line">- [Diary, Games]</span><br><span class="line">- [Life]</span><br></pre></td></tr></table></figure>
+
+<p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p>
+<h3 id="修改分类间隔符"><a href="#修改分类间隔符" class="headerlink" title="修改分类间隔符"></a>修改分类间隔符</h3><p>如果希望保留多语言支持，可以修改翻译文件中的 <code>symbol.comma</code> 定义：</p>
+<ol>
+<li><p>找到主题的语言文件（如中文）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes/next/languages/zh-CN.yml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>symbol.comma</code> 的值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">symbol:</span><br><span class="line">  comma: <span class="string">&quot; / &quot;</span>  <span class="comment"># 将逗号改为斜杠</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>且视他人之疑目如盏盏鬼火，大胆地去走你的夜路。–史铁生 《病隙随笔》</em></p>
+</blockquote>
 
     </div>
 
@@ -431,7 +456,7 @@
 
     <footer class="post-footer">
           <div class="reward-container">
-  <div>请我一杯咖啡吧！</div>
+  <div>假如人人都给我一块钱~</div>
   <button>
     赞赏
   </button>
