@@ -24,24 +24,35 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"microprism.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="我等采石之人，当怀大教堂之愿景~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Young&#39;s Blog">
-<meta property="og:url" content="https://microprism.github.io/index.html">
+    <meta name="description" content="该博文介绍FPGA的相关基础知识，如制造厂商、主要功能等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPGA-01-关于ZYNQ">
+<meta property="og:url" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="我等采石之人，当怀大教堂之愿景~">
+<meta property="og:description" content="该博文介绍FPGA的相关基础知识，如制造厂商、主要功能等。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/image-20250420205204194.png">
+<meta property="og:image" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/image-20250420210628775.png">
+<meta property="og:image" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/image-20250420211339732.png">
+<meta property="og:image" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/image-20250420215617600.png">
+<meta property="og:image" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/image-20250420204136714.png">
+<meta property="og:image" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/image-20250425103918783.png">
+<meta property="article:published_time" content="2025-04-20T09:25:41.000Z">
+<meta property="article:modified_time" content="2025-05-28T11:44:15.481Z">
 <meta property="article:author" content="Youngs">
+<meta property="article:tag" content="FPGA">
+<meta property="article:tag" content="ZYNQ">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/image-20250420205204194.png">
 
 
-<link rel="canonical" href="https://microprism.github.io/">
+<link rel="canonical" href="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/","path":"2025/04/20/FPGA-01-About ZYNQ/","title":"FPGA-01-关于ZYNQ"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Young's Blog</title>
+<title>FPGA-01-关于ZYNQ | Young's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXT2GQNX59"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-YXT2GQNX59","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -100,7 +111,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Young's Blog</h1>
+      <p class="site-title">Young's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">软件攻城狮</p>
@@ -154,7 +165,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -167,6 +178,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PLD%E5%99%A8%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">PLD器件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PLA%E4%B8%8EPROM"><span class="nav-number">1.1.</span> <span class="nav-text">PLA与PROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PAL%E4%B8%8EGAL"><span class="nav-number">1.2.</span> <span class="nav-text">PAL与GAL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPLD%E4%B8%8EFPGA"><span class="nav-number">1.3.</span> <span class="nav-text">CPLD与FPGA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZYNQ"><span class="nav-number">2.</span> <span class="nav-text">ZYNQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PS-%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text">PS 端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#APU"><span class="nav-number">2.1.1.</span> <span class="nav-text">APU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.1.2.</span> <span class="nav-text">存储器接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.1.3.</span> <span class="nav-text">外部接口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text">PL端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IOB"><span class="nav-number">2.2.1.</span> <span class="nav-text">IOB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CLB"><span class="nav-number">2.2.2.</span> <span class="nav-text">CLB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BRAM"><span class="nav-number">2.2.3.</span> <span class="nav-text">BRAM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AC%E6%A0%B8"><span class="nav-number">2.2.4.</span> <span class="nav-text">硬核</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -250,16 +262,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -273,13 +286,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Young's Blog">
+      <meta itemprop="name" content="FPGA-01-关于ZYNQ | Young's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/04/20/FPGA-01-About%20ZYNQ/" class="post-title-link" itemprop="url">FPGA-01-关于ZYNQ</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          FPGA-01-关于ZYNQ
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -313,6 +326,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
@@ -336,17 +356,139 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>该博文介绍FPGA的相关基础知识，如制造厂商、主要功能等。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/04/20/FPGA-01-About%20ZYNQ/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+    <div class="post-body" itemprop="articleBody"><p>该博文介绍FPGA的相关基础知识，如制造厂商、主要功能等。</p>
+<span id="more"></span>
+
+<h2 id="PLD器件"><a href="#PLD器件" class="headerlink" title="PLD器件"></a>PLD器件</h2><p>FPGA: Field Programmable Gate Array，即现场可编程门阵列，属于可编程器件PLD（Programmable Logic Device），类似的有PLA、PAL、CPLD等器件。</p>
+<h3 id="PLA与PROM"><a href="#PLA与PROM" class="headerlink" title="PLA与PROM"></a>PLA与PROM</h3><p>PLA与PROM为早期反熔丝型PLD电路。PLA（Programmable Logic array）中通过与门、非门构成“与平面”，“或平面”，以及一次性的编程矩阵。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420205204194.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    PLA内部结构	<!--标题-->
+    </center>
+</div>
+
+
+<p>可编程只读存储器PROM（Programmable Read-Only Memory）与PLA类似，均是通过“与连接矩阵与“或连接矩阵”组成，<strong>但是PROM的结构上与连接矩阵固定，仅”或矩阵”可进行一次编程</strong>，如下图。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420210628775.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    PROM内部结构	<!--标题-->
+    </center>
+</div>
+
+
+<h3 id="PAL与GAL"><a href="#PAL与GAL" class="headerlink" title="PAL与GAL"></a>PAL与GAL</h3><p>在PLA与PROM的基础上又延伸出其他两种类型，即PAL（Programmable Array Logic）和GAL（Generic Array Logic）。</p>
+<p>其中PAL相对于PROM结构类似，只是<strong>PAL是仅”与连接矩阵”可编程</strong>，仍然为反熔丝工艺，仅可编程1次。</p>
+<p>PAL根据输出电路工作模式可分为三类：</p>
+<ul>
+<li>三态输出</li>
+<li>寄存器输出</li>
+<li>互补输出</li>
+</ul>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420211339732.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    PAL内部结构	<!--标题-->
+    </center>
+</div>
+
+
+<p>GAL相对于PAL改进：</p>
+<ul>
+<li>CMOS工艺，电可擦除，可多次编程</li>
+<li>可编程的输出逻辑宏单元OLMC（Output Logic Macro Cell）</li>
+</ul>
+<p>其中OLMC可通过编程控制GAL输出，覆盖PAL的三种模式。</p>
+<h3 id="CPLD与FPGA"><a href="#CPLD与FPGA" class="headerlink" title="CPLD与FPGA"></a>CPLD与FPGA</h3><p>复杂可编程逻辑器件CPLD（Complex Programmable Logic Device）可以看作若干PLA与可编程连接矩阵的集合。内部结构如图。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420215617600.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    CPLD内部结构	<!--标题-->
+    </center>
+</div>
+
+
+<p>FPGA内大量使用LUT查找表和寄存器，可分为SRAM、反熔丝、Flash三种类型，包括可编程的：</p>
+<ul>
+<li>逻辑块</li>
+<li>布线资源</li>
+<li>IO口</li>
+</ul>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420204136714.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    FPGA与CPLD对比	<!--标题-->
+    </center>
+</div>
+
+
+<p>FPGA的应用场景对比单片机和ARM，主要优势9是灵活高效、高吞吐量、低批量延时、快速并行运算、可重构、可重复编程、可实现定制性能和定制功耗。</p>
+<h2 id="ZYNQ"><a href="#ZYNQ" class="headerlink" title="ZYNQ"></a>ZYNQ</h2><p>Xilinx内的ZYNQ系列芯片内包括一块Cortex-A9的硬件ARM处理器，称为为PS。其余的逻辑部分，称为PL，PL上可以使用逻辑块搭载MicroBlaze软核处理器。</p>
+<h3 id="PS-端"><a href="#PS-端" class="headerlink" title="PS 端"></a>PS 端</h3><p>ZYNQ内除去ARM外，还包括应用处理单元APU（Application Processing Unit）、扩展外设、cache存储器、存储器接口、互联接口、时钟发生电路。</p>
+<h4 id="APU"><a href="#APU" class="headerlink" title="APU"></a>APU</h4><div>
+    <center>
+        <img src="image-20250425103918783.png" alt="image can't load." style="zoom:75%">
+        <br>
+    <center>
+      APU框架
+</center></center></div>
+
+
+<ul>
+<li>双ARM核、NEONTM媒体处理引擎MPE（Media Processing Engine）、浮点计算单元FPU（Floating Point Unit）、内存管理单元MMU（Memory Management Unit）、一级cache存储器（指令+数据）</li>
+<li>一致性控制单元SCU（Snoop Control Unit）：ARM与OCM和二级cache之间的连接桥。可用加速一致端口ACP（Accelerator Coherency Port）管理PS与PL的访问</li>
+<li>二级cache、片上存储器OCM（On Chip Memory），包括256kB的RAM和128kB的BootRAM。</li>
+</ul>
+<h4 id="存储器接口"><a href="#存储器接口" class="headerlink" title="存储器接口"></a>存储器接口</h4><p>ZYNQ-7000系列存储器接口包括动态+静态口。</p>
+<ul>
+<li><p>动态存储器控制器</p>
+<ol>
+<li>核心存储控制器和调度器DDRC</li>
+<li>AXI存储器端口接口DDRI</li>
+<li>数字PHY及控制器DDBP，可用于DDR2&#x2F;3、DDR3L、LPDDR2</li>
+</ol>
+</li>
+<li><p>静态存储控制器</p>
+<p>SMC（Static Memory Controller），可用作NAND闪存控制器、或并口存储器控制器，支持NAND闪存、NOR闪存、异步SRAM。</p>
+</li>
+<li><p>QSPI</p>
+<p>程序烧录，程序固化。</p>
+</li>
+</ul>
+<h4 id="外部接口"><a href="#外部接口" class="headerlink" title="外部接口"></a>外部接口</h4><p>PS和外部通信主要通过复用的输入&#x2F;输出MIO（Multiplexed Input&#x2F;Output，MIO）实现，直接连接在PS端。但扩展的MIO即EMIO需要通过PL端转接，QSPI、USB、SMC不适用于PL的EMIO接口。</p>
+<p>出去4组32位的GPIO外，对外接口还包括各2组：SPI、I2C、CAN、UART、SD、USB、GigE（Ethernet）。</p>
+<h3 id="PL端"><a href="#PL端" class="headerlink" title="PL端"></a>PL端</h3><p>Xilinx FPGA芯片的组成部分：可编程输入输出单元IOB、可配置逻辑块CLB、嵌入式块RAM、布线资源、底层内嵌功能单元、底层内嵌专用硬核等。</p>
+<h4 id="IOB"><a href="#IOB" class="headerlink" title="IOB"></a>IOB</h4><p>需要注意，FPGA每个Bank的VCC电压不同，一个Bank仅有一个电压。</p>
+<p>I&#x2F;O组被分类为高性能HP（High Performance）和高范围HR（High Range）。</p>
+<ul>
+<li>HP：VCC为1.8V，常作连接存储器和其他芯片的高速接口</li>
+<li>HR：VCC为3.3V，适合各种IO标准</li>
+</ul>
+<p>HP与HR均支持单端、差分输入，具体可以查阅引脚说明。</p>
+<p><strong>每个IOB包括IOSERDER，可作串转并或并转串。</strong></p>
+<h4 id="CLB"><a href="#CLB" class="headerlink" title="CLB"></a>CLB</h4><p>CLB指可编程逻辑块，逻辑单元最小规模。Slice片是CLB的子单元。</p>
+<p><strong>ZYNQ的片是由4个查找表（LUT）+8触发前+其他逻辑组成的。</strong></p>
+<h4 id="BRAM"><a href="#BRAM" class="headerlink" title="BRAM"></a>BRAM</h4><p>嵌入式块RAM，用于生成RAM、ROM、FIFO及移位寄存器等常用的存储模块。</p>
+<p>ZYNQ的BRAM由60个存储块组成：</p>
+<ul>
+<li>每个块RAM由2个18kB的BRAM组成；</li>
+<li>以块为单位使用；</li>
+<li>3类分组，即BRAM（36kB）；BRAM（18kB）+BRAM（18kB），BRAM+FIFO。由于仅包括1个FIFO Logic，只能生成一组FIFO控制信号。</li>
+</ul>
+<p><strong>使用块RAM即在片内用小物理空间存储大量数据</strong>。</p>
+<h4 id="硬核"><a href="#硬核" class="headerlink" title="硬核"></a>硬核</h4><p>ZYNQPL端内嵌XADC，即两个模数转换器。且有接口可以连接至PS端。</p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>大梦谁先觉，平生我自知。–《三国演义》</em></p>
+</blockquote>
+
     </div>
 
     
@@ -354,227 +496,61 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="reward-container">
+  <div>假如人人都给我一块钱~</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Youngs 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Youngs 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
 </div>
 
+          
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://microprism.github.io/2025/04/19/SpaceDesk-SecondaryScreen/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/walk.png">
-      <meta itemprop="name" content="Youngs">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Young's Blog">
-      <meta itemprop="description" content="我等采石之人，当怀大教堂之愿景~">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Young's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/04/19/SpaceDesk-SecondaryScreen/" class="post-title-link" itemprop="url">SpaceDesk-Win与iPad有线副屏扩展与常见问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2025-04-19 10:13:20 / 修改时间：12:17:25" itemprop="dateCreated datePublished" datetime="2025-04-19T10:13:20+08:00">2025-04-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">实用工具</span></a>
-        </span>
-          /
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/SpaceDesk/" itemprop="url" rel="index"><span itemprop="name">SpaceDesk</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>378</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Youngs
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://microprism.github.io/2025/04/20/FPGA-01-About%20ZYNQ/" title="FPGA-01-关于ZYNQ">https://microprism.github.io/2025/04/20/FPGA-01-About ZYNQ/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-        </div>
-      </header>
+          <div class="post-tags">
+              <a href="/tags/FPGA/" rel="tag"># FPGA</a>
+              <a href="/tags/ZYNQ/" rel="tag"># ZYNQ</a>
+          </div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/04/19/SpaceDesk-SecondaryScreen/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://microprism.github.io/2025/04/09/Hexo-MyBlog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/walk.png">
-      <meta itemprop="name" content="Youngs">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Young's Blog">
-      <meta itemprop="description" content="我等采石之人，当怀大教堂之愿景~">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Young's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/04/09/Hexo-MyBlog/" class="post-title-link" itemprop="url">Hexo-博客搭建、问题与解决办法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-04-09 00:00:00" itemprop="dateCreated datePublished" datetime="2025-04-09T00:00:00+08:00">2025-04-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-19 10:16:57" itemprop="dateModified" datetime="2025-04-19T10:16:57+08:00">2025-04-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">实用工具</span></a>
-        </span>
-          /
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>该博客主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的视频与帖子连接，同时汇总个人搭建过程中遇到的各种错误和解决办法。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/04/09/Hexo-MyBlog/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/04/19/SpaceDesk-SecondaryScreen/" rel="prev" title="SpaceDesk-Win与iPad有线副屏扩展与常见问题">
+                  <i class="fa fa-angle-left"></i> SpaceDesk-Win与iPad有线副屏扩展与常见问题
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
