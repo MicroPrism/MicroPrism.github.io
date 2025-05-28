@@ -112,6 +112,143 @@
       </tags>
   </entry>
   <entry>
+    <title>SpaceDesk-Win与iPad有线副屏扩展与常见问题</title>
+    <url>/2025/04/19/SpaceDesk-SecondaryScreen/</url>
+    <content><![CDATA[<p>Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…</p>
+<span id="more"></span>
+
+<h2 id="设备说明"><a href="#设备说明" class="headerlink" title="设备说明"></a>设备说明</h2><ul>
+<li>Windows 11,	Type-C</li>
+<li>iPad Air4，	Type-C</li>
+<li>iPad原装双端Type-C数据线</li>
+</ul>
+<h2 id="软件说明"><a href="#软件说明" class="headerlink" title="软件说明"></a>软件说明</h2><h3 id="Win端"><a href="#Win端" class="headerlink" title="Win端"></a>Win端</h3><ol>
+<li><p>下载安装SpaceDesk</p>
+<p>SpaceDesk官网：<a href="https://www.spacedesk.net/download/#server-driver">最新版本 点击下载</a></p>
+<p>百度网盘：<a href="https://pan.baidu.com/s/18-q_8Ee8a7pfuRcNfBlofw?pwd=8eis">v2.1.15 点击下载</a></p>
+</li>
+<li><p>下载安装iTunes</p>
+<p>打开Win自带的微软商店，搜索下载。</p>
+<p><img src="image-20250419103753851.png" alt="image-20250419103753851"></p>
+<p>疑似v2.1.15 版本的SpaceDesk不具备iPad连接的驱动，需要使用iTunes连接1次，后续就不再使用。</p>
+</li>
+</ol>
+<h3 id="iPad-端"><a href="#iPad-端" class="headerlink" title="iPad 端"></a>iPad 端</h3><p>App Store 搜索spacedesk下载。</p>
+<p><img src="image-20250419104020718.png" alt="image-20250419104020718"></p>
+<p>安装完成后打开软件，设置最高画质、自动旋转、自动改变IP等，iPad端无需其他操作。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="黑白显示"><a href="#黑白显示" class="headerlink" title="黑白显示"></a>黑白显示</h3><p>原因：SpaceDesk并非是最新版本。下载官网最新版本。</p>
+<h3 id="连接Type-c无反应"><a href="#连接Type-c无反应" class="headerlink" title="连接Type-c无反应"></a>连接Type-c无反应</h3><p>原因：汉化包Bug。</p>
+<p>打开安装包，Remove当前安装版本，重新安装，不要打汉化</p>
+<h3 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h3><p>【1】<a href="https://blog.csdn.net/qq_42013947/article/details/136596644?ops_request_misc=&request_id=&biz_id=102&utm_term=LXHYouth&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-136596644.142%5Ev102%5Epc_search_result_base6&spm=1018.2226.3001.4187">LXHYouth|使用SpaceDesk实现iPad成为电脑拓展屏(保姆级教程)-CSDN博客</a></p>
+<p>【2】<a href="https://www.bilibili.com/video/BV1NQ4y1A7PD/?share_source=copy_web&vd_source=793e603d878f9531350764468aa132ce">我想当饼藏|ipad作为副屏与Windows电脑有线连接-哔哩哔哩</a></p>
+<p>【3】<a href="https://www.bilibili.com/opus/912838630992510994?spm_id_from=333.1387.0.0">咸鱼羊同学|Windows与iPad有线副屏SpaceDesk扩展与常见问题 - 哔哩哔哩</a></p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>他山之石，可以攻玉。–《诗·小雅·鹤鸣》</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+        <category>SpaceDesk</category>
+      </categories>
+      <tags>
+        <tag>iPad副屏</tag>
+        <tag>有线连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FPGA-01-关于ZYNQ</title>
+    <url>/2025/04/20/FPGA-01-About%20ZYNQ/</url>
+    <content><![CDATA[<p>该博文介绍FPGA的相关基础知识，如制造厂商、主要功能等。</p>
+<span id="more"></span>
+
+<h2 id="PLD器件"><a href="#PLD器件" class="headerlink" title="PLD器件"></a>PLD器件</h2><p>FPGA: Field Programmable Gate Array，即现场可编程门阵列，属于可编程器件PLD（Programmable Logic Device），类似的有PLA、PAL、CPLD等器件。</p>
+<h3 id="PLA与PROM"><a href="#PLA与PROM" class="headerlink" title="PLA与PROM"></a>PLA与PROM</h3><p>PLA与PROM为早期反熔丝型PLD电路。PLA（Programmable Logic array）中通过与门、非门构成“与平面”，“或平面”，以及一次性的编程矩阵。</p>
+<p>可编程只读存储器PROM（Programmable Read-Only Memory）与PLA类似，均是通过“与连接矩阵与“或连接矩阵”组成，<strong>但是PROM的结构上与连接矩阵固定，仅”或矩阵”可进行一次编程</strong>，如下图。</p>
+<h3 id="PAL与GAL"><a href="#PAL与GAL" class="headerlink" title="PAL与GAL"></a>PAL与GAL</h3><p>在PLA与PROM的基础上又延伸出其他两种类型，即PAL（Programmable Array Logic）和GAL（Generic Array Logic）。</p>
+<p>其中PAL相对于PROM结构类似，只是<strong>PAL是仅”与连接矩阵”可编程</strong>，仍然为反熔丝工艺，仅可编程1次。</p>
+<p>PAL根据输出电路工作模式可分为三类：</p>
+<ul>
+<li>三态输出</li>
+<li>寄存器输出</li>
+<li>互补输出</li>
+</ul>
+<p>GAL相对于PAL改进：</p>
+<ul>
+<li>CMOS工艺，电可擦除，可多次编程</li>
+<li>可编程的输出逻辑宏单元OLMC（Output Logic Macro Cell）</li>
+</ul>
+<p>其中OLMC可通过编程控制GAL输出，覆盖PAL的三种模式。</p>
+<h3 id="CPLD与FPGA"><a href="#CPLD与FPGA" class="headerlink" title="CPLD与FPGA"></a>CPLD与FPGA</h3><p>复杂可编程逻辑器件CPLD（Complex Programmable Logic Device）可以看作若干PLA与可编程连接矩阵的集合。内部结构如图。</p>
+<p>FPGA内大量使用LUT查找表和寄存器，可分为SRAM、反熔丝、Flash三种类型，包括可编程的：</p>
+<ul>
+<li>逻辑块</li>
+<li>布线资源</li>
+<li>IO口</li>
+</ul>
+<p>FPGA的应用场景对比单片机和ARM，主要优势9是灵活高效、高吞吐量、低批量延时、快速并行运算、可重构、可重复编程、可实现定制性能和定制功耗。</p>
+<h2 id="ZYNQ"><a href="#ZYNQ" class="headerlink" title="ZYNQ"></a>ZYNQ</h2><p>Xilinx内的ZYNQ系列芯片内包括一块Cortex-A9的硬件ARM处理器，称为为PS。其余的逻辑部分，称为PL，PL上可以使用逻辑块搭载MicroBlaze软核处理器。</p>
+<h3 id="PS-端"><a href="#PS-端" class="headerlink" title="PS 端"></a>PS 端</h3><p>ZYNQ内除去ARM外，还包括应用处理单元APU（Application Processing Unit）、扩展外设、cache存储器、存储器接口、互联接口、时钟发生电路。</p>
+<h4 id="APU"><a href="#APU" class="headerlink" title="APU"></a>APU</h4><ul>
+<li>双ARM核、NEONTM媒体处理引擎MPE（Media Processing Engine）、浮点计算单元FPU（Floating Point Unit）、内存管理单元MMU（Memory Management Unit）、一级cache存储器（指令+数据）</li>
+<li>一致性控制单元SCU（Snoop Control Unit）：ARM与OCM和二级cache之间的连接桥。可用加速一致端口ACP（Accelerator Coherency Port）管理PS与PL的访问</li>
+<li>二级cache、片上存储器OCM（On Chip Memory），包括256kB的RAM和128kB的BootRAM。</li>
+</ul>
+<h4 id="存储器接口"><a href="#存储器接口" class="headerlink" title="存储器接口"></a>存储器接口</h4><p>ZYNQ-7000系列存储器接口包括动态+静态口。</p>
+<ul>
+<li><p>动态存储器控制器</p>
+<ol>
+<li>核心存储控制器和调度器DDRC</li>
+<li>AXI存储器端口接口DDRI</li>
+<li>数字PHY及控制器DDBP，可用于DDR2&#x2F;3、DDR3L、LPDDR2</li>
+</ol>
+</li>
+<li><p>静态存储控制器</p>
+<p>SMC（Static Memory Controller），可用作NAND闪存控制器、或并口存储器控制器，支持NAND闪存、NOR闪存、异步SRAM。</p>
+</li>
+<li><p>QSPI</p>
+<p>程序烧录，程序固化。</p>
+</li>
+</ul>
+<h4 id="外部接口"><a href="#外部接口" class="headerlink" title="外部接口"></a>外部接口</h4><p>PS和外部通信主要通过复用的输入&#x2F;输出MIO（Multiplexed Input&#x2F;Output，MIO）实现，直接连接在PS端。但扩展的MIO即EMIO需要通过PL端转接，QSPI、USB、SMC不适用于PL的EMIO接口。</p>
+<p>出去4组32位的GPIO外，对外接口还包括各2组：SPI、I2C、CAN、UART、SD、USB、GigE（Ethernet）。</p>
+<h3 id="PL端"><a href="#PL端" class="headerlink" title="PL端"></a>PL端</h3><p>Xilinx FPGA芯片的组成部分：可编程输入输出单元IOB、可配置逻辑块CLB、嵌入式块RAM、布线资源、底层内嵌功能单元、底层内嵌专用硬核等。</p>
+<h4 id="IOB"><a href="#IOB" class="headerlink" title="IOB"></a>IOB</h4><p>需要注意，FPGA每个Bank的VCC电压不同，一个Bank仅有一个电压。</p>
+<p>I&#x2F;O组被分类为高性能HP（High Performance）和高范围HR（High Range）。</p>
+<ul>
+<li>HP：VCC为1.8V，常作连接存储器和其他芯片的高速接口</li>
+<li>HR：VCC为3.3V，适合各种IO标准</li>
+</ul>
+<p>HP与HR均支持单端、差分输入，具体可以查阅引脚说明。</p>
+<p><strong>每个IOB包括IOSERDER，可作串转并或并转串。</strong></p>
+<h4 id="CLB"><a href="#CLB" class="headerlink" title="CLB"></a>CLB</h4><p>CLB指可编程逻辑块，逻辑单元最小规模。Slice片是CLB的子单元。</p>
+<p><strong>ZYNQ的片是由4个查找表（LUT）+8触发前+其他逻辑组成的。</strong></p>
+<h4 id="BRAM"><a href="#BRAM" class="headerlink" title="BRAM"></a>BRAM</h4><p>嵌入式块RAM，用于生成RAM、ROM、FIFO及移位寄存器等常用的存储模块。</p>
+<p>ZYNQ的BRAM由60个存储块组成：</p>
+<ul>
+<li>每个块RAM由2个18kB的BRAM组成；</li>
+<li>以块为单位使用；</li>
+<li>3类分组，即BRAM（36kB）；BRAM（18kB）+BRAM（18kB），BRAM+FIFO。由于仅包括1个FIFO Logic，只能生成一组FIFO控制信号。</li>
+</ul>
+<p><strong>使用块RAM即在片内用小物理空间存储大量数据</strong>。</p>
+<h4 id="硬核"><a href="#硬核" class="headerlink" title="硬核"></a>硬核</h4><p>ZYNQPL端内嵌XADC，即两个模数转换器。且有接口可以连接至PS端。</p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>大梦谁先觉，平生我自知。–《三国演义》</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>FPGA</category>
+        <category>ZYNQ</category>
+      </categories>
+      <tags>
+        <tag>FPGA</tag>
+        <tag>ZYNQ</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FPGA-01-关于ZYNQ</title>
     <url>/2025/04/20/FPGA-01-AboutZYNQ/</url>
     <content><![CDATA[<p>该博文介绍FPGA的相关基础知识，如制造厂商、主要功能等。</p>
@@ -210,52 +347,6 @@
       <tags>
         <tag>FPGA</tag>
         <tag>ZYNQ</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpaceDesk-Win与iPad有线副屏扩展与常见问题</title>
-    <url>/2025/04/19/SpaceDesk-SecondaryScreen/</url>
-    <content><![CDATA[<p>Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…</p>
-<span id="more"></span>
-
-<h2 id="设备说明"><a href="#设备说明" class="headerlink" title="设备说明"></a>设备说明</h2><ul>
-<li>Windows 11,	Type-C</li>
-<li>iPad Air4，	Type-C</li>
-<li>iPad原装双端Type-C数据线</li>
-</ul>
-<h2 id="软件说明"><a href="#软件说明" class="headerlink" title="软件说明"></a>软件说明</h2><h3 id="Win端"><a href="#Win端" class="headerlink" title="Win端"></a>Win端</h3><ol>
-<li><p>下载安装SpaceDesk</p>
-<p>SpaceDesk官网：<a href="https://www.spacedesk.net/download/#server-driver">最新版本 点击下载</a></p>
-<p>百度网盘：<a href="https://pan.baidu.com/s/18-q_8Ee8a7pfuRcNfBlofw?pwd=8eis">v2.1.15 点击下载</a></p>
-</li>
-<li><p>下载安装iTunes</p>
-<p>打开Win自带的微软商店，搜索下载。</p>
-<p><img src="image-20250419103753851.png" alt="image-20250419103753851"></p>
-<p>疑似v2.1.15 版本的SpaceDesk不具备iPad连接的驱动，需要使用iTunes连接1次，后续就不再使用。</p>
-</li>
-</ol>
-<h3 id="iPad-端"><a href="#iPad-端" class="headerlink" title="iPad 端"></a>iPad 端</h3><p>App Store 搜索spacedesk下载。</p>
-<p><img src="image-20250419104020718.png" alt="image-20250419104020718"></p>
-<p>安装完成后打开软件，设置最高画质、自动旋转、自动改变IP等，iPad端无需其他操作。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="黑白显示"><a href="#黑白显示" class="headerlink" title="黑白显示"></a>黑白显示</h3><p>原因：SpaceDesk并非是最新版本。下载官网最新版本。</p>
-<h3 id="连接Type-c无反应"><a href="#连接Type-c无反应" class="headerlink" title="连接Type-c无反应"></a>连接Type-c无反应</h3><p>原因：汉化包Bug。</p>
-<p>打开安装包，Remove当前安装版本，重新安装，不要打汉化</p>
-<h3 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h3><p>【1】<a href="https://blog.csdn.net/qq_42013947/article/details/136596644?ops_request_misc=&request_id=&biz_id=102&utm_term=LXHYouth&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-136596644.142%5Ev102%5Epc_search_result_base6&spm=1018.2226.3001.4187">LXHYouth|使用SpaceDesk实现iPad成为电脑拓展屏(保姆级教程)-CSDN博客</a></p>
-<p>【2】<a href="https://www.bilibili.com/video/BV1NQ4y1A7PD/?share_source=copy_web&vd_source=793e603d878f9531350764468aa132ce">我想当饼藏|ipad作为副屏与Windows电脑有线连接-哔哩哔哩</a></p>
-<p>【3】<a href="https://www.bilibili.com/opus/912838630992510994?spm_id_from=333.1387.0.0">咸鱼羊同学|Windows与iPad有线副屏SpaceDesk扩展与常见问题 - 哔哩哔哩</a></p>
-<p align="center">---------------------------  End  ---------------------------</p>
-
-<blockquote>
-<p><em>他山之石，可以攻玉。–《诗·小雅·鹤鸣》</em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>实用工具</category>
-        <category>SpaceDesk</category>
-      </categories>
-      <tags>
-        <tag>iPad副屏</tag>
-        <tag>有线连接</tag>
       </tags>
   </entry>
 </search>
