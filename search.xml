@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SpaceDesk-Win与iPad有线副屏扩展与常见问题</title>
-    <url>/2025/04/19/SpaceDesk-SecondaryScreen/</url>
-    <content><![CDATA[<p>Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…</p>
-<span id="more"></span>
-
-<h2 id="设备说明"><a href="#设备说明" class="headerlink" title="设备说明"></a>设备说明</h2><ul>
-<li>Windows 11,	Type-C</li>
-<li>iPad Air4，	Type-C</li>
-<li>iPad原装双端Type-C数据线</li>
-</ul>
-<h2 id="软件说明"><a href="#软件说明" class="headerlink" title="软件说明"></a>软件说明</h2><h3 id="Win端"><a href="#Win端" class="headerlink" title="Win端"></a>Win端</h3><ol>
-<li><p>下载安装SpaceDesk</p>
-<p>SpaceDesk官网：<a href="https://www.spacedesk.net/download/#server-driver">最新版本 点击下载</a></p>
-<p>百度网盘：<a href="https://pan.baidu.com/s/18-q_8Ee8a7pfuRcNfBlofw?pwd=8eis">v2.1.15 点击下载</a></p>
-</li>
-<li><p>下载安装iTunes</p>
-<p>打开Win自带的微软商店，搜索下载。</p>
-<p><img src="image-20250419103753851.png" alt="image-20250419103753851"></p>
-<p>疑似v2.1.15 版本的SpaceDesk不具备iPad连接的驱动，需要使用iTunes连接1次，后续就不再使用。</p>
-</li>
-</ol>
-<h3 id="iPad-端"><a href="#iPad-端" class="headerlink" title="iPad 端"></a>iPad 端</h3><p>App Store 搜索spacedesk下载。</p>
-<p><img src="image-20250419104020718.png" alt="image-20250419104020718"></p>
-<p>安装完成后打开软件，设置最高画质、自动旋转、自动改变IP等，iPad端无需其他操作。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="黑白显示"><a href="#黑白显示" class="headerlink" title="黑白显示"></a>黑白显示</h3><p>原因：SpaceDesk并非是最新版本。下载官网最新版本。</p>
-<h3 id="连接Type-c无反应"><a href="#连接Type-c无反应" class="headerlink" title="连接Type-c无反应"></a>连接Type-c无反应</h3><p>原因：汉化包Bug。</p>
-<p>打开安装包，Remove当前安装版本，重新安装，不要打汉化</p>
-<h3 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h3><p>【1】<a href="https://blog.csdn.net/qq_42013947/article/details/136596644?ops_request_misc=&request_id=&biz_id=102&utm_term=LXHYouth&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-136596644.142%5Ev102%5Epc_search_result_base6&spm=1018.2226.3001.4187">LXHYouth|使用SpaceDesk实现iPad成为电脑拓展屏(保姆级教程)-CSDN博客</a></p>
-<p>【2】<a href="https://www.bilibili.com/video/BV1NQ4y1A7PD/?share_source=copy_web&vd_source=793e603d878f9531350764468aa132ce">我想当饼藏|ipad作为副屏与Windows电脑有线连接-哔哩哔哩</a></p>
-<p>【3】<a href="https://www.bilibili.com/opus/912838630992510994?spm_id_from=333.1387.0.0">咸鱼羊同学|Windows与iPad有线副屏SpaceDesk扩展与常见问题 - 哔哩哔哩</a></p>
-<p align="center">---------------------------  End  ---------------------------</p>
-
-<blockquote>
-<p><em>他山之石，可以攻玉。–《诗·小雅·鹤鸣》</em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>实用工具</category>
-        <category>SpaceDesk</category>
-      </categories>
-      <tags>
-        <tag>iPad副屏</tag>
-        <tag>有线连接</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo-博客搭建、问题与解决办法</title>
     <url>/2025/04/09/Hexo-MyBlog/</url>
     <content><![CDATA[<p>该博客主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的视频与帖子连接，同时汇总个人搭建过程中遇到的各种错误和解决办法。</p>
@@ -155,6 +109,52 @@
         <tag>Hexo</tag>
         <tag>Next</tag>
         <tag>个人博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpaceDesk-Win与iPad有线副屏扩展与常见问题</title>
+    <url>/2025/04/19/SpaceDesk-SecondaryScreen/</url>
+    <content><![CDATA[<p>Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…</p>
+<span id="more"></span>
+
+<h2 id="设备说明"><a href="#设备说明" class="headerlink" title="设备说明"></a>设备说明</h2><ul>
+<li>Windows 11,	Type-C</li>
+<li>iPad Air4，	Type-C</li>
+<li>iPad原装双端Type-C数据线</li>
+</ul>
+<h2 id="软件说明"><a href="#软件说明" class="headerlink" title="软件说明"></a>软件说明</h2><h3 id="Win端"><a href="#Win端" class="headerlink" title="Win端"></a>Win端</h3><ol>
+<li><p>下载安装SpaceDesk</p>
+<p>SpaceDesk官网：<a href="https://www.spacedesk.net/download/#server-driver">最新版本 点击下载</a></p>
+<p>百度网盘：<a href="https://pan.baidu.com/s/18-q_8Ee8a7pfuRcNfBlofw?pwd=8eis">v2.1.15 点击下载</a></p>
+</li>
+<li><p>下载安装iTunes</p>
+<p>打开Win自带的微软商店，搜索下载。</p>
+<p><img src="image-20250419103753851.png" alt="image-20250419103753851"></p>
+<p>疑似v2.1.15 版本的SpaceDesk不具备iPad连接的驱动，需要使用iTunes连接1次，后续就不再使用。</p>
+</li>
+</ol>
+<h3 id="iPad-端"><a href="#iPad-端" class="headerlink" title="iPad 端"></a>iPad 端</h3><p>App Store 搜索spacedesk下载。</p>
+<p><img src="image-20250419104020718.png" alt="image-20250419104020718"></p>
+<p>安装完成后打开软件，设置最高画质、自动旋转、自动改变IP等，iPad端无需其他操作。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="黑白显示"><a href="#黑白显示" class="headerlink" title="黑白显示"></a>黑白显示</h3><p>原因：SpaceDesk并非是最新版本。下载官网最新版本。</p>
+<h3 id="连接Type-c无反应"><a href="#连接Type-c无反应" class="headerlink" title="连接Type-c无反应"></a>连接Type-c无反应</h3><p>原因：汉化包Bug。</p>
+<p>打开安装包，Remove当前安装版本，重新安装，不要打汉化</p>
+<h3 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h3><p>【1】<a href="https://blog.csdn.net/qq_42013947/article/details/136596644?ops_request_misc=&request_id=&biz_id=102&utm_term=LXHYouth&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-136596644.142%5Ev102%5Epc_search_result_base6&spm=1018.2226.3001.4187">LXHYouth|使用SpaceDesk实现iPad成为电脑拓展屏(保姆级教程)-CSDN博客</a></p>
+<p>【2】<a href="https://www.bilibili.com/video/BV1NQ4y1A7PD/?share_source=copy_web&vd_source=793e603d878f9531350764468aa132ce">我想当饼藏|ipad作为副屏与Windows电脑有线连接-哔哩哔哩</a></p>
+<p>【3】<a href="https://www.bilibili.com/opus/912838630992510994?spm_id_from=333.1387.0.0">咸鱼羊同学|Windows与iPad有线副屏SpaceDesk扩展与常见问题 - 哔哩哔哩</a></p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>他山之石，可以攻玉。–《诗·小雅·鹤鸣》</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+        <category>SpaceDesk</category>
+      </categories>
+      <tags>
+        <tag>iPad副屏</tag>
+        <tag>有线连接</tag>
       </tags>
   </entry>
   <entry>
