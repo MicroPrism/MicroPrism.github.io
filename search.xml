@@ -159,13 +159,34 @@
   </entry>
   <entry>
     <title>FPGA-01-关于ZYNQ</title>
-    <url>/2025/04/20/FPGA-01-AboutZYNQ/</url>
+    <url>/2025/04/20/FPGA-01-About_ZYNQ/</url>
     <content><![CDATA[<p>该博文介绍FPGA的相关基础知识，如制造厂商、主要功能等。</p>
 <span id="more"></span>
 
 <h2 id="PLD器件"><a href="#PLD器件" class="headerlink" title="PLD器件"></a>PLD器件</h2><p>FPGA: Field Programmable Gate Array，即现场可编程门阵列，属于可编程器件PLD（Programmable Logic Device），类似的有PLA、PAL、CPLD等器件。</p>
 <h3 id="PLA与PROM"><a href="#PLA与PROM" class="headerlink" title="PLA与PROM"></a>PLA与PROM</h3><p>PLA与PROM为早期反熔丝型PLD电路。PLA（Programmable Logic array）中通过与门、非门构成“与平面”，“或平面”，以及一次性的编程矩阵。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420205204194.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    PLA内部结构	<!--标题-->
+    </center>
+</div>
+
+
+
+
 <p>可编程只读存储器PROM（Programmable Read-Only Memory）与PLA类似，均是通过“与连接矩阵与“或连接矩阵”组成，<strong>但是PROM的结构上与连接矩阵固定，仅”或矩阵”可进行一次编程</strong>，如下图。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420210628775.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    PROM内部结构	<!--标题-->
+    </center>
+</div>
+
+
+
 <h3 id="PAL与GAL"><a href="#PAL与GAL" class="headerlink" title="PAL与GAL"></a>PAL与GAL</h3><p>在PLA与PROM的基础上又延伸出其他两种类型，即PAL（Programmable Array Logic）和GAL（Generic Array Logic）。</p>
 <p>其中PAL相对于PROM结构类似，只是<strong>PAL是仅”与连接矩阵”可编程</strong>，仍然为反熔丝工艺，仅可编程1次。</p>
 <p>PAL根据输出电路工作模式可分为三类：</p>
@@ -174,6 +195,16 @@
 <li>寄存器输出</li>
 <li>互补输出</li>
 </ul>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420211339732.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    PAL内部结构	<!--标题-->
+    </center>
+</div>
+
+
+
 <p>GAL相对于PAL改进：</p>
 <ul>
 <li>CMOS工艺，电可擦除，可多次编程</li>
@@ -181,16 +212,46 @@
 </ul>
 <p>其中OLMC可通过编程控制GAL输出，覆盖PAL的三种模式。</p>
 <h3 id="CPLD与FPGA"><a href="#CPLD与FPGA" class="headerlink" title="CPLD与FPGA"></a>CPLD与FPGA</h3><p>复杂可编程逻辑器件CPLD（Complex Programmable Logic Device）可以看作若干PLA与可编程连接矩阵的集合。内部结构如图。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420215617600.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    CPLD内部结构	<!--标题-->
+    </center>
+</div>
+
+
+
 <p>FPGA内大量使用LUT查找表和寄存器，可分为SRAM、反熔丝、Flash三种类型，包括可编程的：</p>
 <ul>
 <li>逻辑块</li>
 <li>布线资源</li>
 <li>IO口</li>
 </ul>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250420204136714.png" alt="image can't load." style="zoom:75%">
+    <br>		<!--换行-->
+    FPGA与CPLD对比	<!--标题-->
+    </center>
+</div>
+
+
+
 <p>FPGA的应用场景对比单片机和ARM，主要优势9是灵活高效、高吞吐量、低批量延时、快速并行运算、可重构、可重复编程、可实现定制性能和定制功耗。</p>
 <h2 id="ZYNQ"><a href="#ZYNQ" class="headerlink" title="ZYNQ"></a>ZYNQ</h2><p>Xilinx内的ZYNQ系列芯片内包括一块Cortex-A9的硬件ARM处理器，称为为PS。其余的逻辑部分，称为PL，PL上可以使用逻辑块搭载MicroBlaze软核处理器。</p>
 <h3 id="PS-端"><a href="#PS-端" class="headerlink" title="PS 端"></a>PS 端</h3><p>ZYNQ内除去ARM外，还包括应用处理单元APU（Application Processing Unit）、扩展外设、cache存储器、存储器接口、互联接口、时钟发生电路。</p>
-<h4 id="APU"><a href="#APU" class="headerlink" title="APU"></a>APU</h4><ul>
+<h4 id="APU"><a href="#APU" class="headerlink" title="APU"></a>APU</h4><div>
+    <center>
+        <img src="image-20250425103918783.png" alt="image can't load." style="zoom:75%">
+        <br>
+    <center>
+      APU框架
+</center></center></div>
+
+
+
+<ul>
 <li>双ARM核、NEONTM媒体处理引擎MPE（Media Processing Engine）、浮点计算单元FPU（Floating Point Unit）、内存管理单元MMU（Memory Management Unit）、一级cache存储器（指令+数据）</li>
 <li>一致性控制单元SCU（Snoop Control Unit）：ARM与OCM和二级cache之间的连接桥。可用加速一致端口ACP（Accelerator Coherency Port）管理PS与PL的访问</li>
 <li>二级cache、片上存储器OCM（On Chip Memory），包括256kB的RAM和128kB的BootRAM。</li>
