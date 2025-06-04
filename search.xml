@@ -497,7 +497,7 @@
 <li>data_bus: 物理线型可输入可输出参数，例如I2C数据线</li>
 <li>data_in: 物理线型输出参数</li>
 </ul>
-<p>那么显示的对比到C语言中：</p>
+<p>那么显式的对比到C语言中：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">uint8_t</span> <span class="title function_">test</span></span><br><span class="line"><span class="params">(</span></span><br><span class="line"><span class="params">    <span class="keyword">volatile</span> <span class="type">const</span> <span class="type">uint8_t</span> sel,      <span class="comment">//只能输入</span></span></span><br><span class="line"><span class="params">	<span class="keyword">volatile</span> <span class="type">const</span> <span class="type">uint8_t</span> data_out, <span class="comment">//只能输入</span></span></span><br><span class="line"><span class="params">    </span></span><br><span class="line"><span class="params">    <span class="keyword">volatile</span> <span class="type">uint8_t</span> * data_bus <span class="comment">//可做输入，可修改值</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">&#123;</span><br><span class="line">    ...;</span><br><span class="line">    <span class="keyword">return</span> data_in;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -566,6 +566,182 @@
         <tag>FPGA</tag>
         <tag>Verilog</tag>
         <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>求职-毕业季校招</title>
+    <url>/2025/06/02/%E6%B1%82%E8%81%8C-%E6%AF%95%E4%B8%9A%E5%AD%A3%E6%A0%A1%E6%8B%9B/</url>
+    <content><![CDATA[<p>本篇博文主要列举博主在毕业季求职期间的面试与offer情况，包括引申出的有关校招的一些思考…</p>
+<p>博文尾部放置近几年的考情分析，以便各位同学了解考研形势。</p>
+<span id="more"></span>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>本序言写于博主即将毕业之际，落笔之时博主正躺在校医院病床养病。由于身体行动受限，便想趁此机会总结说明下找工作的情况，也希望能传达给希望考研的同学较为准确的就业形势。</p>
+<p>在介绍整体形势之前，先简单介绍我个人的经历。博主在研究生阶段主要做嵌入式项目，侧重MCU+RTOS系统上的软件开发，也涉及少量硬件电路、上位机设计。</p>
+<p>博主从研三7月开始投递简历，目标岗位是嵌入式软件开发、ARM软件开发等软件研发岗，截止目前，网络投递简历应该有上百份，包括私企、国企、央企、研究所等类型。由于没有做具体的记录，预估面试次数应该有20-30次，拿offer的概率大概有50%。下方举例还能想起来的发offer的公司，待遇皆为税前收入：</p>
+<ul>
+<li><p>锦浪科技-宁波-光伏新能源-ARM软件开发-约26w-私企。公司待遇很高，岗位也非常对口，但出于行业发展考虑，遂放弃。</p>
+</li>
+<li><p>奥克斯-宁波-电能事业部-嵌入式软件开发-23.4w-私企。公司待遇一般，集团规模较大，但在25年春季出现裁员潮（可搜索到相关新闻），遂解约。</p>
+<p><a href="https://www.toutiao.com/article/7496618081104544256/">奥克斯暴力裁员危机！300名应届生仅剩80人，IPO之路还能走多远？ - 今日头条</a></p>
+</li>
+<li><p>依爱消防-蚌埠-中电38所子公司-嵌入式软件开发-约12w-国企。主做消防业务，网上了解到加班强度996，综合考虑后待遇较低，放弃。</p>
+</li>
+<li><p>力源海纳-九江-嵌入式软件研发-约2w&#x2F;月-私企。主做电源业务，和学校内导师有合作，工资在当地属于较高水平，面试时的研发人员确实是懂技术的，但博主不是江西人，综合考虑后放弃。</p>
+</li>
+<li><p>奇瑞汽车-芜湖-车机部-电控软件开发-9.3k&#x2F;月-私企。面试走过场，待遇低，直接放弃。</p>
+</li>
+<li><p>中科院空间工程应用中心-北京-集成技术中心-劳务派遣-25w，劳务派遣不适合长期发展，加班强度大，遂放弃。</p>
+</li>
+<li><p>中铁装备-郑州-嵌入式软件研发-8500&#x2F;月-央企。加班强过996，工资低到难以想象，遂放弃。</p>
+</li>
+<li><p>中航181-武汉-民机部-软件开发-11k&#x2F;月，年包18w-国企。主营防除冰业务，公积金基数8400，非实际工资，996。综合考虑后解约。</p>
+</li>
+<li><p>中航隆盛-洛阳-电控部-硬件开发-年包15w-国企&#x2F;中航613所子公司。公司主营电源业务，加班强度低，基本保证双休，所在城市消费水平适中，宜居，遂签约。</p>
+</li>
+</ul>
+<p>以下还有一些面试了但夭折的公司，同样在此举例：</p>
+<ul>
+<li>许继集团-许昌-控制科学与工程16w&#x2F;电子信息18w-央企。对博主而言属于最优选，当时博主是线上面试，可能线下招聘名额满&#x2F;或者博主能力不行。公司很多分部家在附近，希望躺平的可以考虑。</li>
+<li>格力-珠海-电控软件，不清楚原因</li>
+<li>海康-武汉-智能硬件，项目不对口，没有Linux和网络通信基础</li>
+<li>睿能-深圳-嵌入式软件，手上拿的有其他offer，给不到更高价格</li>
+<li>汉德车桥-西安-电控软件，面试迟到、忘带简历 …,直接被pass</li>
+</ul>
+<p>时间跨度较长，面试机会也并不多，简单列举这么多公司。此外还包括一些给了面试机会，但是网上搜索相关信息后发现裁员、工作环境差、工资低等情况直接放弃的，还有一些压根没有给面试机会的：</p>
+<ul>
+<li>禾赛科技-简历挂</li>
+<li>东风汽车-简历挂</li>
+<li>中科曙光-简历挂</li>
+<li>联合光电-简历挂</li>
+<li>汇川技术-卡双2</li>
+<li>科华数据-简历挂</li>
+<li>一汽集团-简历挂</li>
+<li>久之洋-简历挂（武汉，年薪22.4，996，秋招早期可捡漏）</li>
+<li>国仪量子-简历挂</li>
+<li>比亚迪-卡双2</li>
+<li>阳光电源-卡双2</li>
+<li>江铃汽车-卡双2（今年南昌大学只招了我室友1个，仿真岗）</li>
+<li>洪都航空-卡双2</li>
+<li>联想-简历挂</li>
+<li>九州集团-无消息</li>
+<li>中联重科-简历挂</li>
+<li>长鑫存储-简历挂</li>
+<li>台达电子-无消息</li>
+<li>华中数控-无消息</li>
+<li>美的-简历挂</li>
+<li>牧原-放弃</li>
+<li>中车株洲-放弃</li>
+<li>中车四方-无面试机会</li>
+<li>中船、中电、中航研究所 -无面试机会</li>
+<li>地方实验室、研究院-无面试机会</li>
+<li>…</li>
+</ul>
+<p>回顾找工作的经历，投递的单位类型不明确，私企国企混杂，另一方面也确实高估了自己的学历和能力，没想到本科能进的单位研究生却进不去了。</p>
+<p><strong>根据我粗浅的面试经验，央企似乎并不看重你的实习经历，反而更注意你的高考、考研成绩，工作意向的稳定程度，家庭情况。而技术研发型的国企，则看重你意向是否稳定程度，同时考量项目里的技术能力，有实习和项目（项目完整，尽管和公司业务可能不完全对口）就很容易拿到offer。私企更侧重于你的技术能力，项目对口程度，有实习是非常大的加分项，更容易拿到offer。</strong></p>
+<p>25年对比前几年的就业上的差别比较明显，比如江西省洪都航空（18w）、江铃（13w）两个国企要求双2学历，但工资对比同样要求双2的比亚迪（24w）少不少。再比如我所签约的公司，两年前双非硕士即可签约研发岗，25年要求本科学校为本科一批、硕士为92，否则只给劳务派遣岗位。</p>
+<p><strong>利用身边统计法（纯主观）做个总结：</strong></p>
+<ul>
+<li>双2的同学所签约的公司规模、收入待遇远高于单2，面试机会也更多。</li>
+<li>单2学历就各凭本事，谁的项目、实习多，谁的面试机会就更多。谁做的工作更多、技术功底更劳，签约的单位也更好。</li>
+<li>有很多同学拿私企嵌入式软件研发岗用来保底，其次是硬件研发，最后是FPGA开发。有关Linux驱动、IC验证、机器人仿真等我不了解，也没有关注。还有个别同学考入电厂、当高中老师、读博，此处不再讨论。</li>
+</ul>
+<p>南昌大学控制专业有相当一部分导师的研究方向是深度学习、神经网络等，此类方向其实在找工作上可投递的岗位有限，算法岗可能要求双9学历。所以有部分同学在私下完成毕业设计的同时，自学嵌软相关知识、参加短期实习，秋招春招再找嵌入式相关工作，可能最终签约的工作不是特别满意，但是不至于失业。</p>
+<p>B站上的开源项目、项目教程学一些已经足够通过私企的线下面试，因为私企的岗位需求高、数量多，<strong>可能每年辞职的人也更多</strong>，像格力、比亚迪、华勤、欧菲光、奥克斯已经算是来南昌大学校招的较好的企业了，各位也可以自行斟酌校招情况。</p>
+<p>当然，为了找到心仪的工作，包括我在内的一些同学选择线上投递简历，海面对比待遇后再考虑签约。好处是有机会捡漏到“小而美”的955双休的企业，也有机会找到“实际要求更高”的企业，比如我的双一流硕的朋友在秋招初期拿到了武汉中船久之洋的国企offer，待遇22.4w&#x2F;年，随后我去投递简历，但却没有面试机会。这么看，找工作似乎还需要一些天时、地利、人和…</p>
+<p>另外，面试实在太费精力，也要做出取舍。提前考虑自己想过什么样的生活，996拿高薪或者955躺平，选择不同的工作在短期内会得到不同的生活。另外建议做好背景调查，有些公司裁应届生、有些入职后降薪、有些996猛猛加班…在此推荐几个消息渠道：</p>
+<ul>
+<li><a href="https://www.nowcoder.com/">牛客网 </a>，有内推，有面经，有晒薪资的</li>
+<li>offershow微信小程序，主要是薪资讨论</li>
+<li><a href="https://www.xiaohongshu.com/explore">小红书 </a>，发帖提问可能有人回复</li>
+<li><a href="https://tieba.baidu.com/">百度贴吧</a>，有些陈年老帖会有蛛丝马际</li>
+<li><a href="https://www.zhihu.com/">知乎</a>，可信度不高，基本上每个公司都被骂…需要自行分辨</li>
+</ul>
+<p>由于博主的见闻粗浅，能力尚微，因此本篇序言所写内容可能非常啰嗦，也非常主观。有时候我自己也会迷茫，读研到底是不是一个正确的选择？因为相对3年前，硕士学历已经贬值太多，学历门槛越来越高。我也不知道3年后的硕士就业会更差？或者更好？</p>
+<p>行文至此，希望能给各位准备考研或者即将毕业的同学一点思考，也祝愿各位能得偿所愿，奔向理想前程。</p>
+<p align="right">2025年6月2日</p>
+
+<h2 id="考研形势"><a href="#考研形势" class="headerlink" title="考研形势"></a>考研形势</h2><p>考研笔记内使用大量胡寿松自动控制原理的题目，在询问DeepSeek后被告知公开传播电子笔记可能涉及侵权行为，因此电子笔记的公开计划暂时搁置…</p>
+<p>整理的考情见：</p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p>寒来暑往，来日方长。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>求职</category>
+        <category>校招</category>
+      </categories>
+      <tags>
+        <tag>校招</tag>
+        <tag>就业形势</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Next主题嵌入pdf显示</title>
+    <url>/2025/06/04/Hexo-Next%E4%B8%BB%E9%A2%98%E5%B5%8C%E5%85%A5pdf%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<p>本文介绍在使用Hexo Next主题搭建个人博客时无法嵌入pdf显示的解决方案，以便于进行在线浏览。</p>
+<span id="more"></span>
+
+<h2 id="博文目的"><a href="#博文目的" class="headerlink" title="博文目的"></a>博文目的</h2><p>博主在使用Hexo的过程中发现除去可以插入图像文件外，还可以插入pdf文件进行在线预览。类似以下样例，一个网页内插入了一个方框显示pdf内容：</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250604084524431.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    PDF预览(参考资料1)	<!--标题-->
+    </center>
+</div>
+
+
+<p>因此博主预期在Next主题下实现类似功能。</p>
+<h2 id="最终方案"><a href="#最终方案" class="headerlink" title="最终方案"></a>最终方案</h2><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><ol>
+<li><p>hexo-pdf插件</p>
+<p>通过搜索其他人搭建个人博客的经验，部分作者使用<code>hexo-pdf</code>插件用于显示pdf文件，尝试该方案。</p>
+<ul>
+<li><p>在博文根目录下安装插件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-pdf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>source</code>文件夹内创建pdf文件夹，在<code>.md</code>文档内插入以下语句。<strong>此方式在本地生成后弹出了IDM文件下载链接，未出现预览窗口，且影响整个博文的排版与链接显示。</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  ../pdf/NCU873.pdf %&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250604091556759.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    效果预览    <!--标题-->
+    </center>
+</div>
+
+
+
+<ul>
+<li><p>在<code>_post</code>文件夹下创建与<code>.md</code>同名的文件夹 ，在<code>.md</code>文档内插入以下两句语句。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf ./NCU873.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  NCU873.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上方两条语句均会显示<code>Cannot GET NCU873.pdf</code>，无法加载出内容。</p>
+<div class="pdf-container" data-target="../pdf/NCU873.pdf" data-height="500px"></div></li>
+</ul>
+</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>[hexo 中如何插入pdf | 智贤](<a href="https://awesomeyouthzhang.github.io/2020/02/05/hexo">https://awesomeyouthzhang.github.io/2020/02/05/hexo</a> 中如何插入pdf插件&#x2F;)</li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p>寒来暑往，来日方长。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>pdf预览</tag>
       </tags>
   </entry>
 </search>
