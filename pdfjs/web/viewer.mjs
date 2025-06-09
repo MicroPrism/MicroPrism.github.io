@@ -20626,8 +20626,11 @@ initCom(PDFViewerApplication);
     if (HOSTED_VIEWER_ORIGINS.has(viewerOrigin)) {
       return;
     }
-    /* 检验域名，否则抛出错误
+    
     const fileOrigin = URL.parse(file, window.location)?.origin;
+    return;
+
+    /* 检验域名，否则抛出错误  
     if (fileOrigin === viewerOrigin) {
       return;
     }
