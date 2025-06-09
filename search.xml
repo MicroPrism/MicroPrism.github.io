@@ -569,6 +569,121 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo-Next主题嵌入pdf显示</title>
+    <url>/2025/06/04/Hexo-Next%E4%B8%BB%E9%A2%98%E5%B5%8C%E5%85%A5pdf%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<p>本文介绍在使用Hexo Next主题搭建个人博客时使用PDF.js工具嵌入显示pdf文件的解决方案，便于进行手机和电脑双端在线浏览。</p>
+<span id="more"></span>
+
+<h2 id="博文目的"><a href="#博文目的" class="headerlink" title="博文目的"></a>博文目的</h2><p>博主在使用Hexo的过程中发现除去可以插入图像文件外，还可以插入pdf文件进行在线预览。类似以下样例，一个网页内插入了一个方框显示pdf内容：</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250604084524431.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    PDF预览(参考资料1)	<!--标题-->
+    </center>
+</div>
+
+
+<p>因此博主预期在Next主题下实现类似功能。</p>
+<h2 id="方案验证"><a href="#方案验证" class="headerlink" title="方案验证"></a>方案验证</h2><h3 id="hexo-pdf插件"><a href="#hexo-pdf插件" class="headerlink" title="hexo-pdf插件"></a>hexo-pdf插件</h3><p>通过搜索其他人搭建个人博客的经验，部分作者使用<code>hexo-pdf</code>插件用于显示pdf文件，尝试该方案。</p>
+<ul>
+<li><p>在博文根目录下安装插件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-pdf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>source</code>文件夹内创建pdf文件夹，在<code>.md</code>文档内插入以下语句。</p>
+<p><strong>此方式在本地生成后弹出了IDM文件下载链接，未出现预览窗口，如下图。如果显示<code>Cannot GET /2025/06/04/Test.pdf</code>说明文件路径有问题</strong></p>
+ <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  /pdf/Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250604091556759.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    弹出下载界面，无预览    <!--标题-->
+    </center>
+</div>
+</li>
+<li><p>尝试更改文件夹，在<code>_post</code>文件夹下创建与<code>.md</code>同名的文件夹 ，在<code>.md</code>文档内插入以下两句语句。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf ./Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果与第2步放入<code>source</code>文件夹类似，本地预览弹出文件下载框，但是无法加载出内容。</p>
+<p>该方案推送至Github后可正常浏览，效果如下：</p>
+<div class="pdf-container" data-target="Test.pdf" data-height="600px"></div></li>
+</ul>
+<p><strong>缺点：该方案只能在部署到服务器后在PC端预览，手机端查看博文则会显示文件丢失。也无法在本地生成后查看效果。</strong></p>
+<h3 id="PDF-js工具"><a href="#PDF-js工具" class="headerlink" title="PDF.js工具"></a>PDF.js工具</h3><p>有很多博主在个人博客使用这个pdf工具，但多数应用主题是butterfly或者fluid主题，博主希望尝试应用在next主题上，便于在手机与电脑端实现双端浏览。</p>
+<ol>
+<li><p><a href="https://mozilla.github.io/pdf.js/getting_started/#download">下载PDF.js</a>工具包，博主选择下载modern browsers v5.3.31版本</p>
+</li>
+<li><p>在next主题\source下建立一个文件夹pdfjs，存放解压文件</p>
+</li>
+<li><p>在博客根目录的 <code>_config.yml</code>文件中设置，取消渲染</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">pdfjs/**/*</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用以下代码插入pdf，其中<code>src</code>参量的<code>/pdfjs/pdfjs/web/viewer.html</code>为预览窗口，后面紧跟的<code>file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</code>是Github上的文件路径。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">src</span>=<span class="string">&quot;/pdfjs/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">height</span>=<span class="string">&quot;750&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>此种方式部署到Github之后出现跨域导致文件无法加载，如下图，而浏览器直接输入上方代码的https链接是可以打开访问的。<strong>原因是网页和文件不在同一项目。</strong></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250609113753049.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    文件跨域报错    <!--标题-->
+    </center>
+</div>
+</li>
+<li><p>查看<code>viewer.html</code>源码，能看到PDF.js工具在4.0版本开始后引用了<code>pdf.mjs</code>和<code>viewer.mjs</code>两个资源文件，如下图：</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250609120409051.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    viewer.html资源引用    <!--标题-->
+    </center>
+</div>
+
+<p>在此之前则是使用的<code>.js</code>文件。本文使用v3.11.174版本，打开<code>web/viewer.js</code>第3224行并注释以下三行</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//if (fileOrigin !== viewerOrigin) &#123;</span></span><br><span class="line"><span class="comment">//  throw new Error(&quot;file origin does not match viewer&#x27;s&quot;);</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
+
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250609162557820.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    viewer.html资源引用    <!--标题-->
+    </center>
+</div>
+
+
+
+<p>效果预览如下：</p>
+<iframe src="/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf" width="100%" height="750" frameborder="0">
+</iframe></li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://awesomeyouthzhang.github.io/2020/02/05/hexo%20%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5pdf%E6%8F%92%E4%BB%B6/">hexo 中如何插入pdf | 智贤</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/550626417">hexo中插入PDF |知乎</a></li>
+<li><a href="https://www.poetyin.com/posts/4a17b156/">The Details Usage of the Hexo Next-Theme Plugin <code>next-pdf</code> | Poetry Continent</a></li>
+<li><a href="https://jiqiren116.github.io/2024/03/24/hexo%E5%8D%9A%E5%AE%A2%E6%98%BE%E7%A4%BApdf/">hexo博客显示pdf | robot-x Blog</a></li>
+<li><a href="https://www.bilibili.com/opus/771629864647131138">Hexo内嵌PDF.js | 哔哩哔哩</a></li>
+<li><a href="https://blog.csdn.net/weixin_44657449/article/details/119894091">pdf.js｜CSDN博客</a></li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p>有情芍药含春泪，无力蔷薇卧晓枝。– 春日</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>pdf预览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>求职-毕业季校招</title>
     <url>/2025/06/02/%E6%B1%82%E8%81%8C-%E6%AF%95%E4%B8%9A%E5%AD%A3%E6%A0%A1%E6%8B%9B/</url>
     <content><![CDATA[<p>本篇博文主要列举博主在毕业季求职期间的面试与offer情况，包括引申出的有关校招的一些思考…</p>
@@ -679,115 +794,6 @@
       <tags>
         <tag>校招</tag>
         <tag>就业形势</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-Next主题嵌入pdf显示</title>
-    <url>/2025/06/04/Hexo-Next%E4%B8%BB%E9%A2%98%E5%B5%8C%E5%85%A5pdf%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<p>本文介绍在使用Hexo Next主题搭建个人博客时使用PDF.js工具嵌入显示pdf文件的解决方案，便于进行手机和电脑双端在线浏览。</p>
-<span id="more"></span>
-
-<h2 id="博文目的"><a href="#博文目的" class="headerlink" title="博文目的"></a>博文目的</h2><p>博主在使用Hexo的过程中发现除去可以插入图像文件外，还可以插入pdf文件进行在线预览。类似以下样例，一个网页内插入了一个方框显示pdf内容：</p>
-<div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250604084524431.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-    PDF预览(参考资料1)	<!--标题-->
-    </center>
-</div>
-
-
-<p>因此博主预期在Next主题下实现类似功能。</p>
-<h2 id="方案验证"><a href="#方案验证" class="headerlink" title="方案验证"></a>方案验证</h2><h3 id="hexo-pdf插件"><a href="#hexo-pdf插件" class="headerlink" title="hexo-pdf插件"></a>hexo-pdf插件</h3><p>通过搜索其他人搭建个人博客的经验，部分作者使用<code>hexo-pdf</code>插件用于显示pdf文件，尝试该方案。</p>
-<ul>
-<li><p>在博文根目录下安装插件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-pdf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>source</code>文件夹内创建pdf文件夹，在<code>.md</code>文档内插入以下语句。</p>
-<p><strong>此方式在本地生成后弹出了IDM文件下载链接，未出现预览窗口，如下图。如果显示<code>Cannot GET /2025/06/04/Test.pdf</code>说明文件路径有问题</strong></p>
- <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  /pdf/Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
-
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250604091556759.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    弹出下载界面，无预览    <!--标题-->
-    </center>
-</div>
-</li>
-<li><p>尝试更改文件夹，在<code>_post</code>文件夹下创建与<code>.md</code>同名的文件夹 ，在<code>.md</code>文档内插入以下两句语句。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf ./Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>结果与第2步放入<code>source</code>文件夹类似，本地预览弹出文件下载框，但是无法加载出内容。</p>
-<p>该方案推送至Github后可正常浏览，效果如下：</p>
-<div class="pdf-container" data-target="Test.pdf" data-height="600px"></div></li>
-</ul>
-<p><strong>缺点：该方案只能在部署到服务器后在PC端预览，手机端查看博文则会显示文件丢失。也无法在本地生成后查看效果。</strong></p>
-<h3 id="PDF-js工具"><a href="#PDF-js工具" class="headerlink" title="PDF.js工具"></a>PDF.js工具</h3><p>有很多博主在个人博客使用这个pdf工具，但多数应用主题是butterfly或者fluid主题，博主希望尝试应用在next主题上，便于在手机与电脑端实现双端浏览。</p>
-<ol>
-<li><p><a href="https://mozilla.github.io/pdf.js/getting_started/#download">下载PDF.js</a>工具包，博主选择下载modern browsers v5.3.31版本</p>
-</li>
-<li><p>在next主题\source下建立一个文件夹pdfjs，存放解压文件</p>
-</li>
-<li><p>在博客根目录的 <code>_config.yml</code>文件中设置，取消渲染</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">pdfjs/**/*</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用以下代码插入pdf，其中<code>src</code>参量的<code>/pdfjs/pdfjs/web/viewer.html</code>为预览窗口，后面紧跟的<code>file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</code>是Github上的文件路径。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">src</span>=<span class="string">&quot;/pdfjs/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">height</span>=<span class="string">&quot;750&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>此种方式部署到Github之后会出现跨域导致文件无法加载，如下图，而浏览器直接输入上方代码的https链接是可以打开访问的。<strong>原因是网页和文件不在同一项目。</strong></p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250609113753049.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    文件跨域报错    <!--标题-->
-    </center>
-</div>
-</li>
-<li><p>查看<code>viewer.html</code>源码，能看到PDF.js工具在4.0版本开始后引用了<code>pdf.mjs</code>和<code>viewer.mjs</code>两个资源文件，如下图：</p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250609120409051.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    viewer.html资源引用    <!--标题-->
-    </center>
-</div>
-
-<p>在此之前则是使用的<code>.js</code>文件。本文使用v3.11.174版本，打开<code>web/viewer.js</code>第3224行并注释以下三行</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//if (fileOrigin !== viewerOrigin) &#123;</span></span><br><span class="line"><span class="comment">//  throw new Error(&quot;file origin does not match viewer&#x27;s&quot;);</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>效果预览如下：</p>
-<iframe src="/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf" width="100%" height="750" frameborder="0">
-</iframe></li>
-</ol>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><a href="https://awesomeyouthzhang.github.io/2020/02/05/hexo%20%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5pdf%E6%8F%92%E4%BB%B6/">hexo 中如何插入pdf | 智贤</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/550626417">hexo中插入PDF |知乎</a></li>
-<li><a href="https://www.poetyin.com/posts/4a17b156/">The Details Usage of the Hexo Next-Theme Plugin <code>next-pdf</code> | Poetry Continent</a></li>
-<li><a href="https://jiqiren116.github.io/2024/03/24/hexo%E5%8D%9A%E5%AE%A2%E6%98%BE%E7%A4%BApdf/">hexo博客显示pdf | robot-x Blog</a></li>
-<li><a href="https://www.bilibili.com/opus/771629864647131138">Hexo内嵌PDF.js | 哔哩哔哩</a></li>
-<li><a href="https://blog.csdn.net/weixin_44657449/article/details/119894091">pdf.js｜CSDN博客</a></li>
-</ol>
-<p align="center">---------------------------  End  ---------------------------</p>
-
-<blockquote>
-<p>有情芍药含春泪，无力蔷薇卧晓枝。– 春日</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>实用工具</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-        <tag>pdf预览</tag>
       </tags>
   </entry>
 </search>
