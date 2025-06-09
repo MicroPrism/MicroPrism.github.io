@@ -20627,14 +20627,14 @@ initCom(PDFViewerApplication);
       return;
     }
     const fileOrigin = URL.parse(file, window.location)?.origin;
-    //if (fileOrigin === viewerOrigin) {
-    //  return;
-    //}
-    //const ex = new Error("file origin does not match viewer's");
-    //PDFViewerApplication._documentError("pdfjs-loading-error", {
-    //  message: ex.message
-    //});
-    //throw ex;
+    if (fileOrigin === viewerOrigin) {
+      return;
+    }
+    const ex = new Error("file origin does not match viewer's");
+    PDFViewerApplication._documentError("pdfjs-loading-error", {
+      message: ex.message
+    });
+    throw ex;
   };
   var onFileInputChange = function (evt) {
     if (this.pdfViewer?.isInPresentationMode) {
