@@ -5046,7 +5046,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   disableAutoFetch: {
-    value: false,
+    value: true,
     kind: OptionKind.API + OptionKind.PREFERENCE
   },
   disableFontFace: {
@@ -5058,7 +5058,7 @@ const defaultOptions = {
     kind: OptionKind.API + OptionKind.PREFERENCE
   },
   disableStream: {
-    value: false,
+    value: true,
     kind: OptionKind.API + OptionKind.PREFERENCE
   },
   docBaseUrl: {
