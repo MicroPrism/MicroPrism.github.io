@@ -102,7 +102,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>实用工具</category>
+        <category>Tools</category>
         <category>Hexo</category>
       </categories>
       <tags>
@@ -149,7 +149,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>实用工具</category>
+        <category>Tools</category>
         <category>SpaceDesk</category>
       </categories>
       <tags>
@@ -386,7 +386,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>实用工具</category>
+        <category>Tools</category>
         <category>Hexo</category>
       </categories>
       <tags>
@@ -799,13 +799,13 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>实用工具</category>
+        <category>Tools</category>
         <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
         <tag>Next</tag>
-        <tag>pdf预览</tag>
+        <tag>pdf</tag>
       </tags>
   </entry>
   <entry>
@@ -853,6 +853,44 @@
       </categories>
       <tags>
         <tag>流量卡</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git-UsingGuide</title>
+    <url>/2025/06/17/Git-UsingGuide/</url>
+    <content><![CDATA[<p>本博客存放Git使用过程中的指令与配置。</p>
+<span id="more"></span>
+
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ol>
+<li><p>查看配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="LF与CRLF换行"><a href="#LF与CRLF换行" class="headerlink" title="LF与CRLF换行"></a>LF与CRLF换行</h3><h4 id="具体措施"><a href="#具体措施" class="headerlink" title="具体措施"></a>具体措施</h4><p>使用Hexo博客工具在推送至Github时，Bash内弹出大量警告：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">warning: <span class="keyword">in</span> the working copy of <span class="string">&#x27;tags/.../index.html&#x27;</span>, LF will be replby CRLF the next <span class="keyword">time</span> Git touches it</span><br></pre></td></tr></table></figure>
+
+<p>查阅网络资料，发现<code>LF(\n)</code>与<code>CRLF(\r\n)</code>分别是Linux与Windows下的换行符。Git Bash为Linux环境，Git工作区默认CRLF。最终push到远程仓库时git会统一格式全部转化为用<code>CRLF</code>作为换行符。</p>
+<p>使用如下指令禁用如下转换：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span> //禁用自动转换</span><br></pre></td></tr></table></figure>
+
+<p>对于每一类文件的转换配置可以在 <code>.gitattributes</code>内配置，可见参考资料3。因目前未涉及不同文件，暂时不做其他调整。</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
+<li><a href="https://www.jianshu.com/p/783f7736e77e">解决hexo deploy时出现的警告：LF will be replaced by CRLF - 简书</a></li>
+<li><a href="https://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar">Windows git “warning: LF will be replaced by CRLF”, is that warning tail backward? - Stack Overflow</a></li>
+<li><a href="https://juejin.cn/post/6942320745494085669">Git 优雅处理行结束符 - 掘金</a></li>
+<li><a href="https://www.cnblogs.com/youpeng/p/11243871.html">git core.autocrlf配置说明 - Youpeng - 博客园</a></li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>人越脱离自然便越发恐惧孤独。</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
