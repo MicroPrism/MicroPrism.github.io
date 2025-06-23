@@ -23,6 +23,7 @@
 <p>【5.1】<a href="https://blog.csdn.net/Aoman_Hao/article/details/89416634">Hexo博客Next主题建立标签云-CSDN博客</a></p>
 <p>【5.2】<a href="https://github.com/D0n9X1n/hexo-tag-cloud/blob/master/README.ZH.md">Hexo的hexo-tag-cloud插件使用手册-Github</a></p>
 <p>【6】<a href="https://blog.csdn.net/kantaiyang/article/details/129159055">Hexo无法显示本地图片的问题-CSDN博客</a></p>
+<p>【7】<a href="https://tanwucheng.github.io/2021/03/03/4.Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AERSS%E8%AE%A2%E9%98%85/">HEXO笔记④-Hexo博客NexT主题设置RSS订阅 | Ten’s Blog</a></p>
 <h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>Hexo创建本地博客仓库后，使用<strong>控制台</strong>或<strong>Git Bash Here</strong>输入指令进行博文管理，详见<a href="https://hexo.io/zh-cn/docs/commands">指令 | Hexo</a>，以下简要介绍常用指令</p>
 <ol>
 <li><p>网站生成–生成本地网站</p>
