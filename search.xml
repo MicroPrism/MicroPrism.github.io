@@ -6,7 +6,7 @@
     <content><![CDATA[<p>该博客主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的视频与帖子连接，同时汇总个人搭建过程中遇到的各种错误和解决办法。</p>
 <span id="more"></span>
 
-<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><p>博客搭建所使用的部件如下：</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>博客搭建所使用的部件如下：</p>
 <ul>
 <li>Github：用于博客线上浏览</li>
 <li>Git: 线上推送工具</li>
@@ -38,7 +38,9 @@
 <p>该指令将创建本地5555端口，可在浏览器中输入<code>localhost:5555</code>进行查看，但并未推送至线上。</p>
 </li>
 </ol>
-<h2 id="问题与解决办法"><a href="#问题与解决办法" class="headerlink" title="问题与解决办法"></a>问题与解决办法</h2><p>虽然有视频参考，但作者在使用时仍然出现一些问题，在此记录，希望对各位有所帮助。</p>
+<h2 id="问题与解决办法"><a href="#问题与解决办法" class="headerlink" title="问题与解决办法"></a>问题与解决办法</h2><p>虽然有视频参考，但作者在使用时仍然出现一些问题，在此记录，帮助后人乘凉。</p>
+<h3 id="插件版本"><a href="#插件版本" class="headerlink" title="插件版本"></a>插件版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo: 7.3.0</span><br><span class="line">node: 22.14.0</span><br><span class="line">next: 8.23.0</span><br></pre></td></tr></table></figure>
+
 <h3 id="本地仓库初始化失败"><a href="#本地仓库初始化失败" class="headerlink" title="本地仓库初始化失败"></a>本地仓库初始化失败</h3><p><strong>原因1：在Github创建仓库时的仓库名与本地仓库名不一致。</strong></p>
 <p>举个栗子：作者在Github的仓库名为<code>AAA</code>，那么使用<code>hexo init AAA</code>指令时的本地仓库路径应该为<code>C:\Blog</code>，文件夹名称为<code>AAA</code>。</p>
 <p><strong>原因2：无法在某个硬盘的根目录下创建仓库。例如在<code>C:</code>文件夹下初始化将失败。</strong></p>
@@ -66,15 +68,11 @@
 <p>解决办法：在<code>_config.yml</code>内找到<code>branch </code>分支，并修改为<code>main</code>:</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="string">type:git</span></span><br><span class="line">	<span class="string">repo:xxx</span> <span class="comment">#你的Github仓库</span></span><br><span class="line">	<span class="string">branch：main</span></span><br></pre></td></tr></table></figure>
 
-
-
 <h3 id="新增侧边栏项目后出错"><a href="#新增侧边栏项目后出错" class="headerlink" title="新增侧边栏项目后出错"></a>新增侧边栏项目后出错</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">YAMLException: can not <span class="built_in">read</span> a block mapping entry; a multiline key may not be an implicit key (4:1)</span><br></pre></td></tr></table></figure>
 
 <p>原因1：文件的<code>front-matter</code>内存在中英文字符混用。</p>
 <p>解决办法：使用英文字符，并且后跟空格。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: 关于</span><br><span class="line"><span class="built_in">date</span>: 2025-04-16 13:20:26</span><br><span class="line">tags: about</span><br></pre></td></tr></table></figure>
-
-
 
 <h3 id="创建新标签后访问错误"><a href="#创建新标签后访问错误" class="headerlink" title="创建新标签后访问错误"></a>创建新标签后访问错误</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Cannot GET /about/</span><br></pre></td></tr></table></figure>
 
@@ -85,6 +83,20 @@
 <p>并且注意，此时需要更改内部的tags，比如</p>
  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: 关于</span><br><span class="line"><span class="built_in">date</span>: 2025-04-16 13:20:26</span><br><span class="line">tags: about</span><br></pre></td></tr></table></figure>
 
+<h3 id="自定义图标不显示"><a href="#自定义图标不显示" class="headerlink" title="自定义图标不显示"></a>自定义图标不显示</h3><p>网络上大多数是旧版本Hexo 或者Next主题的配置方案，按照他们的步骤可能找不到相同的文件 …   如本节内4篇博客方案，均无法复刻。</p>
+<p>【1】<a href="https://blog.csdn.net/weixin_44634406/article/details/122777058">hexo next 解决自定义侧边栏用户社交链接小图标 custom sidebar social icon_next自定义图标-CSDN博客</a></p>
+<p>【2】<a href="https://ouyen.github.io/hexo-icon/">给hexo next扩展图标 | 纯白的小站</a></p>
+<p>【3】<a href="https://lockrim.top/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/">Next主题fa图标问题 | LockRim·小站</a></p>
+<p>【4】<a href="https://yelog.org/2020/12/28/3-hexo-add-icon/">3-hexo添加自定义图标 | 叶落阁</a></p>
+<p>原因：参照<a href="https://lockrim.top/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/">博客3</a>发现可能涉及到不同版本Font Awesome(简称fa)图标库，V5和V6涵盖的图标数不同。其他图标可在<a href="https://www.iconfont.cn/?spm=a313x.search_index.i3.2.7d813a81xrirca">iconfont图标库</a>下载。</p>
+<p>解决办法：next v8.23.0版本<code>_config.yml</code>文件注释表明其已集成fa库，在<a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">链接6</a>中搜索图标名，如<code>bilibili</code>。如果有结果，则可在Next主题配置文件中使用<code>fab fa-bilibili</code>，在<code>.md</code>文档内中按如下格式使用：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&#x27;fa-brands fa-bilibili&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&#x27;fa-brands fa-bilibili&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;font-size:20px&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&#x27;fa-brands fa-bilibili&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;font-size:36px;color:red&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&#x27;custom-button&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&#x27;fa-brands fa-bilibili&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span> <span class="language-xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><i class="fa-brands fa-bilibili"></i><br><i class="fa-brands fa-bilibili" style="font-size:20px"></i><br><i class="fa-brands fa-bilibili" style="font-size:36px;color:red"></i><br><button class="custom-button"><i class="fa-brands fa-bilibili"></i> </button></p>
+<p>但该版本Next主题中，即使从<a href="https://www.iconfont.cn/?spm=a313x.search_index.i3.2.7d813a81xrirca">iconfont</a>下载图标代码也难以插入到本地<code>  .css</code>或者<code>.styl</code>文件。</p>
+<p>【5】<a href="https://www.iconfont.cn/?spm=a313x.search_index.i3.2.7d813a81xrirca">iconfont-阿里巴巴矢量图标库</a></p>
+<p>【6】<a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;font-awesome&#x2F;6.4.0&#x2F;css&#x2F;all.min.css</a></p>
+<p>【7】<a href="https://fontawesomeicons.com/tryit/fa/v6/bilibili">fa-brands fa-bilibili — Tryit Editor</a></p>
 <h2 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h2><h3 id="博客分类"><a href="#博客分类" class="headerlink" title="博客分类"></a>博客分类</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Diary, PlayStation]</span><br><span class="line">- [Diary, Games]</span><br><span class="line">- [Life]</span><br></pre></td></tr></table></figure>
 
 <p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p>
