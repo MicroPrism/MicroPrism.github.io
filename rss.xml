@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-06-17T04:15:03.064Z</updated>
+  <updated>2025-07-09T13:32:22.838Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Electronics-PCB_Impedance</title>
+    <link href="https://microprism.github.io/2025/07/09/PCB-Impedance/"/>
+    <id>https://microprism.github.io/2025/07/09/PCB-Impedance/</id>
+    <published>2025-07-09T09:10:41.000Z</published>
+    <updated>2025-07-09T13:32:22.838Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本博客记录PCB阻抗与叠层设计的参考思路。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Electronics" scheme="https://microprism.github.io/categories/Electronics/"/>
+    
+    
+    <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
+    
+    <category term="Impedance" scheme="https://microprism.github.io/tags/Impedance/"/>
+    
+  </entry>
   
   <entry>
     <title>Git-指令与配置</title>
@@ -81,30 +102,6 @@
     <category term="Next" scheme="https://microprism.github.io/tags/Next/"/>
     
     <category term="pdf" scheme="https://microprism.github.io/tags/pdf/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>求职-毕业季校招</title>
-    <link href="https://microprism.github.io/2025/06/02/%E6%B1%82%E8%81%8C-%E6%AF%95%E4%B8%9A%E5%AD%A3%E6%A0%A1%E6%8B%9B/"/>
-    <id>https://microprism.github.io/2025/06/02/%E6%B1%82%E8%81%8C-%E6%AF%95%E4%B8%9A%E5%AD%A3%E6%A0%A1%E6%8B%9B/</id>
-    <published>2025-06-02T07:43:55.000Z</published>
-    <updated>2025-06-30T17:05:50.207Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本篇博文主要列举博主在毕业季求职期间的面试与offer情况，包括引申出的有关校招的一些思考…&lt;/p&gt;
-&lt;p&gt;博文尾部放置近几年的考情分析，以便各位同学了解考研形势。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="求职" scheme="https://microprism.github.io/categories/%E6%B1%82%E8%81%8C/"/>
-    
-    <category term="校招" scheme="https://microprism.github.io/categories/%E6%B1%82%E8%81%8C/%E6%A0%A1%E6%8B%9B/"/>
-    
-    
-    <category term="校招" scheme="https://microprism.github.io/tags/%E6%A0%A1%E6%8B%9B/"/>
-    
-    <category term="就业形势" scheme="https://microprism.github.io/tags/%E5%B0%B1%E4%B8%9A%E5%BD%A2%E5%8A%BF/"/>
     
   </entry>
   
