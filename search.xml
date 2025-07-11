@@ -802,25 +802,4 @@
         <tag>Git</tag>
       </tags>
   </entry>
-  <entry>
-    <title>Electronics-PCB_Impedance</title>
-    <url>/2025/07/09/PCB-Impedance/</url>
-    <content><![CDATA[<p>本博客记录PCB阻抗与叠层设计的参考思路。</p>
-<span id="more"></span>
-
-<h2 id="特性阻抗"><a href="#特性阻抗" class="headerlink" title="特性阻抗"></a>特性阻抗</h2><p>**特性阻抗近似于信号传输线的等效阻抗。**信号线在传输信号时与参考平面（地平面、电源平面）建立电场产生瞬间电流，V&#x2F;I的等效R。对于非均匀传输线，称为“瞬时阻抗”，而非特征阻抗。</p>
-<p align="center">---------------------------  End  ---------------------------</p>
-
-<blockquote>
-<p>“没有调查，没有发言权。”–毛泽东《反对本本主义》*</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Electronics</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
-        <tag>Impedance</tag>
-      </tags>
-  </entry>
 </search>
