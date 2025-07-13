@@ -428,8 +428,8 @@
 <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">a = <span class="number">8&#x27;h123</span>; <span class="comment">//溢出，随后截断为0x23</span></span><br><span class="line">b = <span class="number">12&#x27;h1</span>;	<span class="comment">//不足，补充为0x001</span></span><br></pre></td></tr></table></figure>
 
 <p>实型数据，说白了就是浮点型，小数，可以采用<code>123.45e2</code>表示数值12345。</p>
-<p>字符串指双信号中的字符序列，与C一致，存储的ASCII码值。例如下方字符串同样可以用在verilog内 :</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> * log_str = <span class="string">&quot;Open log file.&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>字符串指双信号中的字符序列，与C一致，存储的ASCII码值。例如下方字符串 <code>Open log file.</code>可以用C的printf输出，同样可以在verilog内用$display输出 :</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> * log_str = <span class="string">&quot;Open log file.&quot;</span>;</span><br><span class="line">pringtf(<span class="string">&quot;%s&quot;</span>,log_str);</span><br><span class="line">...</span><br><span class="line">$display(<span class="string">&quot;Open log file.&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>Verilog的变量类型基于FPGA的结构基础。FPGA可以抽象成若干门电路，其内部是<strong>电路的连接</strong>，因此定义变量时即分为：</p>
 <ul>
@@ -525,7 +525,7 @@
 <h3 id="调试函数"><a href="#调试函数" class="headerlink" title="调试函数"></a>调试函数</h3><p>FPGA里的函数依靠<code>$</code>符号为区分，功能类似C。</p>
 <ol>
 <li><p>$display 打印信息,打印后自动换行</p>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$display</span>(<span class="string">&quot;$d+%d=%d&quot;</span>,a,b,c);</span><br><span class="line"><span class="built_in">$display</span>(<span class="string">&quot;Hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$display</span>(<span class="string">&quot;%d+%d=%d&quot;</span>,a,b,c);</span><br><span class="line"><span class="built_in">$display</span>(<span class="string">&quot;Hello&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>等价于printf，例如printf(“%d”,a);但是$display可以不加格式符，默认为十进制。</p>
@@ -800,6 +800,81 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2025-07-09-SI-01-PCB_Impedance</title>
+    <url>/2025/07/09/SI-01-PCB_Impedance/</url>
+    <content><![CDATA[<p>本博客记录PCB阻抗与叠层设计的参考思路。</p>
+<span id="more"></span>
+
+<h2 id="特性阻抗"><a href="#特性阻抗" class="headerlink" title="特性阻抗"></a>特性阻抗</h2><p>**<span style="color:red">特性阻抗为高频信号在均匀传输线上的等效阻抗。</span><em><em>信号线在传输信号时会与参考平面（地平面、电源平面）建立电场产生瞬间电流，由电压电流</em>V&#x2F;I<em>得等效阻值</em>Z<del>0</del><em>，具体取决于介电常数</em>ε<del>0</del><em>与每单位长度的电容</em>C<del>L</del></em>。<br>$$<br>Z_0&#x3D;\frac{83}{C_L}\sqrt{ε_0}<br>$$<br>对于非均匀传输线，称为“瞬时阻抗”，而非特征阻抗。**对一条线宽变化的传输线，瞬时阻抗没有意义。**线宽不变时，信号传输时的阻抗就是固定的，但PCB上的铜线也有厚度，比如常见的1oz、0.5oz铜厚，所以更准确的说法是横截面不变时，阻抗是固定的（<strong>一般同一层的铜厚一致，所以可以说线宽影响阻抗</strong>）。</p>
+<p>而根据产生电场的条件，传输介质介电常数<em>ε<del>0</del></em>不变的情况下，信号传输线与参考平面的距离<em>d</em>越近&#x2F;面积（线宽）<em>S</em>越大，等效电容（寄生电容）<em>C</em>越大，进而等效阻抗<em>Z<del>0</del></em>越小。<br>$$<br>C&#x3D;ε_0\ast S&#x2F;d<br>$$</p>
+<p>$$<br>Z_0&#x3D;\frac{83d}{S\sqrt{ε_0}}<br>$$</p>
+<p>根据上式也能得出结论，对于电源&#x2F;地两个参考平面，其截面大阻抗低（约1Ω），对于带状线与微带线线宽窄阻抗高（约60-90Ω）。</p>
+<p>特征阻抗的影响因素包括线宽、铜厚、板厚、层数、基板材料、表面工艺，可根据实际的阻抗设计值、阻抗公差计算线宽线距。<strong>介质越厚、线距越大阻抗越大；介电常数、铜厚、线宽、阻焊厚度越大阻抗越小。</strong></p>
+<ul>
+<li><p>介电常数</p>
+<p>对FR-4，介电常数为3.9-4.5；</p>
+<p>对聚四氟乙烯，介电常数为2.2-3.9；</p>
+</li>
+<li><p>阻焊厚度</p>
+<p>刷绿油&#x2F;黑油（阻焊）一次使单端阻抗降低2Ω，差分阻抗降低8Ω。两次时翻倍，三次时不再变化。</p>
+</li>
+</ul>
+<h2 id="阻抗计算"><a href="#阻抗计算" class="headerlink" title="阻抗计算"></a>阻抗计算</h2><p>传输线就像水管，水管粗细突变时水流会被阻拦。同样，一根传输线上阻抗突变意味着信号会发生反射，进而产生噪声干扰正常信号。</p>
+<p>**做阻抗的目的就是减少信号反射点，降低传输损耗。*<em>一般在设计</em>f<del>clock</del>&gt;100MHz*的高速电路时就需要做阻抗。</p>
+<p>可使用<a href="https://tools.jlc.com/jlcTools/index.html#/impedanceCalculatenew">嘉立创阻抗计算</a>或者SI9000输入参数进行线宽线距计算。以嘉立创为例，计算时需要区分单端&#x2F;差分阻抗与共面单端&#x2F;共面差分阻抗。</p>
+<ul>
+<li><p>单端阻抗：单根信号线与参考平面之间的阻抗</p>
+</li>
+<li><p>差分阻抗：差分线对间、与相邻参考层间的耦合阻抗。</p>
+</li>
+<li><p>共面单端阻抗：单根信号线与参考平面间（尽量完整参考地）、以及<strong>与同层两侧地铜皮的耦合阻抗。</strong></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250712230625507.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    共面单端阻抗    <!--标题-->
+    </center>
+</div>
+</li>
+<li><p>共面差分阻抗：差分信号线现对间、与参考平面间（尽量完整参考地）、**与同层两侧地铜皮的的耦合阻抗。**共面差分则与之类似。</p>
+</li>
+</ul>
+<p>**共面地是为了抑制串扰、增加回流路径。**对于多层板，可利用单端阻抗和差分阻抗计算设计，但是对于以下情况，通常需要使用共面单端与共面差分：</p>
+<ul>
+<li>两层板。板厚过大，根据公式限制较小阻抗时线宽较大(可能达到100mil)，而且两层板通常没有完整的参考地。</li>
+<li>射频天线</li>
+<li>高速信号</li>
+</ul>
+<h2 id="常用接口"><a href="#常用接口" class="headerlink" title="常用接口"></a>常用接口</h2><ul>
+<li>RS232:可不做（低频高压摆特性）</li>
+<li>LVDS：100Ω差分</li>
+<li>CAN：100Ω差分</li>
+<li>USB：90Ω差分</li>
+<li>SATA：90Ω差分</li>
+<li>Ethernet:CAN：100Ω差分</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://blog.csdn.net/yinuoheqian123/article/details/129390510">传输线的物理基础（四）：传输线的特征阻抗-CSDN博客</a></li>
+<li><a href="https://tools.jlc.com/jlcTools/index.html#/impedanceCalculatenew">嘉立创阻抗计算</a></li>
+<li><a href="https://www.bilibili.com/video/BV1idAhe2E3a/?spm_id_from=333.337.search-card.all.click&vd_source=5465b0f4790ebae45362caa6519f3b79">如何理解共面差分阻抗，共面单端阻抗？有哪些影响因素？如何用嘉立创阻抗计算神器计算阻抗值？哔哩哔哩</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/520196609">差分走线有5个常见误区，你是否出现？ - 知乎</a></li>
+<li><a href="https://wwwangguan.github.io/2023/08/10/dian-zi-dian-li/layout-yao-qiu/chang-yong-tong-xin-zu-kang-yao-qiu/">常用通信阻抗要求 | WwWangGuan</a></li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>“没有调查，没有发言权。”–毛泽东《反对本本主义》</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>SI</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+        <tag>Impedance</tag>
       </tags>
   </entry>
 </search>

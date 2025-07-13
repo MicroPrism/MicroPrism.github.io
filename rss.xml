@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-06-17T04:15:03.064Z</updated>
+  <updated>2025-07-12T15:22:14.398Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2025-07-09-SI-01-PCB_Impedance</title>
+    <link href="https://microprism.github.io/2025/07/09/SI-01-PCB_Impedance/"/>
+    <id>https://microprism.github.io/2025/07/09/SI-01-PCB_Impedance/</id>
+    <published>2025-07-09T09:10:41.000Z</published>
+    <updated>2025-07-12T15:22:14.398Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本博客记录PCB阻抗与叠层设计的参考思路。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="SI" scheme="https://microprism.github.io/categories/SI/"/>
+    
+    
+    <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
+    
+    <category term="Impedance" scheme="https://microprism.github.io/tags/Impedance/"/>
+    
+  </entry>
   
   <entry>
     <title>Git-指令与配置</title>
@@ -89,7 +110,7 @@
     <link href="https://microprism.github.io/2025/05/29/FPGA-02-Verilog%E8%AF%AD%E6%B3%95/"/>
     <id>https://microprism.github.io/2025/05/29/FPGA-02-Verilog%E8%AF%AD%E6%B3%95/</id>
     <published>2025-05-29T03:00:44.000Z</published>
-    <updated>2025-06-01T10:50:26.189Z</updated>
+    <updated>2025-07-13T01:09:47.828Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文介绍Verilog HDL基本语法，主要将该代码与类似的C&amp;#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。&lt;/p&gt;</summary>
