@@ -533,7 +533,7 @@
 </blockquote>
 </li>
 <li><p>$write打印信息</p>
-<p>用法几乎完全同 <code>$display</code>，但是**<code>write</code>可以使用换行符**</p>
+<p>用法几乎完全同 <code>$display</code>，但是<code>write</code>可以使用换行符</p>
 <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$write</span>(<span class="string">&quot;%d+%d=%d\n&quot;</span>,a,b,c);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>$strobe，格式同$display。<strong>但是该函数是在触发操作后执行的。</strong> 例如下方代码，在 <code>initial</code>块触发最后执行。</p>
@@ -803,7 +803,7 @@
       </tags>
   </entry>
   <entry>
-    <title>2025-07-09-SI-01-PCB_Impedance</title>
+    <title>SI-01-PCB特性阻抗</title>
     <url>/2025/07/09/SI-01-PCB_Impedance/</url>
     <content><![CDATA[<p>本博客记录PCB阻抗与叠层设计的参考思路。</p>
 <span id="more"></span>

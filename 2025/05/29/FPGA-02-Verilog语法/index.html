@@ -33,7 +33,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://microprism.github.io/2025/05/29/FPGA-02-Verilog%E8%AF%AD%E6%B3%95/image-20250601142141567.png">
 <meta property="article:published_time" content="2025-05-29T03:00:44.000Z">
-<meta property="article:modified_time" content="2025-07-13T01:09:47.828Z">
+<meta property="article:modified_time" content="2025-07-13T01:11:46.191Z">
 <meta property="article:author" content="Youngs">
 <meta property="article:tag" content="FPGA">
 <meta property="article:tag" content="Verilog">
@@ -317,7 +317,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-13 09:09:47" itemprop="dateModified" datetime="2025-07-13T09:09:47+08:00">2025-07-13</time>
+      <time title="修改时间：2025-07-13 09:11:46" itemprop="dateModified" datetime="2025-07-13T09:11:46+08:00">2025-07-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -486,7 +486,7 @@
 </blockquote>
 </li>
 <li><p>$write打印信息</p>
-<p>用法几乎完全同 <code>$display</code>，但是**<code>write</code>可以使用换行符**</p>
+<p>用法几乎完全同 <code>$display</code>，但是<code>write</code>可以使用换行符</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$write</span>(<span class="string">&quot;%d+%d=%d\n&quot;</span>,a,b,c);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>$strobe，格式同$display。<strong>但是该函数是在触发操作后执行的。</strong> 例如下方代码，在 <code>initial</code>块触发最后执行。</p>
