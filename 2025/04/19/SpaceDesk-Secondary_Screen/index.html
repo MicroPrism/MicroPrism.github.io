@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="[object Object]">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"microprism.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpaceDesk-Win与iPad有线副屏扩展与常见问题">
+<meta property="og:url" content="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/index.html">
+<meta property="og:site_name" content="Young&#39;s Blog">
+<meta property="og:description" content="Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/image-20250419103753851.png">
+<meta property="og:image" content="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/image-20250419104020718.png">
+<meta property="article:published_time" content="2025-04-19T02:13:20.000Z">
+<meta property="article:modified_time" content="2025-07-18T07:50:59.873Z">
+<meta property="article:author" content="Youngs">
+<meta property="article:tag" content="Ex-Screen">
+<meta property="article:tag" content="Wired">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/image-20250419103753851.png">
+
+
+<link rel="canonical" href="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/","path":"2025/04/19/SpaceDesk-Secondary_Screen/","title":"SpaceDesk-Win与iPad有线副屏扩展与常见问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SpaceDesk-Win与iPad有线副屏扩展与常见问题 | Young's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXT2GQNX59"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-YXT2GQNX59","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?e31b8387d0a02f9c3c7c74c21377751b"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.1/pdfobject.min.js","integrity":"sha256-jI72I8ZLVflVOisZIOaLvRew3tyvzeu6aZXFm7P7dEo="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss.xml" title="Young's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Young's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不完全体攻城狮</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">设备说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">软件说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text">Win端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iPad-%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text">iPad 端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%91%E7%99%BD%E6%98%BE%E7%A4%BA"><span class="nav-number">3.1.</span> <span class="nav-text">黑白显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5Type-c%E6%97%A0%E5%8F%8D%E5%BA%94"><span class="nav-number">3.2.</span> <span class="nav-text">连接Type-c无反应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E5%BC%95%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">参考引用</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Youngs"
+      src="/images/walk.png">
+  <p class="site-author-name" itemprop="name">Youngs</p>
+  <div class="site-description" itemprop="description">我等采石之人，当怀大教堂之愿景~</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MicroPrism" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MicroPrism" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2632688012@qq.com" title="E-Mail → mailto:2632688012@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/405856572?spm_id_from=333.1369.0.0" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;405856572?spm_id_from&#x3D;333.1369.0.0" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>BiliBili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss.xml" title="RSS → &#x2F;rss.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://csdiy.wiki/" title="https:&#x2F;&#x2F;csdiy.wiki&#x2F;" rel="noopener" target="_blank">CS自学指南</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://microprism.github.io/2025/06/10/%E5%89%AF%E4%B8%9A-%E6%B5%81%E9%87%8F%E5%8D%A1/" title="https:&#x2F;&#x2F;microprism.github.io&#x2F;2025&#x2F;06&#x2F;10&#x2F;%E5%89%AF%E4%B8%9A-%E6%B5%81%E9%87%8F%E5%8D%A1&#x2F;">流量卡</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+        <h3 class="widget-title">Tags</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/502/" rel="tag">502</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+      </div>
+    
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/walk.png">
+      <meta itemprop="name" content="Youngs">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Young's Blog">
+      <meta itemprop="description" content="我等采石之人，当怀大教堂之愿景~">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SpaceDesk-Win与iPad有线副屏扩展与常见问题 | Young's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpaceDesk-Win与iPad有线副屏扩展与常见问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-19 10:13:20" itemprop="dateCreated datePublished" datetime="2025-04-19T10:13:20+08:00">2025-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-18 15:50:59" itemprop="dateModified" datetime="2025-07-18T15:50:59+08:00">2025-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+        </span>
+          /
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/SpaceDesk/" itemprop="url" rel="index"><span itemprop="name">SpaceDesk</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>454</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…</p>
+<span id="more"></span>
+
+<h2 id="设备说明"><a href="#设备说明" class="headerlink" title="设备说明"></a>设备说明</h2><ul>
+<li>Windows 11,	Type-C</li>
+<li>iPad Air4，	Type-C</li>
+<li>iPad原装双端Type-C数据线</li>
+</ul>
+<h2 id="软件说明"><a href="#软件说明" class="headerlink" title="软件说明"></a>软件说明</h2><h3 id="Win端"><a href="#Win端" class="headerlink" title="Win端"></a>Win端</h3><ol>
+<li><p>下载安装SpaceDesk</p>
+<p>SpaceDesk官网：<a target="_blank" rel="noopener" href="https://www.spacedesk.net/download/#server-driver">最新版本 点击下载</a></p>
+<p>百度网盘：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/18-q_8Ee8a7pfuRcNfBlofw?pwd=8eis">v2.1.15 点击下载</a></p>
+</li>
+<li><p>下载安装iTunes</p>
+<p>打开Win自带的微软商店，搜索下载。</p>
+<div>            <!--块级封装-->
+ <center>    <!--将图片和文字居中-->
+    <img src="image-20250419103753851.png" alt="image can't load." style="zoom:75%">
+    <br>        <!--换行-->
+    Microsoft Store    <!--标题-->
+    </center>
+</div>
+
+<p>疑似v2.1.15 版本的SpaceDesk不具备iPad连接的驱动，需要使用iTunes连接1次，后续就不再使用。</p>
+</li>
+</ol>
+<h3 id="iPad-端"><a href="#iPad-端" class="headerlink" title="iPad 端"></a>iPad 端</h3><p>App Store 搜索spacedesk下载。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250419104020718.png" alt="image can't load." style="zoom:50%">
+    <br>		<!--换行-->
+    App Store	<!--标题-->
+    </center>
+</div>
+
+<p>安装完成后打开软件，设置最高画质、自动旋转、自动改变IP等，iPad端无需其他操作。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="黑白显示"><a href="#黑白显示" class="headerlink" title="黑白显示"></a>黑白显示</h3><p>原因：SpaceDesk并非是最新版本。下载官网最新版本。</p>
+<h3 id="连接Type-c无反应"><a href="#连接Type-c无反应" class="headerlink" title="连接Type-c无反应"></a>连接Type-c无反应</h3><p>原因：汉化包Bug。</p>
+<p>打开安装包，Remove当前安装版本，重新安装，不要打汉化</p>
+<h3 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h3><p>【1】<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42013947/article/details/136596644?ops_request_misc=&request_id=&biz_id=102&utm_term=LXHYouth&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-136596644.142%5Ev102%5Epc_search_result_base6&spm=1018.2226.3001.4187">LXHYouth|使用SpaceDesk实现iPad成为电脑拓展屏(保姆级教程)-CSDN博客</a></p>
+<p>【2】<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1NQ4y1A7PD/?share_source=copy_web&vd_source=793e603d878f9531350764468aa132ce">我想当饼藏|ipad作为副屏与Windows电脑有线连接-哔哩哔哩</a></p>
+<p>【3】<a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/912838630992510994?spm_id_from=333.1387.0.0">咸鱼羊同学|Windows与iPad有线副屏SpaceDesk扩展与常见问题 - 哔哩哔哩</a></p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>他山之石，可以攻玉。–《诗·小雅·鹤鸣》</em></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>如果你愿意请我喝咖啡~</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Youngs 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Youngs 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Youngs
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/" title="SpaceDesk-Win与iPad有线副屏扩展与常见问题">https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Ex-Screen/" rel="tag"># Ex-Screen</a>
+              <a href="/tags/Wired/" rel="tag"># Wired</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/04/09/Hexo-01-Build_Blog/" rel="prev" title="Hexo-博客搭建、问题与解决办法">
+                  <i class="fa fa-angle-left"></i> Hexo-博客搭建、问题与解决办法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/04/20/FPGA-01-About_ZYNQ/" rel="next" title="FPGA-01-关于ZYNQ">
+                  FPGA-01-关于ZYNQ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Youngs</span>
+  </div>
+
+
+
+
+
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("04/09/2025 00:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="150" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+  <a href="https://github.com/MicroPrism" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

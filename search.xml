@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo-博客搭建、问题与解决办法</title>
-    <url>/2025/04/09/Hexo-MyBlog/</url>
+    <url>/2025/04/09/Hexo-01-Build_Blog/</url>
     <content><![CDATA[<p>该博客主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的视频与帖子连接，同时汇总个人搭建过程中遇到的各种错误和解决办法。</p>
 <span id="more"></span>
 
@@ -119,14 +119,13 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Next</tag>
-        <tag>个人博客</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
     <title>SpaceDesk-Win与iPad有线副屏扩展与常见问题</title>
-    <url>/2025/04/19/SpaceDesk-SecondaryScreen/</url>
+    <url>/2025/04/19/SpaceDesk-Secondary_Screen/</url>
     <content><![CDATA[<p>Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…</p>
 <span id="more"></span>
 
@@ -142,12 +141,26 @@
 </li>
 <li><p>下载安装iTunes</p>
 <p>打开Win自带的微软商店，搜索下载。</p>
-<p><img src="image-20250419103753851.png" alt="image-20250419103753851"></p>
+<div>            <!--块级封装-->
+ <center>    <!--将图片和文字居中-->
+    <img src="image-20250419103753851.png" alt="image can't load." style="zoom:75%">
+    <br>        <!--换行-->
+    Microsoft Store    <!--标题-->
+    </center>
+</div>
+
 <p>疑似v2.1.15 版本的SpaceDesk不具备iPad连接的驱动，需要使用iTunes连接1次，后续就不再使用。</p>
 </li>
 </ol>
 <h3 id="iPad-端"><a href="#iPad-端" class="headerlink" title="iPad 端"></a>iPad 端</h3><p>App Store 搜索spacedesk下载。</p>
-<p><img src="image-20250419104020718.png" alt="image-20250419104020718"></p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250419104020718.png" alt="image can't load." style="zoom:50%">
+    <br>		<!--换行-->
+    App Store	<!--标题-->
+    </center>
+</div>
+
 <p>安装完成后打开软件，设置最高画质、自动旋转、自动改变IP等，iPad端无需其他操作。</p>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="黑白显示"><a href="#黑白显示" class="headerlink" title="黑白显示"></a>黑白显示</h3><p>原因：SpaceDesk并非是最新版本。下载官网最新版本。</p>
 <h3 id="连接Type-c无反应"><a href="#连接Type-c无反应" class="headerlink" title="连接Type-c无反应"></a>连接Type-c无反应</h3><p>原因：汉化包Bug。</p>
@@ -166,8 +179,8 @@
         <category>SpaceDesk</category>
       </categories>
       <tags>
-        <tag>iPad副屏</tag>
-        <tag>有线连接</tag>
+        <tag>Ex-Screen</tag>
+        <tag>Wired</tag>
       </tags>
   </entry>
   <entry>
@@ -310,8 +323,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo-502错误码与解决办法</title>
-    <url>/2025/05/29/Hexo-%E9%83%A8%E7%BD%B2%E9%94%99%E8%AF%AF%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <title>Hexo-推送错误(502)与解决办法</title>
+    <url>/2025/05/29/Hexo-02-Deploy_Error_And_Solution/</url>
     <content><![CDATA[<p>该博客主要介绍使用Hexo部署博客阶段出现Something Wrong中The requested URL returned error: 502错误码的原因与解决办法。</p>
 <span id="more"></span>
 
@@ -404,13 +417,168 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>502</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NCU-南昌大学873控制专业考研形势</title>
+    <url>/2025/06/02/NCU-873_Trends/</url>
+    <content><![CDATA[<p>本篇博文简要介绍南昌大学控制科学与工程、控制工程截止2025年的考研形式，希望帮助后人乘凉。</p>
+<span id="more"></span>
+
+<p>整理的考情如下：</p>
+<iframe src="/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/02/NCU-873_Trends/NCU873.pdf" width="80%" height="750" frameborder="0">
+</iframe>
+
+
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>寒来暑往，来日方长。</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>NCU</category>
+        <category>873</category>
+      </categories>
+      <tags>
+        <tag>NCU</tag>
+        <tag>Postgrad</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Next主题嵌入pdf显示</title>
+    <url>/2025/06/04/Hexo-03-Embed_PDF_In_Next/</url>
+    <content><![CDATA[<p>本文介绍在使用Hexo Next主题搭建个人博客时使用hexo-pdf插件或PDF.js工具在博客内嵌入显示pdf文件的解决方案，便于进行手机和电脑双端在线浏览。</p>
+<span id="more"></span>
+
+<h2 id="博文目的"><a href="#博文目的" class="headerlink" title="博文目的"></a>博文目的</h2><p>博主在使用Hexo的过程中发现除去可以插入图像文件外，还可以插入pdf文件进行在线预览。类似以下样例，一个网页内插入了一个方框显示pdf内容：</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250604084524431.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    PDF预览(参考资料1)	<!--标题-->
+    </center>
+</div>
+
+<p>因此博主预期在Next主题下实现类似功能。</p>
+<h2 id="最终方案"><a href="#最终方案" class="headerlink" title="最终方案"></a>最终方案</h2><p>首先在<code>next/_config.yml</code>主题配置文件内使能pdf配置。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pdf:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="string">enable</span></span><br><span class="line">  <span class="comment"># Default height</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">600px</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo-pdf插件（不推荐）"><a href="#hexo-pdf插件（不推荐）" class="headerlink" title="hexo-pdf插件（不推荐）"></a>hexo-pdf插件（不推荐）</h3><p>通过搜索其他人搭建个人博客的经验，部分作者使用<code>hexo-pdf</code>插件用于显示pdf文件，尝试该方案。</p>
+<ul>
+<li><p>在博文根目录下安装插件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-pdf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>source</code>文件夹内创建pdf文件夹，在<code>.md</code>文档内插入以下语句。</p>
+<p><strong>此方式在本地生成后弹出了IDM文件下载链接，未出现预览窗口，如下图。如果显示<code>Cannot GET /2025/06/04/Test.pdf</code>说明文件路径有问题</strong></p>
+ <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  /pdf/Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250604091556759.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    弹出下载界面，无预览    <!--标题-->
+    </center>
+</div>
+</li>
+<li><p>尝试更改文件夹，在<code>_post</code>文件夹下创建与<code>.md</code>同名的文件夹 ，在<code>.md</code>文档内插入以下两句语句。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf ./Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果与第2步放入<code>source</code>文件夹类似，本地预览弹出文件下载框，但是无法加载出内容。</p>
+<p>该方案推送至Github后可正常浏览，效果如下：</p>
+<div class="pdf-container" data-target="Test.pdf" data-height="400px"></div></li>
+</ul>
+<p><strong>缺点：该方案只能在部署到服务器后在PC端预览，手机端查看博文则会显示文件丢失。也无法在本地生成后查看效果。</strong></p>
+<h3 id="PDF-js工具（推荐）"><a href="#PDF-js工具（推荐）" class="headerlink" title="PDF.js工具（推荐）"></a>PDF.js工具（推荐）</h3><p>有很多博主在个人博客使用这个pdf工具，但多数应用主题是butterfly或者fluid主题，博主希望尝试应用在next主题上，便于在手机与电脑端实现双端浏览。</p>
+<ol>
+<li><p><a href="https://mozilla.github.io/pdf.js/getting_started/#download">下载PDF.js</a>工具包，博主选择下载modern browsers v5.3.31版本，<a href="https://github.com/mozilla/pdf.js/tags">点击此处下载其他版本</a></p>
+</li>
+<li><p>在next主题\source下建立一个文件夹pdfjs，存放解压文件</p>
+</li>
+<li><p>在博客根目录的 <code>_config.yml</code>文件中设置，取消渲染</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">pdfjs/**/*</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用以下代码插入pdf，其中<code>src</code>参量的<code>/pdfjs/web/viewer.html</code>为预览窗口，后面紧跟的<code>file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</code>是Github上的文件路径。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">src</span>=<span class="string">&quot;/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">width</span>=<span class="string">&quot;80%&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">height</span>=<span class="string">&quot;750&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>此种方式部署到Github之后出现404 File Not Found的文件无法加载的错误，如下图：</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250609113753049.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    404 File Not Found    <!--标题-->
+    </center>
+</div>
+
+
+<p>最初博主误认为是和大多数博主一样出现的文件<strong>跨域问题</strong>，但发现<code>https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf</code>网页可以单独打开，因此推测可能是文件加载路径出错，也就是<code>viewer.html</code>路径出错。</p>
+<p>查找原因时发现该路径被博主多写了一个 <code>pdfjs/pdfjs/..</code>，而正确路径需要和pdfjs的存储路径对应，应为 <code>pdfjs/web/viewer.html</code>，至此问题解决。</p>
+</li>
+<li><p>查看<code>viewer.html</code>源码，能看到PDF.js工具在4.0版本开始后引用了<code>pdf.mjs</code>和<code>viewer.mjs</code>两个资源文件，如下图：</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250609120409051.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    v5.3.31 viewer.html资源引用    <!--标题-->
+    </center>
+</div></li>
+</ol>
+<p>在此之前的版本则使用<code>.js</code>资源文件，如下图：</p>
+   <div>			<!--块级封装-->
+       <center>	<!--将图片和文字居中-->
+       <img src="image-20250609164024819.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
+       <br>		<!--换行-->
+       v3.11.174 viewer.html资源引用	<!--标题-->
+       </center>
+   </div>
+
+
+<p>   效果预览如下：</p>
+   <iframe src="/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-03-Embed_PDF_In_Next/Test.pdf" width="80%" height="750" frameborder="0">
+   </iframe>
+
+
+<ol start="6">
+<li><p>打开<code>web/viewer.mjs</code>资源文件，更改以下两个配置值为 <code>true</code>：</p>
+<figure class="highlight mjs"><table><tr><td class="code"><pre><span class="line"><span class="attr">disableAutoFetch</span>: &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">kind</span>: <span class="title class_">OptionKind</span>.<span class="property">API</span> + <span class="title class_">OptionKind</span>.<span class="property">PREFERENCE</span></span><br><span class="line">&#125;,</span><br><span class="line">  <span class="attr">disableStream</span>: &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">kind</span>: <span class="title class_">OptionKind</span>.<span class="property">API</span> + <span class="title class_">OptionKind</span>.<span class="property">PREFERENCE</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>该措施可以实现pdf文件的按需加载，提升观感与加载速度。</p>
+</li>
+</ol>
+<ul>
+<li><p>注意事项：</p>
+<p>其他人的博客上有提到文件跨域导致的文件无法显示，但截止目前，博主没有遇到此问题，如果遇到，请参考第6条参考资料。</p>
+</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://awesomeyouthzhang.github.io/2020/02/05/hexo%20%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5pdf%E6%8F%92%E4%BB%B6/">hexo 中如何插入pdf | 智贤</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/550626417">hexo中插入PDF |知乎</a></li>
+<li><a href="https://www.poetyin.com/posts/4a17b156/">The Details Usage of the Hexo Next-Theme Plugin <code>next-pdf</code> | Poetry Continent</a></li>
+<li><a href="https://jiqiren116.github.io/2024/03/24/hexo%E5%8D%9A%E5%AE%A2%E6%98%BE%E7%A4%BApdf/">hexo博客显示pdf | robot-x Blog</a></li>
+<li><a href="https://www.bilibili.com/opus/771629864647131138">Hexo内嵌PDF.js | 哔哩哔哩</a></li>
+<li><a href="https://blog.csdn.net/weixin_44657449/article/details/119894091">pdf.js｜CSDN博客</a></li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>有情芍药含春泪，无力蔷薇卧晓枝。– 春日</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
         <tag>Next</tag>
-        <tag>个人博客</tag>
+        <tag>Pdf</tag>
       </tags>
   </entry>
   <entry>
     <title>FPGA-02-Verilog语法</title>
-    <url>/2025/05/29/FPGA-02-Verilog%E8%AF%AD%E6%B3%95/</url>
+    <url>/2025/05/29/FPGA-02-Verilog_Syntax/</url>
     <content><![CDATA[<p>本文介绍Verilog HDL基本语法，主要将该代码与类似的C&#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。</p>
 <span id="more"></span>
 
@@ -573,7 +741,7 @@
 ]]></content>
       <categories>
         <category>FPGA</category>
-        <category>Verilog</category>
+        <category>Syntax</category>
       </categories>
       <tags>
         <tag>FPGA</tag>
@@ -582,229 +750,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo-Next主题嵌入pdf显示</title>
-    <url>/2025/06/04/Hexo-Next%E4%B8%BB%E9%A2%98%E5%B5%8C%E5%85%A5pdf%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<p>本文介绍在使用Hexo Next主题搭建个人博客时使用hexo-pdf插件或PDF.js工具在博客内嵌入显示pdf文件的解决方案，便于进行手机和电脑双端在线浏览。</p>
-<span id="more"></span>
-
-<h2 id="博文目的"><a href="#博文目的" class="headerlink" title="博文目的"></a>博文目的</h2><p>博主在使用Hexo的过程中发现除去可以插入图像文件外，还可以插入pdf文件进行在线预览。类似以下样例，一个网页内插入了一个方框显示pdf内容：</p>
-<div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250604084524431.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-    PDF预览(参考资料1)	<!--标题-->
-    </center>
-</div>
-因此博主预期在Next主题下实现类似功能。
-
-<h2 id="最终方案"><a href="#最终方案" class="headerlink" title="最终方案"></a>最终方案</h2><p>首先在<code>next/_config.yml</code>主题配置文件内使能pdf配置。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pdf:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="string">enable</span></span><br><span class="line">  <span class="comment"># Default height</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">600px</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="hexo-pdf插件（不推荐）"><a href="#hexo-pdf插件（不推荐）" class="headerlink" title="hexo-pdf插件（不推荐）"></a>hexo-pdf插件（不推荐）</h3><p>通过搜索其他人搭建个人博客的经验，部分作者使用<code>hexo-pdf</code>插件用于显示pdf文件，尝试该方案。</p>
-<ul>
-<li><p>在博文根目录下安装插件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-pdf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>source</code>文件夹内创建pdf文件夹，在<code>.md</code>文档内插入以下语句。</p>
-<p><strong>此方式在本地生成后弹出了IDM文件下载链接，未出现预览窗口，如下图。如果显示<code>Cannot GET /2025/06/04/Test.pdf</code>说明文件路径有问题</strong></p>
- <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  /pdf/Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
-
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250604091556759.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    弹出下载界面，无预览    <!--标题-->
-    </center>
-</div>
-</li>
-<li><p>尝试更改文件夹，在<code>_post</code>文件夹下创建与<code>.md</code>同名的文件夹 ，在<code>.md</code>文档内插入以下两句语句。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf ./Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf  Test.pdf %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>结果与第2步放入<code>source</code>文件夹类似，本地预览弹出文件下载框，但是无法加载出内容。</p>
-<p>该方案推送至Github后可正常浏览，效果如下：</p>
-<div class="pdf-container" data-target="Test.pdf" data-height="400px"></div></li>
-</ul>
-<p><strong>缺点：该方案只能在部署到服务器后在PC端预览，手机端查看博文则会显示文件丢失。也无法在本地生成后查看效果。</strong></p>
-<h3 id="PDF-js工具（推荐）"><a href="#PDF-js工具（推荐）" class="headerlink" title="PDF.js工具（推荐）"></a>PDF.js工具（推荐）</h3><p>有很多博主在个人博客使用这个pdf工具，但多数应用主题是butterfly或者fluid主题，博主希望尝试应用在next主题上，便于在手机与电脑端实现双端浏览。</p>
-<ol>
-<li><p><a href="https://mozilla.github.io/pdf.js/getting_started/#download">下载PDF.js</a>工具包，博主选择下载modern browsers v5.3.31版本，<a href="https://github.com/mozilla/pdf.js/tags">点击此处下载其他版本</a></p>
-</li>
-<li><p>在next主题\source下建立一个文件夹pdfjs，存放解压文件</p>
-</li>
-<li><p>在博客根目录的 <code>_config.yml</code>文件中设置，取消渲染</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">pdfjs/**/*</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用以下代码插入pdf，其中<code>src</code>参量的<code>/pdfjs/web/viewer.html</code>为预览窗口，后面紧跟的<code>file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</code>是Github上的文件路径。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">src</span>=<span class="string">&quot;/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">width</span>=<span class="string">&quot;80%&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">height</span>=<span class="string">&quot;750&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>此种方式部署到Github之后出现404 File Not Found的文件无法加载的错误，如下图：</p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250609113753049.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    404 File Not Found    <!--标题-->
-    </center>
-</div>
-
-<p>最初博主误认为是和大多数博主一样出现的文件<strong>跨域问题</strong>，但发现<code>https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf</code>网页可以单独打开，因此推测可能是文件加载路径出错，也就是<code>viewer.html</code>路径出错。</p>
-<p>查找原因时发现该路径被博主多写了一个 <code>pdfjs/pdfjs/..</code>，而正确路径需要和pdfjs的存储路径对应，应为 <code>pdfjs/web/viewer.html</code>，至此问题解决。</p>
-</li>
-<li><p>查看<code>viewer.html</code>源码，能看到PDF.js工具在4.0版本开始后引用了<code>pdf.mjs</code>和<code>viewer.mjs</code>两个资源文件，如下图：</p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250609120409051.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    v5.3.31 viewer.html资源引用    <!--标题-->
-    </center>
-</div>
-
-<p>在此之前的版本则使用<code>.js</code>资源文件，如下图：</p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250609164024819.png" alt="image can't load." style="zoom:50%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    v3.11.174 viewer.html资源引用    <!--标题-->
-    </center>
-</div>
-
-
-<p>效果预览如下：</p>
-<iframe src="/pdfjs/web/viewer.html?file=https://MicroPrism.github.io/2025/06/04/Hexo-Next主题嵌入pdf显示/Test.pdf" width="80%" height="750" frameborder="0">
-</iframe>
-</li>
-<li><p>打开<code>web/viewer.mjs</code>资源文件，更改以下两个配置值为 <code>true</code>：</p>
-<figure class="highlight mjs"><table><tr><td class="code"><pre><span class="line"><span class="attr">disableAutoFetch</span>: &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">kind</span>: <span class="title class_">OptionKind</span>.<span class="property">API</span> + <span class="title class_">OptionKind</span>.<span class="property">PREFERENCE</span></span><br><span class="line">&#125;,</span><br><span class="line">  <span class="attr">disableStream</span>: &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">kind</span>: <span class="title class_">OptionKind</span>.<span class="property">API</span> + <span class="title class_">OptionKind</span>.<span class="property">PREFERENCE</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<p>该措施可以实现pdf文件的按需加载，提升观感与加载速度。</p>
-</li>
-</ol>
-<ul>
-<li><p>注意事项：</p>
-<p>其他人的博客上有提到文件跨域导致的文件无法显示，但截止目前，博主没有遇到此问题，如果遇到，请参考第6条参考资料。</p>
-</li>
-</ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><a href="https://awesomeyouthzhang.github.io/2020/02/05/hexo%20%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5pdf%E6%8F%92%E4%BB%B6/">hexo 中如何插入pdf | 智贤</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/550626417">hexo中插入PDF |知乎</a></li>
-<li><a href="https://www.poetyin.com/posts/4a17b156/">The Details Usage of the Hexo Next-Theme Plugin <code>next-pdf</code> | Poetry Continent</a></li>
-<li><a href="https://jiqiren116.github.io/2024/03/24/hexo%E5%8D%9A%E5%AE%A2%E6%98%BE%E7%A4%BApdf/">hexo博客显示pdf | robot-x Blog</a></li>
-<li><a href="https://www.bilibili.com/opus/771629864647131138">Hexo内嵌PDF.js | 哔哩哔哩</a></li>
-<li><a href="https://blog.csdn.net/weixin_44657449/article/details/119894091">pdf.js｜CSDN博客</a></li>
-</ol>
-<p align="center">---------------------------  End  ---------------------------</p>
-
-<blockquote>
-<p><em>有情芍药含春泪，无力蔷薇卧晓枝。– 春日</em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Tools</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-        <tag>pdf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>副业-流量卡</title>
-    <url>/2025/06/10/%E5%89%AF%E4%B8%9A-%E6%B5%81%E9%87%8F%E5%8D%A1/</url>
-    <content><![CDATA[<p>本博客存放博主个人觉得不错的流量卡办理链接，赚一点点外快…</p>
-<p>每周三、周五晚上9:00更新链接，如有需要请在办理链接处自行挑选办理。</p>
-<span id="more"></span>
-
-<h2 id="订单查询"><a href="#订单查询" class="headerlink" title="订单查询"></a>订单查询</h2><p><a href="https://vip.777haoka.cn/cha?k=bHJ1MGp0Vlg0RW89">点击查询订单状态</a></p>
-<h2 id="办理链接-6-23日"><a href="#办理链接-6-23日" class="headerlink" title="办理链接(6.23日)"></a>办理链接(6.23日)</h2><p>该链接主要放一些博主觉得不错的全国发货的流量卡，部分流量卡限制收货地所在省份，此处并未放置。如果有需求，也可以<a href="https://space.bilibili.com/405856572?spm_id_from=333.788.0.0">点击此处</a>在B站私信我。</p>
-<p><span style="color:red"><strong>注意：下单之前请点击链接内的详细资料一栏，判断是否是禁发送区域，如果是则会审核失败，可以更换另外的链接…</strong></span></p>
-<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><ol>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2234">移动花儿卡-29元145G通用+30G定向+100分钟(全国发货，18-30)</a></li>
-</ol>
-<h3 id="联通"><a href="#联通" class="headerlink" title="联通"></a>联通</h3><ol>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2222">联通橙子卡【先激活后发货】-29元150G通用+200分钟(先激活后发货，1年29元)</a></li>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2196">新联通森恩卡【激活后发货】-39元365G通用+300分钟(先激活后发货，前三个月为80G)</a></li>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2157">电信森秋卡【可选号】-29元50G通用+30G定向+0.1元&#x2F;分钟(全国发货，自助激活，长期套餐)</a></li>
-</ol>
-<p><strong>限地区：</strong></p>
-<ol>
-<li>仅四川：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1980">MF联通川星卡-19元80G通用+80G定向+100分钟(仅发四川，18-60)</a></li>
-<li>仅浙江：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1807">联通浙江卡2.0-29元185G+100分钟通话(2年29元，39元长期套餐)</a></li>
-<li>仅陕西：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1947">联通故我卡【省内选号】-29元158G通用+30G定向(仅发陕西)</a></li>
-<li>仅广西：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2228">联通山水卡【省内】-29元219G通用+100分钟(仅发广西，18-60)</a></li>
-<li>仅湖北：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2085">联通森湖卡【省内选号】-29元139G通用+100分钟免费通话(仅发湖北，长期套餐，下单选号)</a></li>
-<li>仅湖南：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2231"> 联通湘乡卡【省内】-29元70G通用+120G省内+200分钟(仅发湖南，19-60)</a></li>
-<li>仅江苏：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1872">联通江苏卡2.0-29元210G通用+100分钟(仅发江苏，上门激活)</a></li>
-<li>仅安徽：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1490">联通天徽卡-29元150G通用流量+100分钟(18-60)</a></li>
-<li>仅江西：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1809">联通江西卡-29元145G通用+30G定向(仅发江西，上门激活)</a></li>
-<li>仅云南：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1779">联通元朗卡-29元185G通用+100分钟通话(只发云南省内,1年29,18-60周岁)</a></li>
-<li>仅甘肃：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2230">联通古龙卡【省内】29元95G通用+30G定向+0.15元&#x2F;分钟(仅发甘肃，23-60)</a></li>
-</ol>
-<h3 id="电信"><a href="#电信" class="headerlink" title="电信"></a>电信</h3><h2 id="自用截图"><a href="#自用截图" class="headerlink" title="自用截图"></a>自用截图</h2><p>博主个人自用移动保号套餐+联通流量卡，未出现流量限速和网络丢失的情况。</p>
-<div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250610141933596.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-    自用套餐	<!--标题-->
-    </center>
-</div>
-
-<p align="center">---------------------------  End  ---------------------------</p>
-
-<blockquote>
-<p><em>若待上林花似锦，出门俱是看花人。–城东早春</em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>副业</category>
-        <category>流量卡</category>
-      </categories>
-      <tags>
-        <tag>流量卡</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git-指令与配置</title>
-    <url>/2025/06/17/Git-UsingGuide/</url>
-    <content><![CDATA[<p>本博客存放Git使用过程中的指令与配置。</p>
-<span id="more"></span>
-
-<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ol>
-<li><p>查看配置</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="LF与CRLF换行"><a href="#LF与CRLF换行" class="headerlink" title="LF与CRLF换行"></a>LF与CRLF换行</h3><h4 id="具体措施"><a href="#具体措施" class="headerlink" title="具体措施"></a>具体措施</h4><p>使用Hexo博客工具在推送至Github时，Bash内弹出大量警告：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">warning: <span class="keyword">in</span> the working copy of <span class="string">&#x27;tags/.../index.html&#x27;</span>, LF will be replby CRLF the next <span class="keyword">time</span> Git touches it</span><br></pre></td></tr></table></figure>
-
-<p>查阅网络资料，发现<code>LF(\n)</code>与<code>CRLF(\r\n)</code>分别是Linux与Windows下的换行符。Git Bash为Linux环境，Git工作区默认CRLF。最终push到远程仓库时git会统一格式全部转化为用<code>CRLF</code>作为换行符。</p>
-<p>使用如下指令禁用如下转换：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span> //禁用自动转换</span><br></pre></td></tr></table></figure>
-
-<p>对于每一类文件的转换配置可以在 <code>.gitattributes</code>内配置，可见参考资料3。因目前未涉及不同文件，暂时不做其他调整。</p>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
-<li><a href="https://www.jianshu.com/p/783f7736e77e">解决hexo deploy时出现的警告：LF will be replaced by CRLF - 简书</a></li>
-<li><a href="https://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar">Windows git “warning: LF will be replaced by CRLF”, is that warning tail backward? - Stack Overflow</a></li>
-<li><a href="https://juejin.cn/post/6942320745494085669">Git 优雅处理行结束符 - 掘金</a></li>
-<li><a href="https://www.cnblogs.com/youpeng/p/11243871.html">git core.autocrlf配置说明 - Youpeng - 博客园</a></li>
-</ol>
-<p align="center">---------------------------  End  ---------------------------</p>
-
-<blockquote>
-<p><em>人越脱离自然便越发恐惧孤独。</em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Tools</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SI-01-PCB特性阻抗</title>
-    <url>/2025/07/09/SI-01-PCB_Impedance/</url>
+    <url>/2025/07/09/SI-01-Impedance/</url>
     <content><![CDATA[<p>本博客记录PCB阻抗与叠层设计的参考思路。</p>
 <span id="more"></span>
 
@@ -876,5 +823,141 @@
         <tag>PCB</tag>
         <tag>Impedance</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>副业-流量卡</title>
+    <url>/2025/06/10/Sideline-SIM_Card/</url>
+    <content><![CDATA[<p>本博客存放博主个人觉得不错的流量卡办理链接，赚一点点外快…</p>
+<p>每周三、周五晚上9:00更新链接，如有需要请在办理链接处自行挑选办理。</p>
+<span id="more"></span>
+
+<h2 id="订单查询"><a href="#订单查询" class="headerlink" title="订单查询"></a>订单查询</h2><p><a href="https://vip.777haoka.cn/cha?k=bHJ1MGp0Vlg0RW89">点击查询订单状态</a></p>
+<h2 id="办理链接-6-23日"><a href="#办理链接-6-23日" class="headerlink" title="办理链接(6.23日)"></a>办理链接(6.23日)</h2><p>该链接主要放一些博主觉得不错的全国发货的流量卡，部分流量卡限制收货地所在省份，此处并未放置。如果有需求，也可以<a href="https://space.bilibili.com/405856572?spm_id_from=333.788.0.0">点击此处</a>在B站私信我。</p>
+<p><span style="color:red"><strong>注意：下单之前请点击链接内的详细资料一栏，判断是否是禁发送区域，如果是则会审核失败，可以更换另外的链接…</strong></span></p>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><ol>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2234">移动花儿卡-29元145G通用+30G定向+100分钟(全国发货，18-30)</a></li>
+</ol>
+<h3 id="联通"><a href="#联通" class="headerlink" title="联通"></a>联通</h3><ol>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2222">联通橙子卡【先激活后发货】-29元150G通用+200分钟(先激活后发货，1年29元)</a></li>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2196">新联通森恩卡【激活后发货】-39元365G通用+300分钟(先激活后发货，前三个月为80G)</a></li>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2157">电信森秋卡【可选号】-29元50G通用+30G定向+0.1元&#x2F;分钟(全国发货，自助激活，长期套餐)</a></li>
+</ol>
+<p><strong>限地区：</strong></p>
+<ol>
+<li>仅四川：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1980">MF联通川星卡-19元80G通用+80G定向+100分钟(仅发四川，18-60)</a></li>
+<li>仅浙江：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1807">联通浙江卡2.0-29元185G+100分钟通话(2年29元，39元长期套餐)</a></li>
+<li>仅陕西：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1947">联通故我卡【省内选号】-29元158G通用+30G定向(仅发陕西)</a></li>
+<li>仅广西：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2228">联通山水卡【省内】-29元219G通用+100分钟(仅发广西，18-60)</a></li>
+<li>仅湖北：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2085">联通森湖卡【省内选号】-29元139G通用+100分钟免费通话(仅发湖北，长期套餐，下单选号)</a></li>
+<li>仅湖南：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2231"> 联通湘乡卡【省内】-29元70G通用+120G省内+200分钟(仅发湖南，19-60)</a></li>
+<li>仅江苏：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1872">联通江苏卡2.0-29元210G通用+100分钟(仅发江苏，上门激活)</a></li>
+<li>仅安徽：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1490">联通天徽卡-29元150G通用流量+100分钟(18-60)</a></li>
+<li>仅江西：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1809">联通江西卡-29元145G通用+30G定向(仅发江西，上门激活)</a></li>
+<li>仅云南：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=1779">联通元朗卡-29元185G通用+100分钟通话(只发云南省内,1年29,18-60周岁)</a></li>
+<li>仅甘肃：<a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2230">联通古龙卡【省内】29元95G通用+30G定向+0.15元&#x2F;分钟(仅发甘肃，23-60)</a></li>
+</ol>
+<h3 id="电信"><a href="#电信" class="headerlink" title="电信"></a>电信</h3><h2 id="自用截图"><a href="#自用截图" class="headerlink" title="自用截图"></a>自用截图</h2><p>博主个人自用移动保号套餐+联通流量卡，未出现流量限速和网络丢失的情况。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250610141933596.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    自用套餐	<!--标题-->
+    </center>
+</div>
+
+
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>若待上林花似锦，出门俱是看花人。–城东早春</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Sideline</category>
+        <category>SIM Card</category>
+      </categories>
+      <tags>
+        <tag>SIM Card</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git-使用指南</title>
+    <url>/2025/06/17/Git-Using_Guide/</url>
+    <content><![CDATA[<p>本博客存放Git使用过程中的指令与配置。</p>
+<span id="more"></span>
+
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ol>
+<li><p>查看配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="LF与CRLF换行"><a href="#LF与CRLF换行" class="headerlink" title="LF与CRLF换行"></a>LF与CRLF换行</h3><h4 id="具体措施"><a href="#具体措施" class="headerlink" title="具体措施"></a>具体措施</h4><p>使用Hexo博客工具在推送至Github时，Bash内弹出大量警告：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">warning: <span class="keyword">in</span> the working copy of <span class="string">&#x27;tags/.../index.html&#x27;</span>, LF will be replby CRLF the next <span class="keyword">time</span> Git touches it</span><br></pre></td></tr></table></figure>
+
+<p>查阅网络资料，发现<code>LF(\n)</code>与<code>CRLF(\r\n)</code>分别是Linux与Windows下的换行符。Git Bash为Linux环境，Git工作区默认CRLF。最终push到远程仓库时git会统一格式全部转化为用<code>CRLF</code>作为换行符。</p>
+<p>使用如下指令禁用如下转换：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span> //禁用自动转换</span><br></pre></td></tr></table></figure>
+
+<p>对于每一类文件的转换配置可以在 <code>.gitattributes</code>内配置，可见参考资料3。因目前未涉及不同文件，暂时不做其他调整。</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
+<li><a href="https://www.jianshu.com/p/783f7736e77e">解决hexo deploy时出现的警告：LF will be replaced by CRLF - 简书</a></li>
+<li><a href="https://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar">Windows git “warning: LF will be replaced by CRLF”, is that warning tail backward? - Stack Overflow</a></li>
+<li><a href="https://juejin.cn/post/6942320745494085669">Git 优雅处理行结束符 - 掘金</a></li>
+<li><a href="https://www.cnblogs.com/youpeng/p/11243871.html">git core.autocrlf配置说明 - Youpeng - 博客园</a></li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>人越脱离自然便越发恐惧孤独。</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Altium-02-错误与解决办法</title>
+    <url>/2025/07/18/Altium-02-Error_And_Solution/</url>
+    <content><![CDATA[<p>本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法。</p>
+<span id="more"></span>
+
+<h2 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h2><p>None.</p>
+<h2 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h2><h3 id="器件位置类"><a href="#器件位置类" class="headerlink" title="器件位置类"></a>器件位置类</h3><ol>
+<li><p>器件无法拖动到原点左侧和下方</p>
+<p>如下图。绝对原点限制了器件摆放位置。</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250718094118825.png" alt="image can't load." style="zoom:40%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    辅助中心    <!--标题-->
+    </center>
+</div>
+
+
+<p>Re:使用<code>EJA</code>跳转至绝对原点，若板框距离原点有差距，选中所有器件移动至合适位置即可。</p>
+</li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>“我住长江头，君住长江尾。”–卜算子·我住长江头</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hardware</category>
+        <category>High Speed</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+        <tag>Altium Designer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blog_Using_Guide</title>
+    <url>/2025/07/18/Blog_Using_Guide/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>

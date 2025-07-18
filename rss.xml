@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-07-13T01:31:46.793Z</updated>
+  <updated>2025-07-18T08:20:40.803Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -17,11 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Blog_Using_Guide</title>
+    <link href="https://microprism.github.io/2025/07/18/Blog_Using_Guide/"/>
+    <id>https://microprism.github.io/2025/07/18/Blog_Using_Guide/</id>
+    <published>2025-07-18T08:20:40.000Z</published>
+    <updated>2025-07-18T08:20:40.803Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Altium-02-错误与解决办法</title>
+    <link href="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/"/>
+    <id>https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/</id>
+    <published>2025-07-18T01:34:52.000Z</published>
+    <updated>2025-07-18T07:43:51.322Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Hardware" scheme="https://microprism.github.io/categories/Hardware/"/>
+    
+    <category term="High Speed" scheme="https://microprism.github.io/categories/Hardware/High-Speed/"/>
+    
+    
+    <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
+    
+    <category term="Altium Designer" scheme="https://microprism.github.io/tags/Altium-Designer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SI-01-PCB特性阻抗</title>
-    <link href="https://microprism.github.io/2025/07/09/SI-01-PCB_Impedance/"/>
-    <id>https://microprism.github.io/2025/07/09/SI-01-PCB_Impedance/</id>
+    <link href="https://microprism.github.io/2025/07/09/SI-01-Impedance/"/>
+    <id>https://microprism.github.io/2025/07/09/SI-01-Impedance/</id>
     <published>2025-07-09T09:10:41.000Z</published>
-    <updated>2025-07-13T01:31:46.793Z</updated>
+    <updated>2025-07-18T07:38:03.194Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博客记录PCB阻抗与叠层设计的参考思路。&lt;/p&gt;</summary>
@@ -38,11 +74,11 @@
   </entry>
   
   <entry>
-    <title>Git-指令与配置</title>
-    <link href="https://microprism.github.io/2025/06/17/Git-UsingGuide/"/>
-    <id>https://microprism.github.io/2025/06/17/Git-UsingGuide/</id>
+    <title>Git-使用指南</title>
+    <link href="https://microprism.github.io/2025/06/17/Git-Using_Guide/"/>
+    <id>https://microprism.github.io/2025/06/17/Git-Using_Guide/</id>
     <published>2025-06-17T03:26:16.000Z</published>
-    <updated>2025-06-17T04:15:03.064Z</updated>
+    <updated>2025-07-18T07:44:42.997Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博客存放Git使用过程中的指令与配置。&lt;/p&gt;</summary>
@@ -60,10 +96,10 @@
   
   <entry>
     <title>副业-流量卡</title>
-    <link href="https://microprism.github.io/2025/06/10/%E5%89%AF%E4%B8%9A-%E6%B5%81%E9%87%8F%E5%8D%A1/"/>
-    <id>https://microprism.github.io/2025/06/10/%E5%89%AF%E4%B8%9A-%E6%B5%81%E9%87%8F%E5%8D%A1/</id>
+    <link href="https://microprism.github.io/2025/06/10/Sideline-SIM_Card/"/>
+    <id>https://microprism.github.io/2025/06/10/Sideline-SIM_Card/</id>
     <published>2025-06-10T06:09:42.000Z</published>
-    <updated>2025-07-05T09:52:14.510Z</updated>
+    <updated>2025-07-18T07:55:23.379Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博客存放博主个人觉得不错的流量卡办理链接，赚一点点外快…&lt;/p&gt;
@@ -71,21 +107,21 @@
     
     
     
-    <category term="副业" scheme="https://microprism.github.io/categories/%E5%89%AF%E4%B8%9A/"/>
+    <category term="Sideline" scheme="https://microprism.github.io/categories/Sideline/"/>
     
-    <category term="流量卡" scheme="https://microprism.github.io/categories/%E5%89%AF%E4%B8%9A/%E6%B5%81%E9%87%8F%E5%8D%A1/"/>
+    <category term="SIM Card" scheme="https://microprism.github.io/categories/Sideline/SIM-Card/"/>
     
     
-    <category term="流量卡" scheme="https://microprism.github.io/tags/%E6%B5%81%E9%87%8F%E5%8D%A1/"/>
+    <category term="SIM Card" scheme="https://microprism.github.io/tags/SIM-Card/"/>
     
   </entry>
   
   <entry>
     <title>Hexo-Next主题嵌入pdf显示</title>
-    <link href="https://microprism.github.io/2025/06/04/Hexo-Next%E4%B8%BB%E9%A2%98%E5%B5%8C%E5%85%A5pdf%E6%98%BE%E7%A4%BA/"/>
-    <id>https://microprism.github.io/2025/06/04/Hexo-Next%E4%B8%BB%E9%A2%98%E5%B5%8C%E5%85%A5pdf%E6%98%BE%E7%A4%BA/</id>
+    <link href="https://microprism.github.io/2025/06/04/Hexo-03-Embed_PDF_In_Next/"/>
+    <id>https://microprism.github.io/2025/06/04/Hexo-03-Embed_PDF_In_Next/</id>
     <published>2025-06-04T00:41:34.000Z</published>
-    <updated>2025-06-17T03:27:41.677Z</updated>
+    <updated>2025-07-18T08:04:57.913Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文介绍在使用Hexo Next主题搭建个人博客时使用hexo-pdf插件或PDF.js工具在博客内嵌入显示pdf文件的解决方案，便于进行手机和电脑双端在线浏览。&lt;/p&gt;</summary>
@@ -97,20 +133,41 @@
     <category term="Hexo" scheme="https://microprism.github.io/categories/Tools/Hexo/"/>
     
     
-    <category term="Hexo" scheme="https://microprism.github.io/tags/Hexo/"/>
-    
     <category term="Next" scheme="https://microprism.github.io/tags/Next/"/>
     
-    <category term="pdf" scheme="https://microprism.github.io/tags/pdf/"/>
+    <category term="Pdf" scheme="https://microprism.github.io/tags/Pdf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NCU-南昌大学873控制专业考研形势</title>
+    <link href="https://microprism.github.io/2025/06/02/NCU-873_Trends/"/>
+    <id>https://microprism.github.io/2025/06/02/NCU-873_Trends/</id>
+    <published>2025-06-02T07:43:55.000Z</published>
+    <updated>2025-07-18T08:15:27.656Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本篇博文简要介绍南昌大学控制科学与工程、控制工程截止2025年的考研形式，希望帮助后人乘凉。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="NCU" scheme="https://microprism.github.io/categories/NCU/"/>
+    
+    <category term="873" scheme="https://microprism.github.io/categories/NCU/873/"/>
+    
+    
+    <category term="NCU" scheme="https://microprism.github.io/tags/NCU/"/>
+    
+    <category term="Postgrad" scheme="https://microprism.github.io/tags/Postgrad/"/>
     
   </entry>
   
   <entry>
     <title>FPGA-02-Verilog语法</title>
-    <link href="https://microprism.github.io/2025/05/29/FPGA-02-Verilog%E8%AF%AD%E6%B3%95/"/>
-    <id>https://microprism.github.io/2025/05/29/FPGA-02-Verilog%E8%AF%AD%E6%B3%95/</id>
+    <link href="https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/"/>
+    <id>https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/</id>
     <published>2025-05-29T03:00:44.000Z</published>
-    <updated>2025-07-13T01:11:46.191Z</updated>
+    <updated>2025-07-18T08:00:56.733Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文介绍Verilog HDL基本语法，主要将该代码与类似的C&amp;#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。&lt;/p&gt;</summary>
@@ -119,7 +176,7 @@
     
     <category term="FPGA" scheme="https://microprism.github.io/categories/FPGA/"/>
     
-    <category term="Verilog" scheme="https://microprism.github.io/categories/FPGA/Verilog/"/>
+    <category term="Syntax" scheme="https://microprism.github.io/categories/FPGA/Syntax/"/>
     
     
     <category term="FPGA" scheme="https://microprism.github.io/tags/FPGA/"/>
@@ -131,11 +188,11 @@
   </entry>
   
   <entry>
-    <title>Hexo-502错误码与解决办法</title>
-    <link href="https://microprism.github.io/2025/05/29/Hexo-%E9%83%A8%E7%BD%B2%E9%94%99%E8%AF%AF%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>https://microprism.github.io/2025/05/29/Hexo-%E9%83%A8%E7%BD%B2%E9%94%99%E8%AF%AF%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <title>Hexo-推送错误(502)与解决办法</title>
+    <link href="https://microprism.github.io/2025/05/29/Hexo-02-Deploy_Error_And_Solution/"/>
+    <id>https://microprism.github.io/2025/05/29/Hexo-02-Deploy_Error_And_Solution/</id>
     <published>2025-05-28T17:19:07.000Z</published>
-    <updated>2025-06-17T03:27:53.709Z</updated>
+    <updated>2025-07-18T07:59:18.776Z</updated>
     
     
     <summary type="html">&lt;p&gt;该博客主要介绍使用Hexo部署博客阶段出现Something Wrong中The requested URL returned error: 502错误码的原因与解决办法。&lt;/p&gt;</summary>
@@ -149,9 +206,7 @@
     
     <category term="Hexo" scheme="https://microprism.github.io/tags/Hexo/"/>
     
-    <category term="Next" scheme="https://microprism.github.io/tags/Next/"/>
-    
-    <category term="个人博客" scheme="https://microprism.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <category term="502" scheme="https://microprism.github.io/tags/502/"/>
     
   </entry>
   
@@ -180,10 +235,10 @@
   
   <entry>
     <title>SpaceDesk-Win与iPad有线副屏扩展与常见问题</title>
-    <link href="https://microprism.github.io/2025/04/19/SpaceDesk-SecondaryScreen/"/>
-    <id>https://microprism.github.io/2025/04/19/SpaceDesk-SecondaryScreen/</id>
+    <link href="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/"/>
+    <id>https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/</id>
     <published>2025-04-19T02:13:20.000Z</published>
-    <updated>2025-06-17T03:28:11.437Z</updated>
+    <updated>2025-07-18T07:50:59.873Z</updated>
     
     
     <summary type="html">&lt;p&gt;Win与平板在同一无线网络下，很容易实现无线连接，但无线延迟较高、设备易发热。有线连接延迟低、帧率高，这篇博客可以让闲置的iPad来跳“最后一舞”，前提是有一个正在吃灰的iPad…&lt;/p&gt;</summary>
@@ -195,18 +250,18 @@
     <category term="SpaceDesk" scheme="https://microprism.github.io/categories/Tools/SpaceDesk/"/>
     
     
-    <category term="iPad副屏" scheme="https://microprism.github.io/tags/iPad%E5%89%AF%E5%B1%8F/"/>
+    <category term="Ex-Screen" scheme="https://microprism.github.io/tags/Ex-Screen/"/>
     
-    <category term="有线连接" scheme="https://microprism.github.io/tags/%E6%9C%89%E7%BA%BF%E8%BF%9E%E6%8E%A5/"/>
+    <category term="Wired" scheme="https://microprism.github.io/tags/Wired/"/>
     
   </entry>
   
   <entry>
     <title>Hexo-博客搭建、问题与解决办法</title>
-    <link href="https://microprism.github.io/2025/04/09/Hexo-MyBlog/"/>
-    <id>https://microprism.github.io/2025/04/09/Hexo-MyBlog/</id>
+    <link href="https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/"/>
+    <id>https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/</id>
     <published>2025-04-08T16:00:00.000Z</published>
-    <updated>2025-06-25T03:41:06.710Z</updated>
+    <updated>2025-07-18T07:57:06.052Z</updated>
     
     
     <summary type="html">&lt;p&gt;该博客主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的视频与帖子连接，同时汇总个人搭建过程中遇到的各种错误和解决办法。&lt;/p&gt;</summary>
@@ -218,11 +273,9 @@
     <category term="Hexo" scheme="https://microprism.github.io/categories/Tools/Hexo/"/>
     
     
-    <category term="Hexo" scheme="https://microprism.github.io/tags/Hexo/"/>
-    
     <category term="Next" scheme="https://microprism.github.io/tags/Next/"/>
     
-    <category term="个人博客" scheme="https://microprism.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <category term="Blog" scheme="https://microprism.github.io/tags/Blog/"/>
     
   </entry>
   
