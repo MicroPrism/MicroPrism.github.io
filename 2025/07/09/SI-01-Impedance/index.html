@@ -33,7 +33,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://microprism.github.io/2025/07/09/SI-01-Impedance/image-20250712230625507.png">
 <meta property="article:published_time" content="2025-07-09T09:10:41.000Z">
-<meta property="article:modified_time" content="2025-07-18T07:38:03.194Z">
+<meta property="article:modified_time" content="2025-07-18T09:56:17.144Z">
 <meta property="article:author" content="Youngs">
 <meta property="article:tag" content="PCB">
 <meta property="article:tag" content="Impedance">
@@ -316,7 +316,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-18 15:38:03" itemprop="dateModified" datetime="2025-07-18T15:38:03+08:00">2025-07-18</time>
+      <time title="修改时间：2025-07-18 17:56:17" itemprop="dateModified" datetime="2025-07-18T17:56:17+08:00">2025-07-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -362,7 +362,7 @@
     <div class="post-body" itemprop="articleBody"><p>本博客记录PCB阻抗与叠层设计的参考思路。</p>
 <span id="more"></span>
 
-<h2 id="特性阻抗"><a href="#特性阻抗" class="headerlink" title="特性阻抗"></a>特性阻抗</h2><p>**<span style="color:red">特性阻抗为高频信号在均匀传输线上的等效阻抗。</span><em><em>信号线在传输信号时会与参考平面（地平面、电源平面）建立电场产生瞬间电流，由电压电流</em>V&#x2F;I<em>得等效阻值</em>Z<del>0</del><em>，具体取决于介电常数</em>ε<del>0</del><em>与每单位长度的电容</em>C<del>L</del></em>。<br>$$<br>Z_0&#x3D;\frac{83}{C_L}\sqrt{ε_0}<br>$$<br>对于非均匀传输线，称为“瞬时阻抗”，而非特征阻抗。**对一条线宽变化的传输线，瞬时阻抗没有意义。**线宽不变时，信号传输时的阻抗就是固定的，但PCB上的铜线也有厚度，比如常见的1oz、0.5oz铜厚，所以更准确的说法是横截面不变时，阻抗是固定的（<strong>一般同一层的铜厚一致，所以可以说线宽影响阻抗</strong>）。</p>
+<h2 id="特性阻抗"><a href="#特性阻抗" class="headerlink" title="特性阻抗"></a>特性阻抗</h2><p><span style="color:red"><strong>特性阻抗为高频信号在均匀传输线上的等效阻抗。</strong></span>信号线在传输信号时会与参考平面（地平面、电源平面）建立电场产生瞬间电流，由电压电流<em>V&#x2F;I</em>得等效阻值<em>Z<del>0</del></em>，具体取决于介电常数<em>ε<del>0</del></em>与每单位长度的电容<em>C<del>L</del></em>。<br>$$<br>Z_0&#x3D;\frac{83}{C_L}\sqrt{ε_0}<br>$$<br>对于非均匀传输线，称为“瞬时阻抗”，而非特征阻抗。**对一条线宽变化的传输线，瞬时阻抗没有意义。**线宽不变时，信号传输时的阻抗就是固定的，但PCB上的铜线也有厚度，比如常见的1oz、0.5oz铜厚，所以更准确的说法是横截面不变时，阻抗是固定的（<strong>一般同一层的铜厚一致，所以可以说线宽影响阻抗</strong>）。</p>
 <p>而根据产生电场的条件，传输介质介电常数<em>ε<del>0</del></em>不变的情况下，信号传输线与参考平面的距离<em>d</em>越近&#x2F;面积（线宽）<em>S</em>越大，等效电容（寄生电容）<em>C</em>越大，进而等效阻抗<em>Z<del>0</del></em>越小。<br>$$<br>C&#x3D;ε_0\ast S&#x2F;d<br>$$</p>
 <p>$$<br>Z_0&#x3D;\frac{83d}{S\sqrt{ε_0}}<br>$$</p>
 <p>根据上式也能得出结论，对于电源&#x2F;地两个参考平面，其截面大阻抗低（约1Ω），对于带状线与微带线线宽窄阻抗高（约60-90Ω）。</p>
@@ -479,8 +479,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/07/18/Altium-02-Error_And_Solution/" rel="next" title="Altium-02-错误与解决办法">
-                  Altium-02-错误与解决办法 <i class="fa fa-angle-right"></i>
+                <a href="/2025/07/18/Altium-02-Error_And_Solution/" rel="next" title="Altium-02-异常与解决办法">
+                  Altium-02-异常与解决办法 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
