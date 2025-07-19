@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>乘凉指南</title>
+    <title>后人乘凉指南</title>
     <url>/2025/07/18/Blog_Using_Guide/</url>
     <content><![CDATA[<p>本博文栽树，以便后人乘凉。</p>
 <span id="more"></span>
 
 <p align="center">---------------------------  Part 1  ---------------------------</p>
 
-<h2 id="程序类"><a href="#程序类" class="headerlink" title="程序类"></a>程序类</h2><h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><ol>
+<h2 id="程序类"><a href="#程序类" class="headerlink" title="程序类"></a>程序类</h2><h3 id="MCU"><a href="#MCU" class="headerlink" title="MCU"></a>MCU</h3><ol>
 <li>empty</li>
 </ol>
 <h3 id="FPGA"><a href="#FPGA" class="headerlink" title="FPGA"></a>FPGA</h3><ol>
@@ -23,6 +23,11 @@
 </ol>
 <p align="center">---------------------------  Part 2  ---------------------------</p>
 
+<h2 id="算法类"><a href="#算法类" class="headerlink" title="算法类"></a>算法类</h2><h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><ol>
+<li>empty</li>
+</ol>
+<p align="center">---------------------------  Part 3  ---------------------------</p>
+
 <h2 id="硬件类"><a href="#硬件类" class="headerlink" title="硬件类"></a>硬件类</h2><h3 id="Altium-Designer"><a href="#Altium-Designer" class="headerlink" title="Altium Designer"></a>Altium Designer</h3><ol>
 <li>empty.</li>
 <li><a href="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/">Altium-02-错误与解决办法 </a></li>
@@ -30,7 +35,7 @@
 <h3 id="SI"><a href="#SI" class="headerlink" title="SI"></a>SI</h3><ol>
 <li><a href="https://microprism.github.io/2025/07/09/SI-01-Impedance/">SI-01-PCB特性阻抗 </a></li>
 </ol>
-<p align="center">---------------------------  Part 3  ---------------------------</p>
+<p align="center">---------------------------  Part 4  ---------------------------</p>
 
 <h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><ol>
 <li><a href="https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/">Hexo-01-博客搭建问题与解决办法 </a></li>
@@ -40,12 +45,12 @@
 <h3 id="SpaceDesk"><a href="#SpaceDesk" class="headerlink" title="SpaceDesk"></a>SpaceDesk</h3><ol>
 <li><a href="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/">SpaceDesk-Win与iPad有线副屏扩展与常见问题</a></li>
 </ol>
-<p align="center">---------------------------  Part 4  ---------------------------</p>
+<p align="center">---------------------------  Part 5  ---------------------------</p>
 
 <h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><h3 id="考研"><a href="#考研" class="headerlink" title="考研"></a>考研</h3><ol>
 <li><a href="https://microprism.github.io/2025/06/02/NCU-873_Trends/">NCU-南昌大学873控制专业考研形势</a></li>
 </ol>
-<p align="center">--------------------------- Part 5 ---------------------------</p>
+<p align="center">--------------------------- Part 6 ---------------------------</p>
 
 <h2 id="流量卡"><a href="#流量卡" class="headerlink" title="流量卡"></a>流量卡</h2><ol>
 <li><a href="https://microprism.github.io/2025/06/10/Sideline-SIM_Card/">Sideline-流量卡办理</a></li>
@@ -56,6 +61,225 @@
 <p>前人栽树，后人乘凉。</p>
 </blockquote>
 ]]></content>
+  </entry>
+  <entry>
+    <title>TCP-02-ZYNQ7020 TCP例程自动协商失败解决办法</title>
+    <url>/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/</url>
+    <content><![CDATA[<p>本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…</p>
+<span id="more"></span>
+
+<h2 id="场景复现"><a href="#场景复现" class="headerlink" title="场景复现"></a>场景复现</h2><ul>
+<li>开发环境：Xilinx Vivado 18.3 SDK</li>
+<li>芯片：ZYNQ 7020</li>
+<li>调试工具：串口调试助手</li>
+<li>接线：开发板直连PC口</li>
+</ul>
+<p>使用SDK工具新建TCP echo server模板项目后，板验证报错信息如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Start PHY autonegotiation </span><br><span class="line">Waiting <span class="keyword">for</span> PHY to complete autonegotiation.</span><br><span class="line">Auto negotiation error  </span><br><span class="line">Phy setup error  </span><br><span class="line">Assert due to phy setup failure </span><br></pre></td></tr></table></figure>
+
+<p>博主在手动设定速率后重新配置为自动协商试图复现异常，但是结果却又协商成功了？如下图。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250719222443418.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    重新配置为自动协商<!--标题-->
+    </center>
+</div>
+
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>优先放置解决办法，感兴趣的可以向下翻阅原因分析。</p>
+<p>1.修改BSP配置</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250719191118162.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    phy link speed<!--标题-->
+    </center>
+</div>
+
+<p>2.手动指定连接速度-100Mbps</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250719191417696.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    BSP's Setting<!--标题-->
+    </center>
+</div>
+
+<p>3.注释掉<code>platform_zynq.c</code>文件中定时器回调函数<code>time_callback</code>中代码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* For detecting Ethernet phy link status periodically */</span></span><br><span class="line">	<span class="comment">/* if (DetectEthLinkStatus == ETH_LINK_DETECT_INTERVAL) &#123;</span></span><br><span class="line"><span class="comment">		eth_link_detect(echo_netif);</span></span><br><span class="line"><span class="comment">		DetectEthLinkStatus = 0;</span></span><br><span class="line"><span class="comment">	&#125;	*/</span></span><br></pre></td></tr></table></figure>
+
+<p>4.配置ip</p>
+<ul>
+<li><p>ZYNQ</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250719192756638.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+   ZYNQ Config<!--标题-->
+    </center>
+</div>
+</li>
+<li><p>PC</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="image-20250719192930341.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+   PC Config<!--标题-->
+    </center>
+</div></li>
+</ul>
+<p>5.串口调试工具配置</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250719193107631.png" alt="image can't load." style="zoom:65%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+   串口工具<!--标题-->
+    </center>
+</div>
+
+<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><h3 id="IP配置错误？"><a href="#IP配置错误？" class="headerlink" title="IP配置错误？"></a>IP配置错误？</h3><p>最先考虑的是PC与ZYNQ开发板的ip地址不在同一网段，但将ip均配置在<code>192.168.1.xx</code>网段下之后仍然出现异常。</p>
+<h3 id="PC端速度限制？"><a href="#PC端速度限制？" class="headerlink" title="PC端速度限制？"></a>PC端速度限制？</h3><div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250719223948825.png" alt="image can't load." style="zoom:65%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+   PC端网口速度<!--标题-->
+    </center>
+</div>
+
+<p>众所周知，PC机在连接以太网之后可以更改连接速度。参考<a href="https://blog.csdn.net/wsnd123321/article/details/129457547">资料3</a>手动将PC端网口速率从自动协商指定为1Gbps，喜提<span style="color:red"><strong>网络未连接</strong></span>。</p>
+<p>速度和双工配置重新调整为自动协商后，连接状态变为上图100Mbps。</p>
+<h3 id="劣质网线…"><a href="#劣质网线…" class="headerlink" title="劣质网线…"></a>劣质网线…</h3><p>破案，是劣质网线不支持1000Mbps:weary::weary::weary:…</p>
+<p><span style="color:red"><strong>从水晶头看到线芯颜色是银白色，胶皮标识为CAT5E超五类，找到订单查材质是铝镁合金、商品名为百兆网线…</strong></span></p>
+<p>5m长的网线费用高达3.39，他能跑百兆我应该夸它耐造….</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://www.amengcc.cn/index.php/archives/1258/">zynq调试网口所遇到的问题记录 | AMENG</a></li>
+<li><a href="https://www.amengcc.cn/index.php/archives/1260/">ZYNQ lwip 自适应网络速率 | AMENG</a></li>
+<li><a href="https://blog.csdn.net/wsnd123321/article/details/129457547">修复 win10&#x2F;11 以太网网速被限制在 100Mbps_win11千兆网卡只有100mbps | CSDN博客</a></li>
+</ol>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>“少无适俗韵，性本爱丘山。”– 《 归园田居·其一》</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>ZYNQ</category>
+        <category>TCP</category>
+      </categories>
+      <tags>
+        <tag>TCP/IP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TCP-01-协议详解</title>
+    <url>/2025/07/19/TCP-01-Protocol/</url>
+    <content><![CDATA[<p>本篇博文主要介绍TCP&#x2F;IP协议模型，分析各层的组成。</p>
+<span id="more"></span>
+
+<h2 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h2><p>按照OSI模型。TCP&#x2F;IP协议被分为7层：物理层、网络层、链路层、传输层、会话层、表示层。<strong>但是常规使用时常用5层表示，由下至上分别为：</strong></p>
+<ul>
+<li><strong>物理层</strong></li>
+<li><strong>链路层</strong></li>
+<li><strong>网络层</strong></li>
+<li><strong>传输层</strong></li>
+<li><strong>应用层</strong></li>
+</ul>
+<p>待补充…</p>
+]]></content>
+      <categories>
+        <category>TCP/IP</category>
+        <category>Protocol</category>
+      </categories>
+      <tags>
+        <tag>TCP/IP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-01-GCD_Of_String</title>
+    <url>/2025/07/19/LeetCode-02-GCD_Of_String/</url>
+    <content><![CDATA[<p>LeetCode算法题：字符串找最大公因子。</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>LeetCode：<a href="https://leetcode.cn/studyplan/leetcode-75/">LeetCode 75 - 学习计划</a>-02-字符串最大公因子</p>
+<p>对于字符串 <code>s</code> 和 <code>t</code>，只有在 <code>s = t + t + t + ... + t + t</code>（<code>t</code> 自身连接 1 次或多次）时，我们才认定 “<code>t</code> 能除尽 <code>s</code>”。</p>
+<p>给定两个字符串 <code>str1</code> 和 <code>str2</code> 。返回 <em>最长字符串 <code>x</code>，要求满足 <code>x</code> 能除尽 <code>str1</code> 且 <code>x</code> 能除尽 <code>str2</code></em> 。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>如果存在最大公因子，最长的相同元素一定是str1与str2中短的那个。</p>
+<p>方案A： **若存在字符串最大公因子，则str1或str2必定只有x元素。即str1与str2之间辗转对比一定能找到最终的x，**否则不存在最大公因子。</p>
+<p>方案B：字符串的公因子是按照长度定义，只需要找到字符串str1与str2长度的最大公因子，以次长度为基准，比对str1与str2的元素。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案A"><a href="#方案A" class="headerlink" title="方案A"></a>方案A</h3><p>辗转相除，以较短的字符串为基准，不断向后移动并缩减比对字符串的长度，也是希望找到<strong>长度的最大公因子</strong>。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="image-20250719114305253.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    长度上辗转相除	<!--标题-->
+    </center>
+</div>
+
+ <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">gcdOfStrings</span><span class="params">(<span class="type">char</span>* str1, <span class="type">char</span>* str2)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> n1 = <span class="built_in">strlen</span>(str1);</span><br><span class="line">    <span class="type">int</span> n2 = <span class="built_in">strlen</span>(str2);</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n1==n2 &amp;&amp; <span class="built_in">strncmp</span>(str1,str2,n1)==<span class="number">0</span> ) <span class="comment">//字符串长度相等</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> str1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n1&gt;n2 &amp;&amp; <span class="built_in">strncmp</span>(str1,str2,n2)==<span class="number">0</span>) <span class="comment">//str1长，向后移动</span></span><br><span class="line">        &#123;</span><br><span class="line">            str1 += n2;</span><br><span class="line">            n1 -= n2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n1&lt;n2 &amp;&amp; <span class="built_in">strncmp</span>(str1,str2,n1)==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            str2 += n1;</span><br><span class="line">            n2 -= n1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案B"><a href="#方案B" class="headerlink" title="方案B"></a>方案B</h3><p>如果考虑不到方案A的辗转相除，那么可以尝试找到长度公因子，并使用长度对应的元素分别与str1和str2后续的字符做比较，理论上应当完全一致。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//int gcd = iGcd(6,4);</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">iGcd</span><span class="params">(<span class="type">int</span> len1,<span class="type">int</span> len2)</span>;</span><br><span class="line"><span class="comment">//int result = (&quot;ABABAB&quot;,&quot;AB&quot;,2);</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">iCheck</span><span class="params">(<span class="type">char</span> *str1, <span class="type">char</span> *str2, <span class="type">int</span> len)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">char</span>* <span class="title function_">gcdOfStrings</span><span class="params">(<span class="type">char</span>* str1, <span class="type">char</span>* str2)</span> &#123;</span><br><span class="line">     <span class="comment">//str1与str2前n个元素不同</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;str1[i] &amp;&amp; str2[i]; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(str1[i]!=str2[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> n1 = <span class="built_in">strlen</span>(str1);</span><br><span class="line">    <span class="type">int</span> n2 = <span class="built_in">strlen</span>(str2);</span><br><span class="line">    <span class="type">int</span> result = iGcd(n1,n2);<span class="comment">//找到长度最大公因子</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> len =result;len&gt;<span class="number">0</span>;len--) <span class="comment">//例如偶数可能是4、2、1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n1%len || n2%len)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(iCheck(str1,str2,len)==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            str1[len] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> str1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//寻找长度的最大公因子</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">iGcd</span><span class="params">(<span class="type">int</span> len1,<span class="type">int</span> len2)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(len1!=len2)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(len1 &gt; len2)</span><br><span class="line">        &#123;</span><br><span class="line">            len1 -= len2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            len2 -= len1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> len1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">iCheck</span><span class="params">(<span class="type">char</span> *str1, <span class="type">char</span> *str2, <span class="type">int</span> len)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//str1前len长度字符与后续对比</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=len; str1[j] ;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(str1[i]!=str1[j]) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i = (i+<span class="number">1</span>)%len;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//str1前len长度字符与str2后续字符对比	</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=len; str2[j] ;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(str1[i]!=str2[j]) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i = (i+<span class="number">1</span>)%len;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>“天长地久有时尽，此恨绵绵无绝期。”– 《长恨歌》</em></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-01-String_Composition</title>
+    <url>/2025/07/19/LeetCode-01-String_Composition/</url>
+    <content><![CDATA[<p>LeetCode算法题：字符串交叉拼接。</p>
+<span id="more"></span>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>LeetCode：<a href="https://leetcode.cn/studyplan/leetcode-75/">LeetCode 75 - 学习计划 </a>-1-交替合并字符串</p>
+<p>题目简述：给你两个字符串 <code>word1</code> 和 <code>word2</code> 。请你从 <code>word1</code> 开始，通过交替添加字母来合并字符串。如果一个字符串比另一个字符串长，就将多出来的字母追加到合并后字符串的末尾。</p>
+<p>返回 <strong>合并后的字符串</strong> 。</p>
+<ul>
+<li><code>1 &lt;= word1.length, word2.length &lt;= 100</code></li>
+<li><code>word1</code> 和 <code>word2</code> 由小写英文字母组成</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>从题干中可得到以下关键信息：</p>
+<ul>
+<li>两字符串不等长</li>
+<li>交替添加</li>
+</ul>
+<p>因此推论出两个要点：</p>
+<ul>
+<li>strlen计算输入字符串长度</li>
+<li>读取时可共用同一索引值&#x2F;双指针</li>
+</ul>
+<p>因此可根据输入字符串长度动态分配内存，随后循环读取两数组的元素。</p>
+<ul>
+<li>malloc分配内存长度应为len1+len2+1，末尾存放’\0’;</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案A"><a href="#方案A" class="headerlink" title="方案A"></a>方案A</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">mergeAlternately</span><span class="params">(<span class="type">char</span>* word1, <span class="type">char</span>* word2)</span> &#123;</span><br><span class="line">    assert(word1);</span><br><span class="line">    assert(word2);</span><br><span class="line">    <span class="type">int</span> word1_len = <span class="built_in">strlen</span>(word1);</span><br><span class="line">    <span class="type">int</span> word2_len = <span class="built_in">strlen</span>(word2);</span><br><span class="line">    <span class="type">int</span> word_rd_idx = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> string_wr_idx = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span>* string_out = (<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">char</span>) * (word1_len + word2_len + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">while</span> ((word_rd_idx &lt; word1_len) || (word_rd_idx &lt; word2_len))</span><br><span class="line">    &#123;</span><br><span class="line">        word_rd_idx &lt; word1_len ? (string_out[string_wr_idx++] = word1[word_rd_idx]) : <span class="number">0</span>;</span><br><span class="line">        word_rd_idx &lt; word2_len ? (string_out[string_wr_idx++] = word2[word_rd_idx]) : <span class="number">0</span>;</span><br><span class="line">        word_rd_idx++;</span><br><span class="line">    &#125;</span><br><span class="line">    string_out[string_wr_idx] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> string_out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方案A中无论哪个字符串更长，while中均会判断两次。如果AB长度差异过大影响效率。</p>
+<h3 id="方案B"><a href="#方案B" class="headerlink" title="方案B"></a>方案B</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">mergeAlternately</span><span class="params">(<span class="type">char</span>* word1, <span class="type">char</span>* word2)</span> &#123;</span><br><span class="line">    assert(word1);</span><br><span class="line">    assert(word2);</span><br><span class="line">    <span class="type">int</span> word1_len = <span class="built_in">strlen</span>(word1);</span><br><span class="line">    <span class="type">int</span> word2_len = <span class="built_in">strlen</span>(word2);</span><br><span class="line">    <span class="type">int</span> word_rd_idx = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> string_wr_idx = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span>* string_out = (<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">char</span>) * (word1_len + word2_len + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">while</span> ((word_rd_idx &lt; word1_len) &amp;&amp; (word_rd_idx &lt; word2_len))</span><br><span class="line">    &#123;</span><br><span class="line">        word_rd_idx &lt; word1_len ? (string_out[string_wr_idx++] = word1[word_rd_idx]) : <span class="number">0</span>;</span><br><span class="line">        word_rd_idx &lt; word2_len ? (string_out[string_wr_idx++] = word2[word_rd_idx]) : <span class="number">0</span>;</span><br><span class="line">        word_rd_idx++;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(word1_len&gt;=word2_len)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (word_rd_idx &lt; word1_len)</span><br><span class="line">        &#123;</span><br><span class="line"> 			string_out[string_wr_idx++] = word1[word_rd_idx];</span><br><span class="line">            word_rd_idx++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (word_rd_idx &lt; word2_len)</span><br><span class="line">        &#123;</span><br><span class="line"> 			string_out[string_wr_idx++] = word2[word_rd_idx];</span><br><span class="line">            word_rd_idx++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    string_out[string_wr_idx] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> string_out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案C"><a href="#方案C" class="headerlink" title="方案C"></a>方案C</h3><p>采用双指针，进一步减少定义变量的个数。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">mergeAlternately</span><span class="params">(<span class="type">char</span>* word1, <span class="type">char</span>* word2)</span> &#123;</span><br><span class="line">    assert(word1);</span><br><span class="line">    assert(word2);</span><br><span class="line">    <span class="type">char</span> *p = (<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">char</span>) * (<span class="built_in">strlen</span>(word1) + <span class="built_in">strlen</span>(word2) + <span class="number">1</span>));<span class="comment">//起始指针</span></span><br><span class="line">    <span class="type">char</span> *string_out = p;<span class="comment">//写入字符的移动指针</span></span><br><span class="line">    <span class="keyword">while</span>(*word1 &amp;&amp; *word2)</span><br><span class="line">    &#123;</span><br><span class="line">        *string_out++=*word1++;</span><br><span class="line">        *string_out++=*word2++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(*word1)</span><br><span class="line">    &#123;</span><br><span class="line">        *string_out++=*word1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(*word2)</span><br><span class="line">    &#123;</span><br><span class="line">        *string_out++=*word2++;</span><br><span class="line">    &#125;</span><br><span class="line">    *string_out = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>方案ABC的复杂度一致，<strong>时间复杂度为O(n+m)</strong>:源于strlen(word1)与strlen(word2)。<strong>空间复杂度为O(n+m)</strong>:源于malloc分配内存</p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>“试玉要烧三日满，辨材须待七年期。”– 《放言五首·其三》</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>LeetCode</tag>
+      </tags>
   </entry>
   <entry>
     <title>Altium-02-异常与解决办法</title>
@@ -913,6 +1137,8 @@
 <p>【5.2】<a href="https://github.com/D0n9X1n/hexo-tag-cloud/blob/master/README.ZH.md">Hexo的hexo-tag-cloud插件使用手册-Github</a></p>
 <p>【6】<a href="https://blog.csdn.net/kantaiyang/article/details/129159055">Hexo无法显示本地图片的问题-CSDN博客</a></p>
 <p>【7】<a href="https://tanwucheng.github.io/2021/03/03/4.Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AERSS%E8%AE%A2%E9%98%85/">HEXO笔记④-Hexo博客NexT主题设置RSS订阅 | Ten’s Blog</a></p>
+<p>【8.1】[hexo 的 Next 主题 中添加首页文章置顶功能及置顶图标 | ShallWe - 官方博客](<a href="https://blog.mrshallwe.com/2022/03/16/hexo">https://blog.mrshallwe.com/2022/03/16/hexo</a> 的 Next 主题 中添加首页文章置顶功能及置顶图标&#x2F;)</p>
+<p>【8.2】<a href="https://blog.csdn.net/qq_41603102/article/details/117203360">Hexo+Next8的升级踩坑之旅_next 8 config-CSDN博客</a></p>
 <h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>Hexo创建本地博客仓库后，使用<strong>控制台</strong>或<strong>Git Bash Here</strong>输入指令进行博文管理，详见<a href="https://hexo.io/zh-cn/docs/commands">指令 | Hexo</a>，以下简要介绍常用指令</p>
 <ol>
 <li><p>网站生成–生成本地网站</p>

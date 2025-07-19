@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-07-18T10:18:57.097Z</updated>
+  <updated>2025-07-19T15:56:18.176Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -17,11 +17,102 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>乘凉指南</title>
+    <title>TCP-02-ZYNQ7020 TCP例程自动协商失败解决办法</title>
+    <link href="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/"/>
+    <id>https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/</id>
+    <published>2025-07-19T11:02:33.832Z</published>
+    <updated>2025-07-19T15:56:18.176Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ZYNQ" scheme="https://microprism.github.io/categories/ZYNQ/"/>
+    
+    <category term="TCP" scheme="https://microprism.github.io/categories/ZYNQ/TCP/"/>
+    
+    
+    <category term="TCP/IP" scheme="https://microprism.github.io/tags/TCP-IP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCP-01-协议详解</title>
+    <link href="https://microprism.github.io/2025/07/19/TCP-01-Protocol/"/>
+    <id>https://microprism.github.io/2025/07/19/TCP-01-Protocol/</id>
+    <published>2025-07-19T07:23:23.000Z</published>
+    <updated>2025-07-19T15:55:42.665Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本篇博文主要介绍TCP&amp;#x2F;IP协议模型，分析各层的组成。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TCP/IP" scheme="https://microprism.github.io/categories/TCP-IP/"/>
+    
+    <category term="Protocol" scheme="https://microprism.github.io/categories/TCP-IP/Protocol/"/>
+    
+    
+    <category term="TCP/IP" scheme="https://microprism.github.io/tags/TCP-IP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-01-GCD_Of_String</title>
+    <link href="https://microprism.github.io/2025/07/19/LeetCode-02-GCD_Of_String/"/>
+    <id>https://microprism.github.io/2025/07/19/LeetCode-02-GCD_Of_String/</id>
+    <published>2025-07-19T03:06:07.000Z</published>
+    <updated>2025-07-19T04:28:42.916Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;LeetCode算法题：字符串找最大公因子。&lt;/p&gt;
+&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;LeetCode：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C" scheme="https://microprism.github.io/tags/C/"/>
+    
+    <category term="LeetCode" scheme="https://microprism.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-01-String_Composition</title>
+    <link href="https://microprism.github.io/2025/07/19/LeetCode-01-String_Composition/"/>
+    <id>https://microprism.github.io/2025/07/19/LeetCode-01-String_Composition/</id>
+    <published>2025-07-19T01:25:10.000Z</published>
+    <updated>2025-07-19T07:24:54.654Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;LeetCode算法题：字符串交叉拼接。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://microprism.github.io/categories/LeetCode/"/>
+    
+    <category term="C" scheme="https://microprism.github.io/categories/LeetCode/C/"/>
+    
+    
+    <category term="C" scheme="https://microprism.github.io/tags/C/"/>
+    
+    <category term="LeetCode" scheme="https://microprism.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>后人乘凉指南</title>
     <link href="https://microprism.github.io/2025/07/18/Blog_Using_Guide/"/>
     <id>https://microprism.github.io/2025/07/18/Blog_Using_Guide/</id>
     <published>2025-07-18T08:20:40.000Z</published>
-    <updated>2025-07-18T10:18:57.097Z</updated>
+    <updated>2025-07-19T15:55:02.609Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博文栽树，以便后人乘凉。&lt;/p&gt;</summary>
@@ -263,7 +354,7 @@
     <link href="https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/"/>
     <id>https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/</id>
     <published>2025-04-08T16:00:00.000Z</published>
-    <updated>2025-07-18T09:43:23.638Z</updated>
+    <updated>2025-07-18T10:27:58.364Z</updated>
     
     
     <summary type="html">&lt;p&gt;该博客主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的视频与帖子连接，同时汇总个人搭建过程中遇到的各种错误和解决办法。&lt;/p&gt;</summary>
