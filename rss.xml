@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-07-19T15:56:18.176Z</updated>
+  <updated>2025-07-19T16:03:56.985Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/"/>
     <id>https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/</id>
     <published>2025-07-19T11:02:33.832Z</published>
-    <updated>2025-07-19T15:56:18.176Z</updated>
+    <updated>2025-07-19T16:03:56.985Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…&lt;/p&gt;</summary>

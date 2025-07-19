@@ -1180,7 +1180,7 @@
 
 <p>众所周知，PC机在连接以太网之后可以更改连接速度。参考<a href="https://blog.csdn.net/wsnd123321/article/details/129457547">资料3</a>手动将PC端网口速率从自动协商指定为1Gbps，喜提<span style="color:red"><strong>网络未连接</strong></span>。</p>
 <p>速度和双工配置重新调整为自动协商后，连接状态变为上图100Mbps。</p>
-<h3 id="劣质网线…"><a href="#劣质网线…" class="headerlink" title="劣质网线…"></a>劣质网线…</h3><p>破案，是劣质网线不支持1000Mbps:weary::weary::weary:…</p>
+<h3 id="劣质网线…"><a href="#劣质网线…" class="headerlink" title="劣质网线…"></a>劣质网线…</h3><p>破案，是劣质网线不支持1000Mbps…</p>
 <p><span style="color:red"><strong>从水晶头看到线芯颜色是银白色，胶皮标识为CAT5E超五类，找到订单查材质是铝镁合金、商品名为百兆网线…</strong></span></p>
 <p>5m长的网线费用高达3.39，他能跑百兆我应该夸它耐造….</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
