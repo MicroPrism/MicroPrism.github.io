@@ -132,9 +132,9 @@
     <category term="High Speed" scheme="https://microprism.github.io/categories/Hardware/High-Speed/"/>
     
     
-    <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
-    
     <category term="Altium Designer" scheme="https://microprism.github.io/tags/Altium-Designer/"/>
+    
+    <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
     
   </entry>
   
