@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-07-24T09:26:03.555Z</updated>
+  <updated>2025-08-07T05:20:07.895Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-07-Product_ExceptSelf</title>
+    <link href="https://microprism.github.io/2025/08/07/LeetCode-07-Product_ExceptSelf/"/>
+    <id>https://microprism.github.io/2025/08/07/LeetCode-07-Product_ExceptSelf/</id>
+    <published>2025-08-07T02:37:07.190Z</published>
+    <updated>2025-08-07T05:20:07.895Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;LeetCode算法题：字符串中单词顺序反转。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="C" scheme="https://microprism.github.io/tags/C/"/>
+    
+    <category term="LeetCode" scheme="https://microprism.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-06-Reverse_Words</title>
+    <link href="https://microprism.github.io/2025/08/03/LeetCode-06-Reverse_Words/"/>
+    <id>https://microprism.github.io/2025/08/03/LeetCode-06-Reverse_Words/</id>
+    <published>2025-08-03T02:32:53.000Z</published>
+    <updated>2025-08-04T11:05:02.643Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;LeetCode算法题：字符串中单词顺序反转。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="C" scheme="https://microprism.github.io/tags/C/"/>
+    
+    <category term="LeetCode" scheme="https://microprism.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-05-reverse_Vowels</title>
+    <link href="https://microprism.github.io/2025/08/02/LeetCode-05-Reverse_Vowels/"/>
+    <id>https://microprism.github.io/2025/08/02/LeetCode-05-Reverse_Vowels/</id>
+    <published>2025-08-02T09:09:35.000Z</published>
+    <updated>2025-08-03T02:47:16.950Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;LeetCode算法题：字符串中元音字符翻转。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="C" scheme="https://microprism.github.io/tags/C/"/>
+    
+    <category term="LeetCode" scheme="https://microprism.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-04-种花问题</title>
@@ -80,7 +137,7 @@
     <link href="https://microprism.github.io/2025/07/19/TCP-01-Protocol/"/>
     <id>https://microprism.github.io/2025/07/19/TCP-01-Protocol/</id>
     <published>2025-07-19T07:23:23.000Z</published>
-    <updated>2025-07-29T06:41:06.626Z</updated>
+    <updated>2025-08-04T13:26:13.410Z</updated>
     
     
     <summary type="html">&lt;p&gt;本篇博文主要介绍TCP&amp;#x2F;IP协议特性…。&lt;/p&gt;</summary>
@@ -377,29 +434,6 @@
     <category term="Ex-Screen" scheme="https://microprism.github.io/tags/Ex-Screen/"/>
     
     <category term="Wired" scheme="https://microprism.github.io/tags/Wired/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-01-博客搭建问题与解决办法</title>
-    <link href="https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/"/>
-    <id>https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/</id>
-    <published>2025-04-08T16:00:00.000Z</published>
-    <updated>2025-07-18T10:27:58.364Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;该博客主要介绍使用Hexo工具在Github上搭建Next主题个人博客的简要过程，列举所参考的视频与帖子连接，同时汇总个人搭建过程中遇到的各种错误和解决办法。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tools" scheme="https://microprism.github.io/categories/Tools/"/>
-    
-    <category term="Hexo" scheme="https://microprism.github.io/categories/Tools/Hexo/"/>
-    
-    
-    <category term="Next" scheme="https://microprism.github.io/tags/Next/"/>
-    
-    <category term="Blog" scheme="https://microprism.github.io/tags/Blog/"/>
     
   </entry>
   
