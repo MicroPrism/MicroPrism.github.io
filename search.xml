@@ -22,9 +22,7 @@
 <h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ol>
 <li><a href="https://microprism.github.io/2025/06/17/Git-Using_Guide/">Git-使用指南 </a></li>
 </ol>
-<p align="center">---------------------------  Part 2  ---------------------------</p>
-
-<h2 id="算法类"><a href="#算法类" class="headerlink" title="算法类"></a>算法类</h2><h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><ol>
+<h3 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h3><ol>
 <li><a href="https://microprism.github.io/2025/07/19/LeetCode-01-String_Composition/">LeetCode-01-字符串交叉拼接</a></li>
 <li><a href="https://microprism.github.io/2025/07/19/LeetCode-02-GCD_Of_String/">LeetCode-02-两字符串寻找最大公因子</a></li>
 <li><a href="https://microprism.github.io/2025/07/24/LeetCode-03-Kids_With_Candies">LeetCode-03-寻找糖果数最多的孩子</a></li>
@@ -33,9 +31,16 @@
 <li><a href="https://microprism.github.io/2025/08/03/LeetCode-06-Reverse_Words/">LeetCode-06-字符串中单词顺序反转</a></li>
 <li><a href="https://microprism.github.io/2025/08/07/LeetCode-07-Product_ExceptSelf/">LeetCode-07-元素之积</a></li>
 </ol>
+<p align="center">---------------------------  Part 2  ---------------------------</p>
+
+<h2 id="计算机类"><a href="#计算机类" class="headerlink" title="计算机类"></a>计算机类</h2><ol>
+<li><a href="https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click&vd_source=5465b0f4790ebae45362caa6519f3b79">《数据结构（C 语言描述）》</a></li>
+<li><a href="https://space.bilibili.com/517494241?spm_id_from=333.337.0.0">董晓算法的个人空间-董晓算法个人主页-哔哩哔哩视频</a></li>
+</ol>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>1. </p>
 <p align="center">---------------------------  Part 3  ---------------------------</p>
 
-<h2 id="硬件类"><a href="#硬件类" class="headerlink" title="硬件类"></a>硬件类</h2><h3 id="Altium-Designer"><a href="#Altium-Designer" class="headerlink" title="Altium Designer"></a>Altium Designer</h3><ol>
+<h2 id="硬件类"><a href="#硬件类" class="headerlink" title="硬件类"></a>硬件类</h2><h3 id="Altium"><a href="#Altium" class="headerlink" title="Altium"></a>Altium</h3><ol>
 <li>empty.</li>
 <li><a href="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/">Altium-02-错误与解决办法 </a></li>
 </ol>
@@ -68,6 +73,600 @@
 <p>前人栽树，后人乘凉。</p>
 </blockquote>
 ]]></content>
+  </entry>
+  <entry>
+    <title>数据结构-02-线性表</title>
+    <url>/2025/08/10/DS-02-Linear_List/</url>
+    <content><![CDATA[<p>本博文基于C语言的内容引入数据结构的时间、空间复杂度概念，并补充等差数列、累加和数列、等比数列等数学理论。</p>
+<span id="more"></span>
+
+<h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><blockquote>
+<p> 由n(n&gt;&#x3D;0)个数据特性相同的元素构成的有限序列。</p>
+</blockquote>
+<p>长度定义：线性表中元素个数定义为长度，n&#x3D;0时称空表</p>
+<p>非空线性表特性：</p>
+<ul>
+<li>存在唯一一个“第一个”数据元素</li>
+<li>存在唯一一个“最后一个”数据元素</li>
+<li>除第一个元素外，每个元素只有一个前驱</li>
+<li>除最后一个元素外，每个元素只有一个后继</li>
+</ul>
+<h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p>用一组连续的内存单元依次存储线性表各个元素，逻辑上相邻的元素在物理存储空间上也是连续的。</p>
+<h4 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE = 100;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType; <span class="comment">//便于后续移植更改</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data[MAXSIZE];</span><br><span class="line">    <span class="type">int</span> length;</span><br><span class="line">&#125;SeqList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//顺序表初始化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">initList</span><span class="params">(SeqList *L)</span></span><br><span class="line">&#123;</span><br><span class="line">    L-&gt;length = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h4><p>可以将length作为数组索引。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">appendElem</span><span class="params">(SeqList *L, ElemType e)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length &gt;= MAXSIZE)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;顺序表已满\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;data[L-&gt;length] = e;</span><br><span class="line">    L-&gt;length ++;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历元素"><a href="#遍历元素" class="headerlink" title="遍历元素"></a>遍历元素</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">listElem</span><span class="params">(SeqList *L)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i&lt; L-&gt;length ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,L-&gt;data[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><p>顺序表插入数据需要移动目标位置处后的所有元素。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">insertElem</span><span class="params">(SeqList *L,<span class="type">int</span> pos, ElemType *e)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( L-&gt;length &gt;= MAXSIZE)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//表满</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(pos &lt; <span class="number">1</span> || pos &gt; MAXSIZE)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//插入位置出错    </span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(pos &lt;= L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i= L-&gt;length - <span class="number">1</span>; i&gt;= pos - <span class="number">1</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            L-&gt;data[i+<span class="number">1</span>] = L-&gt;data[i];</span><br><span class="line">        &#125;</span><br><span class="line">        L-&gt;data[pos - <span class="number">1</span>] = *e;</span><br><span class="line">        L-&gt;length ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><p>顺序表删除数据需要移动目标位置处后的所以元素，但是最后的元素不需清0。因为length-1之后，已经不会再访问该值。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">deleteElem</span><span class="params">(SeqList *L,<span class="type">int</span> pos, ElemType *e)</span></span><br><span class="line">&#123;  </span><br><span class="line">    <span class="keyword">if</span>(<span class="number">0</span> == L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//空表</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>( pos &lt; <span class="number">0</span> || pos &gt; MAXSIZE)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//位置错误</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    *e = L-&gt;data[pos<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">if</span>(pos &lt; L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=pos; i&lt; L-&gt;length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            L-&gt;data[i<span class="number">-1</span>] = L-&gt;data[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     L-&gt;length--;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">findElem</span><span class="params">(SeqList *L,ElemType e)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( <span class="number">0</span> == L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;L-&gt;length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(L-&gt;data[i] == e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//位置从1开始，索引从0开始</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="动态内存"><a href="#动态内存" class="headerlink" title="动态内存"></a>动态内存</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType *data; <span class="comment">//使用指针动态管理空间</span></span><br><span class="line">    <span class="type">int</span> length;</span><br><span class="line">&#125;SeqList;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SeqList *<span class="title function_">initList</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    SeqList *L = (SeqList *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(SeqList));<span class="comment">//结构体指针</span></span><br><span class="line">    L-&gt;data = (Elemype *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(ElemType)*MAXSIZE);<span class="comment">//分配数组</span></span><br><span class="line">    L-&gt;length = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="存储结构-1"><a href="#存储结构-1" class="headerlink" title="存储结构"></a>存储结构</h3><p>一组任意的存储单元存储线性表的数据元素，可以是连续的，也可以是不连续的。</p>
+<blockquote>
+<p> 相对于顺序表，链表村粗的存储单位未必连续。</p>
+</blockquote>
+<p>每个数据元素除去本身的信息外，还需要存储一个指示后继信息。数据元素称为数据域，后继位置称为指针域，两部分信息共同称为节点。</p>
+<p>n个节点组成的线性序列，称为链表。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span> <span class="comment">//下一个节点地址</span></span><br><span class="line">&#125;Node;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>单链表初始化，即初始化一个头节点。后续的节点则不断插入</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Node *<span class="title function_">initList</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *head = (Node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">    head-&gt;data = <span class="number">0</span>;</span><br><span class="line">    head-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入元素-1"><a href="#插入元素-1" class="headerlink" title="插入元素"></a>插入元素</h4><ul>
+<li><p>头插法：每次把数据插入在头节点之后</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="1_HeaderInsert.jpg" alt="image can't load." style="zoom:100%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    头插链表<!--标题-->
+    </center>
+</div>
+
+<p>该方法需要先将新节点链向下一个节点，再将头节点链向新节点。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">insertHead</span><span class="params">(Node *L, ElemType e)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *p = (Node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    p-&gt;next = L-&gt;next; </span><br><span class="line">    L-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>尾插法</p>
+<p>尾插法即插入在尾部，隐藏首先需要获取尾部节点。</p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="2_TailInsert.jpg" alt="image can't load." style="zoom:100%"><!-- alt内为提示词-->
+    <br>        <!--换行-->
+    尾插链表<!--标题-->
+    </center>
+</div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Node *<span class="title function_">getTail</span><span class="params">(Node *L)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *p = L;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在参数节点后插入新节点，并返回新的尾节点</span></span><br><span class="line">Node *<span class="title function_">insertTail</span><span class="params">(Node *tail, ElemType e)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *p = (Node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    tail-&gt;next = p;</span><br><span class="line">    p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>任意位置插入</p>
+</li>
+</ul>
+  <div>			<!--块级封装-->
+      <center>	<!--将图片和文字居中-->
+      <img src="3_Insert.jpg" alt="image can't load." style="zoom:100%"><!-- alt内为提示词-->
+      <br>		<!--换行-->
+      任意位置插入<!--标题-->
+      </center>
+  </div>
+
+  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">insertNode</span><span class="params">(Node *L, <span class="type">int</span> pos,ElemType e)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *p = L;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; pos<span class="number">-1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p= p-&gt;next;</span><br><span class="line">        <span class="keyword">if</span>(p == <span class="literal">NULL</span>) <span class="comment">//链表长度不足</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//此处可以做一些其他操作，比如直接插在尾部</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Node *new = (Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">    new-&gt;data = e;</span><br><span class="line">    new-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next = new;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>遍历</p>
+<p>链表遍历不需要知道节点个数，而是以节点是否为NULL为条件。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">listNode</span><span class="params">(Node *L)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *p = L-&gt;next;</span><br><span class="line">    <span class="keyword">while</span>(p != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,p-&gt;data);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="删除元素-1"><a href="#删除元素-1" class="headerlink" title="删除元素"></a>删除元素</h4><p>对于链表，需要找到待删除的节点位置，随后释放内存空间，防止造成内存泄漏。</p>
+<p>但在节点删除时，需要注意最后一个节点不能被删除，<code>p-&gt;next</code>为空代表链表结束。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="4_deleteNode.jpg" alt="image can't load." style="zoom:100%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    删除节点<!--标题-->
+    </center>
+</div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">deleteNode</span><span class="params">(Node* L,<span class="type">int</span> pos)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *p = L; <span class="comment">//头节点，从头节点之后的节点才称为第一个，第二个</span></span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//p指向待删除节点的前驱</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;pos - <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        i++;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span> == p)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//p-&gt;next待删除节点为NULL</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">NULL</span> == p-&gt;next)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;位置错误\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//q指向待删除节点</span></span><br><span class="line">    Node *q = p-&gt;next;</span><br><span class="line">    <span class="comment">//删除节点的前驱指向删除节点的后继</span></span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果需要删除全部链表，可从前向后删除。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">deleteNodeList</span><span class="params">(Node *L)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *p = L;</span><br><span class="line">    Node *q = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span>(p != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        q = p-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(p);</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h4><h5 id="例题1-查找节点"><a href="#例题1-查找节点" class="headerlink" title="例题1:查找节点"></a>例题1:查找节点</h5><p>已知一个带有表头节点的单链表，节点结构为<code>data + link</code>。假设该链表只给出了头指针 list 。在不改变链表的前提下，请设计一个尽可能高效的算法，查找链表中倒数第 k 个位置上的结点（k 为正整数）。若查找成功，算法输出该节点的 data 域的值，并返回 1 ；否则，只返回 0 。要求：</p>
+<ul>
+<li>描述算法的基本思想；</li>
+<li>描述算法的详细实现步骤；</li>
+<li>根据设计思想和实现步骤，采用程序设计语言描述算法（使用 C 、C++、或 Java语言实现），关键之处请给出简要注释</li>
+</ul>
+<p>**解题思路：**使用双指针（快慢指针）。即快指针走k步之后，开始同步移动fast和slow指针，当fast指向NULL节点时，slow即为目标指针。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="5_doublePointer_gap_k.jpg" alt="image can't load." style="zoom:15%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    快慢指针查值<!--标题-->
+    </center>
+</div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">findNodeFS</span><span class="params">(Node *L, <span class="type">int</span> k)</span></span><br><span class="line">&#123;</span><br><span class="line">    Node *fast = L -&gt; next;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i =<span class="number">0</span>; i&lt;k; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        fast = fast-&gt;next;</span><br><span class="line">        <span class="keyword">if</span>(fast == <span class="literal">NULL</span>) <span class="comment">//链表长度小于k</span></span><br><span class="line">        &#123;</span><br><span class="line">             <span class="built_in">printf</span>(<span class="string">&quot;error 01: list length less than k&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Node *slow = L-&gt;next; <span class="comment">//记录慢指针</span></span><br><span class="line">    <span class="keyword">while</span>(fast != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        fast = fast -&gt; next;</span><br><span class="line">        slow = slow -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;success: expect data is %d\n&quot;</span>,slow-&gt;data);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="例题2-合并链表"><a href="#例题2-合并链表" class="headerlink" title="例题2:合并链表"></a>例题2:合并链表</h5><p>假定采用带头节点的单链表保存单词，当两个单词有相同的后缀时，则可共享相同的后缀存储空间，例如，“ending”和“being”的存储映像如下图所示。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="6_doublePointer_verge_List.jpg" alt="image can't load." style="zoom:15%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    合并尾部结点<!--标题-->
+    </center>
+</div>
+
+<p>设 str1 和 str2 分别指向两个单词所在单链表的头节点，链表结点结构为<code>data+next</code>请设计一个时间上尽可能高效的算法，找出由 str1 和 str2 所指向两个链表共同后缀的起始位置（如图字符 i 所在结点的位置 p）。要求：</p>
+<ul>
+<li>描述算法的基本设计思想；</li>
+<li>根据设计思想，采用 C 或 C++ 或 Java 语言描述，关键之处给出注释</li>
+<li>说明你所设计算法的时间复杂度</li>
+</ul>
+<p><strong>解题思路：</strong></p>
+<p>已知尾部n个字符相等，则需要两个链表先对齐，即长链表后移gap个字节。随后，快慢指针同时移动，直到找到相同的data值。最后将短链表链向长链表的尾缀，并释放短链表后续的结点。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="6_doublePointer_verge_List_re.jpg" alt="image can't load." style="zoom:15%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    思路<!--标题-->
+    </center>
+</div>
+
+<ul>
+<li>寻找相同data时，需要记录上一个节点，以便链向新节点</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//例题2: 合并单词链表，例如being 和ending </span></span><br><span class="line"><span class="type">int</span> <span class="title function_">vergeListWithChar</span><span class="params">(Node* list1, Node* list2)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//输入链表为空</span></span><br><span class="line">	<span class="keyword">if</span> (list1 == <span class="literal">NULL</span> || list2 == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> list1_len = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> list2_len = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//计算链表1的长度</span></span><br><span class="line">	Node* fast = list1;</span><br><span class="line">	<span class="keyword">while</span> (fast != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		fast = fast-&gt;next;</span><br><span class="line">		list1_len++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//计算链表2的长度</span></span><br><span class="line">	fast = list2;</span><br><span class="line">	<span class="keyword">while</span> (fast != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		fast = fast-&gt;next;</span><br><span class="line">		list2_len++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//计算链表长度，并设定快慢指针值</span></span><br><span class="line">	Node* slow = fast;</span><br><span class="line">	<span class="type">int</span> gap = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (list1_len &gt; list2_len)</span><br><span class="line">	&#123;</span><br><span class="line">		fast = list1;</span><br><span class="line">		slow = list2;</span><br><span class="line">		gap = list1_len - list2_len;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		fast = list2;</span><br><span class="line">		slow = list1;</span><br><span class="line">		gap = list2_len - list1_len;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//移动快指针</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; gap; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		fast = fast-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//遍历找到链表中的相同数据</span></span><br><span class="line">	Node* p = slow;</span><br><span class="line">	<span class="keyword">while</span> (fast-&gt;data != slow-&gt;data)</span><br><span class="line">	&#123;</span><br><span class="line">		p = slow;<span class="comment">//保存相同数值的上一节点</span></span><br><span class="line">		fast = fast-&gt;next;</span><br><span class="line">		slow = slow-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//连接向相同值</span></span><br><span class="line">	p-&gt;next = fast; </span><br><span class="line">	</span><br><span class="line">	<span class="comment">//释放剩余节点</span></span><br><span class="line">	<span class="keyword">while</span> (slow != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		p = slow;</span><br><span class="line">		slow = slow-&gt;next;</span><br><span class="line">		<span class="built_in">free</span>(p);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="例题3-删除节点"><a href="#例题3-删除节点" class="headerlink" title="例题3:删除节点"></a>例题3:删除节点</h5><p>用单链表保存 n 个整数，结点的结构为 [data][link]，且|data| n(n 为正整数)。现要求设计一个时间复杂度尽可能高效的算法，对于链表中 data 的绝对值相等的节点，仅保留第一次出现的节点而删除其余绝对值相等的结点。例如，若给定单链表<br>head 如下：</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="7_delete_same_node.jpg" alt="image can't load." style="zoom:15%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    操作事例<!--标题-->
+    </center>
+</div>
+
+<p>要求：</p>
+<ul>
+<li>给出算法的基本设计思想。</li>
+<li>使用 C 或 C++ 语言，给出单链表节点的数据类型定义。</li>
+<li>根据设计思想，采用 C 或 C++ 语言描述算法，关键之处给出注释。</li>
+<li>说明你所设计算法的时间复杂度和空间复杂度。</li>
+</ul>
+<p>解题思路：时间换空间</p>
+<ul>
+<li>已知链表节点内的data最大值小于链表长度n，可创建长度为n（或n+1）的空间作为判断数组，当某个值出现时索引值设为1。</li>
+<li>当出现重复值时，将last_node-&gt;next指向current_node-&gt;next，以跳过重复节点。</li>
+<li>刷新current_node节点</li>
+<li>释放重复节点</li>
+</ul>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="7_delete_same_node_re.jpg" alt="image can't load." style="zoom:15%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    操作事例<!--标题-->
+    </center>
+</div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//例题3：删除链表中数值绝对值相同的节点,已知链表长度n</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">deleteRepeatNode</span><span class="params">(Node* header, <span class="type">int</span> len)</span></span><br><span class="line">&#123;</span><br><span class="line">	Node* p = header; <span class="comment">//使用current_node更合适</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//建立一个与数组长度相符的空间作为判断数组</span></span><br><span class="line">	<span class="type">int</span>* judgeArray = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>) * (len + <span class="number">1</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len + <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		judgeArray[i] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//查找值</span></span><br><span class="line">	p = header-&gt;next;</span><br><span class="line">	Node* last_node = <span class="literal">NULL</span>; <span class="comment">// 保存上一节点</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//绝对值首次出现，则标记</span></span><br><span class="line">		<span class="keyword">if</span> (judgeArray[<span class="built_in">abs</span>(p-&gt;data)] == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			judgeArray[<span class="built_in">abs</span>(p-&gt;data)] = <span class="number">1</span>;</span><br><span class="line">			last_node = p; <span class="comment">//保存上一个节点</span></span><br><span class="line">			p = p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="comment">//出现重复节点，则释放该节点</span></span><br><span class="line">		&#123;</span><br><span class="line">			last_node-&gt;next = p-&gt;next;  <span class="comment">//将重复值的前移节点链向重复节点的后一个节点</span></span><br><span class="line">			Node* tmp = p;		<span class="comment">// 待释放的重复节点</span></span><br><span class="line">			p = p-&gt;next;		<span class="comment">//更新p节点，不更新上一个节点q</span></span><br><span class="line">			<span class="built_in">free</span>(tmp); <span class="comment">//释放当前节点</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">free</span>(judgeArray);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p align="center">---------------------------  Continue...  ---------------------------</p>
+
+
+
+
+
+
+
+
+
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p><em>读书不觉已春深，一寸光阴一寸金。–《白鹿洞二首·其一》</em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算机类</category>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>数据结构</tag>
+        <tag>线性表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构-01-引言</title>
+    <url>/2025/08/09/DS-01-Introduction/</url>
+    <content><![CDATA[<p>本博文基于C语言的内容引入数据结构的时间、空间复杂度概念，并补充等差数列、累加和数列、等比数列等数学理论。</p>
+<span id="more"></span>
+
+<p>数据结构可以拆分为两个内容，即数据+结构。</p>
+<h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><ul>
+<li><p><strong>首先，数据从哪儿来？到哪儿去？</strong></p>
+<p>数据从生活各处中来，而目的是用数据驱动业务。</p>
+</li>
+<li><p><strong>结构又是什么？</strong></p>
+<p>即数据的组织形式，比如数组、比如链表。</p>
+<p><strong>在特定的情境下，以往所用的数据类型无法基于需求合理地组织数据，此时需要自己设计一套新的数据组织形式来解决问题。</strong></p>
+<p><strong>数据结构是一种存储、组织数据的方式，旨在方便访问和修改。任何一致数据结构都有各自的优劣。</strong></p>
+</li>
+</ul>
+<h2 id="C基础"><a href="#C基础" class="headerlink" title="C基础"></a>C基础</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li>实现某个具体功能的代码块</li>
+<li>增加代码复用性</li>
+<li>降低编程难度</li>
+<li>函数不被调用就不会执行</li>
+<li>对内隐藏细节，对外暴露接口</li>
+</ul>
+<p>基于需求对函数设定参数、设定返回值。</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>C语言中的字符串是按照字符数据进行存储的，并没有这种数据类型。</p>
+<blockquote>
+<p>C#中有string类型</p>
+</blockquote>
+<ul>
+<li><p>存储时字符串尾部带有 <code>\0</code>结束符</p>
+</li>
+<li><p>可在定义时直接初始化赋值，也可在定义后使用<code>strcpy()</code>赋值</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> arr1[<span class="number">11</span>] = <span class="string">&quot;HelloWorld&quot;</span>;</span><br><span class="line"><span class="type">char</span> arr2[<span class="number">11</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(arr2,<span class="string">&quot;HelloWorld&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>依据冯诺伊曼结构，计算机操作系统通常包括输入&#x2F;输出设备，主存储器、辅存储器、控制器、运算器。</p>
+<p><strong>内存条、显卡、适配卡都各自有其存储地址空间。操作系统将设备的存储地址空间抽象为一个巨大的一维数组空间，如常说的32位&#x2F;64位机。</strong></p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li>相同数据类型的集合</li>
+<li>数组长度在定义时已经确定</li>
+<li>n元素的数组下标为0~n-1</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[<span class="number">11</span>];</span><br><span class="line"><span class="type">char</span> b[<span class="number">10</span>][<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
+
+<p>例如以上变量a：</p>
+<ul>
+<li>a：数组变量</li>
+<li>*a：数组首元素</li>
+</ul>
+<p>再比如变量b：</p>
+<ul>
+<li>b:数组地址</li>
+<li>*b:数组首个行向量地址</li>
+<li>**b：数组首个行向量中首个元素地址</li>
+</ul>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>指针与数据在某种程度上可以实现相同的功能，比如 :</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">4</span>] = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>&#125;;</span><br><span class="line"><span class="type">int</span> *p = arr;</span><br></pre></td></tr></table></figure>
+
+<p>则arr[i]和*(p+i)是一致的。指针在进行算术运算时，移动的是i与指针指向数据类型字节长度的乘积。</p>
+<p>p+i的实际地址为p向后移动sizeof(int)*i。</p>
+<table>
+<thead>
+<tr>
+<th align="center">有符号</th>
+<th align="center">无符号</th>
+<th align="center">32位</th>
+<th align="center">64位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">char</td>
+<td align="center">unsigned char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">unsigned short</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">unsigned  int</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">unsigned long</td>
+<td align="center">4</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center"></td>
+<td align="center">4</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center"></td>
+<td align="center">8</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>结构体是一个或多个变量的集合，变量可以是不同的类型。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通常来说，结构体之间的传递也使用指针以提高效率。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> *<span class="title">p</span>;</span></span><br><span class="line">p-&gt;x = <span class="number">1</span>;</span><br><span class="line">(*pp).y = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>有些情况下，为了更清晰的表明结构体的功能，通常会使用别名：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">int</span> <span class="type">uint32_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">short</span> <span class="type">uint16_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果后续需要用作链表，需要结构体名和别名</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">&#125; <span class="type">point_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果不需要用作链表，可以直接省区结构体名</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">&#125;<span class="type">point_t</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h3><ul>
+<li><p>静态&#x2F;全局内存</p>
+<p>静态声明的变量和全局变量使用这部分内存，程序开始运行时分配，程序结束才消失</p>
+</li>
+<li><p>自动内存（栈）</p>
+<p>函数内局部变量，函数被调用时才创建</p>
+</li>
+<li><p>动态内存（堆）</p>
+<p>根据需求写代码动态分配内存，需要程序主动释放。</p>
+</li>
+</ul>
+<h2 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h2><h3 id="等差数列"><a href="#等差数列" class="headerlink" title="等差数列"></a>等差数列</h3><p>假设有n项元素，其中a<del>1</del>至a<del>n</del>中每两项之间的差值为d，则其前n项和<br>$$<br>S_n &#x3D; \frac{n(a_1+a_n)}{2}<br>$$<br>由于<br>$$<br>a_n &#x3D; a_1 + (n-1)d<br>$$<br>所以前n项和也可表示为：<br>$$<br>S_n &#x3D; na_1 + \frac{n(n-1)d}{2}<br>$$<br>当a<del>1</del>与d均为1时:<br>$$<br>S_n &#x3D; \frac{n(n+1)}{2}<br>$$</p>
+<h3 id="累加和数列"><a href="#累加和数列" class="headerlink" title="累加和数列"></a>累加和数列</h3><p>累加和数列是在等差数列的基础上再度累加。即</p>
+<ul>
+<li>b<del>1</del> &#x3D; S<del>1</del> &#x3D; a<del>1</del></li>
+<li>b<del>2</del> &#x3D; S<del>2</del> &#x3D; a<del>1</del>+a<del>2</del></li>
+<li>b<del>3</del> &#x3D; S<del>3</del> &#x3D; a<del>1</del>+a<del>2</del>+a<del>3</del></li>
+<li>…</li>
+<li>b<del>n</del> &#x3D; S<del>n</del> &#x3D; a<del>1</del>+a<del>2</del>+… + a<del>n</del> &#x3D; n(a<del>1</del>+a<del>n</del>)&#x2F;2</li>
+</ul>
+<p>我们假设，数列b的前n项和为T<del>n</del>，则有<br>$$<br>T_n &#x3D; \sum_{k&#x3D;1}^nS_k  &#x3D;  \sum_{k&#x3D;1}^n(\frac{k}{2}(2a_1+(k-1)d))<br>$$<br>展开后可得：<br>$$<br>T_n &#x3D;  a_1\sum_{k&#x3D;1}^nk + \frac{d}{2}\sum_{k&#x3D;1}^n(k^2-k)<br>$$</p>
+<p>利用求和公式计算得：<br>$$<br>T_n &#x3D;  a_1\frac{n(n+1)}{2} + \frac{d}{2}(\frac{n(n+1)(2n+1)}{6} - \frac{n(n+1)}{2})<br>$$</p>
+<p>整理可得：<br>$$<br>T_n &#x3D;  a_1\frac{n(n+1)}{2} + d\frac{n(n+1)(n-1)}{6}<br>$$</p>
+<p>合并同类项得：<br>$$<br>T_n &#x3D;  \frac{n(n+1)}{2}(a_1+\frac{d(n-1)}{3})<br>$$<br>我们假设，a<del>1</del> 和d均为1，则数列的前n项和为：<br>$$<br>T_n &#x3D; \frac{n(n+1)(n+2)}{6}<br>$$</p>
+<h3 id="等比数列"><a href="#等比数列" class="headerlink" title="等比数列"></a>等比数列</h3><p>数列{a<del>n</del>}满足相邻项的比值为常数q，其通项式为<br>$$<br>a_n &#x3D; a_1q^{n-1}<br>$$<br>因此S<del>n</del>的表达式为：<br>$$<br>S_n &#x3D; a_1 + a_1q + a_1q^2 + .. a_1q^{n-1}<br>$$<br>两端同时成q以后减去上式：<br>$$<br>(q-1)S_n &#x3D; a_1(q^n-1)<br>$$<br>可得：<br>$$<br>S_n &#x3D; a_1\frac{1-q^n}{1-q}<br>$$</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><ul>
+<li>时间复杂度</li>
+<li>空间复杂度</li>
+<li>抽象数据类型ADT</li>
+</ul>
+<p>数据结构与算法存在本质联系。在研究某一类型的数据结构时，总要涉及其上施加的运算，只有通过对定义运算的研究，才能真正理解数据结构的定义与作用。</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>时间复杂度，也称渐进复杂度，T(n) &#x3D; O(f(n))。随问题规模n增大，算法执行时间增长率和f(n)增长率成正比。</p>
+<p><strong>程序运行时间主要和执行每条语句的耗时、每条语句的执行频率有关。</strong></p>
+<p>语句执行要由源程序翻译为目标代码，目标代码再装配执行。每个语句执行一次需要的具体时间和机器的软&#x2F;硬件环节有关。<span style="color:red"><strong>因此，算法分析并非是实际执行时间，而是针对算法中语句执行次数做出估计，得到算法执行时间的信息。</strong></span></p>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i&lt;=n; i++) <span class="comment">//循环n次，额外1次判断频度为n+1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j&lt;=n; j++)<span class="comment">//同上</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k =<span class="number">1</span>; k&lt;=n; k++)<span class="comment">//同上</span></span><br><span class="line">        &#123;</span><br><span class="line">            c[i][j] += a[i][k]* b[k][j]; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上方代码的<code>f(n) = n^3</code>，当n&#x3D;1时，<code>f(n) = O(1)</code>。</p>
+<p>有以下区分：</p>
+<ul>
+<li>最好时间复杂度：算法再最好情况下的时间复杂度</li>
+<li><strong>最坏时间复杂度：算法在最坏情况下的时间复杂度</strong></li>
+<li>平均时间复杂度：算法在所有可能的情况下，按输入实例等概率出现时的加权平均值</li>
+</ul>
+<p>通常只讨论最坏时间复杂度。</p>
+<h4 id="常量阶"><a href="#常量阶" class="headerlink" title="常量阶"></a>常量阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x++; <span class="comment">//频度为1</span></span><br><span class="line">s = <span class="number">0</span>; <span class="comment">//频度为1</span></span><br></pre></td></tr></table></figure>
+
+<p><code>f(n) = 1+1;</code>复杂度为O(1)。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10000</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    x++;</span><br><span class="line">    s = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>算法执行时间不随问题的规模增长而增长，尽管执行了上万次，其仍然是常量。</p>
+<h4 id="线性阶"><a href="#线性阶" class="headerlink" title="线性阶"></a>线性阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">&#123;</span><br><span class="line">	x++; <span class="comment">//频度为n</span></span><br><span class="line">    s=<span class="number">0</span>; <span class="comment">//频度为n</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>f(n)=(n+1)+n+n = 3n+1</code>，即复杂度T(n) &#x3D; O(n)。</p>
+<h4 id="平方阶"><a href="#平方阶" class="headerlink" title="平方阶"></a>平方阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x++; <span class="comment">//频度为n</span></span><br><span class="line">s=<span class="number">0</span>; <span class="comment">//频度为n	</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;=n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;=n; j++)<span class="comment">//频度为n	</span></span><br><span class="line">    &#123;</span><br><span class="line">        y++;<span class="comment">//频度为n	</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>f(n)=(n+1)*n = n^2+n</code>，即复杂度T(n) &#x3D; O(n^2)。</p>
+<h4 id="立方阶"><a href="#立方阶" class="headerlink" title="立方阶"></a>立方阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;=n; i++)<span class="comment">//频度为n</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;=i; j++) <span class="comment">//频度为1+2+..+i	</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k =<span class="number">0</span>; k&lt;=j;k++ )<span class="comment">//频度为1+(1+2)+(1+2+3)..+n*(n+1)/2</span></span><br><span class="line">        &#123;</span><br><span class="line">        	y++;<span class="comment">//频度为n*(n+1)*(n+2)/6	</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>f(n)=n*(n*(n+1)/2) = n^2+n</code>，即复杂度T(n) &#x3D; O(n^2)。</p>
+<h4 id="对数阶"><a href="#对数阶" class="headerlink" title="对数阶"></a>对数阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;=n; i=i*<span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">	x++; </span><br><span class="line">    s=<span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">次数</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">t</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">4</td>
+<td align="center">8</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">i</td>
+<td align="center">2^0</td>
+<td align="center">2^1</td>
+<td align="center">2^2</td>
+<td align="center">2^3</td>
+<td align="center">2^(t-1)</td>
+</tr>
+</tbody></table>
+<p>2^t-1 &gt; n时循环退出，可得t&gt;log<del>2</del>n + 1</p>
+<p>即T(n) &#x3D; O(log<del>2</del>n)，故也可以推导出倍数为其他值时的时间复杂度。</p>
+<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>1.例如：设n是描述问题规模的非负整数，下面程序片段的时间复杂度是();</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">while</span>(x&lt;n/<span class="number">2</span>)</span><br><span class="line">    x = <span class="number">2</span>*x;</span><br></pre></td></tr></table></figure>
+
+<p>实现复杂度的核心目的是找到语句的执行频次，也即什么时候退出循环，把每次x的值列出</p>
+<table>
+<thead>
+<tr>
+<th align="center">次数</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">t</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="center">2^2</td>
+<td align="center">2^3</td>
+<td align="center">2^4</td>
+<td align="center">2^5</td>
+<td align="center">2^t+1</td>
+</tr>
+</tbody></table>
+<p>即2^t+1^ &gt; n&#x2F;2，可得t&gt;log<del>2</del>n - 2，时间复杂度为O(log<del>2</del>n)。</p>
+<p>2.再如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fun</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>, sum =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(sum &lt; n) sum += ++i;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的思路，列i与sum的变化表格：</p>
+<table>
+<thead>
+<tr>
+<th align="center">次数</th>
+<th>1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">t</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td>1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">t</td>
+</tr>
+<tr>
+<td align="center">sum</td>
+<td>1</td>
+<td align="center">1+2</td>
+<td align="center">1+2+3</td>
+<td align="center">1+..+4</td>
+<td align="center">t(t+1)&#x2F;2</td>
+</tr>
+</tbody></table>
+<p>即t(t+1)&#x2F;2 &gt;&#x3D; n，推知t &gt; n^1&#x2F;2^，时间复杂度为O (n^1&#x2F;2^)。</p>
+<p><span style="color:red"><strong>此处曾出现一处误解，即在t次将sum的值计算为n(n+1)&#x2F;2 &gt; n，从而得出复杂度为O(n)。根本原因在于将循环次数与问题规模混用一个n值。</strong></span></p>
+<p>3.再如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;n; i*=<span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;i; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">次数</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">t</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="center">2^0</td>
+<td align="center">2^1</td>
+<td align="center">2^2</td>
+<td align="center">2^3</td>
+<td align="center">2^(t-1)</td>
+</tr>
+<tr>
+<td align="center">内层次数</td>
+<td align="center">2^0</td>
+<td align="center">2^1</td>
+<td align="center">2^2</td>
+<td align="center">2^3</td>
+<td align="center">2^(t-1)</td>
+</tr>
+</tbody></table>
+<p>其中外层函数的执行次数为2^(t-1) &gt;&#x3D;n ，可得t&gt;log<del>2</del>n + 1。</p>
+<p>而内层每次执行执行的次数与外圈i相等，故最内层语句总执行频度为：<br>$$<br>f(n) &#x3D; 2^0 + 2^1  + .. +  2^{t-1} &#x3D; 2\frac{1-2^t}{1-2} &#x3D; 2^{t+1}-2<br>$$<br>带入t&#x3D;log<del>2</del>n得f(n) &#x3D; 2n，故T(n) &#x3D; O(n)；</p>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>空间复杂度主要描述某个算法对应的程序想在计算机上执行，<strong>除去用来存储代码和输入数据的内存空间外，还需要额外的空间</strong>。</p>
+<p>S(n) &#x3D; O(f(n))。</p>
+<h3 id="抽象数据类型ADT"><a href="#抽象数据类型ADT" class="headerlink" title="抽象数据类型ADT"></a>抽象数据类型ADT</h3><p>ADT是一种编程概念，用于定义数据类型及其操作，不涉及实现细节。优势是对外隐藏细节，对内隐藏接口。</p>
+<p>在C中，ADT通常通过结构体和函数实现。</p>
+<p align="center">---------------------------  End  ---------------------------</p>
+
+<blockquote>
+<p>算法 + 数据结构 &#x3D; 程序</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算机类</category>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-08-三元递增子序列</title>
+    <url>/2025/08/09/LeetCode-08-Increasing_Triplet/</url>
+    <content><![CDATA[<p>LeetCode算法题：元素之积。</p>
+<span id="more"></span>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给你一个整数数组 <code>nums</code> ，判断这个数组中是否存在长度为 <code>3</code> 的递增子序列。</p>
+<p>如果存在这样的三元组下标 <code>(i, j, k)</code> 且满足 <code>i &lt; j &lt; k</code> ，使得 <code>nums[i] &lt; nums[j] &lt; nums[k]</code> ，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 5 * 105</code></li>
+<li><code>-231 &lt;= nums[i] &lt;= 231 - 1</code></li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>首先区分题干要求，递增三元子序列。由原序列中任意n个元素可组成一个n元子序列，例如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>[1,2,4]</code>、<code>[1,4,7]</code>均为a的子序列，如果有顺序要求，则判断条件更广。</p>
+<p>因此，最基础的思路是使用三重循环遍历，直至找到，或者遍历完成。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案A-遍历"><a href="#方案A-遍历" class="headerlink" title="方案Ａ-遍历"></a>方案Ａ-遍历</h3><p>以首元素为i的起点，次元素为j起点，第三个元素为k的起点。但是改方案嵌套三重循环，不适用数据量较大的情况。</p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="A.jpg" alt="image can't load." style="zoom:100%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    三循环，时间O(n^3)<!--标题-->
+    </center>
+</div>
+
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">increasingTriplet</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize)</span> &#123;</span><br><span class="line">    <span class="type">bool</span> result = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(numsSize &lt; <span class="number">3</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;numsSize<span class="number">-2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>; j&lt;numsSize - <span class="number">1</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=j+<span class="number">1</span>; k&lt;numsSize; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]&lt;nums[j] &amp;&amp; nums[j]&lt;nums[k])</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案B-贪心"><a href="#方案B-贪心" class="headerlink" title="方案B-贪心"></a>方案B-贪心</h3><p>方案A的时间复杂度较大，换种思路，即三个元素相互对比，其大小关系只有以下几种：</p>
+<ul>
+<li>i &lt; j &lt; k，单调递增</li>
+<li>i &lt; j，i &lt; k &lt; j，新数组在前方两个数据之间</li>
+<li>k &lt; i &lt; j，新数据最小</li>
+</ul>
+<p><strong>因此定义min存储整个序列的最小值，second存储的数据不定，但一定保证前方存在一个数据&lt;second。</strong></p>
+<div>			<!--块级封装-->
+    <center>	<!--将图片和文字居中-->
+    <img src="B.jpg" alt="image can't load." style="zoom:100%"><!-- alt内为提示词-->
+    <br>		<!--换行-->
+    贪心，时间O(n)空间O(1)<!--标题-->
+    </center>
+</div>
+
+<p>如上图，尽管最后的结果使用的是mid2、min3和末尾值，但在mid2之前一定有一个更小的min1（否则mid为初值<code>INT_MAX</code>，不可能有比其更大的值）。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">increasingTriplet</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(numsSize &lt; <span class="number">3</span>) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="type">bool</span> result = <span class="literal">false</span>;</span><br><span class="line">    <span class="type">int</span> min = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="type">int</span> mid = INT_MIX; <span class="comment">// 初始化为最大值</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;numsSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">     	<span class="comment">// 三元素递增</span></span><br><span class="line">        <span class="keyword">if</span>(mid &lt; nums[i]) </span><br><span class="line">        &#123;</span><br><span class="line">            result = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 刷新次最小的元素值，前方一定有比他更小的</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(min &lt; nums[i])</span><br><span class="line">        &#123;</span><br><span class="line">            mid = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            min = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p align="center">---------------------------  End  ---------------------------</p>
+>*白日放歌须纵酒，青春作伴好还乡。--《 闻官军收河南河北》*]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>LeetCode</tag>
+      </tags>
   </entry>
   <entry>
     <title>LeetCode-07-元素之积</title>
@@ -1048,24 +1647,22 @@
 <span id="more"></span>
 
 <h2 id="订单查询"><a href="#订单查询" class="headerlink" title="订单查询"></a>订单查询</h2><p><a href="https://vip.777haoka.cn/cha?k=bHJ1MGp0Vlg0RW89">点击查询订单状态</a></p>
-<h2 id="办理链接-2025-08-08更新"><a href="#办理链接-2025-08-08更新" class="headerlink" title="办理链接(2025.08.08更新)"></a>办理链接(2025.08.08更新)</h2><p>该链接主要放一些博主觉得不错的全国发货的流量卡，部分流量卡限制收货地所在省份，此处并未放置。如果有需求，也可以<a href="https://space.bilibili.com/405856572?spm_id_from=333.788.0.0">点击此处</a>在B站私信我。</p>
+<h2 id="办理链接-2025-08-24更新"><a href="#办理链接-2025-08-24更新" class="headerlink" title="办理链接(2025.08.24更新)"></a>办理链接(2025.08.24更新)</h2><p>该链接主要放一些博主觉得不错的全国发货的流量卡，部分流量卡限制收货地所在省份，此处并未放置。如果有需求，也可以<a href="https://space.bilibili.com/405856572?spm_id_from=333.788.0.0">点击此处</a>在B站私信我。</p>
 <p><span style="color:red"><strong>注意：下单之前请点击链接内的详细资料一栏，判断是否是禁发送区域，如果是则会审核失败，可以更换另外的链接…</strong></span></p>
 <h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><ol>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2436">新移动淘气卡【选号后报单发货】29元100G通用+80G定向+200分钟+会员权益(自主激活，18-28岁)</a></li>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2436">新移动淘气卡【选号后报单发货】29元100G通用+80G定向+200分钟+权益会员(自主激活，18-26岁,没有视频会员)</a></li>
+<li></li>
 <li></li>
 </ol>
 <h3 id="联通"><a href="#联通" class="headerlink" title="联通"></a>联通</h3><ol>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2331">联通艾莉卡29元130G通用+30G定向+500分钟+会员权益(自主激活，全国发货)</a></li>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2432">联通神王卡29元150G通用+100G定向+500分钟(自主激活，18-30)</a></li>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2412">联通贵人卡【四照下单】23.9元170G通用+0G定向+200分钟+会员权益(自主激活，需要上传公安码，四照下单)</a></li>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2455">联通小豹卡【三照下单】19元150G通用+300分钟(到期可续，18-25，自主激活,限量)</a></li>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2494">联通叮当卡26元125G【全国发货】无短信，自主激活(全国发货无禁区,自主激活,无短信功能,佣金可合追溯)</a></li>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2305">联通沃派卡【发货快】39元280G通用+100分钟+会员权益(自主激活，全国发货，18-26)</a></li>
 <li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2306">联通沃龙卡29元150G通用+300分钟(自主激活，18-25岁)</a></li>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2434">联通恭喜卡【需上传一证通查】29元150G通用+300分钟(自助激活，18-60)</a></li>
+<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2298">联通水花卡T2【四照发货】29元230G通用+300分钟+会员权益(自主激活，需上传一证通查发货,18-30)</a></li>
 <li></li>
 </ol>
-<h3 id="电信"><a href="#电信" class="headerlink" title="电信"></a>电信</h3><ol>
-<li><a href="https://vip.777haoka.cn/order/index.php?uid=bHJ1MGp0Vlg0RW89&pid=2407">电信汉堡卡【考核三要素】29元165G通用+30G定向+500分钟(自主激活，全国发货，18-28)</a></li>
-<li></li>
-</ol>
+<h3 id="电信"><a href="#电信" class="headerlink" title="电信"></a>电信</h3><p>2. </p>
 <h2 id="自用截图"><a href="#自用截图" class="headerlink" title="自用截图"></a>自用截图</h2><p>博主个人自用移动保号套餐+联通流量卡，未出现流量限速和网络丢失的情况。</p>
 <div>			<!--块级封装-->
     <center>	<!--将图片和文字居中-->

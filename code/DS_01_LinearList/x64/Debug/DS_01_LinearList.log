@@ -1,0 +1,3 @@
+﻿  main.c
+F:\Blog\MicroPrism\source\code\DS_01_LinearList\main.c(26,19): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  DS_01_LinearList.vcxproj -> F:\Blog\MicroPrism\source\code\DS_01_LinearList\x64\Debug\DS_01_LinearList.exe
