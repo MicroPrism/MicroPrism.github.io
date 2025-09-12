@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-09-12T14:19:13.690Z</updated>
+  <updated>2025-09-12T14:24:59.451Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://microprism.github.io/2025/08/10/DS-02-Linear_List/"/>
     <id>https://microprism.github.io/2025/08/10/DS-02-Linear_List/</id>
     <published>2025-08-10T08:38:26.000Z</published>
-    <updated>2025-09-12T14:19:13.690Z</updated>
+    <updated>2025-09-12T14:24:59.451Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博文基于C语言的内容引入数据结构的时间、空间复杂度，并补充等差数列、累加和数列、等比数列等数学基础。解释顺序表、链表的使用场景和效率提升思路。&lt;/p&gt;</summary>
@@ -183,7 +183,7 @@
     <link href="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/"/>
     <id>https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/</id>
     <published>2025-07-19T11:02:33.832Z</published>
-    <updated>2025-07-19T16:03:56.985Z</updated>
+    <updated>2025-07-20T07:37:47.121Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…&lt;/p&gt;</summary>
@@ -294,9 +294,9 @@
     <category term="High Speed" scheme="https://microprism.github.io/categories/Hardware/High-Speed/"/>
     
     
-    <category term="Altium Designer" scheme="https://microprism.github.io/tags/Altium-Designer/"/>
-    
     <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
+    
+    <category term="Altium Designer" scheme="https://microprism.github.io/tags/Altium-Designer/"/>
     
   </entry>
   
