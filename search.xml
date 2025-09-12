@@ -80,7 +80,7 @@
     <content><![CDATA[<p>本博文基于C语言的内容引入数据结构的时间、空间复杂度，并补充等差数列、累加和数列、等比数列等数学基础。解释顺序表、链表的使用场景和效率提升思路。</p>
 <span id="more"></span>
 
-<p>代码:<a href="https://microprism.github.io/code/2025-08-10-DS-02-Linear_List.c">点击查阅</a></p>
+<p>代码:<a href="https://github.com/MicroPrism/MicroPrism.github.io/tree/main/code/2025-08-10-DS-02-Linear_List/">点击查阅</a></p>
 <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
 <p> 由n(n&gt;&#x3D;0)个数据特性相同的元素构成的有限序列。</p>
 </blockquote>

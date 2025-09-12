@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-09-12T14:24:59.451Z</updated>
+  <updated>2025-09-12T14:31:33.299Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://microprism.github.io/2025/08/10/DS-02-Linear_List/"/>
     <id>https://microprism.github.io/2025/08/10/DS-02-Linear_List/</id>
     <published>2025-08-10T08:38:26.000Z</published>
-    <updated>2025-09-12T14:24:59.451Z</updated>
+    <updated>2025-09-12T14:31:33.299Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博文基于C语言的内容引入数据结构的时间、空间复杂度，并补充等差数列、累加和数列、等比数列等数学基础。解释顺序表、链表的使用场景和效率提升思路。&lt;/p&gt;</summary>
