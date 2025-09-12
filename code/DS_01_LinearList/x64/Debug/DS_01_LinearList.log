@@ -1,3 +1,5 @@
 ﻿  main.c
-F:\Blog\MicroPrism\source\code\DS_01_LinearList\main.c(26,19): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+F:\Blog\MicroPrism\source\code\DS_01_LinearList\main.c(39,19): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+F:\Blog\MicroPrism\source\code\DS_01_LinearList\main.c(138,14): warning C4047: “return”:“int”与“void *”的间接级别不同
+F:\Blog\MicroPrism\source\code\DS_01_LinearList\main.c(520,11): warning C4047: “return”:“Node *”与“int”的间接级别不同
   DS_01_LinearList.vcxproj -> F:\Blog\MicroPrism\source\code\DS_01_LinearList\x64\Debug\DS_01_LinearList.exe
