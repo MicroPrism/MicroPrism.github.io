@@ -6,7 +6,7 @@
   <link href="https://microprism.github.io/rss.xml" rel="self"/>
   
   <link href="https://microprism.github.io/"/>
-  <updated>2025-09-12T14:31:33.299Z</updated>
+  <updated>2026-01-11T10:05:54.768Z</updated>
   <id>https://microprism.github.io/</id>
   
   <author>
@@ -17,14 +17,88 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>FPGA-04-Verilog语法</title>
+    <link href="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/"/>
+    <id>https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/</id>
+    <published>2025-12-01T13:39:44.000Z</published>
+    <updated>2026-01-11T10:05:54.768Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文学习分析Verilog计数器、分频器设计思路。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="FPGA" scheme="https://microprism.github.io/categories/FPGA/"/>
+    
+    <category term="Syntax" scheme="https://microprism.github.io/categories/FPGA/Syntax/"/>
+    
+    
+    <category term="FPGA" scheme="https://microprism.github.io/tags/FPGA/"/>
+    
+    <category term="Verilog" scheme="https://microprism.github.io/tags/Verilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FPGA-03-Verilog语法</title>
+    <link href="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/"/>
+    <id>https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/</id>
+    <published>2025-11-24T11:59:15.000Z</published>
+    <updated>2025-12-01T16:02:39.816Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文参考实例熟悉Verilog
+HDL基本语法，描述FPGA程序设计本质和思路。基于Vivado创建工程，野火ZYNQ-7020开发板实操。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="FPGA" scheme="https://microprism.github.io/categories/FPGA/"/>
+    
+    <category term="Syntax" scheme="https://microprism.github.io/categories/FPGA/Syntax/"/>
+    
+    
+    <category term="FPGA" scheme="https://microprism.github.io/tags/FPGA/"/>
+    
+    <category term="Verilog" scheme="https://microprism.github.io/tags/Verilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DS-03-栈与队列</title>
+    <link href="https://microprism.github.io/2025/09/15/DS-03-Stack_and_Queue/"/>
+    <id>https://microprism.github.io/2025/09/15/DS-03-Stack_and_Queue/</id>
+    <published>2025-09-15T11:28:07.000Z</published>
+    <updated>2025-12-23T14:55:25.883Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本博文基于C语言数据结构，解释队列存储结构与增删改查思路。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机类" scheme="https://microprism.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B1%BB/"/>
+    
+    <category term="数据结构" scheme="https://microprism.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B1%BB/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="C" scheme="https://microprism.github.io/tags/C/"/>
+    
+    <category term="数据结构" scheme="https://microprism.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="栈" scheme="https://microprism.github.io/tags/%E6%A0%88/"/>
+    
+    <category term="队列" scheme="https://microprism.github.io/tags/%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据结构-02-线性表</title>
     <link href="https://microprism.github.io/2025/08/10/DS-02-Linear_List/"/>
     <id>https://microprism.github.io/2025/08/10/DS-02-Linear_List/</id>
     <published>2025-08-10T08:38:26.000Z</published>
-    <updated>2025-09-12T14:31:33.299Z</updated>
+    <updated>2025-09-15T11:30:00.646Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本博文基于C语言的内容引入数据结构的时间、空间复杂度，并补充等差数列、累加和数列、等比数列等数学基础。解释顺序表、链表的使用场景和效率提升思路。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本博文基于C语言数据结构定义时间、空间复杂度，补充等差数列、累加和数列、等比数列等数学基础。解释顺序表、链表的增删改查与效率提升思路。&lt;/p&gt;</summary>
     
     
     
@@ -46,7 +120,7 @@
     <link href="https://microprism.github.io/2025/08/09/DS-01-Introduction/"/>
     <id>https://microprism.github.io/2025/08/09/DS-01-Introduction/</id>
     <published>2025-08-09T09:11:29.000Z</published>
-    <updated>2025-08-10T08:36:47.830Z</updated>
+    <updated>2026-01-03T15:42:52.473Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博文基于C语言的内容引入数据结构的时间、空间复杂度概念，并补充等差数列、累加和数列、等比数列等数学理论。&lt;/p&gt;</summary>
@@ -69,7 +143,7 @@
     <link href="https://microprism.github.io/2025/08/09/LeetCode-08-Increasing_Triplet/"/>
     <id>https://microprism.github.io/2025/08/09/LeetCode-08-Increasing_Triplet/</id>
     <published>2025-08-09T03:27:28.000Z</published>
-    <updated>2025-08-09T05:10:09.872Z</updated>
+    <updated>2025-12-23T14:54:38.568Z</updated>
     
     
     <summary type="html">&lt;p&gt;LeetCode算法题：元素之积。&lt;/p&gt;</summary>
@@ -186,7 +260,8 @@
     <updated>2025-07-20T07:37:47.121Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本博文介绍ZYNQ SDK默认Lwip
+Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…&lt;/p&gt;</summary>
     
     
     
@@ -207,7 +282,7 @@
     <updated>2025-08-04T13:26:13.410Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本篇博文主要介绍TCP&amp;#x2F;IP协议特性…。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本篇博文主要介绍TCP/IP协议特性…。&lt;/p&gt;</summary>
     
     
     
@@ -267,7 +342,7 @@
     <link href="https://microprism.github.io/2025/07/18/Blog_Using_Guide/"/>
     <id>https://microprism.github.io/2025/07/18/Blog_Using_Guide/</id>
     <published>2025-07-18T08:20:40.000Z</published>
-    <updated>2025-08-09T09:19:21.938Z</updated>
+    <updated>2025-12-23T14:55:05.723Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博文栽树，以便后人乘凉。&lt;/p&gt;</summary>
@@ -285,7 +360,8 @@
     <updated>2025-07-18T09:18:19.453Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本博客记录Altium
+Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…&lt;/p&gt;</summary>
     
     
     
@@ -294,9 +370,9 @@
     <category term="High Speed" scheme="https://microprism.github.io/categories/Hardware/High-Speed/"/>
     
     
-    <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
-    
     <category term="Altium Designer" scheme="https://microprism.github.io/tags/Altium-Designer/"/>
+    
+    <category term="PCB" scheme="https://microprism.github.io/tags/PCB/"/>
     
   </entry>
   
@@ -361,77 +437,6 @@
     
     
     <category term="SIM Card" scheme="https://microprism.github.io/tags/SIM-Card/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-03-Next嵌入PDF</title>
-    <link href="https://microprism.github.io/2025/06/04/Hexo-03-Embed_PDF_In_Next/"/>
-    <id>https://microprism.github.io/2025/06/04/Hexo-03-Embed_PDF_In_Next/</id>
-    <published>2025-06-04T00:41:34.000Z</published>
-    <updated>2025-07-18T09:19:22.376Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍在使用Hexo Next主题搭建个人博客时使用hexo-pdf插件或PDF.js工具在博客内嵌入显示pdf文件的解决方案，便于进行手机和电脑双端在线浏览。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tools" scheme="https://microprism.github.io/categories/Tools/"/>
-    
-    <category term="Hexo" scheme="https://microprism.github.io/categories/Tools/Hexo/"/>
-    
-    
-    <category term="Next" scheme="https://microprism.github.io/tags/Next/"/>
-    
-    <category term="Pdf" scheme="https://microprism.github.io/tags/Pdf/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NCU-873控制专业考研形势</title>
-    <link href="https://microprism.github.io/2025/06/02/NCU-873_Trends/"/>
-    <id>https://microprism.github.io/2025/06/02/NCU-873_Trends/</id>
-    <published>2025-06-02T07:43:55.000Z</published>
-    <updated>2025-07-18T09:19:47.552Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本篇博文简要介绍南昌大学控制科学与工程、控制工程截止2025年的考研形式…&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="NCU" scheme="https://microprism.github.io/categories/NCU/"/>
-    
-    <category term="873" scheme="https://microprism.github.io/categories/NCU/873/"/>
-    
-    
-    <category term="NCU" scheme="https://microprism.github.io/tags/NCU/"/>
-    
-    <category term="Postgrad" scheme="https://microprism.github.io/tags/Postgrad/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FPGA-02-Verilog语法</title>
-    <link href="https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/"/>
-    <id>https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/</id>
-    <published>2025-05-29T03:00:44.000Z</published>
-    <updated>2025-07-18T08:00:56.733Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍Verilog HDL基本语法，主要将该代码与类似的C&amp;#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="FPGA" scheme="https://microprism.github.io/categories/FPGA/"/>
-    
-    <category term="Syntax" scheme="https://microprism.github.io/categories/FPGA/Syntax/"/>
-    
-    
-    <category term="FPGA" scheme="https://microprism.github.io/tags/FPGA/"/>
-    
-    <category term="Verilog" scheme="https://microprism.github.io/tags/Verilog/"/>
-    
-    <category term="C" scheme="https://microprism.github.io/tags/C/"/>
     
   </entry>
   

@@ -24,21 +24,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"microprism.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…">
+    <meta name="description" content="本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Altium-02-异常与解决办法">
 <meta property="og:url" content="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…">
+<meta property="og:description" content="本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/image-20250718094118825.png">
 <meta property="article:published_time" content="2025-07-18T01:34:52.000Z">
 <meta property="article:modified_time" content="2025-07-18T09:18:19.453Z">
 <meta property="article:author" content="Youngs">
-<meta property="article:tag" content="PCB">
 <meta property="article:tag" content="Altium Designer">
+<meta property="article:tag" content="PCB">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/image-20250718094118825.png">
 
 
 <link rel="canonical" href="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/">
@@ -84,6 +82,12 @@
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -125,7 +129,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -176,7 +180,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text">原理图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCB"><span class="nav-number">2.</span> <span class="nav-text">PCB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%99%A8%E4%BB%B6%E4%BD%8D%E7%BD%AE%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">器件位置类</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text">原理图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pcb"><span class="nav-number">2.</span> <span class="nav-text">PCB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%99%A8%E4%BB%B6%E4%BD%8D%E7%BD%AE%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">器件位置类</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -191,18 +195,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -254,7 +258,7 @@
         <h3 class="widget-title">Tags</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/502/" rel="tag">502</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
         </div>
       </div>
@@ -359,27 +363,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本博客记录Altium Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…</p>
+    <div class="post-body" itemprop="articleBody"><p>本博客记录Altium
+Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB进行归类…</p>
 <span id="more"></span>
-
-<h2 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h2><p>None.</p>
-<h2 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h2><h3 id="器件位置类"><a href="#器件位置类" class="headerlink" title="器件位置类"></a>器件位置类</h3><ol>
+<h2 id="原理图">原理图</h2>
+<p>None.</p>
+<h2 id="pcb">PCB</h2>
+<h3 id="器件位置类">器件位置类</h3>
+<ol type="1">
 <li><p>器件无法拖动到原点左侧和下方</p>
 <p>如下图。绝对原点限制了器件摆放位置。</p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250718094118825.png" alt="image can't load." style="zoom:40%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-    辅助中心    <!--标题-->
-    </center>
+<div>
+<pre><code>        &lt;!--块级封装--&gt;
+&lt;center&gt; &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-18-Altium-02-Error_And_Solution/image-20250718094118825.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:40%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;     &lt;!--换行--&gt;
+辅助中心 &lt;!--标题--&gt;
+&lt;/center&gt;</code></pre>
 </div>
-
-
-<p>Re:使用<code>EJA</code>跳转至绝对原点，若板框距离原点有差距，选中所有器件移动至合适位置即可。</p>
-</li>
+<p>Re:使用<code>EJA</code>跳转至绝对原点，若板框距离原点有差距，选中所有器件移动至合适位置即可。</p></li>
 </ol>
-<p align="center">---------------------------  End  ---------------------------</p>
-
+<p align="center">
+————————— End —————————
+</p>
 <blockquote>
 <p><em>“我住长江头，君住长江尾。”–卜算子·我住长江头</em></p>
 </blockquote>
@@ -427,8 +435,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/PCB/" rel="tag"># PCB</a>
               <a href="/tags/Altium-Designer/" rel="tag"># Altium Designer</a>
+              <a href="/tags/PCB/" rel="tag"># PCB</a>
           </div>
 
         
@@ -464,7 +472,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

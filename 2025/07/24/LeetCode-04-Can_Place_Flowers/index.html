@@ -31,14 +31,12 @@
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="LeetCode算法题：种花问题。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://microprism.github.io/2025/07/24/LeetCode-04-Can_Place_Flowers/slip_window.jpg">
 <meta property="article:published_time" content="2025-07-24T06:41:43.000Z">
 <meta property="article:modified_time" content="2025-07-24T09:26:03.555Z">
 <meta property="article:author" content="Youngs">
 <meta property="article:tag" content="C">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://microprism.github.io/2025/07/24/LeetCode-04-Can_Place_Flowers/slip_window.jpg">
 
 
 <link rel="canonical" href="https://microprism.github.io/2025/07/24/LeetCode-04-Can_Place_Flowers/">
@@ -84,6 +82,12 @@
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -125,7 +129,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -176,7 +180,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88A"><span class="nav-number">3.1.</span> <span class="nav-text">方案A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88B"><span class="nav-number">3.2.</span> <span class="nav-text">方案B</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88a"><span class="nav-number">3.1.</span> <span class="nav-text">方案A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88b"><span class="nav-number">3.2.</span> <span class="nav-text">方案B</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -191,18 +195,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -254,7 +258,7 @@
         <h3 class="widget-title">Tags</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/502/" rel="tag">502</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
         </div>
       </div>
@@ -348,27 +352,37 @@
     
     <div class="post-body" itemprop="articleBody"><p>LeetCode算法题：种花问题。</p>
 <span id="more"></span>
-
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/studyplan/leetcode-75/">LeetCode 75 - 学习计划</a>-04-种花问题</p>
+<h2 id="题目">题目</h2>
+<p>LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/studyplan/leetcode-75/">LeetCode 75 -
+学习计划</a>-04-种花问题</p>
 <p>假设有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花不能种植在相邻的地块上，它们会争夺水源，两者都会死去。</p>
-<p>给你一个整数数组 <code>flowerbed</code> 表示花坛，由若干 <code>0</code> 和 <code>1</code> 组成，其中 <code>0</code> 表示没种植花，<code>1</code> 表示种植了花。另有一个数 <code>n</code> ，能否在不打破种植规则的情况下种入 <code>n</code> 朵花？能则返回 <code>true</code> ，不能则返回 <code>false</code> 。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>花不能相邻，则可用连续三块地无花进行分析。即<code>i-1,i,i+1</code>均为空。</p>
+<p>给你一个整数数组 <code>flowerbed</code> 表示花坛，由若干
+<code>0</code> 和 <code>1</code> 组成，其中 <code>0</code>
+表示没种植花，<code>1</code> 表示种植了花。另有一个数 <code>n</code>
+，能否在不打破种植规则的情况下种入 <code>n</code> 朵花？能则返回
+<code>true</code> ，不能则返回 <code>false</code> 。</p>
+<h2 id="思路">思路</h2>
+<p>花不能相邻，则可用连续三块地无花进行分析。即<code>i-1,i,i+1</code>均为空。</p>
 <p>但需考虑几个特殊情况：</p>
 <ul>
-<li>待插花数n&#x3D;0</li>
+<li>待插花数n=0</li>
 <li>花坛长度为1、2或其他长度（可直接判断插花或不插）</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案A"><a href="#方案A" class="headerlink" title="方案A"></a>方案A</h3><p>分别考虑特殊情况和长度大于2时的通用情况，遍历所有情况。</p>
+<h2 id="代码">代码</h2>
+<h3 id="方案a">方案A</h3>
+<p>分别考虑特殊情况和长度大于2时的通用情况，遍历所有情况。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">canPlaceFlowers</span><span class="params">(<span class="type">int</span>* flowerbed, <span class="type">int</span> flowerbedSize, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    assert(flowerbed);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 待插入0 */</span></span><br><span class="line">    <span class="keyword">if</span> (n==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 花圃仅一块 */</span></span><br><span class="line">    <span class="keyword">if</span>(flowerbedSize == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        flowerbed[<span class="number">0</span>]==<span class="number">0</span>? (n--):<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> n&gt;<span class="number">0</span>?<span class="literal">false</span>:<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 向两端插花 */</span></span><br><span class="line">    <span class="keyword">if</span>(flowerbed[<span class="number">0</span>]+flowerbed[<span class="number">1</span>] == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        flowerbed[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flowerbed[flowerbedSize<span class="number">-1</span>]+flowerbed[flowerbedSize<span class="number">-2</span>] == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        flowerbed[flowerbedSize<span class="number">-1</span>] = <span class="number">1</span>;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 循环在中间插花 */</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; flowerbedSize &gt; <span class="number">2</span> &amp;&amp; i&lt; flowerbedSize<span class="number">-1</span> &amp;&amp; n &gt; <span class="number">0</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((flowerbed[i<span class="number">-1</span>] | flowerbed[i] | flowerbed[i+<span class="number">1</span>]) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            flowerbed[i++] = <span class="number">1</span>; <span class="comment">/* 插花后向后跳 */</span></span><br><span class="line">            n--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n&gt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案B"><a href="#方案B" class="headerlink" title="方案B"></a>方案B</h3><div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="slip_window.jpg" alt="image can't load." style="zoom:100%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-    滑动窗逻辑<!--标题-->
-    </center>
+<h3 id="方案b">方案B</h3>
+<div>
+<pre><code>       &lt;!--块级封装--&gt;
+&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-24-LeetCode-04-Can_Place_Flowers/slip_window.jpg&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;        &lt;!--换行--&gt;
+滑动窗逻辑&lt;!--标题--&gt;
+&lt;/center&gt;</code></pre>
 </div>
-
 <p>使用滑动窗口逻辑，设定</p>
 <ul>
 <li>起始左窗口<code>left = -1,right = 0</code>。</li>
@@ -376,11 +390,9 @@
 <li>左右边界间距大于3时，可插入一个</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">canPlaceFlowers</span><span class="params">(<span class="type">int</span>* flowerbed, <span class="type">int</span> flowerbedSize, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    assert(flowerbed);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> left=<span class="number">-1</span>,right=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(flowerbedSize==<span class="number">1</span>)	<span class="comment">//考虑待插入数组只有一个空间</span></span><br><span class="line">    &#123;</span><br><span class="line">        flowerbed[<span class="number">0</span>] == <span class="number">0</span> ? (n--):<span class="number">0</span>;	</span><br><span class="line">        <span class="keyword">return</span>  n&lt;=<span class="number">0</span>;		<span class="comment">//需考虑n=0的情况</span></span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(right &lt; flowerbedSize &amp;&amp; n&gt;<span class="number">0</span>) <span class="comment">/* 未到达右边界，且无新花需要插入 */</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(flowerbed[right] == <span class="number">1</span>)	<span class="comment">/* 刷新左边界 */</span></span><br><span class="line">        &#123;</span><br><span class="line">            left = right+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        right ++;   </span><br><span class="line"></span><br><span class="line">        <span class="comment">/*分别判断在中间或花圃右边界是否能插入新花*/</span></span><br><span class="line">        <span class="keyword">if</span>(right-left&gt;=<span class="number">3</span> || (right == flowerbedSize &amp;&amp; (right-left)&gt;<span class="number">1</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            n--;</span><br><span class="line">            left += <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n&lt;=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p align="center">---------------------------  End  ---------------------------</p>
-
+<p align="center">
+————————— End —————————
+</p>
 <blockquote>
 <p><em>星星之火</em></p>
 </blockquote>
@@ -465,7 +477,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

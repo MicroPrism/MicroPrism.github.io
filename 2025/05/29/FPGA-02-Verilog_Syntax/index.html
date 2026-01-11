@@ -24,14 +24,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"microprism.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="本文介绍Verilog HDL基本语法，主要将该代码与类似的C&#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。">
+    <meta name="description" content="本文介绍Verilog HDL基本语法，主要将该代码与类似的C&#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FPGA-02-Verilog语法">
 <meta property="og:url" content="https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="本文介绍Verilog HDL基本语法，主要将该代码与类似的C&#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。">
+<meta property="og:description" content="本文介绍Verilog HDL基本语法，主要将该代码与类似的C&#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/image-20250601142141567.png">
 <meta property="article:published_time" content="2025-05-29T03:00:44.000Z">
 <meta property="article:modified_time" content="2025-07-18T08:00:56.733Z">
 <meta property="article:author" content="Youngs">
@@ -39,7 +38,6 @@
 <meta property="article:tag" content="Verilog">
 <meta property="article:tag" content="C">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/image-20250601142141567.png">
 
 
 <link rel="canonical" href="https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/">
@@ -85,6 +83,12 @@
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -126,7 +130,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -192,18 +196,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -255,7 +259,7 @@
         <h3 class="widget-title">Tags</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/502/" rel="tag">502</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
         </div>
       </div>
@@ -366,27 +370,32 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文介绍Verilog HDL基本语法，主要将该代码与类似的C&#x2F;C#语言代码进行对比，根据架构的不同强调表示形式的差异。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文介绍Verilog
+HDL基本语法，主要将该代码与类似的C/C#语言代码进行对比，根据架构的不同强调表示形式的差异。</p>
 <span id="more"></span>
-
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="逻辑值"><a href="#逻辑值" class="headerlink" title="逻辑值"></a>逻辑值</h3><p>FPGA内逻辑值除0、1外新增高阻态Z，表示无驱动。而实际运行中还可能出现亚稳态。</p>
-<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>标识符用于定义常数、变量、信号、端口、子模块或参数名称，大小写则为不同变量。自定义标识符需要为数字、字母、下划线、$等，且首字母需要为字母或者下划线。</p>
+<h2 id="语法">语法</h2>
+<h3 id="逻辑值">逻辑值</h3>
+<p>FPGA内逻辑值除0、1外新增高阻态Z，表示无驱动。而实际运行中还可能出现亚稳态。</p>
+<h3 id="标识符">标识符</h3>
+<p>标识符用于定义常数、变量、信号、端口、子模块或参数名称，大小写则为不同变量。自定义标识符需要为数字、字母、下划线、$等，且首字母需要为字母或者下划线。</p>
 <blockquote>
 <p>类似于C语言的关键字，如int、void、const等等。自定义标识符不能与关键字冲突。</p>
 </blockquote>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>Verilog中不变的值，分为整形、实型、字符串型。</p>
+<h3 id="常量">常量</h3>
+<p>Verilog中不变的值，分为整形、实型、字符串型。</p>
 <p>在表示整形数据时可以有以下几种：</p>
- <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">16</span>    <span class="comment">//位宽32的整数</span></span><br><span class="line"><span class="number">8&#x27;hab</span> <span class="comment">//8位hex值0xab</span></span><br><span class="line"><span class="number">8&#x27;d171</span><span class="comment">//8位dec值171</span></span><br><span class="line"><span class="number">8&#x27;o253</span><span class="comment">//8位oct值0253</span></span><br><span class="line"><span class="number">8&#x27;b101</span><span class="comment">//8位bin值</span></span><br></pre></td></tr></table></figure>
-
-<p><span style="color:red"> 类似于C语言存在整形提升或数据截断，Verilog也存在此种问题。</span></p>
+<p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">16</span>    <span class="comment">//位宽32的整数</span></span><br><span class="line"><span class="number">8&#x27;hab</span> <span class="comment">//8位hex值0xab</span></span><br><span class="line"><span class="number">8&#x27;d171</span><span class="comment">//8位dec值171</span></span><br><span class="line"><span class="number">8&#x27;o253</span><span class="comment">//8位oct值0253</span></span><br><span class="line"><span class="number">8&#x27;b101</span><span class="comment">//8位bin值</span></span><br></pre></td></tr></table></figure></p>
+<p><span style="color:red">
+类似于C语言存在整形提升或数据截断，Verilog也存在此种问题。</span></p>
 <p>例如，C语言使用<code>uint8_t data_a = 0x123;uint8_t data_b =0x1;</code>定义两个变量，数据类型为8bit位宽，显然前者溢出而后者补足。类比到Verilog中只是修改了表述方式，在赋值时赋予位宽，而且不用按8bit对齐：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">8&#x27;h123</span>; <span class="comment">//溢出，随后截断为0x23</span></span><br><span class="line">b = <span class="number">12&#x27;h1</span>;	<span class="comment">//不足，补充为0x001</span></span><br></pre></td></tr></table></figure>
-
 <p>实型数据，说白了就是浮点型，小数，可以采用<code>123.45e2</code>表示数值12345。</p>
-<p>字符串指双信号中的字符序列，与C一致，存储的ASCII码值。例如下方字符串 <code>Open log file.</code>可以用C的printf输出，同样可以在verilog内用$display输出 :</p>
+<p>字符串指双信号中的字符序列，与C一致，存储的ASCII码值。例如下方字符串
+<code>Open log file.</code>可以用C的printf输出，同样可以在verilog内用$display输出
+:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> * log_str = <span class="string">&quot;Open log file.&quot;</span>;</span><br><span class="line">pringtf(<span class="string">&quot;%s&quot;</span>,log_str);</span><br><span class="line">...</span><br><span class="line">$display(<span class="string">&quot;Open log file.&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>Verilog的变量类型基于FPGA的结构基础。FPGA可以抽象成若干门电路，其内部是<strong>电路的连接</strong>，因此定义变量时即分为：</p>
+<h3 id="变量类型">变量类型</h3>
+<p>Verilog的变量类型基于FPGA的结构基础。FPGA可以抽象成若干门电路，其内部是<strong>电路的连接</strong>，因此定义变量时即分为：</p>
 <ul>
 <li>线网：<strong>物理电路层面的通路</strong>，wire；</li>
 <li>寄存器：<strong>软件层面的变量</strong>，reg；</li>
@@ -395,71 +404,66 @@
 <blockquote>
 <p>C语言最底层的设计最多是操作硬件IO，大多数是存储在堆、栈里的软件量，进行软件层面的运算。Verilog是直接基于电路，搭的是电路，软件量用于进行辅佐运算。</p>
 </blockquote>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>此处参数是指module块内部的参数，用于定义状态机的状态、数据位宽和计数器计数个数大小等。例如下方定义的的<code>CNT_MAX</code>：</p>
+<h3 id="参数">参数</h3>
+<p>此处参数是指module块内部的参数，用于定义状态机的状态、数据位宽和计数器计数个数大小等。例如下方定义的的<code>CNT_MAX</code>：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Parameter CNT_MAX = <span class="number">25&#x27;d24_999_999</span></span><br></pre></td></tr></table></figure>
-
 <p>在实例化模块时可以配置参数：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">counter </span><br><span class="line">#( </span><br><span class="line">    <span class="variable">.CNT_MAX</span> (<span class="number">25&#x27;d24</span> ) <span class="comment">//实例化时参数可修改 </span></span><br><span class="line"> )</span><br><span class="line">counter_inst </span><br><span class="line">(</span><br><span class="line">    <span class="variable">.sys_clk</span> (sys_clk ), <span class="comment">//input sys_clk</span></span><br><span class="line">    <span class="variable">.sys_rst_n</span> (sys_rst_n ), <span class="comment">//input sys_rst_n</span></span><br><span class="line">	<span class="variable">.led_out</span> (led_out ) <span class="comment">//output led_out </span></span><br><span class="line">);          </span><br></pre></td></tr></table></figure>
-
 <p>那么我们可以这么类比C语言，一个module可以当做一个函数，如下：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> test(</span><br><span class="line">	<span class="keyword">input</span> a,</span><br><span class="line">    <span class="keyword">inout</span> b,</span><br><span class="line">    <span class="keyword">output</span> c</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
 <p>在不管内部如何处理的情况下，其中的输入、输出、输入输出就可以类似为下方的a、b、c，只不过所处的位置不同，修饰也更加直观:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">test</span><span class="params">(<span class="type">const</span> <span class="type">int</span> a,<span class="type">int</span> * b)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> c = a + *b;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><p>此处应当注意，Verliog中包括 <code>=</code>以及<code>&lt;=</code>两种符号。首先思考其底层结构——门电路，搭建的不同的物理电路当然可以执行多个程序流（目前还没学到，暂时这么称呼），也就是常说的<strong>并行逻辑</strong>。</p>
+<h3 id="赋值">赋值</h3>
+<p>此处应当注意，Verliog中包括
+<code>=</code>以及<code>&lt;=</code>两种符号。首先思考其底层结构——门电路，搭建的不同的物理电路当然可以执行多个程序流（目前还没学到，暂时这么称呼），也就是常说的<strong>并行逻辑</strong>。</p>
 <blockquote>
 <p>MCU则是顺序执行逻辑，从上至下，从外至内逐步执行。为了达到类似的并行效果，衍生出了FreeRTOS、uCOSIII等操作系统，频繁切换线程达到并行的假象。</p>
 </blockquote>
 <p>MCU上有顺序转并行的方案，FPGA上也有类似的顺序执行的模块，比如说每个always块上是一个互相独立的并行块，那么always内部应该可以通过某种方式来达到顺序执行的效果——引出阻塞、非阻塞赋值。</p>
 <ul>
-<li><p>非阻塞赋值  &lt;&#x3D;</p>
-<p>非阻塞赋值不会影响下一个语句的执行。**在某个时刻，一段非阻塞赋值代码是同时执行的，所有代码执行完后再进行赋值操作、刷新结果。**例如下方代码，假设a初值为1：</p>
+<li><p>非阻塞赋值 &lt;=</p>
+<p>非阻塞赋值不会影响下一个语句的执行。<strong>在某个时刻，一段非阻塞赋值代码是同时执行的，所有代码执行完后再进行赋值操作、刷新结果。</strong>例如下方代码，假设a初值为1：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a &lt;= a+<span class="number">1</span>;  <span class="comment">//line 1</span></span><br><span class="line">b &lt;= a;	<span class="comment">//line 2</span></span><br></pre></td></tr></table></figure>
-
-<p>那么在运行时，line 1 与 line 2 同时执行，用于运算的a值为1，运行完后<code>a=2，b=1</code>。</p>
-</li>
-<li><p>阻塞赋值 &#x3D;</p>
+<p>那么在运行时，line 1 与 line 2
+同时执行，用于运算的a值为1，运行完后<code>a=2，b=1</code>。</p></li>
+<li><p>阻塞赋值 =</p>
 <p><strong>阻塞赋值语句按照顺序执行，执行完立即进行赋值操作、刷新结果</strong>，上一句代码会影响下一句的执行。例如：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = a + <span class="number">1</span>; <span class="comment">//line 1</span></span><br><span class="line">b = a; 	   <span class="comment">//line 2</span></span><br></pre></td></tr></table></figure>
-
-<p> 上方的代码在运行时，执行完line 1得<code>a = 2</code>，立刻将该值用于下一句代码，得到<code>b=2</code>。</p>
-</li>
+<p>上方的代码在运行时，执行完line
+1得<code>a = 2</code>，立刻将该值用于下一句代码，得到<code>b=2</code>。</p></li>
 </ul>
-<p>这种思路与C中<code>a++</code>和 <code>++a</code>类似，阻塞就是<code>a++</code>用上一时刻的值进行计算，随后刷新，而非阻塞就是<code>++a</code>，我执行完代码，立刻用新的值进行后续运算。</p>
-<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
-<li><p>算术运算：<code>+、-、*、/</code></p>
-</li>
-<li><p>关系运算：<code>&gt;、&lt;、&gt;=、&lt;=</code>，在没有括号的情况下优先进行算术运算。</p>
-</li>
-<li><p><strong>归约运算&#x2F;位运算</strong>：<code>&amp;、|、^、~&amp;、~|、~^</code></p>
+<p>这种思路与C中<code>a++</code>和
+<code>++a</code>类似，阻塞就是<code>a++</code>用上一时刻的值进行计算，随后刷新，而非阻塞就是<code>++a</code>，我执行完代码，立刻用新的值进行后续运算。</p>
+<h3 id="运算符">运算符</h3>
+<ul>
+<li><p>算术运算：<code>+、-、*、/</code></p></li>
+<li><p>关系运算：<code>&gt;、&lt;、&gt;=、&lt;=</code>，在没有括号的情况下优先进行算术运算。</p></li>
+<li><p><strong>归约运算/位运算</strong>：<code>&amp;、|、^、~&amp;、~|、~^</code></p>
 <p>C语言中的位运算符属于双目运算符(C++、C#暂且不说)，而Verilog中可以用于一个变量得出一个bit值，如下：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;<span class="number">4</span>b&#x27;<span class="number">1010</span> = <span class="number">1</span>&amp;<span class="number">0</span>&amp;<span class="number">1</span>&amp;<span class="number">0</span> = <span class="number">1&#x27;b0</span></span><br></pre></td></tr></table></figure>
-
 <p>如果把1个bit当作一个门的输出，那么一个数据的归约运算当然可以看作多个电路接入一个与或非门。</p>
-<p>在Verilog中，双目运算和C基本一致，但是<strong>限定左右参数位宽一致</strong></p>
-</li>
-<li><p>逻辑运算：<code>&amp;&amp;、||、!=</code>等，不再赘述</p>
-</li>
-<li><p>移位运算符：<code>&lt;&lt;、&gt;&gt;</code>，逻辑与C基本一致。<strong>但是右操作数如果为x（不定值）或z（高阻），那么运算结果为不定值。</strong></p>
-</li>
-<li><p>条件运算符：<code>exp1 ? action1 : action2</code>，这个表达式与C一致，多层嵌套时也是就近结合。</p>
-</li>
+<p>在Verilog中，双目运算和C基本一致，但是<strong>限定左右参数位宽一致</strong></p></li>
+<li><p>逻辑运算：<code>&amp;&amp;、||、!=</code>等，不再赘述</p></li>
+<li><p>移位运算符：<code>&lt;&lt;、&gt;&gt;</code>，逻辑与C基本一致。<strong>但是右操作数如果为x（不定值）或z（高阻），那么运算结果为不定值。</strong></p></li>
+<li><p>条件运算符：<code>exp1 ? action1 : action2</code>，这个表达式与C一致，多层嵌套时也是就近结合。</p></li>
 </ul>
 <p>运算符的优先级：一元（归约）&gt;二元（算术、移位、关系、等和不等、按位运算）&gt;三元（条件运算）。</p>
 <p>其优先级也类似C语言，一般使用<code>()</code>区分。</p>
 <ul>
 <li>位拼接标识符：<code>&#123;,&#125;</code>，常用来拼接不同位宽的数据，同时可以实现数据右移和左移。</li>
 </ul>
-<h3 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h3><p>与C语言相同，包括<code>if-else</code> 和<code>case</code> 语句，在此不再赘述。但是需要注意：</p>
+<h3 id="选择语句">选择语句</h3>
+<p>与C语言相同，包括<code>if-else</code> 和<code>case</code>
+语句，在此不再赘述。但是需要注意：</p>
 <ul>
 <li>如果if语句没有else块，可能会在组合逻辑中产生latch</li>
-<li>if语句尽量写成多个else if的分支形式，而不建议写成if else  内嵌套if else的语句</li>
+<li>if语句尽量写成多个else if的分支形式，而不建议写成if else 内嵌套if
+else的语句</li>
 </ul>
-<h3 id="参数类型"><a href="#参数类型" class="headerlink" title="参数类型"></a>参数类型</h3><p>把该节起名为参数类型的原因是希望参照C语言的函数，划分输入输出的思路。</p>
+<h3 id="参数类型">参数类型</h3>
+<p>把该节起名为参数类型的原因是希望参照C语言的函数，划分输入输出的思路。</p>
 <p>Verilog的参数类型可以划分为<code>input、output、inout</code>三类，我们可以这么类比：</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> test</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">input</span> <span class="keyword">wire</span> sel,</span><br><span class="line">		</span><br><span class="line">        <span class="keyword">input</span> <span class="keyword">wire</span> data_out,</span><br><span class="line">        <span class="keyword">inout</span> <span class="keyword">wire</span> data_bus,</span><br><span class="line">        <span class="keyword">output</span> <span class="keyword">wire</span> data_in</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    ...</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>sel、data_out: 物理线型输入参数</li>
 <li>data_bus: 物理线型可输入可输出参数，例如I2C数据线</li>
@@ -467,61 +471,61 @@
 </ul>
 <p>那么显式的对比到C语言中：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">uint8_t</span> <span class="title function_">test</span></span><br><span class="line"><span class="params">(</span></span><br><span class="line"><span class="params">    <span class="keyword">volatile</span> <span class="type">const</span> <span class="type">uint8_t</span> sel,      <span class="comment">//只能输入</span></span></span><br><span class="line"><span class="params">	<span class="keyword">volatile</span> <span class="type">const</span> <span class="type">uint8_t</span> data_out, <span class="comment">//只能输入</span></span></span><br><span class="line"><span class="params">    </span></span><br><span class="line"><span class="params">    <span class="keyword">volatile</span> <span class="type">uint8_t</span> * data_bus <span class="comment">//可做输入，可修改值</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">&#123;</span><br><span class="line">    ...;</span><br><span class="line">    <span class="keyword">return</span> data_in;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>其中的volatile表示易变量。每次从硬件地址重新读取</li>
 <li>其中的const显示表示这个量不可被软件层面修改</li>
 <li>verilog中若有多个输出，C中可集成在一个结构体中</li>
 </ul>
-<h2 id="仿真"><a href="#仿真" class="headerlink" title="仿真"></a>仿真</h2><p>时间单位与精度</p>
+<h2 id="仿真">仿真</h2>
+<p>时间单位与精度</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="keyword">timescale</span> 1ns/1ns </span><span class="comment">// 单位1ns 精度1ns</span></span><br><span class="line"><span class="meta">`<span class="keyword">timescale</span> 1ns/10ps </span><span class="comment">// 单位1ns 精度10ps，则#10.11表示10.11ns = 10110 ps</span></span><br></pre></td></tr></table></figure>
-
 <p>其中<strong>前者是时间单位，后者是仿真的最小刻度，精度必须小于时间单位。</strong></p>
-<h3 id="调试函数"><a href="#调试函数" class="headerlink" title="调试函数"></a>调试函数</h3><p>FPGA里的函数依靠<code>$</code>符号为区分，功能类似C。</p>
-<ol>
+<h3 id="调试函数">调试函数</h3>
+<p>FPGA里的函数依靠<code>$</code>符号为区分，功能类似C。</p>
+<ol type="1">
 <li><p>$display 打印信息,打印后自动换行</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$display</span>(<span class="string">&quot;%d+%d=%d&quot;</span>,a,b,c);</span><br><span class="line"><span class="built_in">$display</span>(<span class="string">&quot;Hello&quot;</span>);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>等价于printf，例如printf(“%d”,a);但是$display可以不加格式符，默认为十进制。</p>
 <p>这个例子用C#函数来解释就是Console.WriteLine(…);函数</p>
-</blockquote>
-</li>
+</blockquote></li>
 <li><p>$write打印信息</p>
-<p>用法几乎完全同 <code>$display</code>，但是<code>write</code>可以使用换行符</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$write</span>(<span class="string">&quot;%d+%d=%d\n&quot;</span>,a,b,c);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>$strobe，格式同$display。<strong>但是该函数是在触发操作后执行的。</strong> 例如下方代码，在 <code>initial</code>块触发最后执行。</p>
+<p>用法几乎完全同
+<code>$display</code>，但是<code>write</code>可以使用换行符</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$write</span>(<span class="string">&quot;%d+%d=%d\n&quot;</span>,a,b,c);</span><br></pre></td></tr></table></figure></li>
+<li><p><span class="math inline"><em>s</em><em>t</em><em>r</em><em>o</em><em>b</em><em>e</em>，<em>格</em><em>式</em><em>同</em></span>display。<strong>但是该函数是在触发操作后执行的。</strong>
+例如下方代码，在 <code>initial</code>块触发最后执行。</p>
 <div>
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250601142141567.png" alt="image can't load." style="zoom:75%">
-    <br>        <!--换行-->
-    $strobe代码示意    <!--标题-->
-    </center>
+<pre><code>&lt;center&gt; &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-05-29-FPGA-02-Verilog语法/image-20250601142141567.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:75%&quot;/&gt;
+&lt;br&gt;     &lt;!--换行--&gt;
+$strobe代码示意  &lt;!--标题--&gt;
+&lt;/center&gt;</code></pre>
 </div>
-
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">display:<span class="number">0101</span>+xxxx=x</span><br><span class="line">strobe:<span class="number">0101</span>+<span class="number">0110</span>=<span class="number">11</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>$ monitor，持续监测量，使用格式同上方几个函数。但可以理解为C语言中的数据断点，当监测量变发生化时输出调试信息。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">display:<span class="number">0101</span>+xxxx=x</span><br><span class="line">strobe:<span class="number">0101</span>+<span class="number">0110</span>=<span class="number">11</span></span><br></pre></td></tr></table></figure></li>
+<li><p>$
+monitor，持续监测量，使用格式同上方几个函数。但可以理解为C语言中的数据断点，当监测量变发生化时输出调试信息。</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">    a = <span class="number">5</span>; <span class="comment">//输出</span></span><br><span class="line">    #<span class="number">100</span>;</span><br><span class="line">    b = <span class="number">6</span>; <span class="comment">//输出</span></span><br><span class="line">    #<span class="number">100</span>;</span><br><span class="line">    c = a + b; <span class="comment">//输出</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">initial</span> <span class="built_in">$monitor</span>(<span class="string">&quot;%d+%d=%d&quot;</span>,a,b,c);</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="终止函数"><a href="#终止函数" class="headerlink" title="终止函数"></a>终止函数</h3><ol>
+<h3 id="终止函数">终止函数</h3>
+<ol type="1">
 <li>$stop，暂停仿真。可使用modelsim指令或按键继续仿真。</li>
 <li>$finish，结束仿真。只可重新开始。</li>
 </ol>
-<h3 id="配置函数"><a href="#配置函数" class="headerlink" title="配置函数"></a>配置函数</h3><ol>
-<li><p>$time，返回64bit<strong>当前仿真时间</strong></p>
-</li>
+<h3 id="配置函数">配置函数</h3>
+<ol type="1">
+<li><p>$time，返回64bit<strong>当前仿真时间</strong></p></li>
 <li><p>$random，产生随机数</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> #<span class="number">10</span> a = <span class="built_in">$random</span>;</span><br><span class="line"><span class="keyword">initial</span> <span class="built_in">$monitor</span>(<span class="string">&quot;a = %d @time %d&quot;</span>,a,<span class="built_in">$time</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>$readmemb，读取二进制文件</p>
-</li>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> #<span class="number">10</span> a = <span class="built_in">$random</span>;</span><br><span class="line"><span class="keyword">initial</span> <span class="built_in">$monitor</span>(<span class="string">&quot;a = %d @time %d&quot;</span>,a,<span class="built_in">$time</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>$readmemb，读取二进制文件</p></li>
 <li><p>$readmemh，读取十六进制文件</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">7</span>:<span class="number">0</span>] a [<span class="number">20</span>:<span class="number">0</span>]; <span class="comment">// 21位位深，8位位宽的数组</span></span><br><span class="line"><span class="comment">//等价于 uint8_t a[21];</span></span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="built_in">$readmemb</span>(<span class="string">&quot;text.txt&quot;</span>,a);</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>; i&lt;=<span class="number">20</span>; i=i+<span class="number">1</span> ) <span class="keyword">begin</span></span><br><span class="line">           	#<span class="number">10</span>;</span><br><span class="line">            <span class="built_in">$write</span>(<span class="string">&quot;%s&quot;</span>,a[i]);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<p align="center">---------------------------  End  ---------------------------</p>
-
+<p align="center">
+————————— End —————————
+</p>
 <blockquote>
 <p><em>与人同行的前提是，你要先在路上。</em></p>
 </blockquote>
@@ -578,8 +582,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/05/29/Hexo-02-Deploy_Error_And_Solution/" rel="prev" title="Hexo-02-推送错误(Fatal:502)解决办法">
-                  <i class="fa fa-angle-left"></i> Hexo-02-推送错误(Fatal:502)解决办法
+                <a href="/2025/04/20/FPGA-01-About_ZYNQ/" rel="prev" title="FPGA-01-关于ZYNQ">
+                  <i class="fa fa-angle-left"></i> FPGA-01-关于ZYNQ
                 </a>
             </div>
             <div class="post-nav-item">
@@ -607,7 +611,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

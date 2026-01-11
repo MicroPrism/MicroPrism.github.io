@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="[object Object]">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"microprism.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本文学习分析Verilog计数器、分频器设计思路。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPGA-04-Verilog语法">
+<meta property="og:url" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/index.html">
+<meta property="og:site_name" content="Young&#39;s Blog">
+<meta property="og:description" content="本文学习分析Verilog计数器、分频器设计思路。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251201233903055.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251201234332654.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251208213722376.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251208215700771.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251209225702076.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251208221814413.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251208225120013.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251209232035871.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251223221501338.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251223224225849.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251224225348372.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251224231604239.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251224232716374.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251225214938051.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251225220056320.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260103155003452.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260103162626328.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251230232647727.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260104194145937.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260104194145937.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260104195038410.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260104201917235.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260105182126774.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260105192532293.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260105190633278.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260105204438970.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260110101735089.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260110102524194.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260111173304436.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260111174908264.png">
+<meta property="og:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20260105205421207.png">
+<meta property="article:published_time" content="2025-12-01T13:39:44.000Z">
+<meta property="article:modified_time" content="2026-01-11T10:05:54.768Z">
+<meta property="article:author" content="Youngs">
+<meta property="article:tag" content="FPGA">
+<meta property="article:tag" content="Verilog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/image-20251201233903055.png">
+
+
+<link rel="canonical" href="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/","path":"2025/12/01/FPGA-04-Verilog_Syntax/","title":"FPGA-04-Verilog语法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>FPGA-04-Verilog语法 | Young's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXT2GQNX59"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-YXT2GQNX59","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?e31b8387d0a02f9c3c7c74c21377751b"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.1/pdfobject.min.js","integrity":"sha256-jI72I8ZLVflVOisZIOaLvRew3tyvzeu6aZXFm7P7dEo="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss.xml" title="Young's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Young's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不完全体攻城狮</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">计数器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E9%A2%91%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">分频器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%B6%E5%88%86%E9%A2%91"><span class="nav-number">2.1.</span> <span class="nav-text">偶分频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%87%E5%88%86%E9%A2%91"><span class="nav-number">2.2.</span> <span class="nav-text">奇分频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%88%86%E9%A2%91"><span class="nav-number">2.3.</span> <span class="nav-text">通用分频</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%89%E9%94%AE%E6%B6%88%E6%8A%96"><span class="nav-number">3.</span> <span class="nav-text">按键消抖</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82"><span class="nav-number">3.1.</span> <span class="nav-text">功能需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.2.</span> <span class="nav-text">详细设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C"><span class="nav-number">3.4.</span> <span class="nav-text">仿真结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%81%AF"><span class="nav-number">4.</span> <span class="nav-text">流水灯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82-1"><span class="nav-number">4.1.</span> <span class="nav-text">功能需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1-1"><span class="nav-number">4.2.</span> <span class="nav-text">详细设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">4.3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C-1"><span class="nav-number">4.4.</span> <span class="nav-text">仿真结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BC%E5%90%B8%E7%81%AF"><span class="nav-number">5.</span> <span class="nav-text">呼吸灯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82-2"><span class="nav-number">5.1.</span> <span class="nav-text">功能需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1-2"><span class="nav-number">5.2.</span> <span class="nav-text">详细设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">5.3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C-2"><span class="nav-number">5.4.</span> <span class="nav-text">仿真结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-number">6.</span> <span class="nav-text">状态机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%BE%93%E5%85%A5%E5%8D%95%E8%BE%93%E5%87%BA%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-number">6.1.</span> <span class="nav-text">单输入单输出状态机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82-3"><span class="nav-number">6.1.1.</span> <span class="nav-text">功能需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1-3"><span class="nav-number">6.1.2.</span> <span class="nav-text">详细设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A2%E5%BD%A2%E5%88%86%E6%9E%90"><span class="nav-number">6.1.3.</span> <span class="nav-text">波形分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-3"><span class="nav-number">6.1.4.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90"><span class="nav-number">6.1.5.</span> <span class="nav-text">仿真分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%BE%93%E5%85%A5%E5%A4%9A%E8%BE%93%E5%87%BA%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-number">6.2.</span> <span class="nav-text">多输入多输出状态机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82-4"><span class="nav-number">6.2.1.</span> <span class="nav-text">功能需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1-4"><span class="nav-number">6.2.2.</span> <span class="nav-text">详细设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A2%E5%BD%A2%E5%88%86%E6%9E%90-1"><span class="nav-number">6.2.3.</span> <span class="nav-text">波形分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-4"><span class="nav-number">6.2.4.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90-1"><span class="nav-number">6.2.5.</span> <span class="nav-text">仿真分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8"><span class="nav-number">7.</span> <span class="nav-text">综合应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82-5"><span class="nav-number">7.1.</span> <span class="nav-text">功能需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1-5"><span class="nav-number">7.2.</span> <span class="nav-text">详细设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A2%E5%BD%A2%E5%88%86%E6%9E%90-2"><span class="nav-number">7.3.</span> <span class="nav-text">波形分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1"><span class="nav-number">7.4.</span> <span class="nav-text">代码设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90-2"><span class="nav-number">7.5.</span> <span class="nav-text">仿真分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">8.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Youngs"
+      src="/images/walk.png">
+  <p class="site-author-name" itemprop="name">Youngs</p>
+  <div class="site-description" itemprop="description">我等采石之人，当怀大教堂之愿景~</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MicroPrism" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MicroPrism" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2632688012@qq.com" title="E-Mail → mailto:2632688012@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/405856572?spm_id_from=333.1369.0.0" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;405856572?spm_id_from&#x3D;333.1369.0.0" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>BiliBili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss.xml" title="RSS → &#x2F;rss.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://csdiy.wiki/" title="https:&#x2F;&#x2F;csdiy.wiki&#x2F;" rel="noopener" target="_blank">CS自学指南</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+        <h3 class="widget-title">Tags</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+      </div>
+    
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/walk.png">
+      <meta itemprop="name" content="Youngs">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Young's Blog">
+      <meta itemprop="description" content="我等采石之人，当怀大教堂之愿景~">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="FPGA-04-Verilog语法 | Young's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          FPGA-04-Verilog语法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    
+    
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-12-01 21:39:44" itemprop="dateCreated datePublished" datetime="2025-12-01T21:39:44+08:00">2025-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-11 18:05:54" itemprop="dateModified" datetime="2026-01-11T18:05:54+08:00">2026-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FPGA/" itemprop="url" rel="index"><span itemprop="name">FPGA</span></a>
+        </span>
+          /
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FPGA/Syntax/" itemprop="url" rel="index"><span itemprop="name">Syntax</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>21 分钟</span>
+    </span>
+
+
+
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文学习分析Verilog计数器、分频器设计思路。</p>
+<span id="more"></span>
+<h1 id="计数器">计数器</h1>
+<p>计数器是FPGA中常用的单位，例如希望a状态持续X时间，b状态持续Y时间。在时钟做时间源的情况下，通过累计时钟计数得出较大打秒级、分钟级单位，得出flag标志可用到各个模块的判断语句中。</p>
+<p>假设有sys_clk =
+F，则单个周期T=1/F，A秒钟的计数器所需的计数值为M=A/T=AF。</p>
+<ul>
+<li>为节省资源，考虑找到所有时间值的最小公倍数</li>
+<li>单个always块仅操作单个变量</li>
+<li>提前1拍，打出flag信号，可用于所有变量</li>
+</ul>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//需求：led 0.5s亮，1.5s灭</span></span><br><span class="line"><span class="keyword">module</span> Counter(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		led_out</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">parameter</span>	CNT_MAX	= <span class="number">25&#x27;d24_999_999</span>;	<span class="comment">//计数值为0.5s</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">reg</span> [<span class="number">24</span>:<span class="number">0</span>]	cnt;		<span class="comment">//计数器-0.5s</span></span><br><span class="line"><span class="comment">//reg			cnt_flag;	//到达0.5s标志</span></span><br><span class="line"><span class="keyword">reg</span> [<span class="number">1</span>:<span class="number">0</span>]	half_s_cnt;	<span class="comment">//0.5s个数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//计数块</span></span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line"><span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">	cnt &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(cnt == CNT_MAX)</span><br><span class="line">	cnt &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	cnt &lt;= cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算第几个0.5s，用于做不同时长闪烁</span></span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line"><span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">	half_s_cnt &lt;= <span class="number">2&#x27;d0</span>;		<span class="comment">//或者此处复位设置为3</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(cnt == CNT_MAX - <span class="number">1</span>)</span><br><span class="line">	half_s_cnt &lt;= half_s_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	half_s_cnt &lt;= half_s_cnt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//led控制块</span></span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line"><span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">	led_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(half_s_cnt == <span class="number">2&#x27;d0</span>)		</span><br><span class="line"><span class="comment">//放在首个亮时，由于half_s_cnt复位后为0，与cnt同一拍开始计数，所以上电后第一个亮会为480ms</span></span><br><span class="line"><span class="comment">//因此，可将亮起的位置放在后侧</span></span><br><span class="line">	led_out &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	led_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//parameter	CNT_MAX	=	25&#x27;d24_999_999;	//50MHz Clock,计数0.5s</span></span><br><span class="line">	<span class="comment">//localparam	CNT_MAX =	25&#x27;d24_999_999;		//局部参数，实例化时不可从外部使用</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div>
+<center>
+<img src="image-20251201233903055.png" alt="image can't load." style="zoom:75%"> <br> half_s_cnt == 2’d0 复位后首次丢失一拍
+</center>
+</div>
+<div>
+<center>
+<img src="image-20251201234332654.png" alt="image can't load." style="zoom:75%"> <br> half_s_cnt == 2’d3，复位后时间正常
+</center>
+</div>
+<p><strong>两张图的差异在于，led_out默认输出与第一次状态不同。对第一张图，在rst
+= 1后，cnt和led同时翻转，因此出现一拍丢失。若希望使用half_s_cnt ==
+2’d0，而不出现丢拍，则需要把复位后的led状态拉高。</strong></p>
+<h1 id="分频器">分频器</h1>
+<p>Vivado自带的IP核为锁相环，通过PLL由一个输入时钟得到多个不同频率的子时钟。分频器细分为奇分频与偶分频。分频器本质与计数器相同，即计数到某一值输出翻转或输出Flag标志。</p>
+<h2 id="偶分频">偶分频</h2>
+<p>偶分频可以sys_clk上升沿为为基准，计数刚好对应的分频系数的一半时，对信号翻转。</p>
+<div>
+<center>
+<img src="image-20251208213722376.png" alt="image can't load." style="zoom:50%"> <br> 偶分频(双边沿输出flag标志)
+</center>
+</div>
+<p>若为低频时钟，则可直接对信号翻转：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本模块通过输出不同参数来调用奇分频或偶分频函数</span></span><br><span class="line"><span class="comment">//暂时实现偶分频模块</span></span><br><span class="line"><span class="keyword">module</span> uPLL(</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		clk_out,</span><br><span class="line">	<span class="keyword">output</span>  <span class="keyword">reg</span>		stat_flag </span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">parameter</span>		DIVIDER	=	<span class="number">4&#x27;d6</span>;</span><br><span class="line">	<span class="comment">//-------------------局部配置参数-------------------</span></span><br><span class="line">	<span class="keyword">localparam</span>		DIV_IDX =	(DIVIDER &gt;	<span class="number">15</span> || DIVIDER &lt; <span class="number">2</span>)?</span><br><span class="line">								(DIVIDER &gt; 	<span class="number">15</span>)?<span class="number">14</span>:</span><br><span class="line">								(DIVIDER &lt;= <span class="number">1</span>)?<span class="number">2</span>:</span><br><span class="line">								DIVIDER:</span><br><span class="line">								DIVIDER;												  </span><br><span class="line">	<span class="keyword">localparam</span>		DIV_MAX	=	<span class="number">4&#x27;d15</span>;</span><br><span class="line">	<span class="keyword">localparam</span>		DIV_MIN	=	<span class="number">4&#x27;d2</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//-------------------分频计数器-------------------	</span></span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]	clk_cnt;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------分频器状态-------------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		stat_flag	&lt;=	<span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(DIVIDER &gt; DIV_MAX || DIVIDER	&lt; 	DIV_MIN)</span><br><span class="line">		stat_flag	&lt;=  <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		stat_flag	&lt;=	<span class="number">1&#x27;b1</span>;	</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//-------------------计数器-------------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_cnt &lt;= <span class="number">4&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX/<span class="number">2</span>-<span class="number">1</span>)</span><br><span class="line">		clk_cnt	&lt;= <span class="number">4&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_cnt &lt;= clk_cnt + <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------时钟输出-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX/<span class="number">2</span>-<span class="number">1</span>)</span><br><span class="line">		clk_out &lt;= ~clk_out;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_out	&lt;= clk_out;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<p>以此生成的clk：</p>
+<ul>
+<li><p>可直接在后续alway块中做参考</p>
+<p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">1</span>:<span class="number">0</span>] a;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> clk_out <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">    <span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">        a &lt;= <span class="number">2&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">        a &lt;= a + <span class="number">1&#x27;b1</span>;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>不属于FPGA全局时钟，高速时钟下不精确</p></li>
+</ul>
+<p>为解决高速时钟下不精确问题，将clk_out作为输出标识配合同步时钟，思路同<a href="#计数器">计数器</a>。将上方代码块的clk_out代码更换为以下代码：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line"><span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">	clk_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX/<span class="number">2</span>-<span class="number">2</span>)</span><br><span class="line">	clk_out	&lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	clk_out &lt;= <span class="number">1&#x27;b0</span>;</span><br></pre></td></tr></table></figure>
+<p>仿真结果如下：</p>
+<div>
+<center>
+<img src="image-20251208215700771.png" alt="image can't load." style="zoom:50%"> <br> 偶分频仿真结果
+</center>
+</div>
+<p>产生flag标识后可以配合sys_clk使用：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">1</span>:<span class="number">0</span>] a;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">posedge</span> sys_rst_n)</span><br><span class="line"><span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">    	a	&lt;= <span class="number">2&#x27;b0</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(flag)	<span class="comment">//--- a在新时钟的上升沿下降沿均加1</span></span><br><span class="line">    	a	&lt;= a + <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    	a 	&lt;= a;</span><br></pre></td></tr></table></figure>
+<p>上方的flag == 1
+时代表分频后时钟的边沿（上升沿+下降沿），<strong>调整计数清零时的值可调整为单边沿或双边沿</strong>：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//偶分频模块</span></span><br><span class="line"><span class="comment">//采用flag信号</span></span><br><span class="line"><span class="keyword">module</span> eveDivider(	</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>			sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>			sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>				clk_out,</span><br><span class="line">	<span class="keyword">output</span>  <span class="keyword">reg</span>				clk_flag </span><br><span class="line">    );</span><br><span class="line"><span class="comment">//-------------------全局配置参数-------------------</span></span><br><span class="line">	<span class="keyword">parameter</span>		DIVIDER			=	<span class="number">32&#x27;d6</span>;</span><br><span class="line">	<span class="keyword">parameter</span>		CLK_EDGE_SEL 	= 	<span class="number">1&#x27;b0</span>;	<span class="comment">//输出边沿选择	</span></span><br><span class="line"><span class="comment">//-------------------局部配置参数-------------------	</span></span><br><span class="line">    <span class="keyword">localparam</span>		DIV_IDX =	(CLK_EDGE_SEL == <span class="number">1&#x27;b0</span>)? DIVIDER -<span class="number">1</span> 	:		<span class="comment">//单边沿flag</span></span><br><span class="line">														DIVIDER/<span class="number">2</span> -<span class="number">1</span>	;	<span class="comment">//双边沿flag</span></span><br><span class="line"><span class="comment">//-------------------分频计数器-------------------	</span></span><br><span class="line">	<span class="keyword">reg</span>		[<span class="number">31</span>:<span class="number">0</span>]	clk_cnt;	</span><br><span class="line"><span class="comment">//-------------------边沿计数器-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(sys_rst_n == <span class="number">1&#x27;b0</span>)</span><br><span class="line">		clk_cnt &lt;= <span class="number">32&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX)</span><br><span class="line">		clk_cnt	&lt;= <span class="number">32&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_cnt	&lt;= clk_cnt + <span class="number">1&#x27;d1</span>;		</span><br><span class="line"><span class="comment">//-------------------输出时钟-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(sys_rst_n == <span class="number">1&#x27;b0</span>)</span><br><span class="line">		clk_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIVIDER/<span class="number">2</span>-<span class="number">1</span> || clk_cnt == DIVIDER-<span class="number">1</span>)</span><br><span class="line">		clk_out	&lt;= ~clk_out;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_out	&lt;= clk_out;		</span><br><span class="line"><span class="comment">//-------------------标志位输出-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(sys_rst_n == <span class="number">1&#x27;b0</span>)		</span><br><span class="line">		clk_flag &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX - <span class="number">1</span>)</span><br><span class="line">		clk_flag &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_flag &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<div>
+<center>
+<img src="image-20251209225702076.png" alt="image can't load." style="zoom:50%"> <br> 偶分频(双边沿标志)仿真结果
+</center>
+</div>
+<h2 id="奇分频">奇分频</h2>
+<p>偶分频因为分频系数为偶数，最小为二分频，恰好对齐ys_clk上升沿(本节末尾放置使用下降沿的通用分频器)。若对时钟进行奇分频，欲求找到系数一半m/2-1的上升沿是不可能的，但是可引入下降沿为标准，波形如下：</p>
+<div>
+<center>
+<img src="image-20251208221814413.png" alt="image can't load." style="zoom:50%"> <br> 奇分频波形
+</center>
+</div>
+<p>因此，代码如下：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> uPLL(</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		clk_out,</span><br><span class="line">	<span class="keyword">output</span>  <span class="keyword">reg</span>		stat_flag </span><br><span class="line">    );</span><br><span class="line">	<span class="keyword">parameter</span>		DIVIDER	=	<span class="number">4&#x27;d6</span>;</span><br><span class="line">	<span class="comment">//-------------------局部配置参数-------------------</span></span><br><span class="line">	<span class="keyword">localparam</span>		DIV_IDX =	(DIVIDER &gt;	<span class="number">15</span> || DIVIDER &lt; <span class="number">2</span>)?</span><br><span class="line">								(DIVIDER &gt; 	<span class="number">15</span>)?<span class="number">14</span>:</span><br><span class="line">								(DIVIDER &lt;= <span class="number">1</span>)?<span class="number">2</span>:</span><br><span class="line">								DIVIDER:</span><br><span class="line">								DIVIDER;												  </span><br><span class="line">	<span class="keyword">localparam</span>		DIV_MAX	=	<span class="number">4&#x27;d15</span>;</span><br><span class="line">	<span class="keyword">localparam</span>		DIV_MIN	=	<span class="number">4&#x27;d2</span>;</span><br><span class="line">	<span class="comment">//-------------------分频计数器-------------------	</span></span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]	clk_cnt;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//-------------------边沿计数器-------------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_cnt &lt;= <span class="number">4&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX-<span class="number">1</span>)</span><br><span class="line">		clk_cnt &lt;= <span class="number">4&#x27;b0</span> ;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_cnt &lt;= clk_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="comment">//-------------------异常状态指示-------------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		stat_flag	&lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(DIVIDER &gt; DIV_MAX || DIVIDER &lt; DIV_MIN)</span><br><span class="line">		stat_flag	&lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		stat_flag	&lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">    <span class="comment">//-------------------信号输出-------------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX-<span class="number">2</span>)</span><br><span class="line">		clk_out	&lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<div>
+<center>
+<img src="image-20251208225120013.png" alt="image can't load." style="zoom:50%"> <br> 奇数分频仿真结果
+</center>
+</div>
+<p><strong>显然always块中增加对下降沿的判断可以快速精准的找到分频结果，但是：</strong></p>
+<ul>
+<li><strong>双边沿检测综合更复杂、时序约束复杂</strong></li>
+<li><strong>不适合合并到仅使用上升沿判断的通用分频模块中</strong></li>
+</ul>
+<p>因此可将上升沿下降沿分别放在两个块内，计数到分频值的一半时翻转，将输出信号相或即可得到输出：</p>
+<div>
+<center>
+<img src="image-20251209232035871.png" alt="image can't load." style="zoom:75%"> <br> 奇分频波形
+</center>
+</div>
+<p>代码块如下：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> oddDivider(</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>  <span class="keyword">wire</span>		clk_out </span><br><span class="line">    );</span><br><span class="line">	<span class="comment">//-------------------全局配置参数-------------------</span></span><br><span class="line">	<span class="keyword">parameter</span>		DIVIDER	=	<span class="number">32&#x27;d5</span>;</span><br><span class="line">	<span class="comment">//-------------------局部配置参数-------------------</span></span><br><span class="line">	<span class="keyword">localparam</span>		DIV_HIDX =	DIVIDER/<span class="number">2</span>;		</span><br><span class="line">	<span class="keyword">localparam</span>		DIV_IDX =	DIVIDER - <span class="number">1</span>;												  </span><br><span class="line"></span><br><span class="line">	<span class="comment">//-------------------分频计数器-------------------	</span></span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>]	clk_cnt;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">reg</span> clk_pos;</span><br><span class="line">	<span class="keyword">reg</span> clk_neg;</span><br><span class="line">	<span class="comment">//-------------------计数器-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)	</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_cnt &lt;= <span class="number">32&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_IDX)</span><br><span class="line">		clk_cnt &lt;= <span class="number">32&#x27;d0</span> ;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_cnt &lt;= clk_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line">	<span class="comment">//-------------------上升沿输出-------------------		</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_pos 	&lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_HIDX || clk_cnt == DIV_IDX)</span><br><span class="line">		clk_pos		&lt;= ~clk_pos;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_pos 	&lt;= clk_pos;</span><br><span class="line">    <span class="comment">//-------------------下降沿输出-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">negedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_neg 	&lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_HIDX || clk_cnt == DIV_IDX)</span><br><span class="line">		clk_neg		&lt;= ~clk_neg;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_neg 	&lt;= clk_neg;</span><br><span class="line">	<span class="comment">//-------------------线与输出-------------------	</span></span><br><span class="line">	<span class="keyword">assign</span> clk_out = clk_pos | clk_neg;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<div>
+<center>
+<img src="image-20251223221501338.png" alt="image can't load." style="zoom:75%"> <br> 奇分频仿真波形
+</center>
+</div>
+<h2 id="通用分频">通用分频</h2>
+<p>既然上方两种分频方式可产生flag信号，那么可通过对sys_clk基准时钟单上升沿计数封装出通用分频模块，到达分频时输出flag，代码如下：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> uPLL(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		clk_flag</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------全局配置参数-------------------</span></span><br><span class="line">	<span class="keyword">parameter</span>		DIVIDER	=	<span class="number">32&#x27;d5</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------局部配置参数-------------------</span></span><br><span class="line">	<span class="keyword">localparam</span>		DIV_REV_CNT		=	DIVIDER - <span class="number">2</span>;		<span class="comment">//flag reverse count</span></span><br><span class="line">	<span class="keyword">localparam</span>		DIV_REF_CNT		=	DIVIDER - <span class="number">1</span>;		<span class="comment">//reference value to clear the count</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------分频计数器-------------------	</span></span><br><span class="line">	<span class="keyword">reg</span>		[<span class="number">31</span>:<span class="number">0</span>]	clk_cnt;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_cnt &lt;= <span class="number">32&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_REF_CNT)</span><br><span class="line">		clk_cnt &lt;= <span class="number">32&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_cnt &lt;= clk_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_flag &lt;= <span class="number">1&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == DIV_REV_CNT)</span><br><span class="line">		clk_flag &lt;= <span class="number">1&#x27;d1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_flag &lt;= <span class="number">1&#x27;d0</span>;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<div>
+<center>
+<img src="image-20251223224225849.png" alt="image can't load." style="zoom:75%"> <br> 通用分频仿真波形
+</center>
+</div>
+<h1 id="按键消抖">按键消抖</h1>
+<p>按键是电路板上常用的给出特殊高低电平的器件，单一使用按键时可能出现按下/弹起时的波形抖动，称为前抖动/后抖动。常用的解决办法是：</p>
+<ul>
+<li>硬件上采用RS触发器、外接滤波电容</li>
+<li>软件上采用延时算法</li>
+</ul>
+<div>
+<center>
+<img src="image-20251224225348372.png" alt="image can't load." style="zoom:75%"> <br> 按键抖动模型
+</center>
+</div>
+<p>按键按下的状态分为5个状态：</p>
+<ul>
+<li>A、E：按下/弹起后的稳定状态</li>
+<li>B：按下时的不稳定状态，持续时间不定</li>
+<li>C：按下后的稳定状态</li>
+<li>D：弹起时的不稳定状态，持续时间不定</li>
+</ul>
+<h2 id="功能需求">功能需求</h2>
+<p>针对指定引脚，检测到连续20ms低电平时，输出1拍低电平</p>
+<h2 id="详细设计">详细设计</h2>
+<p>针对输入信号，当检测到低电平时计数器开始计数。若遇到高电平，则立刻清0。当达到给定值时输出低电平脉冲，随后计数值保持，直到按键释放。</p>
+<div>
+<center>
+<img src="image-20251224231604239.png" alt="image can't load." style="zoom:75%"> <br> 方案设计
+</center>
+</div>
+<p>上图3种方案设计时，依次分析可能出现的问题，直到优化出最终设计。</p>
+<h2 id="代码实现">代码实现</h2>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> key_filter(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	key_in,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		key_out</span><br><span class="line">    );</span><br><span class="line">	<span class="comment">//-------------------局部配置参数-------------------</span></span><br><span class="line">	<span class="keyword">parameter</span>	FILTER_MAX	= <span class="number">20&#x27;d1_000_000</span>;</span><br><span class="line">	<span class="keyword">reg</span>		[<span class="number">19</span>:<span class="number">0</span>]	hold_cnt;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------低电平保持计数器-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		hold_cnt &lt;= <span class="number">20&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(key_in == <span class="number">1&#x27;b1</span>)</span><br><span class="line">		hold_cnt &lt;= <span class="number">20&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(hold_cnt == FILTER_MAX - <span class="number">1</span>)</span><br><span class="line">		hold_cnt &lt;= hold_cnt;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		hold_cnt &lt;= hold_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------滤波输出-------------------	</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		key_out &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(hold_cnt == FILTER_MAX - <span class="number">2</span>)</span><br><span class="line">		key_out &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		key_out &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<p>tb仿真文件中，也可以使用always块加计数器在不同时间段产生不同的输入：</p>
+<p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reg</span>	[<span class="number">7</span>:<span class="number">0</span>]	clk_cnt;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)	<span class="comment">//阶段计数器</span></span><br><span class="line"><span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">    clk_cnt &lt;= <span class="number">8&#x27;d0</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == <span class="number">199</span>)</span><br><span class="line">    clk_cnt &lt;= <span class="number">8&#x27;d0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    clk_cnt &lt;= clk_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)	<span class="comment">//分段输入</span></span><br><span class="line"><span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">    key_in &lt;= <span class="number">1&#x27;d1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt &lt;<span class="number">19</span> || clk_cnt&gt;=<span class="number">150</span>)		<span class="comment">//A/E高电平阶段</span></span><br><span class="line">    key_in &lt;= <span class="number">1&#x27;d1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt &gt;=<span class="number">50</span> &amp;&amp; clk_cnt &lt;<span class="number">100</span>)	<span class="comment">//C低电平阶段</span></span><br><span class="line">    key_in &lt;= <span class="number">1&#x27;d0</span>;</span><br><span class="line"><span class="keyword">else</span> 								<span class="comment">//B/D不稳定阶段</span></span><br><span class="line">    key_in &lt;= <span class="built_in">$random</span>%<span class="number">2</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="仿真结果">仿真结果</h2>
+<div>
+<center>
+<img src="image-20251224232716374.png" alt="image can't load." style="zoom:75%"> <br> 仿真结果
+</center>
+</div>
+<h1 id="流水灯">流水灯</h1>
+<h2 id="功能需求-1">功能需求</h2>
+<p>根据参数，调整4路LED流水灯输出，每间隔固定时间切换下一个灯亮。</p>
+<h2 id="详细设计-1">详细设计</h2>
+<p>在参数给定的情况下，只需设定计数器，计数到给定值时刷新输出，即方案A。此种情况无法保证复位按下时的初始状态全灭/全亮。</p>
+<p>进一步，如果希望初始状态为4’b0000/4’b1111，和运行时仅1bit为1或0的状态并不一致。因此需要提前打1拍增加flag标志(参考<a href="#分频器">分频器</a>一节，提前1拍打出flag)，在检测到flag拉高时根据当前led状态决定是移位或是刷新初值(led_out
+== 4b1000)。</p>
+<blockquote>
+<p>如果采用位拼接，只需要在flag拉高时刷新初值。</p>
+</blockquote>
+<div>
+<center>
+<img src="image-20251225214938051.png" alt="image can't load." style="zoom:75%"> <br> 方案设计
+</center>
+</div>
+<h2 id="代码实现-1">代码实现</h2>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> flow_led(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>			sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>			sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		[<span class="number">3</span>:<span class="number">0</span>]	led_out</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------全局配置参数-------------------</span></span><br><span class="line">	<span class="keyword">parameter</span>	G_LIGHT_HD_TIME	= <span class="number">25&#x27;d25_000_000</span>;	<span class="comment">//LED light hold time</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------------局部配置参数-------------------</span></span><br><span class="line">	<span class="keyword">localparam</span>	L_LIGHT_HD_TIME = G_LIGHT_HD_TIME - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	L_LED_INIT		= <span class="number">4&#x27;b0000</span>;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">reg</span>	[<span class="number">24</span>:<span class="number">0</span>]	clk_cnt;</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		clk_cnt &lt;= <span class="number">25&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == L_LIGHT_HD_TIME)</span><br><span class="line">		clk_cnt &lt;= <span class="number">25&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		clk_cnt &lt;= clk_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//方案B-移位</span></span><br><span class="line">	<span class="keyword">reg</span>	time500ms_flag;</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		time500ms_flag &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(clk_cnt == L_LIGHT_HD_TIME - <span class="number">1</span>)</span><br><span class="line">		time500ms_flag &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		time500ms_flag &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		led_out &lt;= L_LED_INIT;					<span class="comment">//设置复位时独特状态</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(led_out == L_LED_INIT)</span><br><span class="line">		led_out &lt;= L_LED_INIT + <span class="number">4&#x27;b0001</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(time500ms_flag)<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span>( led_out == <span class="number">4&#x27;b1000</span>)</span><br><span class="line">			led_out &lt;= L_LED_INIT + <span class="number">4&#x27;b0001</span>;	<span class="comment">//移位</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			led_out &lt;= led_out&lt;&lt;<span class="number">1&#x27;b1</span>;</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		led_out &lt;= led_out;</span><br><span class="line">	<span class="comment">//方案A--位拼接</span></span><br><span class="line">	<span class="comment">/*	</span></span><br><span class="line"><span class="comment">	always@(posedge sys_clk or negedge sys_rst_n)</span></span><br><span class="line"><span class="comment">	if(!sys_rst_n)</span></span><br><span class="line"><span class="comment">		led_out &lt;= L_LED_INIT;</span></span><br><span class="line"><span class="comment">	else if(clk_cnt == L_LIGHT_HD_TIME)</span></span><br><span class="line"><span class="comment">		led_out &lt;= &#123;led_out[2:0],led_out[3]&#125;;	//位拼接</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">		led_out &lt;= led_out;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h2 id="仿真结果-1">仿真结果</h2>
+<div>
+<center>
+<img src="image-20251225220056320.png" alt="image can't load." style="zoom:75%"> <br>
+</center>
+</div>
+<p>方案A的不再赘述。对上述方案B，复位后的第一个状态会丢1拍，在<a href="#计数器">计数器</a>一节尾部已经做了分析。</p>
+<h1 id="呼吸灯">呼吸灯</h1>
+<p>流水灯是在指定时间间隔是切换状态，呼吸灯为达到呼吸效果则通过控制占空比（PWM）达到不同程度的亮度效果（引脚直接控制电压显然比较困难）。</p>
+<ul>
+<li>在不同时间段，不同占空比呈现不同亮度。</li>
+</ul>
+<h2 id="功能需求-2">功能需求</h2>
+<p>给定参数T下，实现均匀的亮，灭效果，整个周期为2T。</p>
+<h2 id="详细设计-2">详细设计</h2>
+<p>假设有1个较短的时间片，根据PWM的原理，此时间片内，高电平持续时间越长，呈现的亮度越亮。通过对相同长度的时间片设置递增的高电平时长，可以“呼吸”式亮起/灭下。</p>
+<p>参照其他已有设计，可以1us为基准时间单位，以N个单位设置上一级/上上一级时间片。</p>
+<blockquote>
+<p>若如此设置，单个亮/灭状态的周期 T = N<sup>2</sup> us。</p>
+<p>将两级时间片的单位设置为相同，程序内方便以当前循环周期设定亮灭。</p>
+</blockquote>
+<div>
+<center>
+<img src="image-20260103155003452.png" alt="image can't load." style="zoom:55%"> <br><br>
+呼吸灯波形时序
+</center>
+</div>
+<p>上方是整体的逻辑，N =
+1000，标准的1s亮/灭。单独以其中一个为例，将计数值简化t1 = t2 = t3 =
+4。</p>
+<p>四个led_out从上至下为连续4个cnt_t3下的输出，呈现如下态势：</p>
+<div>
+<center>
+<img src="image-20260103162626328.png" alt="image can't load." style="zoom:55%"> <br><br>
+单周期波形
+</center>
+</div>
+<p>可发现：cnt_t2&lt;cnt_t3时灯亮，可实现亮度时间均匀的增长。（暗下同理）</p>
+<h2 id="代码实现-2">代码实现</h2>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">module</span> breathe_led</span><br><span class="line">	#(	</span><br><span class="line">	<span class="keyword">parameter</span>	G_US_CNT_MAX = <span class="number">6&#x27;d50</span>,		<span class="comment">//cnt_t1</span></span><br><span class="line">	<span class="keyword">parameter</span>	G_MS_CNT_MAX = <span class="number">10&#x27;d1000</span>,	<span class="comment">//cnt_t2</span></span><br><span class="line">	<span class="keyword">parameter</span>	G_S_CNT_MAX =  <span class="number">10&#x27;d1000</span>		<span class="comment">//cnt_t3，参数值由外部输入，便于仿真观察</span></span><br><span class="line">	)</span><br><span class="line">	(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		pwm_out</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------- 全局参数 -------------</span></span><br><span class="line">	<span class="comment">//parameter	G_US_CNT_MAX = 6&#x27;d50,		//全局参数也可写在内部</span></span><br><span class="line">	<span class="comment">//parameter	G_MS_CNT_MAX = 10&#x27;d1000,</span></span><br><span class="line">	<span class="comment">//parameter	G_S_CNT_MAX =  10&#x27;d1000,</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//-------------- 局部参数 -------------</span></span><br><span class="line">	<span class="keyword">localparam</span>	L_US_CNT_MAX = G_US_CNT_MAX - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	L_MS_CNT_MAX = G_MS_CNT_MAX - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	L_S_CNT_MAX =  G_S_CNT_MAX - <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//-------------- 计数器定义 -------------</span></span><br><span class="line">    <span class="keyword">reg</span>	[<span class="number">5</span>:<span class="number">0</span>]	us_cnt;		<span class="comment">//此处注意，位宽需要结合实际值，若希望计数129，则6bit是不够的</span></span><br><span class="line">	<span class="keyword">reg</span>	[<span class="number">10</span>:<span class="number">0</span>]	ms_cnt;		</span><br><span class="line">	<span class="keyword">reg</span>	[<span class="number">10</span>:<span class="number">0</span>]	s_cnt;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//--------------  us计数器  -------------</span></span><br><span class="line">    <span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)	<span class="comment">//用于产生基准us计数器</span></span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		us_cnt &lt;= <span class="number">6&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(us_cnt == L_US_CNT_MAX)</span><br><span class="line">		us_cnt &lt;= <span class="number">6&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		us_cnt &lt;= us_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//--------------  ms计数器  -------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		ms_cnt &lt;= <span class="number">10&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(us_cnt == L_US_CNT_MAX &amp;&amp; ms_cnt == L_MS_CNT_MAX)</span><br><span class="line">		ms_cnt &lt;= <span class="number">10&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(us_cnt == L_US_CNT_MAX)</span><br><span class="line">		ms_cnt &lt;= ms_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		ms_cnt &lt;= ms_cnt;</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//--------------  s计数器  -------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)	</span><br><span class="line">		s_cnt &lt;= <span class="number">10&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(us_cnt == L_US_CNT_MAX &amp;&amp; </span><br><span class="line">			ms_cnt == L_MS_CNT_MAX &amp;&amp;</span><br><span class="line">			s_cnt  == L_S_CNT_MAX)</span><br><span class="line">		s_cnt &lt;= <span class="number">10&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(us_cnt == L_US_CNT_MAX &amp;&amp; </span><br><span class="line">			ms_cnt == L_MS_CNT_MAX )</span><br><span class="line">		s_cnt &lt;= s_cnt + <span class="number">1&#x27;d1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		s_cnt &lt;= s_cnt;</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//--------------  亮灭状态切换  -------------</span></span><br><span class="line">	<span class="keyword">reg</span> breathe_status;</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)	</span><br><span class="line">		breathe_status &lt;= <span class="number">1&#x27;d0</span>;	<span class="comment">//亮状态</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(us_cnt == L_US_CNT_MAX &amp;&amp; </span><br><span class="line">			ms_cnt == L_MS_CNT_MAX &amp;&amp;</span><br><span class="line">			s_cnt  == L_S_CNT_MAX)</span><br><span class="line">		breathe_status &lt;= ~breathe_status; <span class="comment">//灭状态</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		breathe_status &lt;= breathe_status;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//--------------  PWM输出  -------------</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		pwm_out &lt;= <span class="number">1&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>((breathe_status == <span class="number">1&#x27;d0</span> &amp;&amp; ms_cnt &gt; s_cnt) ||</span><br><span class="line">			(breathe_status == <span class="number">1&#x27;d1</span> &amp;&amp; ms_cnt &lt; s_cnt))</span><br><span class="line">		pwm_out &lt;= <span class="number">1&#x27;d0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pwm_out &lt;= <span class="number">1&#x27;d1</span>;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<p>上方代码为single channel的输出，再建立顶层模块即可实现4
+chl的不同频率输出（参考ip核设计思路，不改动内部代码）：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> breathe_4chl_led(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span> 		sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>		sys_rst_n,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">wire</span>	[<span class="number">3</span>:<span class="number">0</span>]	led_out</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	breathe_led</span><br><span class="line">	#(	</span><br><span class="line">	<span class="variable">.G_US_CNT_MAX</span>(<span class="number">6&#x27;d50</span>),</span><br><span class="line">	<span class="variable">.G_MS_CNT_MAX</span>(<span class="number">10&#x27;d1000</span>),</span><br><span class="line">	<span class="variable">.G_S_CNT_MAX</span>(<span class="number">10&#x27;d1000</span>)</span><br><span class="line">	)</span><br><span class="line">	breathe_led_inst0(</span><br><span class="line">	<span class="variable">.sys_clk</span>(sys_clk),</span><br><span class="line">	<span class="variable">.sys_rst_n</span>(sys_rst_n),</span><br><span class="line">	</span><br><span class="line">	<span class="variable">.pwm_out</span>(led_out[<span class="number">0</span>])</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	breathe_led</span><br><span class="line">	#(	</span><br><span class="line">	<span class="variable">.G_US_CNT_MAX</span>(<span class="number">6&#x27;d50</span>),</span><br><span class="line">	<span class="variable">.G_MS_CNT_MAX</span>(<span class="number">10&#x27;d700</span>),</span><br><span class="line">	<span class="variable">.G_S_CNT_MAX</span> (<span class="number">10&#x27;d700</span>)</span><br><span class="line">	)</span><br><span class="line">	breathe_led_inst1(</span><br><span class="line">	<span class="variable">.sys_clk</span>(sys_clk),</span><br><span class="line">	<span class="variable">.sys_rst_n</span>(sys_rst_n),</span><br><span class="line">	</span><br><span class="line">	<span class="variable">.pwm_out</span>(led_out[<span class="number">1</span>])</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	breathe_led</span><br><span class="line">	#(	</span><br><span class="line">	<span class="variable">.G_US_CNT_MAX</span> (<span class="number">6&#x27;d50</span>),</span><br><span class="line">	<span class="variable">.G_MS_CNT_MAX</span> (<span class="number">10&#x27;d500</span>),</span><br><span class="line">	<span class="variable">.G_S_CNT_MAX</span>  (<span class="number">10&#x27;d500</span>)</span><br><span class="line">	)</span><br><span class="line">	breathe_led_inst2(</span><br><span class="line">	<span class="variable">.sys_clk</span>(sys_clk),</span><br><span class="line">	<span class="variable">.sys_rst_n</span>(sys_rst_n),</span><br><span class="line">	</span><br><span class="line">	<span class="variable">.pwm_out</span>(led_out[<span class="number">2</span>])</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line">	breathe_led</span><br><span class="line">	#(	</span><br><span class="line">	<span class="variable">.G_US_CNT_MAX</span> (<span class="number">6&#x27;d50</span>),</span><br><span class="line">	<span class="variable">.G_MS_CNT_MAX</span> (<span class="number">11&#x27;d2000</span>),</span><br><span class="line">	<span class="variable">.G_S_CNT_MAX</span>  (<span class="number">11&#x27;d2000</span>)</span><br><span class="line">	)</span><br><span class="line">	breathe_led_inst3(</span><br><span class="line">	<span class="variable">.sys_clk</span>(sys_clk),</span><br><span class="line">	<span class="variable">.sys_rst_n</span>(sys_rst_n),</span><br><span class="line">	</span><br><span class="line">	<span class="variable">.pwm_out</span>(led_out[<span class="number">3</span>])</span><br><span class="line">    );</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h2 id="仿真结果-2">仿真结果</h2>
+<p>pwm_out的输出高电平时间均匀递增</p>
+<div>
+<center>
+<img src="image-20251230232647727.png" alt="image can't load." style="zoom:75%"> <br><br>
+呼吸灯仿真输出
+</center>
+</div>
+<h1 id="状态机">状态机</h1>
+<p>状态机缩写FSM，又叫有限状态机，指状态的个数有限。根据是否受限于输入分为</p>
+<ul>
+<li>Moore型：最后输出状态至于当前状态有关，与输入无关</li>
+<li>Mealy型：最后输出状态至于当前状态有关，同时与输入有关</li>
+</ul>
+<p><strong>状态机的状态意为“事件”，A事件到B或C事件称为状态转移。</strong>完整的状态机需要具备：</p>
+<ul>
+<li>输入：根据输入可以确定是否需要进行状态跳转以及输出，是影响状态机系统执行过程的重要驱动力；</li>
+<li>输出：根据当前时刻的状态以及输入，是状态机系统最终要执行的动作；</li>
+<li>状态：根据输入和上一状态决定当前时刻所处的状态，是状态机系统执行的一个稳定的过程。</li>
+</ul>
+<div>
+<center>
+<img src="image-20260104194145937.png" alt="image can't load." style="zoom:55%"> <br><br>
+状态图模型
+</center>
+</div>
+<h2 id="单输入单输出状态机">单输入单输出状态机</h2>
+<h3 id="功能需求-3">功能需求</h3>
+<p>可乐机每次只能投入1枚1元硬币，且每瓶可乐卖3元钱，即投入3个硬币就可以让可乐机出可乐，如果投币不够3元想放弃投币需要按复位键，否则之前投入的钱不能退回。</p>
+<h3 id="详细设计-3">详细设计</h3>
+<p>对该需求需要设计状态转移图，即IDLE、ONE、TWO三个投币状态，状态间的切换靠输入驱动，与当前状态和输入有关，如下Mealy状态机。</p>
+<div>
+<center>
+<img src="image-20260104194145937.png" alt="image can't load." style="zoom:55%"> <br><br>
+Mealy状态机模型
+</center>
+</div>
+<p>若再增加一个状态THREE，输出则可完全依照当前状态，即检测到为THREE状态后直接输出可乐，输入不影响输出。如下Moore型状态机。</p>
+<div>
+<center>
+<img src="image-20260104195038410.png" alt="image can't load." style="zoom:55%"> <br><br>
+Moore状态机模型
+</center>
+</div>
+<h3 id="波形分析">波形分析</h3>
+<p>此节的需求中，输入只有一个，状态根据输入变化。</p>
+<div>
+<center>
+<img src="image-20260104201917235.png" alt="image can't load." style="zoom:55%"> <br><br>
+Mealy状态机波形
+</center>
+</div>
+<h3 id="代码实现-3">代码实现</h3>
+<p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> simple_FSM(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	pi_money,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		po_cola</span><br><span class="line">	);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">parameter</span>	IDLE = <span class="number">3&#x27;b001</span>;</span><br><span class="line">	<span class="keyword">parameter</span>	ONE =  <span class="number">3&#x27;b010</span>;</span><br><span class="line">	<span class="keyword">parameter</span>	TWO =  <span class="number">3&#x27;b100</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">2</span>:<span class="number">0</span>] state;</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		state &lt;= IDLE;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">case</span> (state)</span><br><span class="line">		IDLE:	<span class="keyword">if</span>(pi_money == <span class="number">1&#x27;b1</span>)</span><br><span class="line">					state &lt;= ONE;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					state &lt;= IDLE;</span><br><span class="line">		ONE:	<span class="keyword">if</span>(pi_money == <span class="number">1&#x27;b1</span>)</span><br><span class="line">					state &lt;= TWO;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					state &lt;= ONE;</span><br><span class="line">		TWO:	<span class="keyword">if</span>(pi_money == <span class="number">1&#x27;b1</span>)</span><br><span class="line">					state &lt;= IDLE;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					state &lt;= TWO;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">				state &lt;= IDLE;</span><br><span class="line">		<span class="keyword">endcase</span></span><br><span class="line">		</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		po_cola &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(state == TWO &amp;&amp; pi_money == <span class="number">1&#x27;b1</span>)</span><br><span class="line">		po_cola &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		po_cola &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="仿真分析">仿真分析</h3>
+<div>
+<center>
+<img src="image-20260105182126774.png" alt="image can't load." style="zoom:55%"> <br><br>
+三状态仿真波形
+</center>
+</div>
+<h2 id="多输入多输出状态机">多输入多输出状态机</h2>
+<h3 id="功能需求-4">功能需求</h3>
+<p>可乐定价为2.5元一瓶，可投入0.5元、1元硬币，投币不够2.5元需要按复位键退回钱款，投币超过2.5元需找零。</p>
+<h3 id="详细设计-4">详细设计</h3>
+<p>先设计状态转移图，即IDLE、HALF、ONE、ONE_HALF、TWO、三个投币状态，状态间的切换靠输入驱动，与当前状态和输入有关，如下Mealy状态机。</p>
+<p>确定输入：</p>
+<ul>
+<li>0.5元</li>
+<li>1元</li>
+</ul>
+<p>确定输出：</p>
+<ul>
+<li>是否找零</li>
+<li>是否出可乐</li>
+</ul>
+<div>
+<center>
+<img src="image-20260105192532293.png" alt="image can't load." style="zoom:55%"> <br><br>
+Mealy状态转移图
+</center>
+</div>
+<h3 id="波形分析-1">波形分析</h3>
+<div>
+<center>
+<img src="image-20260105190633278.png" alt="image can't load." style="zoom:55%"> <br><br>
+波形分析图
+</center>
+</div>
+<h3 id="代码实现-4">代码实现</h3>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> complex_FSM(</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_clk,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	sys_rst_n,</span><br><span class="line">	<span class="keyword">input</span> 	<span class="keyword">wire</span>	pi_money_one,</span><br><span class="line">	<span class="keyword">input</span>	<span class="keyword">wire</span>	pi_money_half,</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		po_money,</span><br><span class="line">	<span class="keyword">output</span>	<span class="keyword">reg</span>		po_cola</span><br><span class="line">    );</span><br><span class="line">	<span class="comment">//------------ 输入合并 ------------------</span></span><br><span class="line">	<span class="keyword">wire</span>   [<span class="number">1</span>:<span class="number">0</span>] pi_money;</span><br><span class="line">	<span class="keyword">assign</span> pi_money = &#123;pi_money_one,pi_money_half&#125;;</span><br><span class="line">	<span class="comment">//------------ 局部参数 ------------------</span></span><br><span class="line">	<span class="comment">//---- 状态定义</span></span><br><span class="line">	<span class="keyword">localparam</span>	IDLE 		= <span class="number">5&#x27;b00001</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	HALF		= <span class="number">5&#x27;b00010</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	ONE	 		= <span class="number">5&#x27;b00100</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	ONE_HALF 	= <span class="number">5&#x27;b01000</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	TWO 		= <span class="number">5&#x27;b10000</span>;</span><br><span class="line">	<span class="comment">//-----输入定义</span></span><br><span class="line">	<span class="keyword">localparam</span>	INPUT_HALF	= <span class="number">2&#x27;b01</span>;</span><br><span class="line">	<span class="keyword">localparam</span>	INPUT_ONE	= <span class="number">2&#x27;b10</span>;</span><br><span class="line">	<span class="comment">//------------ 状态切换 ------------------	</span></span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">4</span>:<span class="number">0</span>] state;</span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		state &lt;= IDLE;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">case</span>(state)</span><br><span class="line">		IDLE:	<span class="keyword">if</span>(pi_money == INPUT_HALF)</span><br><span class="line">					state &lt;= HALF;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(pi_money == INPUT_ONE)</span><br><span class="line">					state &lt;= ONE;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					state &lt;= IDLE;</span><br><span class="line">		HALF:	<span class="keyword">if</span>(pi_money == INPUT_HALF)</span><br><span class="line">					state &lt;= ONE;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(pi_money ==INPUT_ONE)</span><br><span class="line">					state &lt;= ONE_HALF;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					state &lt;= HALF;</span><br><span class="line">		ONE:	<span class="keyword">if</span>(pi_money == INPUT_HALF)</span><br><span class="line">					state &lt;= ONE_HALF;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(pi_money == INPUT_ONE)</span><br><span class="line">					state &lt;= TWO;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">					state &lt;= ONE;</span><br><span class="line">		ONE_HALF:<span class="keyword">if</span>(pi_money == INPUT_HALF)</span><br><span class="line">					state &lt;= TWO;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(pi_money ==INPUT_ONE)</span><br><span class="line">					state &lt;= IDLE;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					state &lt;= ONE_HALF;</span><br><span class="line">		TWO:	<span class="keyword">if</span>(pi_money[<span class="number">1</span>] != pi_money[<span class="number">0</span>])</span><br><span class="line">					state &lt;= IDLE;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">					state &lt;= TWO;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">				state &lt;= IDLE;</span><br><span class="line">		<span class="keyword">endcase</span></span><br><span class="line">	<span class="comment">//---------------- 输出量</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		po_cola &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>((state == ONE_HALF &amp;&amp; pi_money == INPUT_ONE)</span><br><span class="line">			|| (state == TWO &amp;&amp; pi_money[<span class="number">1</span>] != pi_money[<span class="number">0</span>]))</span><br><span class="line">		po_cola &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		po_cola	&lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="comment">//---------------- 输出量</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		po_money &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(state == TWO &amp;&amp; pi_money == INPUT_ONE)</span><br><span class="line">		po_money &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		po_money &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="keyword">timescale</span> 1ns / 1ns</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> tb_complex_FSM(</span><br><span class="line"></span><br><span class="line">    );</span><br><span class="line">	<span class="keyword">reg</span>	sys_clk;</span><br><span class="line">	<span class="keyword">reg</span> sys_rst_n;</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">1</span>:<span class="number">0</span>] pi_money;</span><br><span class="line">	<span class="keyword">wire</span>	po_cola;</span><br><span class="line">	<span class="keyword">wire</span>	po_money;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">		sys_clk = <span class="number">1&#x27;b1</span>;</span><br><span class="line">		sys_rst_n &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line">		#<span class="number">20</span></span><br><span class="line">		sys_rst_n &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	</span><br><span class="line">    <span class="comment">//--------------- 引用仿真实例inst0内的量</span></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">4</span>:<span class="number">0</span>] state = complex_FSM_inst0<span class="variable">.state</span>;</span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">		<span class="built_in">$timeformat</span>(-<span class="number">9</span>,<span class="number">0</span>,<span class="string">&quot;ns&quot;</span>,<span class="number">6</span>);</span><br><span class="line">		<span class="built_in">$monitor</span>(<span class="string">&quot;@time %t: pi_money_half = %b, pi_money_one = %b, state = %b,po_cola = %b, po_money = %b&quot;</span>,</span><br><span class="line">					<span class="built_in">$time</span> ,pi_money[<span class="number">0</span>],pi_money[<span class="number">1</span>],state,po_cola,po_money);</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="comment">//--------------- 50MHz时钟</span></span><br><span class="line">	<span class="keyword">always</span> #<span class="number">10</span> sys_clk = ~sys_clk;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//--------------- 随机输入</span></span><br><span class="line">	<span class="keyword">always</span>@(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> sys_rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!sys_rst_n)</span><br><span class="line">		pi_money &lt;= <span class="number">2&#x27;b00</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pi_money &lt;= &#123;<span class="built_in">$random</span>&#125;%<span class="number">3</span>;</span><br><span class="line">	</span><br><span class="line">	complex_FSM complex_FSM_inst0(</span><br><span class="line">	<span class="variable">.sys_clk</span>(sys_clk),</span><br><span class="line">	<span class="variable">.sys_rst_n</span>(sys_rst_n),</span><br><span class="line">	<span class="variable">.pi_money_one</span>(pi_money[<span class="number">1</span>]),</span><br><span class="line">	<span class="variable">.pi_money_half</span>(pi_money[<span class="number">0</span>]),</span><br><span class="line">	</span><br><span class="line">	<span class="variable">.po_money</span>(po_money),</span><br><span class="line">	<span class="variable">.po_cola</span>(po_cola)</span><br><span class="line">    );</span><br><span class="line">	</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h3 id="仿真分析-1">仿真分析</h3>
+<div>
+<center>
+<img src="image-20260105204438970.png" alt="image can't load." style="zoom:55%"> <br><br>
+仿真波形
+</center>
+</div>
+<blockquote>
+<p>最初在做仿真时，pi_money_half和pi_money_one在独立的always块内赋值，导致出现同时为1的意外情况。后续修正为pi_money
+&lt;= {$random}%3; 包含00、01、10三种情况。</p>
+</blockquote>
+<h1 id="综合应用">综合应用</h1>
+<p>结合本篇博文的消抖、流水灯、状态机，可以搭建简单的小功能。</p>
+<h2 id="功能需求-5">功能需求</h2>
+<p>实现可乐机，投币为0.5元、1元，达到2.5时出可乐，达到3时出可乐并找零。每次投币10s后无操作则回到初始态。每个投币状态由LED反馈，0-2元，分别亮起0-4个LED，2.5元为单向流水，3元时为双向流水，流水间隔0.5s。</p>
+<h2 id="详细设计-5">详细设计</h2>
+<p>如果继续按照模块化设计思路，根据需求可拆解以下模块：</p>
+<ul>
+<li>输入检测：确定是否有输入，输入是什么，并进行滤波</li>
+<li>状态切换：确定什么时间复位，输出包含所有状态</li>
+<li>LED控制：根据当前状态进行LED亮灭</li>
+</ul>
+<div>
+<center>
+<img src="image-20260110101735089.png" alt="image can't load." style="zoom:55%"> <br><br>
+模块划分
+</center>
+</div>
+<h2 id="波形分析-2">波形分析</h2>
+<p>[1]输入检测：参考<a href="#按键消抖">按键消抖</a>一节，当监测到连续20ms输入时，输出1拍高电平</p>
+<p>[2]状态机：相对<a href="#状态机">上一节</a>内容</p>
+<ul>
+<li>取消cola和money的输出</li>
+<li>新增FSM的state状态量输出，供后续模块调用</li>
+<li>新增切换状态后10s复位计数器</li>
+</ul>
+<p>[3]LED控制：</p>
+<p>LED控制状态包括两种，固定排列常亮 +
+指定间隔/方向闪烁，对两种分别进行波形逻辑绘制：</p>
+<div>
+<center>
+<img src="image-20260110102524194.png" alt="image can't load." style="zoom:75%"> <br><br>
+基本状态：N个LED常亮，红色虚线表示进入新状态
+</center>
+</div>
+<p>每uint_cnt，检测并切换LED状态。若在state !=
+prev_state时切换状态，则uint_cnt复位，重新对新状态计时。</p>
+<div>
+<center>
+<img src="image-20260111173304436.png" alt="image can't load." style="zoom:75%"> <br><br>
+流水状态：间隔0.5s流水，红色虚线表示进入新状态
+</center>
+</div>
+<p>由于流水状态包含流水方向，需要1bit寄存器表示什么时候翻转。由于后续状态依靠flow_dir，因此需要提前打一拍翻转。</p>
+<h2 id="代码设计">代码设计</h2>
+<p>详见链接</p>
+<p>总结发现，真正耗时的时确定模块间的数据传递关系，比如：</p>
+<ul>
+<li>Key按键到FSM检测时输入的究竟是1拍高电平还是低电平：单模块仿真时未发现此问题，整体仿真异常才发现</li>
+<li>状态参数究竟由谁控制：led的state仅前级传递，还是内部定义一个10s回到空闲态的计数器，应在划分模块时提前构思好</li>
+</ul>
+<h2 id="仿真分析-2">仿真分析</h2>
+<p>此处只放top层文件仿真结果：</p>
+<div>
+<center>
+<img src="image-20260111174908264.png" alt="image can't load." style="zoom:75%"> <br><br>
+仿真结果：模块间传输延时1拍
+</center>
+</div>
+<h1 id="注意事项">注意事项</h1>
+<ol type="1">
+<li><p>仿真时必须修改tb文件中传递parameter参数的时，底层模块的局部参数才会变化，否则仿真时继续使用上一次的值，导致结果异常。</p></li>
+<li><p>状态量设置</p>
+<p>状态量类似C语言中的宏定义，常见的0、1、2….区分不同状态，在Verilog中也类似，以下三种形式都可以表示四种状态：</p>
+<ul>
+<li>二进制值：2’b00,2’b01,2’b10,2’b11</li>
+<li>独热码：4’b0001,4’b0010,4’b0100,4’b1000</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/jingfengvae/article/details/51691124">格雷码</a>：3’b000,3’b001,3’b011,3b’110，相邻两个编码只有一个bit不同</li>
+</ul>
+<p>由于Verilog代码最后综合出的是电路，一个bit可以视为一个比较器。由于布局布线的差异多输入比较器可以会存在传输延迟，可能导致A输入在clk上升沿前，而B输出延迟2ns出现在clk上升沿之后，进而出现状态不稳的情况。格雷码相邻编码只有1bit不同，解决多输入传输延迟问题，同时节省部分资源。</p>
+<p><strong>FPGA寄存器资源较多，CPLD组合逻辑资源多，通常采用以下配置方式。</strong></p>
+<div>
+<center>
+<img src="image-20260105205421207.png" alt="image can't load." style="zoom:55%"> <br><br>
+编码方式表
+</center>
+</div></li>
+</ol>
+<p align="center">
+————————— End —————————
+</p>
+<blockquote>
+<p><em>君子终日乾乾，夕惕若厉。–《周易·乾卦》</em></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>如果你愿意请我喝咖啡~</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Youngs 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Youngs 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Youngs
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/" title="FPGA-04-Verilog语法">https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/FPGA/" rel="tag"># FPGA</a>
+              <a href="/tags/Verilog/" rel="tag"># Verilog</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/24/FPGA-03-Verilog_Syntax/" rel="prev" title="FPGA-03-Verilog语法">
+                  <i class="fa fa-angle-left"></i> FPGA-03-Verilog语法
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Youngs</span>
+  </div>
+
+
+
+
+
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("04/09/2025 00:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="150" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+  <a href="https://github.com/MicroPrism" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

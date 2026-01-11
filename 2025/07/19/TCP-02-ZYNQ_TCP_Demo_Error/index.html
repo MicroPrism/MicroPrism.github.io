@@ -24,26 +24,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"microprism.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…">
+    <meta name="description" content="本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP-02-ZYNQ7020 TCP例程自动协商失败解决办法">
 <meta property="og:url" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…">
+<meta property="og:description" content="本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719222443418.png">
-<meta property="og:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719191118162.png">
-<meta property="og:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719191417696.png">
-<meta property="og:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719192756638.png">
-<meta property="og:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719192930341.png">
-<meta property="og:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719193107631.png">
-<meta property="og:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719223948825.png">
 <meta property="article:published_time" content="2025-07-19T11:02:33.832Z">
 <meta property="article:modified_time" content="2025-07-20T07:37:47.121Z">
 <meta property="article:author" content="Youngs">
 <meta property="article:tag" content="TCP&#x2F;IP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/image-20250719222443418.png">
 
 
 <link rel="canonical" href="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/">
@@ -89,6 +81,12 @@
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -130,7 +128,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -181,7 +179,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">场景复现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">原因分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">IP配置错误？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PC%E7%AB%AF%E9%80%9F%E5%BA%A6%E9%99%90%E5%88%B6%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">PC端速度限制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A3%E8%B4%A8%E7%BD%91%E7%BA%BF%E2%80%A6"><span class="nav-number">3.3.</span> <span class="nav-text">劣质网线…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">场景复现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">原因分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ip%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF"><span class="nav-number">3.1.</span> <span class="nav-text">IP配置错误？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pc%E7%AB%AF%E9%80%9F%E5%BA%A6%E9%99%90%E5%88%B6"><span class="nav-number">3.2.</span> <span class="nav-text">PC端速度限制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A3%E8%B4%A8%E7%BD%91%E7%BA%BF"><span class="nav-number">3.3.</span> <span class="nav-text">劣质网线…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,18 +194,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -259,7 +257,7 @@
         <h3 class="widget-title">Tags</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/502/" rel="tag">502</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
         </div>
       </div>
@@ -370,10 +368,11 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本博文介绍ZYNQ SDK默认Lwip Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…</p>
+    <div class="post-body" itemprop="articleBody"><p>本博文介绍ZYNQ SDK默认Lwip
+Demo自动协商失败问题解决办法，如有相同情况，请先检查网线是不是千兆网…</p>
 <span id="more"></span>
-
-<h2 id="场景复现"><a href="#场景复现" class="headerlink" title="场景复现"></a>场景复现</h2><ul>
+<h2 id="场景复现">场景复现</h2>
+<ul>
 <li>开发环境：Xilinx Vivado 18.3 SDK</li>
 <li>芯片：ZYNQ 7020</li>
 <li>调试工具：串口调试助手</li>
@@ -381,88 +380,112 @@
 </ul>
 <p>使用SDK工具新建TCP echo server模板项目后，板验证报错信息如下：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Start PHY autonegotiation </span><br><span class="line">Waiting <span class="keyword">for</span> PHY to complete autonegotiation.</span><br><span class="line">Auto negotiation error  </span><br><span class="line">Phy setup error  </span><br><span class="line">Assert due to phy setup failure </span><br></pre></td></tr></table></figure>
-
 <p>博主在手动设定速率后重新配置为自动协商试图复现异常，但是结果却又协商成功了？如下图。</p>
-<div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250719222443418.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-    重新配置为自动协商<!--标题-->
-    </center>
+<div>
+<pre><code>       &lt;!--块级封装--&gt;
+&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-19-TCP-02-ZYNQ_TCP_Demo_Error/image-20250719222443418.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;        &lt;!--换行--&gt;
+重新配置为自动协商&lt;!--标题--&gt;
+&lt;/center&gt;</code></pre>
 </div>
-
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>优先放置解决办法，感兴趣的可以向下翻阅原因分析。</p>
+<h2 id="解决办法">解决办法</h2>
+<p>优先放置解决办法，感兴趣的可以向下翻阅原因分析。</p>
 <p>1.修改BSP配置</p>
-<div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250719191118162.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-    phy link speed<!--标题-->
-    </center>
+<div>
+<pre><code>       &lt;!--块级封装--&gt;
+&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-19-TCP-02-ZYNQ_TCP_Demo_Error/image-20250719191118162.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:55%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;        &lt;!--换行--&gt;
+phy link speed&lt;!--标题--&gt;
+&lt;/center&gt;</code></pre>
 </div>
-
 <p>2.手动指定连接速度-100Mbps</p>
-<div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250719191417696.png" alt="image can't load." style="zoom:55%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-    BSP's Setting<!--标题-->
-    </center>
+<div>
+<pre><code>       &lt;!--块级封装--&gt;
+&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-19-TCP-02-ZYNQ_TCP_Demo_Error/image-20250719191417696.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:55%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;        &lt;!--换行--&gt;
+BSP&#39;s Setting&lt;!--标题--&gt;
+&lt;/center&gt;</code></pre>
 </div>
-
 <p>3.注释掉<code>platform_zynq.c</code>文件中定时器回调函数<code>time_callback</code>中代码</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* For detecting Ethernet phy link status periodically */</span></span><br><span class="line">	<span class="comment">/* if (DetectEthLinkStatus == ETH_LINK_DETECT_INTERVAL) &#123;</span></span><br><span class="line"><span class="comment">		eth_link_detect(echo_netif);</span></span><br><span class="line"><span class="comment">		DetectEthLinkStatus = 0;</span></span><br><span class="line"><span class="comment">	&#125;	*/</span></span><br></pre></td></tr></table></figure>
-
 <p>4.配置ip</p>
 <ul>
 <li><p>ZYNQ</p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250719192756638.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-   ZYNQ Config<!--标题-->
-    </center>
-</div>
-</li>
+<div>
+<pre><code>     &lt;!--块级封装--&gt;
+&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-19-TCP-02-ZYNQ_TCP_Demo_Error/image-20250719192756638.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;      &lt;!--换行--&gt;</code></pre>
+ZYNQ Config<!--标题-->
+
+</div></li>
 <li><p>PC</p>
-<div>            <!--块级封装-->
-    <center>    <!--将图片和文字居中-->
-    <img src="image-20250719192930341.png" alt="image can't load." style="zoom:75%"><!-- alt内为提示词-->
-    <br>        <!--换行-->
-   PC Config<!--标题-->
-    </center>
+<div>
+<pre><code>     &lt;!--块级封装--&gt;
+&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-19-TCP-02-ZYNQ_TCP_Demo_Error/image-20250719192930341.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;      &lt;!--换行--&gt;</code></pre>
+PC Config<!--标题-->
+
 </div></li>
 </ul>
 <p>5.串口调试工具配置</p>
-<div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250719193107631.png" alt="image can't load." style="zoom:65%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-   串口工具<!--标题-->
-    </center>
-</div>
+<div>
+<pre><code>       &lt;!--块级封装--&gt;
+&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-19-TCP-02-ZYNQ_TCP_Demo_Error/image-20250719193107631.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:65%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;        &lt;!--换行--&gt;</code></pre>
+串口工具<!--标题-->
 
-<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><h3 id="IP配置错误？"><a href="#IP配置错误？" class="headerlink" title="IP配置错误？"></a>IP配置错误？</h3><p>最先考虑的是PC与ZYNQ开发板的ip地址不在同一网段，但将ip均配置在<code>192.168.1.xx</code>网段下之后仍然出现异常。</p>
-<h3 id="PC端速度限制？"><a href="#PC端速度限制？" class="headerlink" title="PC端速度限制？"></a>PC端速度限制？</h3><div>			<!--块级封装-->
-    <center>	<!--将图片和文字居中-->
-    <img src="image-20250719223948825.png" alt="image can't load." style="zoom:65%"><!-- alt内为提示词-->
-    <br>		<!--换行-->
-   PC端网口速度<!--标题-->
-    </center>
 </div>
+<h2 id="原因分析">原因分析</h2>
+<h3 id="ip配置错误">IP配置错误？</h3>
+<p>最先考虑的是PC与ZYNQ开发板的ip地址不在同一网段，但将ip均配置在<code>192.168.1.xx</code>网段下之后仍然出现异常。</p>
+<h3 id="pc端速度限制">PC端速度限制？</h3>
+<div>
+<pre><code>       &lt;!--块级封装--&gt;
+&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
+&lt;img src=&quot;2025-07-19-TCP-02-ZYNQ_TCP_Demo_Error/image-20250719223948825.png&quot;
+     alt=&quot;image can&#39;t load.&quot;
+     style=&quot;zoom:65%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
+&lt;br&gt;        &lt;!--换行--&gt;</code></pre>
+PC端网口速度<!--标题-->
 
+</div>
 <p>众所周知，PC机在连接以太网之后可以更改连接速度。参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/wsnd123321/article/details/129457547">资料3</a>手动将PC端网口速率从自动协商指定为1Gbps，喜提<span style="color:red"><strong>网络未连接</strong></span>。</p>
 <p>速度和双工配置重新调整为自动协商后，连接状态变为上图100Mbps。</p>
-<h3 id="劣质网线…"><a href="#劣质网线…" class="headerlink" title="劣质网线…"></a>劣质网线…</h3><p>破案，是劣质网线不支持1000Mbps…</p>
+<h3 id="劣质网线">劣质网线…</h3>
+<p>破案，是劣质网线不支持1000Mbps…</p>
 <p><span style="color:red"><strong>从水晶头看到线芯颜色是银白色，胶皮标识为CAT5E超五类，找到订单查材质是铝镁合金、商品名为百兆网线…</strong></span></p>
 <p>5m长的网线费用高达3.39，他能跑百兆我应该夸它耐造….</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.amengcc.cn/index.php/archives/1258/">zynq调试网口所遇到的问题记录 | AMENG</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.amengcc.cn/index.php/archives/1260/">ZYNQ lwip 自适应网络速率 | AMENG</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/wsnd123321/article/details/129457547">修复 win10&#x2F;11 以太网网速被限制在 100Mbps_win11千兆网卡只有100mbps | CSDN博客</a></li>
+<h2 id="参考资料">参考资料</h2>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://www.amengcc.cn/index.php/archives/1258/">zynq调试网口所遇到的问题记录
+| AMENG</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.amengcc.cn/index.php/archives/1260/">ZYNQ lwip
+自适应网络速率 | AMENG</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/wsnd123321/article/details/129457547">修复
+win10/11 以太网网速被限制在 100Mbps_win11千兆网卡只有100mbps |
+CSDN博客</a></li>
 </ol>
-<p align="center">---------------------------  End  ---------------------------</p>
-
+<p align="center">
+————————— End —————————
+</p>
 <blockquote>
 <p><em>“少无适俗韵，性本爱丘山。”– 《 归园田居·其一》</em></p>
 </blockquote>
@@ -546,7 +569,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
