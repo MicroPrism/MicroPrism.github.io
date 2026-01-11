@@ -31,12 +31,33 @@
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="本文参考实例熟悉Verilog HDL基本语法，描述FPGA程序设计本质和思路。基于Vivado创建工程，野火ZYNQ-7020开发板实操。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251124205938660.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251124210134581.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251124205259801.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251124205716339.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251124210523205.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251124210659965.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251125233723518.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251126010426003.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251126000431448.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251126005538068.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251130235512504.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201000949737.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201001428537.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201112507974.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201113020891.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201115138968.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201113930888.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201124709370.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201120750531.png">
+<meta property="og:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251201020744383.png">
 <meta property="article:published_time" content="2025-11-24T11:59:15.000Z">
-<meta property="article:modified_time" content="2025-12-01T16:02:39.816Z">
+<meta property="article:modified_time" content="2026-01-11T12:27:22.586Z">
 <meta property="article:author" content="Youngs">
 <meta property="article:tag" content="FPGA">
 <meta property="article:tag" content="Verilog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/image-20251124205938660.png">
 
 
 <link rel="canonical" href="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/">
@@ -129,7 +150,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -201,12 +222,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -258,7 +279,7 @@
         <h3 class="widget-title">Tags</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/873%E6%8E%A7%E5%88%B6%E5%B7%A5%E7%A8%8B/" rel="tag">873控制工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpaceDesk/" rel="tag">SpaceDesk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%8F%B7%E5%AE%8C%E6%95%B4%E6%80%A7/" rel="tag">信号完整性</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E5%B1%8F%E6%89%A9%E5%B1%95/" rel="tag">副屏扩展</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%97%E6%98%8C%E5%A4%A7%E5%AD%A6/" rel="tag">南昌大学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E9%87%8F%E5%8D%A1/" rel="tag">流量卡</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%B9%E6%80%A7%E9%98%BB%E6%8A%97/" rel="tag">特性阻抗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8D%8F%E5%95%86/" rel="tag">自动协商</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
         </div>
       </div>
@@ -319,7 +340,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-02 00:02:39" itemprop="dateModified" datetime="2025-12-02T00:02:39+08:00">2025-12-02</time>
+      <time title="修改时间：2026-01-11 20:27:22" itemprop="dateModified" datetime="2026-01-11T20:27:22+08:00">2026-01-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -327,11 +348,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FPGA/" itemprop="url" rel="index"><span itemprop="name">FPGA</span></a>
+          <a href="/categories/%E7%94%B5%E5%AD%90%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">电子类</span></a>
         </span>
           /
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FPGA/Syntax/" itemprop="url" rel="index"><span itemprop="name">Syntax</span></a>
+          <a href="/categories/%E7%94%B5%E5%AD%90%E7%B1%BB/FPGA/" itemprop="url" rel="index"><span itemprop="name">FPGA</span></a>
         </span>
     </span>
 
@@ -349,14 +370,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.5k</span>
+      <span>4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>15 分钟</span>
+      <span>13 分钟</span>
     </span>
 
 
@@ -409,72 +430,42 @@ HDL基本语法，描述FPGA程序设计本质和思路。基于Vivado创建工�
 <li><p>if-else语句缺少末尾的else</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b000</span>)	</span><br><span class="line">    out = <span class="number">8&#x27;b0000_0001</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b001</span>)</span><br><span class="line">    out = <span class="number">8&#x27;b0000_0010</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b010</span>)</span><br><span class="line">    out = <span class="number">8&#x27;b0000_0100</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b011</span>)</span><br><span class="line">    out = <span class="number">8&#x27;b0000_1000</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b100</span>)</span><br><span class="line">    out = <span class="number">8&#x27;b0001_0000</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b101</span>)</span><br><span class="line">    out = <span class="number">8&#x27;b0010_0000</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b110</span>)</span><br><span class="line">    out = <span class="number">8&#x27;b0100_0000</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(&#123;in1,in2,in3&#125;==<span class="number">3&#x27;b111</span>)</span><br><span class="line">    out = <span class="number">8&#x27;b1000_0000</span>;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    out = <span class="number">8&#x27;b0000_0000</span>;</span><br></pre></td></tr></table></figure>
 <div>
-<pre><code>     &lt;!--块级封装--&gt;
-&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251124205938660.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;      &lt;!--换行--&gt;
-if-else语句遍历所有条件&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251124205938660.png" alt="image can't load." style="zoom:100%"> <br> if-else语句遍历所有条件
+</center>
 </div>
 <p>若缺少最终的else语句，则会在尾部产生锁存：</p>
 <div>
-<pre><code>     &lt;!--块级封装--&gt;
-&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251124210134581.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;      &lt;!--换行--&gt;
-if-else语句缺少else&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251124210134581.png" alt="image can't load." style="zoom:100%"> <br> if-else语句缺少else
+</center>
 </div></li>
 <li><p>case语句在条件未遍历时缺少default</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span>(&#123;in1,in2,in3&#125;)</span><br><span class="line">		<span class="number">3&#x27;b000</span>:	out = <span class="number">8&#x27;b0000_0001</span>;</span><br><span class="line">		<span class="number">3&#x27;b001</span>:	out = <span class="number">8&#x27;b0000_0010</span>;</span><br><span class="line">		<span class="number">3&#x27;b010</span>:	out = <span class="number">8&#x27;b0000_0100</span>;</span><br><span class="line">		<span class="number">3&#x27;b011</span>:	out = <span class="number">8&#x27;b0000_1000</span>;</span><br><span class="line">		<span class="number">3&#x27;b100</span>:	out = <span class="number">8&#x27;b0001_0000</span>;</span><br><span class="line">		<span class="number">3&#x27;b101</span>:	out = <span class="number">8&#x27;b0010_0000</span>;</span><br><span class="line">		<span class="number">3&#x27;b110</span>:	out = <span class="number">8&#x27;b0100_0000</span>;</span><br><span class="line">		<span class="number">3&#x27;b111</span>:	out = <span class="number">8&#x27;b1000_0000</span>;</span><br><span class="line">		<span class="keyword">default</span>:out = <span class="number">8&#x27;b0000_0000</span>;</span><br><span class="line">	<span class="keyword">endcase</span>	</span><br></pre></td></tr></table></figure>
 <div>
-<pre><code>     &lt;!--块级封装--&gt;
-&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251124205259801.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;      &lt;!--换行--&gt;
-case语句遍历所有条件&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251124205259801.png" alt="image can't load." style="zoom:75%"> <br> case语句遍历所有条件
+</center>
 </div>
 <p>而将</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3&#x27;b111</span>:	out = <span class="number">8&#x27;b1000_0000</span>;</span><br><span class="line"><span class="keyword">default</span>:out = <span class="number">8&#x27;b0000_0000</span>;</span><br></pre></td></tr></table></figure>
 <p>两句注释之后生成的RTL电路则带有Latch</p>
 <div>
-<pre><code>     &lt;!--块级封装--&gt;
-&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251124205716339.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;      &lt;!--换行--&gt;
-case语句缺少条件&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251124205716339.png" alt="image can't load." style="zoom:75%"> <br> case语句缺少条件
+</center>
 </div></li>
 <li><p>输出变量给自身赋值</p>
 <p>变量给自身赋值，其逻辑类似于保持自身，直到某个条件触发后开始变化。恰好与锁存器的功能一致。</p>
 <div>
-<pre><code>     &lt;!--块级封装--&gt;
-&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251124210523205.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;      &lt;!--换行--&gt;
-if-else语句out=out赋值&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251124210523205.png" alt="image can't load." style="zoom:100%"> <br> if-else语句out=out赋值
+</center>
 </div>
 <div>
-<pre><code>     &lt;!--块级封装--&gt;
-&lt;center&gt;  &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251124210659965.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;      &lt;!--换行--&gt;
-case语句out = out赋值&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251124210659965.png" alt="image can't load." style="zoom:50%"> <br> case语句out = out赋值
+</center>
 </div></li>
 </ul>
 <p>参考本节的图片，也能发现不同语句综合出的电路不相同，if-else内涵顺序结构，其RTL是多个二选一选择器串连，case语句并行选择，只有一个ROM块。</p>
@@ -514,25 +505,15 @@ case语句out = out赋值&lt;!--标题--&gt;
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">in_reg 	= 	<span class="number">2</span>‘b00;</span><br><span class="line">out		=	<span class="number">2</span>‘b00;</span><br><span class="line"></span><br><span class="line">in_reg 	= 	in;</span><br><span class="line">out		=	in_reg;</span><br></pre></td></tr></table></figure>
 <p>其RTL电路为D触发器。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251125233723518.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:55%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-always块内阻塞赋值RTL&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251125233723518.png" alt="image can't load." style="zoom:55%"> <br> always块内阻塞赋值RTL
+</center>
 </div>
 <p>仿真波形如下：</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251126010426003.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-阻塞赋值RTL&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251126010426003.png" alt="image can't load." style="zoom:75%"> <br> 阻塞赋值RTL
+</center>
 </div>
 <p>显然，in_reg和out之间并无延迟，数据同步变化。</p>
 <h3 id="非阻塞赋值">非阻塞赋值</h3>
@@ -548,24 +529,14 @@ always块内阻塞赋值RTL&lt;!--标题--&gt;
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">in_reg 	&lt;= 	<span class="number">2</span>‘b00;</span><br><span class="line">out		&lt;=	<span class="number">2</span>‘b00;</span><br><span class="line"></span><br><span class="line">in_reg 	&lt;= 	in;</span><br><span class="line">out		&lt;=	in_reg;</span><br></pre></td></tr></table></figure>
 <p>其RTL电路为两个D触发器串联，从电路更容易理解滞后一拍：</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251126000431448.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-非阻塞赋值RTL&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251126000431448.png" alt="image can't load." style="zoom:50%"> <br> 非阻塞赋值RTL
+</center>
 </div>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251126005538068.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-非阻塞赋值仿真波形&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251126005538068.png" alt="image can't load." style="zoom:75%"> <br> 非阻塞赋值仿真波形
+</center>
 </div>
 <p>RTL电路中in_reg和out之间多出一个上升沿D触发器，因此输出滞后一拍。查看<a href="#D触发器">D触发器</a>。</p>
 <h1 id="附录">附录</h1>
@@ -573,14 +544,9 @@ always块内阻塞赋值RTL&lt;!--标题--&gt;
 <p>从背景上说，触发器的目的是增加电路“状态”，因为组合逻辑电路能传输信号–输出跟随输入变化，永远只反映现在的状态，即电路输出与上一时刻“状态”无关，</p>
 <p>以单一的与、或、非门电路为例，其当前的输入直接影响当前的输出。而“状态”的前提是记忆，或者说保持，其中最简单的记忆电路是两个反相器串联：</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251130235512504.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-保持电路&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251130235512504.png" alt="image can't load." style="zoom:50%"> <br> 保持电路
+</center>
 </div>
 <p>以上电路：</p>
 <ul>
@@ -590,14 +556,9 @@ always块内阻塞赋值RTL&lt;!--标题--&gt;
 <p>假设，首个反相器输出Q，则第二个输出Q
 <sup>’</sup>。其端口电压传输特性如下，三个工作点0(a)、1(c)和亚稳态(b)，稳定在a、c两点。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201000949737.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-反相器输出特性&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201000949737.png" alt="image can't load." style="zoom:50%"> <br> 反相器输出特性
+</center>
 </div>
 <h2 id="sr触发器">SR触发器</h2>
 <p>在具备保持功能的反相器电路基础上，但其缺少外部输入。将非门替换为与非门或者或非门可增加一个输入量，如图a，当v<sub>11</sub>=v<sub>12</sub>=0时，与上图一致。</p>
@@ -605,14 +566,9 @@ always块内阻塞赋值RTL&lt;!--标题--&gt;
 <p>如果不用与非门替换反相器，则在改变数值时，需要断开上下两部分连接，并改变数据后重新连接</p>
 </blockquote>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201001428537.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-SR触发器或非门电路&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201001428537.png" alt="image can't load." style="zoom:50%"> <br> SR触发器或非门电路
+</center>
 </div>
 <p>按照图b进行符号定义，对于或非门，1信号为决定信号(与门0信号为决定信号)。因此有以下真值表：</p>
 <table>
@@ -655,14 +611,9 @@ SR触发器或非门电路&lt;!--标题--&gt;
 <p>根据真值表，称其为Set-Reset触发器。另一种形式是与非门电路，其R<sub>D</sub>’和S<sub>D</sub>’低电平有效(0为决定信号)，两者不能同为0。</p>
 <p>再进一步，此时R、S信号在部分时刻影响输出，在输入端R、D增加与非门的Load信号，则有：</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201112507974.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-SR同步电平触发器&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201112507974.png" alt="image can't load." style="zoom:50%"> <br> SR同步电平触发器
+</center>
 </div>
 <p>(a)图后端为R<sub>D</sub>’、S<sub>D</sub>’有效的SR触发器，增设前端的与非门后输入反相：</p>
 <ul>
@@ -671,25 +622,15 @@ SR同步电平触发器&lt;!--标题--&gt;
 </ul>
 <p>再进一步，后端SR触发器若接异步输入（低电平有效），可同时具备同步异步功能。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201113020891.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-SR同步异步电平触发器&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201113020891.png" alt="image can't load." style="zoom:50%"> <br> SR同步异步电平触发器
+</center>
 </div>
 <p>电平触发器问题是，不易使得CLK=1时恰好SR输入变化。因此，在其基础上使用两个相同的SR触发器串联，但使用反相的装载信号CLK。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201115138968.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-SR主从触发器&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201115138968.png" alt="image can't load." style="zoom:50%"> <br> SR主从触发器
+</center>
 </div>
 <ul>
 <li>CLK=1时，主触发器任意变化，从触发器屏蔽输入</li>
@@ -758,14 +699,9 @@ SR主从触发器&lt;!--标题--&gt;
 </ol>
 <p><strong>为解决以上问题1，提出由同一信号决定SR，原始信号+反相信号。此方式SR恒等于0，但弊端是SR不可同时为0，即不具备保持功能。</strong></p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201113930888.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-电平触发D触发器&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201113930888.png" alt="image can't load." style="zoom:50%"> <br> 电平触发D触发器
+</center>
 </div>
 <p>其真值表简化为：</p>
 <table>
@@ -800,14 +736,9 @@ SR主从触发器&lt;!--标题--&gt;
 <li>CLK=1，前闭后开</li>
 </ul>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201124709370.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-边沿触发D触发器&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201124709370.png" alt="image can't load." style="zoom:50%"> <br> 边沿触发D触发器
+</center>
 </div>
 <p>其电路符号为：</p>
 <div>
@@ -824,14 +755,9 @@ SR主从触发器&lt;!--标题--&gt;
 <h2 id="jk触发器">JK触发器</h2>
 <p>基于主从SR触发器，为解决SR恒为0的约束条件，提出将从触发器输出分别接入主触发器输入端，称为JK触发器。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201120750531.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:50%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-JK主从触发器&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201120750531.png" alt="image can't load." style="zoom:50%"> <br> JK主从触发器
+</center>
 </div>
 <p>其有以下特点：</p>
 <ul>
@@ -854,14 +780,9 @@ JK主从触发器&lt;!--标题--&gt;
 </ul>
 </blockquote>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201020744383.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-JK触发器输出&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201020744383.png" alt="image can't load." style="zoom:75%"> <br> JK触发器输出
+</center>
 </div>
 <h1 id="参考资料">参考资料</h1>
 <p>[1] <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV139tweXEzT/?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click&amp;vd_source=5465b0f4790ebae45362caa6519f3b79">野火
@@ -872,7 +793,7 @@ FPGA ZYNQ-7000系列FPGA Verilog开发实战指南 | 哔哩哔哩</a></p>
 ————————— End —————————
 </p>
 <blockquote>
-<p><em>经历是过程，经验是目的。–不愿透露姓名的同事</em></p>
+<p><em>经历是过程，经验是目的。</em></p>
 </blockquote>
 
     </div>
@@ -926,8 +847,8 @@ FPGA ZYNQ-7000系列FPGA Verilog开发实战指南 | 哔哩哔哩</a></p>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/09/15/DS-03-Stack_and_Queue/" rel="prev" title="DS-03-栈与队列">
-                  <i class="fa fa-angle-left"></i> DS-03-栈与队列
+                <a href="/2025/09/15/DS-03-Stack_and_Queue/" rel="prev" title="数据结构-03-栈与队列">
+                  <i class="fa fa-angle-left"></i> 数据结构-03-栈与队列
                 </a>
             </div>
             <div class="post-nav-item">

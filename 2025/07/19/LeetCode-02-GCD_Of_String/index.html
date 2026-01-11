@@ -31,12 +31,14 @@
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="LeetCode算法题：字符串找最大公因子。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://microprism.github.io/2025/07/19/LeetCode-02-GCD_Of_String/image-20250719114305253.png">
 <meta property="article:published_time" content="2025-07-19T03:06:07.000Z">
-<meta property="article:modified_time" content="2025-07-24T05:52:32.432Z">
+<meta property="article:modified_time" content="2026-01-11T11:54:27.234Z">
 <meta property="article:author" content="Youngs">
-<meta property="article:tag" content="C">
 <meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="C">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://microprism.github.io/2025/07/19/LeetCode-02-GCD_Of_String/image-20250719114305253.png">
 
 
 <link rel="canonical" href="https://microprism.github.io/2025/07/19/LeetCode-02-GCD_Of_String/">
@@ -129,7 +131,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -201,12 +203,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -258,7 +260,7 @@
         <h3 class="widget-title">Tags</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ex-Screen/" rel="tag">Ex-Screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Impedance/" rel="tag">Impedance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCU/" rel="tag">NCU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgrad/" rel="tag">Postgrad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SIM-Card/" rel="tag">SIM Card</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wired/" rel="tag">Wired</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/873%E6%8E%A7%E5%88%B6%E5%B7%A5%E7%A8%8B/" rel="tag">873控制工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/" rel="tag">FPGA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB/" rel="tag">PCB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpaceDesk/" rel="tag">SpaceDesk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZYNQ/" rel="tag">ZYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%8F%B7%E5%AE%8C%E6%95%B4%E6%80%A7/" rel="tag">信号完整性</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%AF%E5%B1%8F%E6%89%A9%E5%B1%95/" rel="tag">副屏扩展</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%97%E6%98%8C%E5%A4%A7%E5%AD%A6/" rel="tag">南昌大学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="tag">常见问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E9%87%8F%E5%8D%A1/" rel="tag">流量卡</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%B9%E6%80%A7%E9%98%BB%E6%8A%97/" rel="tag">特性阻抗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8D%8F%E5%95%86/" rel="tag">自动协商</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
         </div>
       </div>
@@ -319,7 +321,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-24 13:52:32" itemprop="dateModified" datetime="2025-07-24T13:52:32+08:00">2025-07-24</time>
+      <time title="修改时间：2026-01-11 19:54:27" itemprop="dateModified" datetime="2026-01-11T19:54:27+08:00">2026-01-11</time>
     </span>
 
   
@@ -336,7 +338,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>709</span>
+      <span>687</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -376,14 +378,9 @@
 <h3 id="方案a">方案A</h3>
 <p>辗转相除，以较短的字符串为基准，不断向后移动并缩减比对字符串的长度，也是希望找到<strong>长度的最大公因子</strong>。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-07-19-LeetCode-02-GCD_Of_String/image-20250719114305253.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:55%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-长度上辗转相除 &lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20250719114305253.png" alt="image can't load." style="zoom:55%"> <br> 长度上辗转相除
+</center>
 </div>
 <p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">gcdOfStrings</span><span class="params">(<span class="type">char</span>* str1, <span class="type">char</span>* str2)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> n1 = <span class="built_in">strlen</span>(str1);</span><br><span class="line">    <span class="type">int</span> n2 = <span class="built_in">strlen</span>(str2);</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n1==n2 &amp;&amp; <span class="built_in">strncmp</span>(str1,str2,n1)==<span class="number">0</span> ) <span class="comment">//字符串长度相等</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> str1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n1&gt;n2 &amp;&amp; <span class="built_in">strncmp</span>(str1,str2,n2)==<span class="number">0</span>) <span class="comment">//str1长，向后移动</span></span><br><span class="line">        &#123;</span><br><span class="line">            str1 += n2;</span><br><span class="line">            n1 -= n2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n1&lt;n2 &amp;&amp; <span class="built_in">strncmp</span>(str1,str2,n1)==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            str2 += n1;</span><br><span class="line">            n2 -= n1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="方案b">方案B</h3>
@@ -439,8 +436,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C</a>
               <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+              <a href="/tags/C/" rel="tag"># C</a>
           </div>
 
         
@@ -452,8 +449,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/07/19/TCP-01-Protocol/" rel="next" title="TCP-01-TCP/IP协议详解">
-                  TCP-01-TCP/IP协议详解 <i class="fa fa-angle-right"></i>
+                <a href="/2025/07/19/TCP-Protocol/" rel="next" title="TCP/IP-协议详解">
+                  TCP/IP-协议详解 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
