@@ -8,23 +8,55 @@
 <p align="center">
 ————————— Part 1 —————————
 </p>
-<h2 id="电子类">电子类</h2>
-<h3 id="mcu">MCU</h3>
+<h1 id="电子类">电子类</h1>
+<h2 id="altium">Altium</h2>
 <ol type="1">
-<li><a href="https://microprism.github.io/2025/07/19/TCP-01-Protocol/">TCP-01-协议详解</a></li>
-<li><a href="https://microprism.github.io/2025/07/19/TCP-02-ZYNQ_TCP_Demo_Error/#more">TCP-02-ZYNQ7020
+<li>empty.</li>
+<li><a href="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/">Altium-02-异常与解决办法</a></li>
+</ol>
+<h2 id="si">SI</h2>
+<ol type="1">
+<li><a href="https://microprism.github.io/2025/07/09/SI-01-Impedance/">SI-01-PCB特性阻抗</a></li>
+</ol>
+<h2 id="zynq">ZYNQ</h2>
+<ol type="1">
+<li><a href="https://microprism.github.io/2025/07/19/ZYNQ-01-ZYNQ_TCP_Demo_Error/">ZYNQ-01-ZYNQ7020
 TCP例程自动协商失败解决办法</a></li>
 </ol>
-<h3 id="fpga">FPGA</h3>
+<h2 id="fpga">FPGA</h2>
 <ol type="1">
 <li><a href="https://microprism.github.io/2025/04/20/FPGA-01-About_ZYNQ/">FPGA-01-关于ZYNQ</a></li>
 <li><a href="https://microprism.github.io/2025/05/29/FPGA-02-Verilog_Syntax/">FPGA-02-Verilog语法</a></li>
+<li><a href="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/">FPGA-03-Verilog语法</a></li>
+<li><a href="https://microprism.github.io/2025/12/01/FPGA-04-Verilog_Syntax/">FPGA-04-Verilog语法</a></li>
 </ol>
-<h3 id="git">Git</h3>
+<p align="center">
+————————— Part 2 —————————
+</p>
+<h1 id="协议类">协议类</h1>
 <ol type="1">
-<li><a href="https://microprism.github.io/2025/06/17/Git-Using_Guide/">Git-使用指南</a></li>
+<li><a href="https://microprism.github.io/2025/07/19/TCP-Protocol/">TCP/IP-协议详解</a></li>
 </ol>
-<h3 id="leetcode">LeetCode</h3>
+<p align="center">
+————————— Part 3 —————————
+</p>
+<h1 id="计算机类">计算机类</h1>
+<ol type="1">
+<li><a href="https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click&amp;vd_source=5465b0f4790ebae45362caa6519f3b79">《数据结构（C
+语言描述）》</a></li>
+<li><a href="https://space.bilibili.com/517494241?spm_id_from=333.337.0.0">董晓算法的个人空间-董晓算法个人主页-哔哩哔哩视频</a></li>
+</ol>
+<h2 id="数据结构">数据结构</h2>
+<ol type="1">
+<li><a href="https://microprism.github.io/2025/08/09/DS-01-Introduction/">数据结构-01-引言</a></li>
+<li><a href="https://microprism.github.io/2025/08/10/DS-02-Linear_List/">数据结构-02-线性表</a></li>
+<li><a href="https://microprism.github.io/2025/09/15/DS-03-Stack_and_Queue/">数据结构-03-栈与队列</a></li>
+</ol>
+<p align="center">
+————————— Part 4 —————————
+</p>
+<h1 id="leetcode">LeetCode</h1>
+<h2 id="c算法">C算法</h2>
 <ol type="1">
 <li><a href="https://microprism.github.io/2025/07/19/LeetCode-01-String_Composition/">LeetCode-01-字符串交叉拼接</a></li>
 <li><a href="https://microprism.github.io/2025/07/19/LeetCode-02-GCD_Of_String/">LeetCode-02-两字符串寻找最大公因子</a></li>
@@ -36,61 +68,21 @@ TCP例程自动协商失败解决办法</a></li>
 <li><a href="https://microprism.github.io/2025/08/09/LeetCode-08-Increasing_Triplet/#more">LeetCode-08-三元递增子序列</a></li>
 </ol>
 <p align="center">
-————————— Part 2 —————————
-</p>
-<h2 id="计算机类">计算机类</h2>
-<ol type="1">
-<li><a href="https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click&amp;vd_source=5465b0f4790ebae45362caa6519f3b79">《数据结构（C
-语言描述）》</a></li>
-<li><a href="https://space.bilibili.com/517494241?spm_id_from=333.337.0.0">董晓算法的个人空间-董晓算法个人主页-哔哩哔哩视频</a></li>
-</ol>
-<h3 id="数据结构">数据结构</h3>
-<ol type="1">
-<li><a href="https://microprism.github.io/2025/08/09/DS-01-Introduction/">数据结构-01-引言</a></li>
-<li><a href="https://microprism.github.io/2025/08/10/DS-02-Linear_List/">数据结构-02-线性表</a></li>
-<li></li>
-</ol>
-<p align="center">
-————————— Part 3 —————————
-</p>
-<h2 id="硬件类">硬件类</h2>
-<h3 id="altium">Altium</h3>
-<ol type="1">
-<li>empty.</li>
-<li><a href="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/">Altium-02-错误与解决办法</a></li>
-</ol>
-<h3 id="si">SI</h3>
-<ol type="1">
-<li><a href="https://microprism.github.io/2025/07/09/SI-01-Impedance/">SI-01-PCB特性阻抗</a></li>
-</ol>
-<p align="center">
-————————— Part 4 —————————
-</p>
-<h2 id="工具类">工具类</h2>
-<h3 id="hexo">Hexo</h3>
-<ol type="1">
-<li><a href="https://microprism.github.io/2025/04/09/Hexo-01-Build_Blog/">Hexo-01-博客搭建问题与解决办法</a></li>
-<li><a href="https://microprism.github.io/2025/05/29/Hexo-02-Deploy_Error_And_Solution/">Hexo-02-推送错误(Fatal:502)解决办法</a></li>
-<li><a href="https://microprism.github.io/2025/06/04/Hexo-03-Embed_PDF_In_Next/">Hexo-03-Next嵌入PDF</a></li>
-</ol>
-<h3 id="spacedesk">SpaceDesk</h3>
-<ol type="1">
-<li><a href="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/">SpaceDesk-Win与iPad有线副屏扩展与常见问题</a></li>
-</ol>
-<p align="center">
 ————————— Part 5 —————————
 </p>
-<h2 id="碎碎念">碎碎念</h2>
-<h3 id="考研">考研</h3>
+<h1 id="工具类">工具类</h1>
 <ol type="1">
-<li><a href="https://microprism.github.io/2025/06/02/NCU-873_Trends/">NCU-南昌大学873控制专业考研形势</a></li>
+<li><a href="https://microprism.github.io/2025/04/09/Hexo-Build_Blog/">Hexo-博客搭建</a></li>
+<li><a href="https://microprism.github.io/2025/06/17/Git-Using_Guide/">Git-使用指南</a></li>
+<li><a href="https://microprism.github.io/2025/04/19/SpaceDesk-Secondary_Screen/">SpaceDesk-Win与iPad有线副屏扩展与常见问题</a></li>
 </ol>
 <p align="center">
 ————————— Part 6 —————————
 </p>
-<h2 id="流量卡">流量卡</h2>
+<h1 id="见闻类">见闻类</h1>
 <ol type="1">
-<li><a href="https://microprism.github.io/2025/06/10/Sideline-SIM_Card/">Sideline-流量卡办理</a></li>
+<li><a href="https://microprism.github.io/2025/06/02/NCU-873_Trends/">南昌大学-873控制工程考研形势</a></li>
+<li><a href="https://microprism.github.io/2025/06/10/Sideline-SIM_Card/">流量卡-性价比推荐</a></li>
 </ol>
 <p align="center">
 ————————— End —————————
@@ -571,26 +563,16 @@ Device），类似的有PLA、PAL、CPLD等器件。</p>
 <p>PLA与PROM为早期反熔丝型PLD电路。PLA（Programmable Logic
 array）中通过与门、非门构成“与平面”，“或平面”，以及一次性的编程矩阵。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-04-20-FPGA-01-About_ZYNQ/image-20250420205204194.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-PLA内部结构 &lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20250420205204194.png" alt="image can't load." style="zoom:75%"> <br> PLA内部结构
+</center>
 </div>
 <p>可编程只读存储器PROM（Programmable Read-Only
 Memory）与PLA类似，均是通过“与连接矩阵与“或连接矩阵”组成，<strong>但是PROM的结构上与连接矩阵固定，仅”或矩阵”可进行一次编程</strong>，如下图。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-04-20-FPGA-01-About_ZYNQ/image-20250420210628775.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-PROM内部结构    &lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20250420210628775.png" alt="image can't load." style="zoom:75%"> <br> PROM内部结构
+</center>
 </div>
 <h2 id="pal与gal">PAL与GAL</h2>
 <p>在PLA与PROM的基础上又延伸出其他两种类型，即PAL（Programmable Array
@@ -603,14 +585,9 @@ Logic）和GAL（Generic Array Logic）。</p>
 <li>互补输出</li>
 </ul>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-04-20-FPGA-01-About_ZYNQ/image-20250420211339732.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-PAL内部结构 &lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20250420211339732.png" alt="image can't load." style="zoom:75%"> <br> PAL内部结构
+</center>
 </div>
 <p>GAL相对于PAL改进：</p>
 <ul>
@@ -622,14 +599,9 @@ PAL内部结构 &lt;!--标题--&gt;
 <p>复杂可编程逻辑器件CPLD（Complex Programmable Logic
 Device）可以看作若干PLA与可编程连接矩阵的集合。内部结构如图。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-04-20-FPGA-01-About_ZYNQ/image-20250420215617600.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-CPLD内部结构    &lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20250420215617600.png" alt="image can't load." style="zoom:75%"> <br> CPLD内部结构
+</center>
 </div>
 <p>FPGA内大量使用LUT查找表和寄存器，可分为SRAM、反熔丝、Flash三种类型，包括可编程的：</p>
 <ul>
@@ -638,14 +610,9 @@ CPLD内部结构    &lt;!--标题--&gt;
 <li>IO口</li>
 </ul>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-04-20-FPGA-01-About_ZYNQ/image-20250420204136714.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-FPGA与CPLD对比 &lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20250420204136714.png" alt="image can't load." style="zoom:75%"> <br> FPGA与CPLD对比
+</center>
 </div>
 <p>FPGA的应用场景对比单片机和ARM，主要优势9是灵活高效、高吞吐量、低批量延时、快速并行运算、可重构、可重复编程、可实现定制性能和定制功耗。</p>
 <h1 id="zynq">ZYNQ</h1>
@@ -655,14 +622,11 @@ FPGA与CPLD对比 &lt;!--标题--&gt;
 Unit）、扩展外设、cache存储器、存储器接口、互联接口、时钟发生电路。</p>
 <h2 id="apu">APU</h2>
 <div>
-<pre><code>&lt;center&gt;
-    &lt;img src= &quot;2025-04-20-FPGA-01-About_ZYNQ/image-20250425103918783.png&quot;
-         alt = &quot;image can&#39;t load.&quot;
-         style=&quot;zoom:75%&quot;/&gt;
-    &lt;br&gt;
-&lt;center&gt;
-  APU框架</code></pre>
-</div>
+<center>
+<img src="image-20250425103918783.png" alt="image can't load." style="zoom:75%"> <br>
+<center>
+APU框架
+</center></center></div>
 <ul>
 <li>双ARM核、NEONTM媒体处理引擎MPE（Media Processing
 Engine）、浮点计算单元FPU（Floating Point
@@ -727,6 +691,7 @@ Logic，只能生成一组FIFO控制信号。</li>
 <blockquote>
 <p><em>大梦谁先觉，平生我自知。–《三国演义》</em></p>
 </blockquote>
+
 ]]></content>
       <categories>
         <category>电子类</category>
@@ -1120,14 +1085,9 @@ Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB
 <li><p>器件无法拖动到原点左侧和下方</p>
 <p>如下图。绝对原点限制了器件摆放位置。</p>
 <div>
-<pre><code>        &lt;!--块级封装--&gt;
-&lt;center&gt; &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-07-18-Altium-02-Error_And_Solution/image-20250718094118825.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:40%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;     &lt;!--换行--&gt;
-辅助中心 &lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20250718094118825.png" alt="image can't load." style="zoom:40%"> <br> 辅助中心
+</center>
 </div>
 <p>Re:使用<code>EJA</code>跳转至绝对原点，若板框距离原点有差距，选中所有器件移动至合适位置即可。</p></li>
 </ol>
@@ -1148,7 +1108,7 @@ Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-01-String_Composition</title>
+    <title>LeetCode-01-字符串交叉拼接</title>
     <url>/2025/07/19/LeetCode-01-String_Composition/</url>
     <content><![CDATA[<p>LeetCode算法题：字符串交叉拼接。</p>
 <span id="more"></span>
@@ -1251,7 +1211,7 @@ Designer设计PCB时遇到的各种问题与解决办法，按照原理图与PCB
   <entry>
     <title>TCP/IP-协议详解</title>
     <url>/2025/07/19/TCP-Protocol/</url>
-    <content><![CDATA[<p>本篇博文主要介绍TCP/IP协议特性…。</p>
+    <content><![CDATA[<p>本篇博文主要介绍TCP/IP协议特性。</p>
 <span id="more"></span>
 <h1 id="osi模型">OSI模型</h1>
 <p>TCP/IP协议族常用的应用层协议包括：</p>
@@ -1744,7 +1704,7 @@ CSDN博客</a></li>
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-05-reverse_Vowels</title>
+    <title>LeetCode-05-元音字符翻转</title>
     <url>/2025/08/02/LeetCode-05-Reverse_Vowels/</url>
     <content><![CDATA[<p>LeetCode算法题：字符串中元音字符翻转。</p>
 <span id="more"></span>
@@ -1833,7 +1793,7 @@ CSDN博客</a></li>
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-06-Reverse_Words</title>
+    <title>LeetCode-06-单词顺序反转</title>
     <url>/2025/08/03/LeetCode-06-Reverse_Words/</url>
     <content><![CDATA[<p>LeetCode算法题：字符串中单词顺序反转。</p>
 <span id="more"></span>
@@ -1865,14 +1825,9 @@ CSDN博客</a></li>
 <li>直到right = 0地址索引终止。</li>
 </ol>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-08-03-LeetCode-06-Reverse_Words/reverseString_A.jpg&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-自后向前找单词O(n)&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="reverseString_A.jpg" alt="image can't load." style="zoom:100%"> <br> 自后向前找单词O(n)
+</center>
 </div>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">reverseWords</span><span class="params">(<span class="type">char</span>* s)</span> &#123;</span><br><span class="line">    assert(s);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="type">char</span>* out_string = (<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">char</span>) * (len + <span class="number">1</span>));</span><br><span class="line">    <span class="type">char</span>* out_idx = out_string;</span><br><span class="line"></span><br><span class="line">    <span class="type">char</span>* right = s + len - <span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span>* left = right;</span><br><span class="line">    <span class="comment">//处理单字符</span></span><br><span class="line">    <span class="keyword">if</span> (right == s)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memcpy</span>((<span class="type">void</span>*)out_idx, (<span class="type">void</span>*)left, <span class="keyword">sizeof</span>(<span class="type">char</span>) * (right - left + <span class="number">1</span>));</span><br><span class="line">        out_idx += right - left + <span class="number">1</span>;</span><br><span class="line">        *out_idx = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> out_string;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//处理多字符</span></span><br><span class="line">    <span class="keyword">while</span> (right &gt; s)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (*right == <span class="string">&#x27; &#x27;</span> &amp;&amp; right &gt; s) right--;</span><br><span class="line">        <span class="keyword">if</span> (*right == <span class="string">&#x27; &#x27;</span>) <span class="keyword">break</span>;</span><br><span class="line">        left = right;</span><br><span class="line">        <span class="keyword">while</span> (*left != <span class="string">&#x27; &#x27;</span> &amp;&amp; left &gt; s) left--;</span><br><span class="line">        (left != s || (left == s &amp;&amp; *left == <span class="string">&#x27; &#x27;</span>)) ? left += <span class="number">1</span> : <span class="number">0</span>; <span class="comment">//判断是否为首字符，防止越界</span></span><br><span class="line">        <span class="built_in">memcpy</span>((<span class="type">void</span>*)out_idx, (<span class="type">void</span>*)left, <span class="keyword">sizeof</span>(<span class="type">char</span>) * (right - left + <span class="number">1</span>));</span><br><span class="line">        out_idx += right - left + <span class="number">1</span>;</span><br><span class="line">        *(out_idx++) = <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        right = left - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    *(out_idx - <span class="number">1</span>) = <span class="string">&#x27;\0&#x27;</span>;<span class="comment">//字符串结束符</span></span><br><span class="line">    <span class="keyword">return</span> out_string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此方案指针是从后向前移动，需要注意数组越界/指针越界。其中leetcode会报错，本地VS可运行成功。
@@ -1889,14 +1844,9 @@ space for an object of type ‘char’</p>
 <p>此种方案可以在原有字符串上进行改动，空间复杂度为O (1)
 ，<strong>修减空格、反转函数</strong>进行模块化。</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-08-03-LeetCode-06-Reverse_Words/reverseString_B.jpg&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-反转字符串再反转单词O(1)&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="reverseString_B.jpg" alt="image can't load." style="zoom:100%"> <br> 反转字符串再反转单词O(1)
+</center>
 </div>
 <ol type="1">
 <li>从前之后滤除空格。遇到单词后的空格/尾部结束符时仅输出1次空格，将后方字符前移。将尾部替换为结束符<code>\0</code>。</li>
@@ -1956,14 +1906,9 @@ anwser[i-1]*nums[i]，将计算结果直接存入anwser数组内，额外使用i
 <li>二次循环计算元素右侧之积suffix，并计算新answer</li>
 </ul>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-08-07-LeetCode-07-Product_ExceptSelf/B.jpg&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-单循环O(1)&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="B.jpg" alt="image can't load." style="zoom:100%"> <br> 单循环O(1)
+</center>
 </div>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* <span class="title function_">productExceptSelf</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numSize, <span class="type">int</span>* returnSize)</span> &#123;</span><br><span class="line">    *returnSize = numSize;</span><br><span class="line">     <span class="type">int</span> *answer = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*numSize);</span><br><span class="line">    answer[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> suffix = <span class="number">1</span>; <span class="comment">//右侧之积</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">//正向，元素左侧之积存入answer中</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;numSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        answer[i] = answer[i<span class="number">-1</span>]*nums[i<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//反向，乘右侧之积suffix，并刷新新值    </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;=numSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">		answer[numSize-i] *= suffix;</span><br><span class="line">        suffix *= nums[numSize-i];</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="方案c-单循环">方案C-单循环</h3>
@@ -1973,14 +1918,9 @@ anwser[i-1]*nums[i]，将计算结果直接存入anwser数组内，额外使用i
 <li>answer[i]与answer[n-i-1]正向反向两次计算，则单次循环内实现对数据的两次乘积</li>
 </ul>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-08-07-LeetCode-07-Product_ExceptSelf/C.jpg&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:100%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-单循环O(1)&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="C.jpg" alt="image can't load." style="zoom:100%"> <br> 单循环O(1)
+</center>
 </div>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* <span class="title function_">productExceptSelf</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize, <span class="type">int</span>* returnSize)</span> &#123;</span><br><span class="line">    *returnSize = numSize;</span><br><span class="line">     <span class="type">int</span> *answer = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*numSize);</span><br><span class="line">     <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt; numSize; i++)</span><br><span class="line">     &#123;</span><br><span class="line">         answer[i] = <span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="type">int</span> L = <span class="number">1</span>, R= <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;numSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        L *= nums[i - <span class="number">1</span>];</span><br><span class="line">        R *= nums[n - i];</span><br><span class="line">        </span><br><span class="line">        answer[i] *= L;</span><br><span class="line">        answer[n-i<span class="number">-1</span>] *= R;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p align="center">
@@ -2768,14 +2708,9 @@ HDL基本语法，描述FPGA程序设计本质和思路。基于Vivado创建工�
 </div>
 <p>其电路符号为：</p>
 <div>
-<pre><code>       &lt;!--块级封装--&gt;
-&lt;center&gt;    &lt;!--将图片和文字居中--&gt;
-&lt;img src=&quot;2025-11-24-FPGA-03-Verilog_Syntax/image-20251201125318946.png&quot;
-     alt=&quot;image can&#39;t load.&quot;
-     style=&quot;zoom:75%&quot;/&gt;&lt;!-- alt内为提示词--&gt;
-&lt;br&gt;        &lt;!--换行--&gt;
-上升触发D触发器电路符号&lt;!--标题--&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<img src="image-20251201125318946.png" alt="image can't load." style="zoom:75%"> <br> 上升触发D触发器电路符号
+</center>
 </div>
 <p><strong>边沿D触发器、主从SR触发器、主从JK触发器的性质都是在下一拍反映上一拍的数据，“记忆”功能体现滞后一拍的特性。</strong></p>
 <h2 id="jk触发器">JK触发器</h2>

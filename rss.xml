@@ -44,7 +44,7 @@
     <link href="https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/"/>
     <id>https://microprism.github.io/2025/11/24/FPGA-03-Verilog_Syntax/</id>
     <published>2025-11-24T11:59:15.000Z</published>
-    <updated>2026-01-11T12:27:22.586Z</updated>
+    <updated>2026-01-11T12:42:57.808Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文参考实例熟悉Verilog
@@ -162,7 +162,7 @@ HDL基本语法，描述FPGA程序设计本质和思路。基于Vivado创建工�
     <link href="https://microprism.github.io/2025/08/07/LeetCode-07-Product_ExceptSelf/"/>
     <id>https://microprism.github.io/2025/08/07/LeetCode-07-Product_ExceptSelf/</id>
     <published>2025-08-07T02:37:07.000Z</published>
-    <updated>2025-08-09T03:28:55.450Z</updated>
+    <updated>2026-01-11T12:41:27.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;LeetCode算法题：元素之积。&lt;/p&gt;</summary>
@@ -177,11 +177,11 @@ HDL基本语法，描述FPGA程序设计本质和思路。基于Vivado创建工�
   </entry>
   
   <entry>
-    <title>LeetCode-06-Reverse_Words</title>
+    <title>LeetCode-06-单词顺序反转</title>
     <link href="https://microprism.github.io/2025/08/03/LeetCode-06-Reverse_Words/"/>
     <id>https://microprism.github.io/2025/08/03/LeetCode-06-Reverse_Words/</id>
     <published>2025-08-03T02:32:53.000Z</published>
-    <updated>2025-08-04T11:05:02.643Z</updated>
+    <updated>2026-01-11T12:42:34.016Z</updated>
     
     
     <summary type="html">&lt;p&gt;LeetCode算法题：字符串中单词顺序反转。&lt;/p&gt;</summary>
@@ -196,11 +196,11 @@ HDL基本语法，描述FPGA程序设计本质和思路。基于Vivado创建工�
   </entry>
   
   <entry>
-    <title>LeetCode-05-reverse_Vowels</title>
+    <title>LeetCode-05-元音字符翻转</title>
     <link href="https://microprism.github.io/2025/08/02/LeetCode-05-Reverse_Vowels/"/>
     <id>https://microprism.github.io/2025/08/02/LeetCode-05-Reverse_Vowels/</id>
     <published>2025-08-02T09:09:35.000Z</published>
-    <updated>2025-08-03T02:47:16.950Z</updated>
+    <updated>2026-01-11T12:43:14.331Z</updated>
     
     
     <summary type="html">&lt;p&gt;LeetCode算法题：字符串中元音字符翻转。&lt;/p&gt;</summary>
@@ -281,10 +281,10 @@ Demo自动协商失败问题解决办法，如有相同情况，请先检查网�
     <link href="https://microprism.github.io/2025/07/19/TCP-Protocol/"/>
     <id>https://microprism.github.io/2025/07/19/TCP-Protocol/</id>
     <published>2025-07-19T07:23:23.000Z</published>
-    <updated>2026-01-11T11:56:55.491Z</updated>
+    <updated>2026-01-11T12:44:31.498Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本篇博文主要介绍TCP/IP协议特性…。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本篇博文主要介绍TCP/IP协议特性。&lt;/p&gt;</summary>
     
     
     
@@ -317,11 +317,11 @@ Demo自动协商失败问题解决办法，如有相同情况，请先检查网�
   </entry>
   
   <entry>
-    <title>LeetCode-01-String_Composition</title>
+    <title>LeetCode-01-字符串交叉拼接</title>
     <link href="https://microprism.github.io/2025/07/19/LeetCode-01-String_Composition/"/>
     <id>https://microprism.github.io/2025/07/19/LeetCode-01-String_Composition/</id>
     <published>2025-07-19T01:25:10.000Z</published>
-    <updated>2025-07-19T07:24:54.654Z</updated>
+    <updated>2026-01-11T12:46:05.647Z</updated>
     
     
     <summary type="html">&lt;p&gt;LeetCode算法题：字符串交叉拼接。&lt;/p&gt;</summary>
@@ -344,7 +344,7 @@ Demo自动协商失败问题解决办法，如有相同情况，请先检查网�
     <link href="https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/"/>
     <id>https://microprism.github.io/2025/07/18/Altium-02-Error_And_Solution/</id>
     <published>2025-07-18T01:34:52.000Z</published>
-    <updated>2026-01-11T11:44:08.016Z</updated>
+    <updated>2026-01-11T12:47:18.910Z</updated>
     
     
     <summary type="html">&lt;p&gt;本博客记录Altium
